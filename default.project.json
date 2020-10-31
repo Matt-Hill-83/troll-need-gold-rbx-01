@@ -11,11 +11,7 @@
     "Lighting": {
       "$className": "Lighting",
       "$properties": {
-        "Ambient": [
-          0.0,
-          0.0,
-          0.0
-        ],
+        "Ambient": [0.0, 0.0, 0.0],
         "Brightness": 2.0,
         "Technology": "Voxel",
         "GlobalShadows": true,
@@ -42,23 +38,20 @@
       "Baseplate": {
         "$className": "Part",
         "$properties": {
-          "Position": [
-            0.0,
-            -10.0,
-            0.0
-          ],
-          "Color": [
-            0.38823,
-            0.37254,
-            0.38823
-          ],
+          "Position": [0.0, -10.0, 0.0],
+          "Color": [0.38823, 0.37254, 0.38823],
           "Locked": true,
-          "Size": [
-            512.0,
-            20.0,
-            512.0
-          ],
+          "Size": [512.0, 20.0, 512.0],
           "Anchored": true
+        }
+      },
+      "MyPart": {
+        "$className": "Part",
+        "$properties": {
+          "Size": [33, 53, 33],
+          "Color": [0.5, 0, 0.5],
+          "Anchored": true,
+          "Material": "Granite"
         }
       }
     }
