@@ -130,7 +130,7 @@
 				<bool name="CanCollide">true</bool>
 				<bool name="CastShadow">true</bool>
 				<int name="CollisionGroupId">0</int>
-				<Color3uint8 name="Color3uint8">4284636770</Color3uint8>
+				<Color3uint8 name="Color3uint8">4286709638</Color3uint8>
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
@@ -144,7 +144,7 @@
 				<token name="LeftSurfaceInput">0</token>
 				<bool name="Locked">true</bool>
 				<bool name="Massless">false</bool>
-				<token name="Material">256</token>
+				<token name="Material">1280</token>
 				<string name="Name">Baseplate</string>
 				<float name="Reflectance">0</float>
 				<float name="RightParamA">-0.5</float>
