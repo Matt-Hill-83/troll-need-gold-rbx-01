@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-35.437645</X>
-					<Y>15.0139856</Y>
-					<Z>17.2733173</Z>
-					<R00>-0.00695202593</R00>
-					<R01>0.129821166</R01>
-					<R02>-0.991513073</R02>
-					<R10>-0</R10>
-					<R11>0.991537094</R11>
-					<R12>0.129824296</R12>
-					<R20>0.99997592</R20>
-					<R21>0.000902541855</R21>
-					<R22>-0.00689319009</R22>
+					<X>-61.2569084</X>
+					<Y>17.3224983</Y>
+					<Z>37.5057907</Z>
+					<R00>-0.00695776939</R00>
+					<R01>0.114218839</R01>
+					<R02>-0.99343133</R02>
+					<R10>-5.8207654e-11</R10>
+					<R11>0.99345541</R11>
+					<R12>0.114221603</R12>
+					<R20>0.999975801</R20>
+					<R21>0.000794727646</R21>
+					<R22>-0.00691223331</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-33.454628</X>
-					<Y>14.7543383</Y>
-					<Z>17.2871037</Z>
+					<X>-59.2700462</X>
+					<Y>17.0940552</Y>
+					<Z>37.5196152</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -114,9 +114,9 @@
 				<token name="BottomSurface">4</token>
 				<token name="BottomSurfaceInput">0</token>
 				<CoordinateFrame name="CFrame">
-					<X>1.51073391e-06</X>
-					<Y>4.87489338e-08</Y>
-					<Z>33.5</Z>
+					<X>-6.00000811</X>
+					<Y>3.15342305e-07</Y>
+					<Z>48</Z>
 					<R00>-4.50965345e-08</R00>
 					<R01>-4.09155163e-08</R01>
 					<R02>1.00000167</R02>
@@ -172,9 +172,9 @@
 				<token name="formFactorRaw">1</token>
 				<token name="shape">1</token>
 				<Vector3 name="size">
-					<X>107</X>
+					<X>136</X>
 					<Y>1</Y>
-					<Z>40</Z>
+					<Z>52</Z>
 				</Vector3>
 			</Properties>
 			<Item class="Script" referent="RBX8fa77c9fa8f446348f49a2bc648d23d9">
@@ -193,13 +193,13 @@ test.Parent = script.Parent]]></ProtectedString>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="Weld" referent="RBX1e186dbd21ad4fdf917e6612ba84963e">
+			<Item class="Weld" referent="RBXe838dc0352344b0c8f283a9b80d3f76c">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<CoordinateFrame name="C0">
 						<X>0</X>
 						<Y>0.500002623</Y>
-						<Z>3.76157573e-07</Z>
+						<Z>4.76837158e-07</Z>
 						<R00>1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
@@ -211,9 +211,9 @@ test.Parent = script.Parent]]></ProtectedString>
 						<R22>-8.183099e-08</R22>
 					</CoordinateFrame>
 					<CoordinateFrame name="C1">
-						<X>31.5</X>
-						<Y>-0.500007927</Y>
-						<Z>-13.0000629</Z>
+						<X>46</X>
+						<Y>-0.500007153</Y>
+						<Z>-7.00002766</Z>
 						<R00>-1</R00>
 						<R01>4.37114664e-08</R01>
 						<R02>-1.45518519e-09</R02>
