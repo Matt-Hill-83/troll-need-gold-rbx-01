@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>0</X>
-					<Y>28.1112671</Y>
-					<Z>35.1391068</Z>
-					<R00>1</R00>
-					<R01>0</R01>
-					<R02>-0</R02>
+					<X>5.7714057</X>
+					<Y>53.2788048</Y>
+					<Z>65.8564835</Z>
+					<R00>0.999780774</R00>
+					<R01>-0.00666573644</R01>
+					<R02>0.01985313</R02>
 					<R10>-0</R10>
-					<R11>0.780869007</R11>
-					<R12>0.624694765</R12>
-					<R20>0</R20>
-					<R21>-0.624694765</R21>
-					<R22>0.780869007</R22>
+					<R11>0.947993159</R11>
+					<R12>0.318290949</R12>
+					<R20>-0.0209422745</R20>
+					<R21>-0.318221182</R21>
+					<R22>0.947785199</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>0</X>
-					<Y>0</Y>
-					<Z>0</Z>
+					<X>4.87801409</X>
+					<Y>38.9556999</Y>
+					<Z>23.2061176</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -693,9 +693,9 @@ return my_functions]]></ProtectedString>
 							<token name="BottomSurface">4</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>1</X>
-								<Y>4</Y>
-								<Z>4</Z>
+								<X>2</X>
+								<Y>2</Y>
+								<Z>2</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -793,7 +793,7 @@ return my_functions]]></ProtectedString>
 							<token name="Font">0</token>
 							<int name="LayoutOrder">0</int>
 							<float name="LineHeight">1</float>
-							<string name="Name">the label</string>
+							<string name="Name">MyLabelaaa</string>
 							<Ref name="NextSelectionDown">null</Ref>
 							<Ref name="NextSelectionLeft">null</Ref>
 							<Ref name="NextSelectionRight">null</Ref>
