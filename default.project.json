@@ -16,6 +16,13 @@
       }
     },
 
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "Source": {
+        "$path": "src/ServerScriptService"
+      }
+    },
+
     "Workspace": {
       "$className": "Workspace",
       "$properties": {

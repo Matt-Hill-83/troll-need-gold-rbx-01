@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-127.065628</X>
-					<Y>68.909317</Y>
-					<Z>37.5352478</Z>
-					<R00>-0.00706420839</R00>
-					<R01>0.604619741</R01>
-					<R02>-0.796482861</R02>
-					<R10>-0</R10>
-					<R11>0.796502769</R11>
-					<R12>0.604634821</R12>
-					<R20>0.999975085</R20>
-					<R21>0.00427126652</R21>
-					<R22>-0.00562666077</R22>
+					<X>-33.3154068</X>
+					<Y>6.1434598</Y>
+					<Z>19.0546913</Z>
+					<R00>0.0665043592</R00>
+					<R01>0.0610982105</R01>
+					<R02>-0.995913744</R02>
+					<R10>4.65661287e-10</R10>
+					<R11>0.998123527</R11>
+					<R12>0.0612337738</R12>
+					<R20>0.997786164</R20>
+					<R21>-0.0040723132</R21>
+					<R22>0.066379562</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>9.50001526</X>
-					<Y>-34.7619057</Y>
-					<Z>38.5</Z>
+					<X>-31.3235798</X>
+					<Y>6.02099228</Y>
+					<Z>18.9219322</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1068,18 +1068,24 @@ local testDict01= {
 
 local testDict02= {
 	name="Tree",
-	text = "two",
+	
 	color = BrickColor.new("Blue"),
-	char = "Britta"
+	
 }
 
-local scenes = {testDict01,testDict02,testDict01}
+--local scenes = {testDict01,testDict02,testDict01}
+local scenes = {testDict02}
 
 for i, scene in ipairs(scenes) do	
+	print(i)
+	print (scene.color)
 	local newScene = game.ReplicatedStorage.Source.MyParts.MyBlock["NewWall"]
+	print(newScene)
 	newScene.Parent = base
-	local charName = scenes.name
-
+	---local charName = scenes.name
+	
+	
+	
 	newScene.Position = Vector3.new(1,  1,  i * 10)
 	newScene.BrickColor = scene.color
 	newScene.CanCollide = true
@@ -1377,6 +1383,130 @@ end]]></ProtectedString>
 							<string name="Name">Weld</string>
 							<Ref name="Part0">RBXcff13c169a274ff4912483a3b9dc27aa</Ref>
 							<Ref name="Part1">RBXb245c3c9e904461fb8cd759c487fa7b6</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+			<Item class="Folder" referent="RBXfefd86b839ea482ca1b01cdc22bd4ffe">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<string name="Name">-- Demos</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="Part" referent="RBX6518ccbf97c64cdd88a7cbca7d3233b7">
+					<Properties>
+						<bool name="Anchored">true</bool>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<float name="BackParamA">-0.5</float>
+						<float name="BackParamB">0.5</float>
+						<token name="BackSurface">0</token>
+						<token name="BackSurfaceInput">0</token>
+						<float name="BottomParamA">-0.5</float>
+						<float name="BottomParamB">0.5</float>
+						<token name="BottomSurface">0</token>
+						<token name="BottomSurfaceInput">0</token>
+						<CoordinateFrame name="CFrame">
+							<X>-45.5600014</X>
+							<Y>1.91581404</Y>
+							<Z>39.7900085</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>1</R22>
+						</CoordinateFrame>
+						<bool name="CanCollide">true</bool>
+						<bool name="CastShadow">true</bool>
+						<int name="CollisionGroupId">0</int>
+						<Color3uint8 name="Color3uint8">4278497260</Color3uint8>
+						<PhysicalProperties name="CustomPhysicalProperties">
+							<CustomPhysics>false</CustomPhysics>
+						</PhysicalProperties>
+						<float name="FrontParamA">-0.5</float>
+						<float name="FrontParamB">0.5</float>
+						<token name="FrontSurface">0</token>
+						<token name="FrontSurfaceInput">0</token>
+						<float name="LeftParamA">-0.5</float>
+						<float name="LeftParamB">0.5</float>
+						<token name="LeftSurface">0</token>
+						<token name="LeftSurfaceInput">0</token>
+						<bool name="Locked">false</bool>
+						<bool name="Massless">false</bool>
+						<token name="Material">256</token>
+						<string name="Name">buttonPart</string>
+						<float name="Reflectance">0</float>
+						<float name="RightParamA">-0.5</float>
+						<float name="RightParamB">0.5</float>
+						<token name="RightSurface">0</token>
+						<token name="RightSurfaceInput">0</token>
+						<int name="RootPriority">0</int>
+						<Vector3 name="RotVelocity">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<float name="TopParamA">-0.5</float>
+						<float name="TopParamB">0.5</float>
+						<token name="TopSurface">0</token>
+						<token name="TopSurfaceInput">0</token>
+						<float name="Transparency">0</float>
+						<Vector3 name="Velocity">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+						</Vector3>
+						<token name="formFactorRaw">1</token>
+						<token name="shape">1</token>
+						<Vector3 name="size">
+							<X>4</X>
+							<Y>3.82999969</Y>
+							<Z>0.459999979</Z>
+						</Vector3>
+					</Properties>
+					<Item class="Weld" referent="RBXb0759dc0a2304d54beb9bdb3f16f0fb0">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>0</X>
+								<Y>-1.91499984</Y>
+								<Z>0</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>-0</R10>
+								<R11>-0</R11>
+								<R12>-1</R12>
+								<R20>0</R20>
+								<R21>1</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>-39.7900085</X>
+								<Y>0.262720346</Y>
+								<Z>-55.0599976</Z>
+								<R00>0</R00>
+								<R01>-1</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>-1</R12>
+								<R20>1</R20>
+								<R21>0</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<bool name="Enabled">true</bool>
+							<string name="Name">Weld</string>
+							<Ref name="Part0">RBX6518ccbf97c64cdd88a7cbca7d3233b7</Ref>
+							<Ref name="Part1">10</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
@@ -1757,6 +1887,14 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 				</Properties>
 			</Item>
 		</Item>
+		<Item class="Folder" referent="RBX0a94999abf6641cb9a2d85cc64813062">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="Name">empty folder</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+		</Item>
 	</Item>
 	<Item class="SoundService" referent="8">
 		<Properties>
@@ -1936,6 +2074,141 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
+		<Item class="Folder" referent="RBXf439e83f5c9341829d5edceaed47ac38">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="Name">-- Demos</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+			<Item class="SurfaceGui" referent="RBX50317e63794b488cab7d453c10f72886">
+				<Properties>
+					<bool name="Active">true</bool>
+					<Ref name="Adornee">null</Ref>
+					<bool name="AlwaysOnTop">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="AutoLocalize">true</bool>
+					<Vector2 name="CanvasSize">
+						<X>800</X>
+						<Y>600</Y>
+					</Vector2>
+					<bool name="ClipsDescendants">true</bool>
+					<bool name="Enabled">true</bool>
+					<token name="Face">2</token>
+					<float name="LightInfluence">1</float>
+					<string name="Name">ButtonGui</string>
+					<float name="PixelsPerStud">50</float>
+					<bool name="ResetOnSpawn">true</bool>
+					<Ref name="RootLocalizationTable">null</Ref>
+					<token name="SizingMode">1</token>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="ToolPunchThroughDistance">0</float>
+					<token name="ZIndexBehavior">1</token>
+					<float name="ZOffset">0</float>
+				</Properties>
+				<Item class="TextButton" referent="RBX5e6952bfca8e4f4190ad0c68780c0e41">
+					<Properties>
+						<bool name="Active">true</bool>
+						<Vector2 name="AnchorPoint">
+							<X>0</X>
+							<Y>0.5</Y>
+						</Vector2>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<bool name="AutoButtonColor">true</bool>
+						<bool name="AutoLocalize">true</bool>
+						<token name="AutomaticSize">0</token>
+						<Color3 name="BackgroundColor3">
+							<R>1</R>
+							<G>1</G>
+							<B>1</B>
+						</Color3>
+						<float name="BackgroundTransparency">0</float>
+						<Color3 name="BorderColor3">
+							<R>0.105882362</R>
+							<G>0.164705887</G>
+							<B>0.207843155</B>
+						</Color3>
+						<token name="BorderMode">0</token>
+						<int name="BorderSizePixel">1</int>
+						<bool name="ClipsDescendants">false</bool>
+						<bool name="Draggable">false</bool>
+						<token name="Font">19</token>
+						<int name="LayoutOrder">0</int>
+						<float name="LineHeight">1</float>
+						<bool name="Modal">false</bool>
+						<string name="Name">TextButton</string>
+						<Ref name="NextSelectionDown">null</Ref>
+						<Ref name="NextSelectionLeft">null</Ref>
+						<Ref name="NextSelectionRight">null</Ref>
+						<Ref name="NextSelectionUp">null</Ref>
+						<UDim2 name="Position">
+							<XS>0</XS>
+							<XO>0</XO>
+							<YS>0.5</YS>
+							<YO>0</YO>
+						</UDim2>
+						<bool name="RichText">false</bool>
+						<Ref name="RootLocalizationTable">null</Ref>
+						<float name="Rotation">0</float>
+						<bool name="Selectable">true</bool>
+						<bool name="Selected">false</bool>
+						<Ref name="SelectionImageObject">null</Ref>
+						<UDim2 name="Size">
+							<XS>0</XS>
+							<XO>200</XO>
+							<YS>0</YS>
+							<YO>50</YO>
+						</UDim2>
+						<token name="SizeConstraint">0</token>
+						<int64 name="SourceAssetId">-1</int64>
+						<token name="Style">0</token>
+						<BinaryString name="Tags"></BinaryString>
+						<string name="Text">Click Me</string>
+						<Color3 name="TextColor3">
+							<R>0</R>
+							<G>0</G>
+							<B>0</B>
+						</Color3>
+						<bool name="TextScaled">false</bool>
+						<float name="TextSize">14</float>
+						<Color3 name="TextStrokeColor3">
+							<R>0</R>
+							<G>0</G>
+							<B>0</B>
+						</Color3>
+						<float name="TextStrokeTransparency">1</float>
+						<float name="TextTransparency">0</float>
+						<token name="TextTruncate">0</token>
+						<bool name="TextWrapped">false</bool>
+						<token name="TextXAlignment">2</token>
+						<token name="TextYAlignment">1</token>
+						<bool name="Visible">true</bool>
+						<int name="ZIndex">1</int>
+					</Properties>
+					<Item class="LocalScript" referent="RBXe2d6875bba524dfdad2a395231608b2b">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<bool name="Disabled">false</bool>
+							<Content name="LinkedSource"><null></null></Content>
+							<string name="Name">LocalScript</string>
+							<string name="ScriptGuid">{6a43a08a-0766-4d4c-8e5e-a1d3cd7d4943}</string>
+							<ProtectedString name="Source"><![CDATA[
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local buttonEvent = ReplicatedStorage:FindFirstChild("buttonEvent")
+local myString = "Dogs are cool!"
+
+script.Parent.MouseButton1Click:Connect(function()
+	buttonEvent:FireServer(myString)
+end)
+]]></ProtectedString>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
+				</Item>
+			</Item>
+		</Item>
 	</Item>
 	<Item class="LocalizationService" referent="RBXffb8c9e514604bb9bae5dc250136cdb7">
 		<Properties>
@@ -2077,6 +2350,62 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
+		<Item class="Folder" referent="RBX019ce3d6c1b549f3a45f8e5d8bb62d67">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="Name">-- Demos</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+			<Item class="ModuleScript" referent="RBXf87fb11126244a28b2292982a979e95a">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">functionsModuleScript</string>
+					<string name="ScriptGuid">{989d7304-99f5-4c61-ba99-65f607c918a1}</string>
+					<ProtectedString name="Source"><![CDATA[local funMod = {}
+
+	function funMod.changeColor(triggerPart)
+		triggerPart.BrickColor = BrickColor.new("Really red")
+	end
+
+	function funMod.myTouchFunction(triggerPart)
+		print("funMod is working!")
+		funMod.changeColor(triggerPart)
+	end
+	
+	
+return funMod
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="Script" referent="RBXd3e2ebbb8e83473b850ff519cad79d63">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">buttonScript</string>
+					<string name="ScriptGuid">{0f1d6f68-4a9b-49af-9465-bac59bb6f04a}</string>
+					<ProtectedString name="Source"><![CDATA[
+
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local buttonEvent = ReplicatedStorage:FindFirstChild("buttonEvent")
+
+function triggerButton(player,myVar)
+	print("button pressed")
+	print(myVar)
+end
+
+buttonEvent.OnServerEvent:Connect(triggerButton)
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+		</Item>
 	</Item>
 	<Item class="ServerStorage" referent="RBX2706d9939baa47c6b0c26f77464e164e">
 		<Properties>
@@ -2180,7 +2509,7 @@ return my_functions]]></ProtectedString>
 								<R21>0</R21>
 								<R22>1</R22>
 							</CoordinateFrame>
-							<bool name="CanCollide">false</bool>
+							<bool name="CanCollide">true</bool>
 							<bool name="CastShadow">true</bool>
 							<int name="CollisionGroupId">0</int>
 							<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
@@ -2316,6 +2645,22 @@ return my_functions]]></ProtectedString>
 						</Properties>
 					</Item>
 				</Item>
+			</Item>
+		</Item>
+		<Item class="Folder" referent="RBX9a3a8acf67d44ceab3014eefb487df48">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<string name="Name">-- Demos</string>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+			<Item class="RemoteEvent" referent="RBX3dc93218f87447c5997adb5cbdd83613">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<string name="Name">buttonEvent</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
 			</Item>
 		</Item>
 	</Item>

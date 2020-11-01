@@ -5,11 +5,6 @@
       "Name": "NewWall",
       "ClassName": "Part",
       "Properties": {
-        "Size": {
-          "Type": "Vector3",
-          "Value": [1, 20, 20]
-        },
-
         "Anchored": true,
         "CanCollide": true
       }
