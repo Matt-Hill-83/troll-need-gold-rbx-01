@@ -1651,23 +1651,11 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 local dialogSurface = textButton.Parent
 local textLabels = textButton.Parent:GetChildren('textLabel')
 local counter = 1
-
-
---local test = require(game.ReplicatedStorage.Source["MyModel-002"])
---local test = require(game.ReplicatedStorage.Source["MyModel-002"],textButton)
---local newbase = game.ReplicatedStorage.Source["MyModel-002"]
-local newbase = game.ReplicatedStorage.Source["json-002"]
-local newbase2 = game.ReplicatedStorage.Source.hello
-
-newbase2.Parent = workspace
-
-
+--local newbase = game.ReplicatedStorage.Source["json-002"]
+local newbase = game.ReplicatedStorage.Source.MyTextLabel
 print(newbase)
-print(newbase2)
+
 newbase.Parent= workspace
---local newLabel = Instance.new(newbase , dialogSurface) 
-
-
 
 textButton.Text = "Next Page!"
 
@@ -1692,7 +1680,7 @@ for i, dialog in ipairs(texts2) do
 	newLabel.Text = charName .. ": " .. dialog['text']
 	newLabel.Size = UDim2.new(0, 800, 0, 100)
 	newLabel.Position = UDim2.new(0,  100, 0, i * 150)	
-	-- newLabel.AnchorPoint = Vector2.new(1, 0.5)
+	
 end
 
 local function onActivated()	
@@ -2094,28 +2082,28 @@ return module
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
-		<Item class="Folder" referent="RBX2b06076562e842cb9f7aef4c813620eb">
+		<Item class="Folder" referent="RBX8bb6831dbe7d4103b4c68195f831f6a5">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<string name="Name">Source</string>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="Folder" referent="RBX26c24b71fd074d9980ed379c0bd04b1b">
+			<Item class="Folder" referent="RBX18a873333bc54854b2f8f2ea7d1cff7b">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<string name="Name">MyModel-002</string>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="Folder" referent="RBXadc5b28f87be44e1ba17b33393823564">
+				<Item class="Folder" referent="RBXda6ea15d27024f889bf688e71e35255f">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Name">json-001</string>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="Part" referent="RBX16e6dc6442144796a8a2226787dc39d8">
+					<Item class="Part" referent="RBXb5a9719c6b2f49e6898b84f5bfb39538">
 						<Properties>
 							<bool name="Anchored">false</bool>
 							<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2194,22 +2182,22 @@ return module
 					</Item>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBX78b0864885834fdc892c71a16627d3e4">
+			<Item class="ModuleScript" referent="RBX55d67e3a5ad343758886b6a78c96a6ca">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">MyModel-003</string>
-					<string name="ScriptGuid">{f20863c2-1752-4ab8-bb24-c84521d199ea}</string>
+					<string name="ScriptGuid"></string>
 					<ProtectedString name="Source">-- test</ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX9328c7f247cb4eb3ae1001a5a89f8f4f">
+				<Item class="ModuleScript" referent="RBXd9b8ac61500c4f429806bcff01b3295a">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">foo</string>
-						<string name="ScriptGuid">{5996a6ce-cddd-48b5-b52c-ab9e4105fa63}</string>
+						<string name="ScriptGuid"></string>
 						<ProtectedString name="Source"><![CDATA[local module = {test = 5}
 
 return module
@@ -2219,12 +2207,97 @@ return module
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBXf1a6a54eb6ed4dda9093fba0a3229e5b">
+			<Item class="Folder" referent="RBXc2cc2c6e98004c1388709672466544a2">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<string name="Name">MyTextLabel</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="Part" referent="RBXd7118afbbf064eef8724e54cc099680c">
+					<Properties>
+						<bool name="Anchored">false</bool>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<float name="BackParamA">-0.5</float>
+						<float name="BackParamB">0.5</float>
+						<token name="BackSurface">0</token>
+						<token name="BackSurfaceInput">0</token>
+						<float name="BottomParamA">-0.5</float>
+						<float name="BottomParamB">0.5</float>
+						<token name="BottomSurface">4</token>
+						<token name="BottomSurfaceInput">0</token>
+						<CoordinateFrame name="CFrame">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>1</R11>
+							<R12>0</R12>
+							<R20>0</R20>
+							<R21>0</R21>
+							<R22>1</R22>
+						</CoordinateFrame>
+						<bool name="CanCollide">true</bool>
+						<bool name="CastShadow">true</bool>
+						<int name="CollisionGroupId">0</int>
+						<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
+						<PhysicalProperties name="CustomPhysicalProperties">
+							<CustomPhysics>false</CustomPhysics>
+						</PhysicalProperties>
+						<float name="FrontParamA">-0.5</float>
+						<float name="FrontParamB">0.5</float>
+						<token name="FrontSurface">0</token>
+						<token name="FrontSurfaceInput">0</token>
+						<float name="LeftParamA">-0.5</float>
+						<float name="LeftParamB">0.5</float>
+						<token name="LeftSurface">0</token>
+						<token name="LeftSurfaceInput">0</token>
+						<bool name="Locked">false</bool>
+						<bool name="Massless">false</bool>
+						<token name="Material">256</token>
+						<string name="Name">FunPart-001</string>
+						<float name="Reflectance">0</float>
+						<float name="RightParamA">-0.5</float>
+						<float name="RightParamB">0.5</float>
+						<token name="RightSurface">0</token>
+						<token name="RightSurfaceInput">0</token>
+						<int name="RootPriority">0</int>
+						<Vector3 name="RotVelocity">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+						</Vector3>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<float name="TopParamA">-0.5</float>
+						<float name="TopParamB">0.5</float>
+						<token name="TopSurface">3</token>
+						<token name="TopSurfaceInput">0</token>
+						<float name="Transparency">0</float>
+						<Vector3 name="Velocity">
+							<X>0</X>
+							<Y>0</Y>
+							<Z>0</Z>
+						</Vector3>
+						<token name="formFactorRaw">1</token>
+						<token name="shape">1</token>
+						<Vector3 name="size">
+							<X>40</X>
+							<Y>40</Y>
+							<Z>40</Z>
+						</Vector3>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="ModuleScript" referent="RBXaa008259abd1407f8e8036f662784ae0">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">ReplicatedStorage</string>
-					<string name="ScriptGuid">{6e7458e8-dc92-4b7f-af24-d995c3f3f54d}</string>
+					<string name="ScriptGuid"></string>
 					<ProtectedString name="Source"><![CDATA[local module = {}
 -- test - matt
 return module
@@ -2232,7 +2305,7 @@ return module
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="LocalizationTable" referent="RBX456be7c425a347bbb3f8da5173dfdbd6">
+				<Item class="LocalizationTable" referent="RBXd30da1b4815842dbaaee59fb3a240efe">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<string name="Contents">[]</string>
@@ -2242,12 +2315,12 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX0bfe83e6ea80447395a1b94971b9123e">
+				<Item class="ModuleScript" referent="RBXa9ebf94a24174cd7b7571070c29b17a0">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">test</string>
-						<string name="ScriptGuid">{fe561892-c415-4ce2-b204-5a296220c9cb}</string>
+						<string name="ScriptGuid"></string>
 						<ProtectedString name="Source"><![CDATA[
 -- local newLabel = Instance.new("TextLabel", dialogSurface) 
 -- local charName = texts2[counter]['char']
@@ -2259,21 +2332,30 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
+				<Item class="StringValue" referent="RBX163a924474544fb6bdaab3d48c59543a">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">txt-001</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<string name="Value">test</string>
+					</Properties>
+				</Item>
 			</Item>
-			<Item class="Folder" referent="RBXb1a040c56ced4287b3f0dda7bfa2f954">
+			<Item class="Folder" referent="RBXb85da5a016ae4cd3b503193aad2d5572">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<string name="Name">ServerScriptService</string>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="Script" referent="RBX48c664700fc34b5ab26ab0ba14d4e9f9">
+				<Item class="Script" referent="RBX6c3a2bbf6e934713a44c5d1dfda48ae9">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<bool name="Disabled">false</bool>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">server</string>
-						<string name="ScriptGuid">{6b74bfb0-519d-4eb2-9823-d4ff413ecad2}</string>
+						<string name="ScriptGuid"></string>
 						<ProtectedString name="Source"><![CDATA[local module = {
 
 
@@ -2287,7 +2369,7 @@ return module]]></ProtectedString>
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="Folder" referent="RBX3c0a488309934937a8cb28df0894c7fb">
+			<Item class="Folder" referent="RBX494a580889fa4a53b4398f5c0ded34cf">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<string name="Name">ServerStorage</string>
@@ -2295,49 +2377,41 @@ return module]]></ProtectedString>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="Folder" referent="RBX4cb14bcae8f74d8e87031ca823e22228">
+			<Item class="Folder" referent="RBX93ec810070e445e59110bd92b96f322d">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<string name="Name">StarterPlayerScripts</string>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="LocalScript" referent="RBXe1318243ec8b4cb9ad843b092126a7aa">
+				<Item class="LocalScript" referent="RBXc12a54fefa85449592eb2a375d723656">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<bool name="Disabled">false</bool>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">client</string>
-						<string name="ScriptGuid">{186e9e20-a272-47e6-a432-b3eaf98d7398}</string>
+						<string name="ScriptGuid"></string>
 						<ProtectedString name="Source"><![CDATA[--client
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="StringValue" referent="RBX1603ebbf33b14c00afce1bc870104c03">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<string name="Name">txt-001</string>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<string name="Value">test</string>
-					</Properties>
-				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBX3baa6bc261a8466eb09ad457220127d7">
+			<Item class="ModuleScript" referent="RBX3eefa92eb5084be4abaaf5e816cda88c">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">hello</string>
-					<string name="ScriptGuid">{feb8e789-2707-4653-9f2d-125027176f57}</string>
+					<string name="ScriptGuid"></string>
 					<ProtectedString name="Source"><![CDATA[
 local newLabel = Instance.new("TextLabel") 
 
 newLabel.Name = "MyLabel---fu"
 newLabel.Text = "fuck you"
 newLabel.Size = UDim2.new(0, 800, 0, 100)
-newLabel.Position = UDim2.new(0,  100, 0, i * 150)
+newLabel.Position = UDim2.new(0,  100, 0,  150)
+print('fuck your mom')
 
 return newLabel
 ]]></ProtectedString>
@@ -2345,14 +2419,14 @@ return newLabel
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="Folder" referent="RBXa8ec0853ab8f4072879978fe5a4dbc99">
+			<Item class="Folder" referent="RBX72933b487a224a1eab76ede19ed72d3e">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<string name="Name">json-002</string>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="Part" referent="RBX063708493cf74597a986c93f67dda326">
+				<Item class="Part" referent="RBX6ac031cd761842a78af5066ca0a87163">
 					<Properties>
 						<bool name="Anchored">false</bool>
 						<BinaryString name="AttributesSerialize"></BinaryString>
