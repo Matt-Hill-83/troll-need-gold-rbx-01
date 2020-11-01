@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-47.1537132</X>
-					<Y>12.2203121</Y>
-					<Z>-22.5416183</Z>
-					<R00>-0.0560963564</R00>
-					<R01>-0.0373880342</R01>
-					<R02>-0.997725129</R02>
-					<R10>-2.32830644e-10</R10>
-					<R11>0.999298751</R11>
-					<R12>-0.0374469981</R12>
-					<R20>0.998425424</R20>
-					<R21>-0.00210063998</R21>
-					<R22>-0.0560570098</R22>
+					<X>-47.097744</X>
+					<Y>12.4713917</Y>
+					<Z>-22.8849602</Z>
+					<R00>-0.228614867</R00>
+					<R01>0.0857591629</R01>
+					<R02>-0.969732285</R02>
+					<R10>1.86264515e-09</R10>
+					<R11>0.996112347</R11>
+					<R12>0.0880921111</R12>
+					<R20>0.973516941</R20>
+					<R21>0.0201391652</R21>
+					<R22>-0.227726102</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -1755,7 +1755,7 @@ return module
 				<string name="Name">Script-001</string>
 				<string name="ScriptGuid">{29bdafcc-2791-4ddf-916e-30cdbdc345f0}</string>
 				<ProtectedString name="Source"><![CDATA[
-local my_functions = require(game.ReplicatedStorage["test-001"])
+local my_functions = require(game.ReplicatedStorage.MyScripts)
 
 print(my_functions)
 
@@ -2496,12 +2496,12 @@ return module
 				</Properties>
 			</Item>
 		</Item>
-		<Item class="ModuleScript" referent="RBX6a8af979e98b476e81642cbd6b678fbc">
+		<Item class="ModuleScript" referent="RBX690ab133ee3e4bfdbd05b8aece81729e">
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<Content name="LinkedSource"><null></null></Content>
-				<string name="Name">test-001</string>
-				<string name="ScriptGuid">{125d57a4-e458-4d90-87d3-7e45678f1feb}</string>
+				<string name="Name">MyScripts</string>
+				<string name="ScriptGuid"></string>
 				<ProtectedString name="Source"><![CDATA[local my_functions = {}
 
 function my_functions.foo()
