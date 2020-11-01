@@ -1005,8 +1005,8 @@ return my_functions]]></ProtectedString>
 							<token name="shape">1</token>
 							<Vector3 name="size">
 								<X>1</X>
-								<Y>4</Y>
-								<Z>4</Z>
+								<Y>14</Y>
+								<Z>1</Z>
 							</Vector3>
 						</Properties>
 					</Item>
