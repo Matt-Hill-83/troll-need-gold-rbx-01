@@ -1,58 +1,61 @@
 {
-  "name": "rojo-test-002",
+  "name": "Sisyphus Simulator",
   "tree": {
     "$className": "DataModel",
+
     "HttpService": {
       "$className": "HttpService",
       "$properties": {
         "HttpEnabled": true
       }
     },
-    "Lighting": {
-      "$className": "Lighting",
-      "$properties": {
-        "Ambient": [0.0, 0.0, 0.0],
-        "Brightness": 2.0,
-        "Technology": "Voxel",
-        "GlobalShadows": true,
-        "Outlines": false
-      }
-    },
+
     "ReplicatedStorage": {
       "$className": "ReplicatedStorage",
-      "Source": {
-        "$path": "src"
+      "$path": "src"
+    },
+
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "$path": "src/ServerStorage"
+    },
+
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "$path": "src/StarterPlayerScripts"
       }
     },
-    "SoundService": {
-      "$className": "SoundService",
-      "$properties": {
-        "RespectFilteringEnabled": true
-      }
-    },
+
     "Workspace": {
       "$className": "Workspace",
       "$properties": {
-        "FilteringEnabled": true
+        "Gravity": 67.3
       },
-      "Baseplate": {
+
+      "Terrain": {
+        "$path": "Terrain.rbxm"
+      },
+
+      "MyPart99999999998907987987": {
         "$className": "Part",
         "$properties": {
-          "Position": [0.0, -10.0, 0.0],
-          "Color": [0.38823, 0.37254, 0.38823],
-          "Locked": true,
-          "Size": [512.0, 20.0, 512.0],
-          "Anchored": true
-        }
-      },
-      "MyPart": {
-        "$className": "Part",
-        "$properties": {
-          "Size": [33, 53, 33],
+          "Size": [300, 500, 300],
           "Color": [0.5, 0, 0.5],
           "Anchored": true,
           "Material": "Granite"
         }
+      }
+    },
+    "MyPart99999999998907987987": {
+      "$className": "Part",
+      "$properties": {
+        "Size": [300, 500, 300],
+        "Color": [0.5, 0, 0.5],
+        "Anchored": true,
+        "Material": "Granite"
       }
     }
   }
