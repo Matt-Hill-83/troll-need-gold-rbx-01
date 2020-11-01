@@ -11,8 +11,7 @@
     },
 
     "ReplicatedStorage": {
-      "$className": "ReplicatedStorage",
-      "$path": "src"
+      "$path": "src/ReplicatedStorage"
     }
   }
 }
