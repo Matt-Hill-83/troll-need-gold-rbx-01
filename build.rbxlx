@@ -1083,7 +1083,7 @@ for i, scene in ipairs(scenes) do
 	local newScene = Instance.new("Part", base) 
 	local charName = scenes[i]['name']
 
-	newScene.Size = Vector3.new(10, 1,  10)
+	newScene.Size = Vector3.new(10, 10,  1)
 	newScene.Position = Vector3.new(0,  10,  i * 10)
 	newScene.BrickColor = BrickColor.new("Really red")
 	newScene.CanCollide = true
@@ -2229,8 +2229,8 @@ return my_functions]]></ProtectedString>
 							<token name="formFactorRaw">1</token>
 							<token name="shape">1</token>
 							<Vector3 name="size">
-								<X>1</X>
-								<Y>20</Y>
+								<X>20</X>
+								<Y>1</Y>
 								<Z>20</Z>
 							</Vector3>
 						</Properties>
