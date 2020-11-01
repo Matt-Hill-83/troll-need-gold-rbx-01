@@ -6,7 +6,8 @@
       "ClassName": "TextLabel",
       "Properties": {
         "Name": "MyLabel",
-        "Text": "fuck you"
+        "Text": "new label",
+        "Size": [3, 5, 3, 5]
       }
     }
   ]
