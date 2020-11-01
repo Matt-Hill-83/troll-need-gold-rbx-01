@@ -1059,9 +1059,11 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<string name="ScriptGuid">{217e422e-4b92-4b98-9299-4e87aa49c738}</string>
 						<ProtectedString name="Source"><![CDATA[print("Hello world!")
 
-local test = game.ReplicatedStorage.Source.MyParts.MyBlock.NewWall
+local testBlock = game.ReplicatedStorage.Source.MyParts.MyBlock["NewWall"]
+local testLabel = game.ReplicatedStorage.Source.MyParts.MyTextLabel["MyLabel-001"]
 
-test.Parent = script.Parent]]></ProtectedString>
+testBlock.Parent= workspace
+testLabel.Parent= workspace]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -1590,11 +1592,11 @@ local dialogSurface = textButton.Parent
 local textLabels = textButton.Parent:GetChildren('textLabel')
 local counter = 1
 
-local testBlock = game.ReplicatedStorage.Source.MyParts.MyBlock["NewWall"]
-local testLabel = game.ReplicatedStorage.Source.MyParts.MyTextLabel["MyLabel-001"]
+---local testBlock = game.ReplicatedStorage.Source.MyParts.MyBlock["NewWall"]
+---local testLabel = game.ReplicatedStorage.Source.MyParts.MyTextLabel["MyLabel-001"]
 
-testBlock.Parent= workspace
-testLabel.Parent= workspace
+---testBlock.Parent= workspace
+---testLabel.Parent= workspace
 
 textButton.Text = "Next Page!"
 
