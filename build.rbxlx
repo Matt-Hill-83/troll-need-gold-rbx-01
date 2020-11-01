@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-46.7468605</X>
-					<Y>13.3509874</Y>
-					<Z>37.6114349</Z>
-					<R00>-0.0278971437</R00>
-					<R01>0.00451579364</R01>
-					<R02>-0.999600649</R02>
+					<X>-79.3958435</X>
+					<Y>19.6193829</Y>
+					<Z>45.9523048</Z>
+					<R00>-0.0278884862</R00>
+					<R01>0.258047998</R01>
+					<R02>-0.965729535</R02>
 					<R10>-0</R10>
-					<R11>0.999989867</R11>
-					<R12>0.00451755198</R12>
-					<R20>0.999610782</R20>
-					<R21>0.000126026804</R21>
-					<R22>-0.0278968606</R22>
+					<R11>0.966105342</R11>
+					<R12>0.258148402</R12>
+					<R20>0.99961108</R20>
+					<R21>0.00719936797</R21>
+					<R22>-0.0269432142</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-44.7476578</X>
-					<Y>13.3419523</Y>
-					<Z>37.6672287</Z>
+					<X>-6.00000858</X>
+					<Y>2.98023224e-07</Y>
+					<Z>48</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1057,13 +1057,39 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Script</string>
 						<string name="ScriptGuid">{217e422e-4b92-4b98-9299-4e87aa49c738}</string>
-						<ProtectedString name="Source"><![CDATA[print("Hello world!")
+						<ProtectedString name="Source"><![CDATA[
 
-local testBlock = game.ReplicatedStorage.Source.MyParts.MyBlock["NewWall"]
-local testLabel = game.ReplicatedStorage.Source.MyParts.MyTextLabel["MyLabel-001"]
+local basePlate = script.Parent
+--local testBlock = game.ReplicatedStorage.Source.MyParts.MyBlock["NewWall"]
 
-testBlock.Parent= workspace
-testLabel.Parent= workspace]]></ProtectedString>
+
+
+
+
+local testDict01= {
+	name="Log",
+	text = "one",
+	color = "Yellow",
+	char = "Britta"
+}
+
+local testDict02= {
+	name="Tree",
+	text = "two",
+	color = "Yellow",
+	char = "Britta"
+}
+
+local scenes = {testDict01,testDict02,testDict01}
+
+for i, scene in ipairs(scenes) do	
+	local newScene = Instance.new("Part", basePlate) 
+	local charName = scenes[i]['name']
+
+	newScene.Size = Vector3.new(0, 800,  100)
+	newScene.Position = Vector3.new(0,  100,  i * 150)	
+
+end]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -1695,83 +1721,6 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-		</Item>
-		<Item class="Part" referent="RBXd5381933c41b4a68aa73afa37d71a617">
-			<Properties>
-				<bool name="Anchored">true</bool>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<float name="BackParamA">-0.5</float>
-				<float name="BackParamB">0.5</float>
-				<token name="BackSurface">0</token>
-				<token name="BackSurfaceInput">0</token>
-				<float name="BottomParamA">-0.5</float>
-				<float name="BottomParamB">0.5</float>
-				<token name="BottomSurface">4</token>
-				<token name="BottomSurfaceInput">0</token>
-				<CoordinateFrame name="CFrame">
-					<X>0</X>
-					<Y>-10</Y>
-					<Z>0</Z>
-					<R00>1</R00>
-					<R01>0</R01>
-					<R02>0</R02>
-					<R10>0</R10>
-					<R11>1</R11>
-					<R12>0</R12>
-					<R20>0</R20>
-					<R21>0</R21>
-					<R22>1</R22>
-				</CoordinateFrame>
-				<bool name="CanCollide">true</bool>
-				<bool name="CastShadow">true</bool>
-				<int name="CollisionGroupId">0</int>
-				<Color3uint8 name="Color3uint8">4284636770</Color3uint8>
-				<PhysicalProperties name="CustomPhysicalProperties">
-					<CustomPhysics>false</CustomPhysics>
-				</PhysicalProperties>
-				<float name="FrontParamA">-0.5</float>
-				<float name="FrontParamB">0.5</float>
-				<token name="FrontSurface">0</token>
-				<token name="FrontSurfaceInput">0</token>
-				<float name="LeftParamA">-0.5</float>
-				<float name="LeftParamB">0.5</float>
-				<token name="LeftSurface">0</token>
-				<token name="LeftSurfaceInput">0</token>
-				<bool name="Locked">true</bool>
-				<bool name="Massless">false</bool>
-				<token name="Material">256</token>
-				<string name="Name">Baseplate</string>
-				<float name="Reflectance">0</float>
-				<float name="RightParamA">-0.5</float>
-				<float name="RightParamB">0.5</float>
-				<token name="RightSurface">0</token>
-				<token name="RightSurfaceInput">0</token>
-				<int name="RootPriority">0</int>
-				<Vector3 name="RotVelocity">
-					<X>0</X>
-					<Y>0</Y>
-					<Z>0</Z>
-				</Vector3>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-				<float name="TopParamA">-0.5</float>
-				<float name="TopParamB">0.5</float>
-				<token name="TopSurface">3</token>
-				<token name="TopSurfaceInput">0</token>
-				<float name="Transparency">0</float>
-				<Vector3 name="Velocity">
-					<X>0</X>
-					<Y>0</Y>
-					<Z>0</Z>
-				</Vector3>
-				<token name="formFactorRaw">1</token>
-				<token name="shape">1</token>
-				<Vector3 name="size">
-					<X>512</X>
-					<Y>20</Y>
-					<Z>512</Z>
-				</Vector3>
-			</Properties>
 		</Item>
 	</Item>
 	<Item class="SoundService" referent="8">
