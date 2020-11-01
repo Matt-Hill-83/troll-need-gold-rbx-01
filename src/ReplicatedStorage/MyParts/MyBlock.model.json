@@ -7,8 +7,9 @@
       "Properties": {
         "Size": {
           "Type": "Vector3",
-          "Value": [4, 4, 4]
-        }
+          "Value": [1, 4, 4]
+        },
+        "Position": [2, 2, 2]
       }
     }
   ]

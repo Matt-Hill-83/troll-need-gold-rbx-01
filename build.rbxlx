@@ -177,6 +177,22 @@
 					<Z>30</Z>
 				</Vector3>
 			</Properties>
+			<Item class="Script" referent="RBX8fa77c9fa8f446348f49a2bc648d23d9">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">Script</string>
+					<string name="ScriptGuid">{217e422e-4b92-4b98-9299-4e87aa49c738}</string>
+					<ProtectedString name="Source"><![CDATA[print("Hello world!")
+
+local test = game.ReplicatedStorage.Source.MyParts.MyBlock
+
+test.Parent = script.Parent]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
 		</Item>
 		<Item class="Terrain" referent="RBX8192ea5f0d4f4d98a8a10aa1c4e90cfc">
 			<Properties>
@@ -608,7 +624,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">Source</string>
-				<string name="ScriptGuid"></string>
+				<string name="ScriptGuid">{2cbb1455-71a2-4e0d-9db9-0bde01756744}</string>
 				<ProtectedString name="Source"><![CDATA[---test
 ]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
@@ -619,7 +635,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">MyScripts</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{fab49551-8151-4cec-8e16-0f328f73f139}</string>
 					<ProtectedString name="Source">---test</ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -629,7 +645,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">MyScripts</string>
-						<string name="ScriptGuid"></string>
+						<string name="ScriptGuid">{c334f802-459e-481b-bf20-cee272aa9ab8}</string>
 						<ProtectedString name="Source"><![CDATA[local my_functions = {}
 
 function my_functions.foo()
@@ -652,7 +668,7 @@ return my_functions]]></ProtectedString>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">MyParts</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{0454bd35-ddf2-4e77-a244-a4cbc5271884}</string>
 					<ProtectedString name="Source">---test</ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -677,9 +693,9 @@ return my_functions]]></ProtectedString>
 							<token name="BottomSurface">4</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>0</Z>
+								<X>1</X>
+								<Y>4</Y>
+								<Z>4</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -735,7 +751,7 @@ return my_functions]]></ProtectedString>
 							<token name="formFactorRaw">1</token>
 							<token name="shape">1</token>
 							<Vector3 name="size">
-								<X>4</X>
+								<X>1</X>
 								<Y>4</Y>
 								<Z>4</Z>
 							</Vector3>
