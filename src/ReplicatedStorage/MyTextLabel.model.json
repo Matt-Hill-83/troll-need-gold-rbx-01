@@ -2,12 +2,15 @@
   "ClassName": "Folder",
   "Children": [
     {
-      "Name": "FunPart-001",
+      "Name": "the label",
       "ClassName": "TextLabel",
       "Properties": {
-        "Name": "MyLabel",
-        "Text": "new label",
-        "Size": [3, 5, 3, 5]
+        "Name": "MyLabelaaa",
+        "Text": "new label+++++",
+        "Size": {
+          "Type": "UDim2",
+          "Value": [0, 400, 0, 400]
+        }
       }
     }
   ]
