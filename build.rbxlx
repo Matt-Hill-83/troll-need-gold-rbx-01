@@ -1080,11 +1080,13 @@ local testDict02= {
 local scenes = {testDict01,testDict02,testDict01}
 
 for i, scene in ipairs(scenes) do	
-	local newScene = Instance.new("Part", base) 
+--	local newScene = Instance.new("Part", base) 
+	local newScene = game.ReplicatedStorage.Source.MyParts.MyBlock["NewWall"]
+	newScene.Parent = base
 	local charName = scenes[i]['name']
 
-	newScene.Size = Vector3.new(10, 10,  1)
-	newScene.Position = Vector3.new(0,  10,  i * 10)
+	--newScene.Size = Vector3.new(10, 10,  1)
+	--newScene.Position = Vector3.new(0,  10,  i * 10)
 	newScene.BrickColor = BrickColor.new("Really red")
 	newScene.CanCollide = true
 	newScene.Anchored = true
