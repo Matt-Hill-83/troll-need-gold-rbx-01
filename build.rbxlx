@@ -1057,37 +1057,31 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Script</string>
 						<string name="ScriptGuid">{217e422e-4b92-4b98-9299-4e87aa49c738}</string>
-						<ProtectedString name="Source"><![CDATA[
-
-local base = script.Parent
---local testBlock = game.ReplicatedStorage.Source.MyParts.MyBlock["NewWall"]
-
+						<ProtectedString name="Source"><![CDATA[local base = script.Parent
 
 local testDict01= {
 	name="Log",
 	text = "one",
-	color = "Yellow",
+	color = BrickColor.new("Really red"),
 	char = "Britta"
 }
 
 local testDict02= {
 	name="Tree",
 	text = "two",
-	color = "Yellow",
+	color = BrickColor.new("Blue"),
 	char = "Britta"
 }
 
 local scenes = {testDict01,testDict02,testDict01}
 
 for i, scene in ipairs(scenes) do	
---	local newScene = Instance.new("Part", base) 
 	local newScene = game.ReplicatedStorage.Source.MyParts.MyBlock["NewWall"]
 	newScene.Parent = base
-	local charName = scenes[i]['name']
+	local charName = scenes.name
 
-	--newScene.Size = Vector3.new(10, 10,  1)
-	--newScene.Position = Vector3.new(0,  10,  i * 10)
-	newScene.BrickColor = BrickColor.new("Really red")
+	newScene.Position = Vector3.new(1,  1,  i * 10)
+	newScene.BrickColor = scene.color
 	newScene.CanCollide = true
 	newScene.Anchored = true
 
@@ -2231,8 +2225,8 @@ return my_functions]]></ProtectedString>
 							<token name="formFactorRaw">1</token>
 							<token name="shape">1</token>
 							<Vector3 name="size">
-								<X>20</X>
-								<Y>1</Y>
+								<X>1</X>
+								<Y>20</Y>
 								<Z>20</Z>
 							</Vector3>
 						</Properties>
