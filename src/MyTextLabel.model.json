@@ -3,12 +3,10 @@
   "Children": [
     {
       "Name": "FunPart-001",
-      "ClassName": "Part",
+      "ClassName": "TextLabel",
       "Properties": {
-        "Size": {
-          "Type": "Vector3",
-          "Value": [40, 40, 40]
-        }
+        "Name": "MyLabel",
+        "Text": "fuck you"
       }
     }
   ]

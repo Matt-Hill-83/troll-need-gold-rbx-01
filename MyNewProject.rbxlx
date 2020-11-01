@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-37.7667351</X>
-					<Y>9.51148033</Y>
-					<Z>-22.4508209</Z>
-					<R00>0.0695004091</R00>
-					<R01>0.22193642</R01>
-					<R02>-0.972581089</R02>
-					<R10>-9.31322575e-10</R10>
-					<R11>0.974938571</R11>
-					<R12>0.222474366</R12>
-					<R20>0.997581959</R20>
-					<R21>-0.0154620586</R21>
-					<R22>0.0677586272</R22>
+					<X>-48.7699471</X>
+					<Y>23.5105572</Y>
+					<Z>1.26337612</Z>
+					<R00>-0.125589237</R00>
+					<R01>0.210571066</R01>
+					<R02>-0.969477773</R02>
+					<R10>-0</R10>
+					<R11>0.977214992</R11>
+					<R12>0.212251604</R12>
+					<R20>0.992082298</R20>
+					<R21>0.0266565178</R21>
+					<R22>-0.1227277</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>6</X>
-					<Y>-0.5</Y>
-					<Z>-25.5</Z>
+					<X>-46.8309822</X>
+					<Y>23.0860519</Y>
+					<Z>1.50883269</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1653,6 +1653,7 @@ local textLabels = textButton.Parent:GetChildren('textLabel')
 local counter = 1
 --local newbase = game.ReplicatedStorage.Source["json-002"]
 local newbase = game.ReplicatedStorage.Source.MyTextLabel
+
 print(newbase)
 
 newbase.Parent= workspace
@@ -1745,6 +1746,48 @@ return module
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
+		</Item>
+		<Item class="Script" referent="RBXf650b61bd73644a4a1f85a04b6d253f4">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">Script-001</string>
+				<string name="ScriptGuid">{29bdafcc-2791-4ddf-916e-30cdbdc345f0}</string>
+				<ProtectedString name="Source"><![CDATA[
+local my_functions = require(game.ReplicatedStorage.Source.test)
+
+print(my_functions)
+
+my_functions.foo()
+my_functions.bar()]]></ProtectedString>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+		</Item>
+		<Item class="ModuleScript" referent="RBX899f086805c749c496e10a07c20822f9">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">MyFunctions</string>
+				<string name="ScriptGuid">{1c376107-bd3c-41a3-bc19-8550c1d962f9}</string>
+				<ProtectedString name="Source"><![CDATA[-- Tables are store multiple values in one variable
+local my_functions = {}
+
+-- Add a few functions to the table
+function my_functions.foo()
+	print("Foo!")
+end
+
+function my_functions.bar()
+	print("Bar!")
+end
+
+-- ModuleScripts must return exactly one value
+return my_functions]]></ProtectedString>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
 		</Item>
 	</Item>
 	<Item class="SoundService" referent="5">
@@ -2066,6 +2109,175 @@ return module
 			<int64 name="SourceAssetId">-1</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
+		<Item class="ModuleScript" referent="RBX0b2276139abd4cb39ebd7e64a158cf9c">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">functionsModuleScript</string>
+				<string name="ScriptGuid">{989d7304-99f5-4c61-ba99-65f607c918a1}</string>
+				<ProtectedString name="Source"><![CDATA[local funMod = {}
+
+	function funMod.changeColor(triggerPart)
+		triggerPart.BrickColor = BrickColor.new("Really red")
+	end
+
+	function funMod.myTouchFunction(triggerPart)
+		print("funMod is working!")
+		funMod.changeColor(triggerPart)
+	end
+	
+	
+return funMod
+]]></ProtectedString>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+		</Item>
+		<Item class="Part" referent="RBX6df87261545845d6840c3237baa58c39">
+			<Properties>
+				<bool name="Anchored">true</bool>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<float name="BackParamA">-0.5</float>
+				<float name="BackParamB">0.5</float>
+				<token name="BackSurface">0</token>
+				<token name="BackSurfaceInput">0</token>
+				<float name="BottomParamA">-0.5</float>
+				<float name="BottomParamB">0.5</float>
+				<token name="BottomSurface">0</token>
+				<token name="BottomSurfaceInput">0</token>
+				<CoordinateFrame name="CFrame">
+					<X>5.80999708</X>
+					<Y>0.250028998</Y>
+					<Z>-25.9000015</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<bool name="CanCollide">true</bool>
+				<bool name="CastShadow">true</bool>
+				<int name="CollisionGroupId">0</int>
+				<Color3uint8 name="Color3uint8">4278497260</Color3uint8>
+				<PhysicalProperties name="CustomPhysicalProperties">
+					<CustomPhysics>false</CustomPhysics>
+				</PhysicalProperties>
+				<float name="FrontParamA">-0.5</float>
+				<float name="FrontParamB">0.5</float>
+				<token name="FrontSurface">0</token>
+				<token name="FrontSurfaceInput">0</token>
+				<float name="LeftParamA">-0.5</float>
+				<float name="LeftParamB">0.5</float>
+				<token name="LeftSurface">0</token>
+				<token name="LeftSurfaceInput">0</token>
+				<bool name="Locked">false</bool>
+				<bool name="Massless">false</bool>
+				<token name="Material">256</token>
+				<string name="Name">triggerPart</string>
+				<float name="Reflectance">0</float>
+				<float name="RightParamA">-0.5</float>
+				<float name="RightParamB">0.5</float>
+				<token name="RightSurface">0</token>
+				<token name="RightSurfaceInput">0</token>
+				<int name="RootPriority">0</int>
+				<Vector3 name="RotVelocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<float name="TopParamA">-0.5</float>
+				<float name="TopParamB">0.5</float>
+				<token name="TopSurface">0</token>
+				<token name="TopSurfaceInput">0</token>
+				<float name="Transparency">0</float>
+				<Vector3 name="Velocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<token name="formFactorRaw">1</token>
+				<token name="shape">1</token>
+				<Vector3 name="size">
+					<X>4</X>
+					<Y>0.5</Y>
+					<Z>4</Z>
+				</Vector3>
+			</Properties>
+			<Item class="Script" referent="RBX4f34fbb74f9843cbbef1ec6c8fead06d">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">triggerScript</string>
+					<string name="ScriptGuid">{b1096062-20f8-497a-8070-dad8fbe34798}</string>
+					<ProtectedString name="Source"><![CDATA[
+local funMod = require(game.ServerScriptService.functionsModuleScript)
+local trigger = script.Parent
+local db = true
+
+trigger.Touched:Connect(function(hit)
+	local char = hit.Parent
+	local hum = char:FindFirstChild("Humanoid")
+	
+	if hum and db then
+		db = false
+		print(char.Name.." touched the tile")
+		funMod.myTouchFunction(trigger)
+		wait(2)
+		db = true
+	end
+end)
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="Weld" referent="RBXb07217a537f74728910e80cb1810d8df">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<CoordinateFrame name="C0">
+						<X>0</X>
+						<Y>-0.25</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>-0</R10>
+						<R11>-0</R11>
+						<R12>-1</R12>
+						<R20>0</R20>
+						<R21>1</R21>
+						<R22>0</R22>
+					</CoordinateFrame>
+					<CoordinateFrame name="C1">
+						<X>5.80999708</X>
+						<Y>10.0000286</Y>
+						<Z>-25.9000015</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>0</R11>
+						<R12>-1</R12>
+						<R20>0</R20>
+						<R21>1</R21>
+						<R22>0</R22>
+					</CoordinateFrame>
+					<bool name="Enabled">true</bool>
+					<string name="Name">Weld</string>
+					<Ref name="Part0">RBX6df87261545845d6840c3237baa58c39</Ref>
+					<Ref name="Part1">7</Ref>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+		</Item>
 	</Item>
 	<Item class="ServerStorage" referent="RBX45b9de3777714ded939a7bd3ff4ece93">
 		<Properties>
@@ -2089,105 +2301,12 @@ return module
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="Folder" referent="RBX18a873333bc54854b2f8f2ea7d1cff7b">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<string name="Name">MyModel-002</string>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-				<Item class="Folder" referent="RBXda6ea15d27024f889bf688e71e35255f">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<string name="Name">json-001</string>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-					<Item class="Part" referent="RBXb5a9719c6b2f49e6898b84f5bfb39538">
-						<Properties>
-							<bool name="Anchored">false</bool>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<float name="BackParamA">-0.5</float>
-							<float name="BackParamB">0.5</float>
-							<token name="BackSurface">0</token>
-							<token name="BackSurfaceInput">0</token>
-							<float name="BottomParamA">-0.5</float>
-							<float name="BottomParamB">0.5</float>
-							<token name="BottomSurface">4</token>
-							<token name="BottomSurfaceInput">0</token>
-							<CoordinateFrame name="CFrame">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>0</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>1</R11>
-								<R12>0</R12>
-								<R20>0</R20>
-								<R21>0</R21>
-								<R22>1</R22>
-							</CoordinateFrame>
-							<bool name="CanCollide">true</bool>
-							<bool name="CastShadow">true</bool>
-							<int name="CollisionGroupId">0</int>
-							<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
-							<PhysicalProperties name="CustomPhysicalProperties">
-								<CustomPhysics>false</CustomPhysics>
-							</PhysicalProperties>
-							<float name="FrontParamA">-0.5</float>
-							<float name="FrontParamB">0.5</float>
-							<token name="FrontSurface">0</token>
-							<token name="FrontSurfaceInput">0</token>
-							<float name="LeftParamA">-0.5</float>
-							<float name="LeftParamB">0.5</float>
-							<token name="LeftSurface">0</token>
-							<token name="LeftSurfaceInput">0</token>
-							<bool name="Locked">false</bool>
-							<bool name="Massless">false</bool>
-							<token name="Material">256</token>
-							<string name="Name">FunPart-001</string>
-							<float name="Reflectance">0</float>
-							<float name="RightParamA">-0.5</float>
-							<float name="RightParamB">0.5</float>
-							<token name="RightSurface">0</token>
-							<token name="RightSurfaceInput">0</token>
-							<int name="RootPriority">0</int>
-							<Vector3 name="RotVelocity">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>0</Z>
-							</Vector3>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-							<float name="TopParamA">-0.5</float>
-							<float name="TopParamB">0.5</float>
-							<token name="TopSurface">3</token>
-							<token name="TopSurfaceInput">0</token>
-							<float name="Transparency">0</float>
-							<Vector3 name="Velocity">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>0</Z>
-							</Vector3>
-							<token name="formFactorRaw">1</token>
-							<token name="shape">1</token>
-							<Vector3 name="size">
-								<X>40</X>
-								<Y>40</Y>
-								<Z>40</Z>
-							</Vector3>
-						</Properties>
-					</Item>
-				</Item>
-			</Item>
 			<Item class="ModuleScript" referent="RBX55d67e3a5ad343758886b6a78c96a6ca">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">MyModel-003</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{cafb68af-fff9-4de4-87dc-788bc889c66f}</string>
 					<ProtectedString name="Source">-- test</ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -2197,7 +2316,7 @@ return module
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">foo</string>
-						<string name="ScriptGuid"></string>
+						<string name="ScriptGuid">{82f1108e-c226-4390-acbb-d4434539fa38}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {test = 5}
 
 return module
@@ -2214,81 +2333,80 @@ return module
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="Part" referent="RBXd7118afbbf064eef8724e54cc099680c">
+				<Item class="TextLabel" referent="RBXb5d32124b802488da4b8baf0dcb9bef9">
 					<Properties>
-						<bool name="Anchored">false</bool>
+						<bool name="Active">false</bool>
+						<Vector2 name="AnchorPoint">
+							<X>0</X>
+							<Y>0</Y>
+						</Vector2>
 						<BinaryString name="AttributesSerialize"></BinaryString>
-						<float name="BackParamA">-0.5</float>
-						<float name="BackParamB">0.5</float>
-						<token name="BackSurface">0</token>
-						<token name="BackSurfaceInput">0</token>
-						<float name="BottomParamA">-0.5</float>
-						<float name="BottomParamB">0.5</float>
-						<token name="BottomSurface">4</token>
-						<token name="BottomSurfaceInput">0</token>
-						<CoordinateFrame name="CFrame">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>1</R11>
-							<R12>0</R12>
-							<R20>0</R20>
-							<R21>0</R21>
-							<R22>1</R22>
-						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
-						<bool name="CastShadow">true</bool>
-						<int name="CollisionGroupId">0</int>
-						<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
-						<PhysicalProperties name="CustomPhysicalProperties">
-							<CustomPhysics>false</CustomPhysics>
-						</PhysicalProperties>
-						<float name="FrontParamA">-0.5</float>
-						<float name="FrontParamB">0.5</float>
-						<token name="FrontSurface">0</token>
-						<token name="FrontSurfaceInput">0</token>
-						<float name="LeftParamA">-0.5</float>
-						<float name="LeftParamB">0.5</float>
-						<token name="LeftSurface">0</token>
-						<token name="LeftSurfaceInput">0</token>
-						<bool name="Locked">false</bool>
-						<bool name="Massless">false</bool>
-						<token name="Material">256</token>
-						<string name="Name">FunPart-001</string>
-						<float name="Reflectance">0</float>
-						<float name="RightParamA">-0.5</float>
-						<float name="RightParamB">0.5</float>
-						<token name="RightSurface">0</token>
-						<token name="RightSurfaceInput">0</token>
-						<int name="RootPriority">0</int>
-						<Vector3 name="RotVelocity">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
+						<bool name="AutoLocalize">true</bool>
+						<token name="AutomaticSize">0</token>
+						<Color3 name="BackgroundColor3">
+							<R>0.639215708</R>
+							<G>0.635294139</G>
+							<B>0.647058845</B>
+						</Color3>
+						<float name="BackgroundTransparency">0</float>
+						<Color3 name="BorderColor3">
+							<R>0.105882362</R>
+							<G>0.164705887</G>
+							<B>0.207843155</B>
+						</Color3>
+						<token name="BorderMode">0</token>
+						<int name="BorderSizePixel">1</int>
+						<bool name="ClipsDescendants">false</bool>
+						<bool name="Draggable">false</bool>
+						<token name="Font">0</token>
+						<int name="LayoutOrder">0</int>
+						<float name="LineHeight">1</float>
+						<string name="Name">MyLabel</string>
+						<Ref name="NextSelectionDown">null</Ref>
+						<Ref name="NextSelectionLeft">null</Ref>
+						<Ref name="NextSelectionRight">null</Ref>
+						<Ref name="NextSelectionUp">null</Ref>
+						<UDim2 name="Position">
+							<XS>0</XS>
+							<XO>0</XO>
+							<YS>0</YS>
+							<YO>0</YO>
+						</UDim2>
+						<bool name="RichText">false</bool>
+						<Ref name="RootLocalizationTable">null</Ref>
+						<float name="Rotation">0</float>
+						<bool name="Selectable">false</bool>
+						<Ref name="SelectionImageObject">null</Ref>
+						<UDim2 name="Size">
+							<XS>0</XS>
+							<XO>0</XO>
+							<YS>0</YS>
+							<YO>0</YO>
+						</UDim2>
+						<token name="SizeConstraint">0</token>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
-						<float name="TopParamA">-0.5</float>
-						<float name="TopParamB">0.5</float>
-						<token name="TopSurface">3</token>
-						<token name="TopSurfaceInput">0</token>
-						<float name="Transparency">0</float>
-						<Vector3 name="Velocity">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<token name="formFactorRaw">1</token>
-						<token name="shape">1</token>
-						<Vector3 name="size">
-							<X>40</X>
-							<Y>40</Y>
-							<Z>40</Z>
-						</Vector3>
+						<string name="Text">fuck you</string>
+						<Color3 name="TextColor3">
+							<R>0.105882362</R>
+							<G>0.164705887</G>
+							<B>0.207843155</B>
+						</Color3>
+						<bool name="TextScaled">false</bool>
+						<float name="TextSize">8</float>
+						<Color3 name="TextStrokeColor3">
+							<R>0</R>
+							<G>0</G>
+							<B>0</B>
+						</Color3>
+						<float name="TextStrokeTransparency">1</float>
+						<float name="TextTransparency">0</float>
+						<token name="TextTruncate">0</token>
+						<bool name="TextWrapped">false</bool>
+						<token name="TextXAlignment">2</token>
+						<token name="TextYAlignment">1</token>
+						<bool name="Visible">true</bool>
+						<int name="ZIndex">1</int>
 					</Properties>
 				</Item>
 			</Item>
@@ -2297,7 +2415,7 @@ return module
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">ReplicatedStorage</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{464b4426-d69e-4a5e-ae47-1902cf9cecb8}</string>
 					<ProtectedString name="Source"><![CDATA[local module = {}
 -- test - matt
 return module
@@ -2320,14 +2438,21 @@ return module
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">test</string>
-						<string name="ScriptGuid"></string>
-						<ProtectedString name="Source"><![CDATA[
--- local newLabel = Instance.new("TextLabel", dialogSurface) 
--- local charName = texts2[counter]['char']
--- newLabel.Name = "MyLabel" .. i
--- newLabel.Text = charName .. ": " .. dialog['text']
--- newLabel.Size = UDim2.new(0, 800, 0, 100)
--- newLabel.Position = UDim2.new(0,  100, 0, i * 150)	]]></ProtectedString>
+						<string name="ScriptGuid">{150da308-0ec8-470a-9f25-638e8a6eb0d1}</string>
+						<ProtectedString name="Source"><![CDATA[-- Tables are store multiple values in one variable
+local my_functions = {}
+    
+-- Add a few functions to the table
+function my_functions.foo()
+    print("Foo111!")
+end
+
+function my_functions.bar()
+    print("Bar!111")
+end
+
+-- ModuleScripts must return exactly one value
+return my_functions]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -2355,15 +2480,21 @@ return module
 						<bool name="Disabled">false</bool>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">server</string>
-						<string name="ScriptGuid"></string>
-						<ProtectedString name="Source"><![CDATA[local module = {
+						<string name="ScriptGuid">{79497512-6577-4ace-98b2-d52ed41525bd}</string>
+						<ProtectedString name="Source"><![CDATA[-- Tables are store multiple values in one variable
+local my_functions = {}
+    
+-- Add a few functions to the table
+function my_functions.foo()
+    print("Foo111!")
+end
 
+function my_functions.bar()
+    print("Bar!111")
+end
 
-
-}
-
-
-return module]]></ProtectedString>
+-- ModuleScripts must return exactly one value
+return my_functions]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -2390,7 +2521,7 @@ return module]]></ProtectedString>
 						<bool name="Disabled">false</bool>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">client</string>
-						<string name="ScriptGuid"></string>
+						<string name="ScriptGuid">{f2fbc099-f8f9-4e3d-8e6f-d03b63deca63}</string>
 						<ProtectedString name="Source"><![CDATA[--client
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
@@ -2403,7 +2534,7 @@ return module]]></ProtectedString>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">hello</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{6a30c20c-0c90-458f-8506-f840ee4d08cb}</string>
 					<ProtectedString name="Source"><![CDATA[
 local newLabel = Instance.new("TextLabel") 
 
@@ -2502,6 +2633,140 @@ return newLabel
 							<Z>40</Z>
 						</Vector3>
 					</Properties>
+				</Item>
+			</Item>
+			<Item class="ModuleScript" referent="RBX96d1379b07e444d09ada51505c40a986">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">test</string>
+					<string name="ScriptGuid">{0d7e3506-4439-4536-947f-676dfb601cab}</string>
+					<ProtectedString name="Source"><![CDATA[-- Tables are store multiple values in one variable
+local my_functions = {}
+    
+-- Add a few functions to the table
+function my_functions.foo()
+    print("Foo111!")
+end
+
+function my_functions.bar()
+    print("Bar!111")
+end
+
+-- ModuleScripts must return exactly one value
+return my_functions]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="Script" referent="RBXb9ca6ed0b04d4c00879e927dbe9688b8">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">MyModel-002</string>
+					<string name="ScriptGuid">{3f83cf48-7f24-4565-8e4c-bb8dfd43c3a7}</string>
+					<ProtectedString name="Source"><![CDATA[-- Tables are store multiple values in one variable
+local my_functions = {}
+    
+-- Add a few functions to the table
+function my_functions.foo()
+    print("Foo111!")
+end
+
+function my_functions.bar()
+    print("Bar!111")
+end
+
+-- ModuleScripts must return exactly one value
+return my_functions]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="Folder" referent="RBXe291d66bd11945289ce20fc0e953e85e">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<string name="Name">json-001</string>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+					<Item class="Part" referent="RBXaef9f27c10a74dc49748c30d0e12b675">
+						<Properties>
+							<bool name="Anchored">false</bool>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<float name="BackParamA">-0.5</float>
+							<float name="BackParamB">0.5</float>
+							<token name="BackSurface">0</token>
+							<token name="BackSurfaceInput">0</token>
+							<float name="BottomParamA">-0.5</float>
+							<float name="BottomParamB">0.5</float>
+							<token name="BottomSurface">4</token>
+							<token name="BottomSurfaceInput">0</token>
+							<CoordinateFrame name="CFrame">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>0</R20>
+								<R21>0</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<bool name="CanCollide">true</bool>
+							<bool name="CastShadow">true</bool>
+							<int name="CollisionGroupId">0</int>
+							<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
+							<PhysicalProperties name="CustomPhysicalProperties">
+								<CustomPhysics>false</CustomPhysics>
+							</PhysicalProperties>
+							<float name="FrontParamA">-0.5</float>
+							<float name="FrontParamB">0.5</float>
+							<token name="FrontSurface">0</token>
+							<token name="FrontSurfaceInput">0</token>
+							<float name="LeftParamA">-0.5</float>
+							<float name="LeftParamB">0.5</float>
+							<token name="LeftSurface">0</token>
+							<token name="LeftSurfaceInput">0</token>
+							<bool name="Locked">false</bool>
+							<bool name="Massless">false</bool>
+							<token name="Material">256</token>
+							<string name="Name">FunPart-001</string>
+							<float name="Reflectance">0</float>
+							<float name="RightParamA">-0.5</float>
+							<float name="RightParamB">0.5</float>
+							<token name="RightSurface">0</token>
+							<token name="RightSurfaceInput">0</token>
+							<int name="RootPriority">0</int>
+							<Vector3 name="RotVelocity">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+							</Vector3>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<float name="TopParamA">-0.5</float>
+							<float name="TopParamB">0.5</float>
+							<token name="TopSurface">3</token>
+							<token name="TopSurfaceInput">0</token>
+							<float name="Transparency">0</float>
+							<Vector3 name="Velocity">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0</Z>
+							</Vector3>
+							<token name="formFactorRaw">1</token>
+							<token name="shape">1</token>
+							<Vector3 name="size">
+								<X>40</X>
+								<Y>40</Y>
+								<Z>40</Z>
+							</Vector3>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 		</Item>
