@@ -1652,7 +1652,7 @@ local dialogSurface = textButton.Parent
 local textLabels = textButton.Parent:GetChildren('textLabel')
 local counter = 1
 --local newbase = game.ReplicatedStorage.Source["json-002"]
-local newbase = game.ReplicatedStorage.Source.MyTextLabel
+local newbase = game.ReplicatedStorage.Source["MyModel-003"]
 
 print(newbase)
 
@@ -1755,7 +1755,7 @@ return module
 				<string name="Name">Script-001</string>
 				<string name="ScriptGuid">{29bdafcc-2791-4ddf-916e-30cdbdc345f0}</string>
 				<ProtectedString name="Source"><![CDATA[
-local my_functions = require(game.ReplicatedStorage.Source.test)
+local my_functions = require(game.ReplicatedStorage.Source["test-001"])
 
 print(my_functions)
 
@@ -2508,48 +2508,6 @@ return my_functions]]></ProtectedString>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="Folder" referent="RBX93ec810070e445e59110bd92b96f322d">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<string name="Name">StarterPlayerScripts</string>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-				<Item class="LocalScript" referent="RBXc12a54fefa85449592eb2a375d723656">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<bool name="Disabled">false</bool>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">client</string>
-						<string name="ScriptGuid">{f2fbc099-f8f9-4e3d-8e6f-d03b63deca63}</string>
-						<ProtectedString name="Source"><![CDATA[--client
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-			</Item>
-			<Item class="ModuleScript" referent="RBX3eefa92eb5084be4abaaf5e816cda88c">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">hello</string>
-					<string name="ScriptGuid">{6a30c20c-0c90-458f-8506-f840ee4d08cb}</string>
-					<ProtectedString name="Source"><![CDATA[
-local newLabel = Instance.new("TextLabel") 
-
-newLabel.Name = "MyLabel---fu"
-newLabel.Text = "fuck you"
-newLabel.Size = UDim2.new(0, 800, 0, 100)
-newLabel.Position = UDim2.new(0,  100, 0,  150)
-print('fuck your mom')
-
-return newLabel
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
 			<Item class="Folder" referent="RBX72933b487a224a1eab76ede19ed72d3e">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2634,30 +2592,6 @@ return newLabel
 						</Vector3>
 					</Properties>
 				</Item>
-			</Item>
-			<Item class="ModuleScript" referent="RBX96d1379b07e444d09ada51505c40a986">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">test</string>
-					<string name="ScriptGuid">{0d7e3506-4439-4536-947f-676dfb601cab}</string>
-					<ProtectedString name="Source"><![CDATA[-- Tables are store multiple values in one variable
-local my_functions = {}
-    
--- Add a few functions to the table
-function my_functions.foo()
-    print("Foo111!")
-end
-
-function my_functions.bar()
-    print("Bar!111")
-end
-
--- ModuleScripts must return exactly one value
-return my_functions]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
 			</Item>
 			<Item class="Script" referent="RBXb9ca6ed0b04d4c00879e927dbe9688b8">
 				<Properties>
@@ -2768,6 +2702,30 @@ return my_functions]]></ProtectedString>
 						</Properties>
 					</Item>
 				</Item>
+			</Item>
+			<Item class="ModuleScript" referent="RBX310e06cdef9c4bc5abdd1d28d7e60e62">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">test-001</string>
+					<string name="ScriptGuid">{9abe708a-4b1b-445b-a0bd-d985affe79fd}</string>
+					<ProtectedString name="Source"><![CDATA[-- Tables are store multiple values in one variable
+local my_functions = {}
+    
+-- Add a few functions to the table
+function my_functions.foo()
+    print("Foo---------111!")
+end
+
+function my_functions.bar()
+    print("Bar!---------------111")
+end
+
+-- ModuleScripts must return exactly one value
+return my_functions]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
 			</Item>
 		</Item>
 	</Item>

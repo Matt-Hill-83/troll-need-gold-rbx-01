@@ -18,45 +18,6 @@
     "ServerStorage": {
       "$className": "ServerStorage",
       "$path": "src/ServerStorage"
-    },
-
-    "StarterPlayer": {
-      "$className": "StarterPlayer",
-
-      "StarterPlayerScripts": {
-        "$className": "StarterPlayerScripts",
-        "$path": "src/StarterPlayerScripts"
-      }
-    },
-
-    "Workspace": {
-      "$className": "Workspace",
-      "$properties": {
-        "Gravity": 67.3
-      },
-
-      "Terrain": {
-        "$path": "Terrain.rbxm"
-      },
-
-      "MyPart99999999998907987987": {
-        "$className": "Part",
-        "$properties": {
-          "Size": [300, 500, 300],
-          "Color": [0.5, 0, 0.5],
-          "Anchored": true,
-          "Material": "Granite"
-        }
-      }
-    },
-    "MyPart99999999998907987987": {
-      "$className": "Part",
-      "$properties": {
-        "Size": [300, 500, 300],
-        "Color": [0.5, 0, 0.5],
-        "Anchored": true,
-        "Material": "Granite"
-      }
     }
   }
 }
