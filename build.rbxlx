@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-85.5024719</X>
-					<Y>71.119133</Y>
-					<Z>25.121439</Z>
-					<R00>-0.132246614</R00>
-					<R01>0.066730611</R01>
-					<R02>-0.988968074</R02>
-					<R10>-0</R10>
-					<R11>0.997731328</R11>
-					<R12>0.0673219115</R12>
-					<R20>0.991216838</R20>
-					<R21>0.00890309457</R21>
-					<R22>-0.131946594</R22>
+					<X>-86.4217834</X>
+					<Y>23.8256531</Y>
+					<Z>24.9638233</Z>
+					<R00>0.0906480923</R00>
+					<R01>0.0618418716</R01>
+					<R02>-0.993960977</R02>
+					<R10>4.65661287e-10</R10>
+					<R11>0.998070061</R11>
+					<R12>0.0620975271</R12>
+					<R20>0.995882988</R20>
+					<R21>-0.00562902261</R21>
+					<R22>0.0904731452</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-53.8399773</X>
-					<Y>68.9637756</Y>
-					<Z>29.3458004</Z>
+					<X>-84.4338608</X>
+					<Y>23.701458</Y>
+					<Z>24.782877</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1409,10 +1409,10 @@ end]]></ProtectedString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-54.5600014</X>
-							<Y>2.44045091</Y>
-							<Z>39.7900085</Z>
-							<R00>1</R00>
+							<X>-21.161293</X>
+							<Y>2.44044828</Y>
+							<Z>18.9595528</Z>
+							<R00>0.99999994</R00>
 							<R01>0</R01>
 							<R02>0</R02>
 							<R10>0</R10>
@@ -1472,34 +1472,34 @@ end]]></ProtectedString>
 							<Z>0.459999979</Z>
 						</Vector3>
 					</Properties>
-					<Item class="Weld" referent="RBX3ffdfe7458c644f9ade34ace88e06388">
+					<Item class="Weld" referent="RBXde784cb89e01470ebe66c4db3b1b400f">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
 								<X>0</X>
 								<Y>-1.91499984</Y>
 								<Z>0</Z>
-								<R00>1</R00>
+								<R00>0.999999881</R00>
 								<R01>0</R01>
 								<R02>0</R02>
 								<R10>0</R10>
 								<R11>0</R11>
 								<R12>-1</R12>
 								<R20>0</R20>
-								<R21>1</R21>
+								<R21>0.99999994</R21>
 								<R22>0</R22>
 							</CoordinateFrame>
 							<CoordinateFrame name="C1">
-								<X>-39.7900085</X>
-								<Y>0.262720346</Y>
-								<Z>-55.0599976</Z>
+								<X>-18.9595528</X>
+								<Y>0.262717456</Y>
+								<Z>-21.6612911</Z>
 								<R00>0</R00>
-								<R01>-1</R01>
+								<R01>-0.99999994</R01>
 								<R02>0</R02>
 								<R10>0</R10>
 								<R11>0</R11>
 								<R12>-1</R12>
-								<R20>1</R20>
+								<R20>0.99999994</R20>
 								<R21>0</R21>
 								<R22>0</R22>
 							</CoordinateFrame>
@@ -1586,7 +1586,7 @@ end]]></ProtectedString>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">Source</string>
-				<string name="ScriptGuid"></string>
+				<string name="ScriptGuid">{d0444d99-a244-4922-882b-7f15790100c2}</string>
 				<ProtectedString name="Source"><![CDATA[---test
 ]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
@@ -1597,7 +1597,7 @@ end]]></ProtectedString>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">-- Demos</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{086dacff-987b-4a90-a578-737e9609594e}</string>
 					<ProtectedString name="Source"></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -1607,7 +1607,7 @@ end]]></ProtectedString>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">bs</string>
-						<string name="ScriptGuid"></string>
+						<string name="ScriptGuid">{9db894e5-b89e-4df2-ad4a-8ea5d5ed20cc}</string>
 						<ProtectedString name="Source">--- test</ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
@@ -1713,7 +1713,7 @@ end]]></ProtectedString>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">Source</string>
-				<string name="ScriptGuid"></string>
+				<string name="ScriptGuid">{8979da9f-bdff-4f14-babc-763db913fa5f}</string>
 				<ProtectedString name="Source"><![CDATA[---test
 ]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
@@ -1724,7 +1724,7 @@ end]]></ProtectedString>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">-- Demos</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{f23e7583-cd4c-4e60-b248-387f9844f89c}</string>
 					<ProtectedString name="Source"></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -1734,7 +1734,7 @@ end]]></ProtectedString>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">bs</string>
-						<string name="ScriptGuid"></string>
+						<string name="ScriptGuid">{1d0956b3-8e7b-4008-a29c-8381d203085c}</string>
 						<ProtectedString name="Source">--- test</ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
@@ -1755,7 +1755,7 @@ end]]></ProtectedString>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">Source</string>
-				<string name="ScriptGuid"></string>
+				<string name="ScriptGuid">{5c07ace6-6b96-43f7-84a5-46b8c6be043c}</string>
 				<ProtectedString name="Source"><![CDATA[---test
 ]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
@@ -1766,7 +1766,7 @@ end]]></ProtectedString>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">-- Demos</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{78b038a3-cf91-42e3-9379-9ae09db7554b}</string>
 					<ProtectedString name="Source"></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -1776,7 +1776,7 @@ end]]></ProtectedString>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">bs</string>
-						<string name="ScriptGuid"></string>
+						<string name="ScriptGuid">{c83d7866-cddf-4fe4-baec-dc58cd8e2374}</string>
 						<ProtectedString name="Source">--- test</ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
@@ -1800,7 +1800,7 @@ end]]></ProtectedString>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">Source</string>
-				<string name="ScriptGuid"></string>
+				<string name="ScriptGuid">{f5734f3d-1fd0-4367-8e0f-fba4bd9dac06}</string>
 				<ProtectedString name="Source"><![CDATA[---test
 ]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
@@ -1811,7 +1811,7 @@ end]]></ProtectedString>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">-- Demos</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{e694e16f-14b7-4226-bfe9-6e6bdea0ca55}</string>
 					<ProtectedString name="Source"></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -1821,7 +1821,7 @@ end]]></ProtectedString>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">bs</string>
-						<string name="ScriptGuid"></string>
+						<string name="ScriptGuid">{ef2e4678-d8fe-4912-acba-a428aefc786c}</string>
 						<ProtectedString name="Source">--- test</ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
@@ -1975,7 +1975,7 @@ end]]></ProtectedString>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">Source</string>
-				<string name="ScriptGuid"></string>
+				<string name="ScriptGuid">{fff6187c-e823-4743-a48f-970df0bad40b}</string>
 				<ProtectedString name="Source"><![CDATA[---test
 ]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
@@ -1986,7 +1986,7 @@ end]]></ProtectedString>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">My Test Folder</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{ffccd0e0-f3f8-4b4b-a2d3-011fdffc611e}</string>
 					<ProtectedString name="Source"></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -1996,7 +1996,7 @@ end]]></ProtectedString>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">MyScripts2</string>
-						<string name="ScriptGuid"></string>
+						<string name="ScriptGuid">{b0dae849-5130-493b-82e8-b5d334eb5981}</string>
 						<ProtectedString name="Source"><![CDATA[local my_functions = {}
 
 function my_functions.foo()
@@ -2019,7 +2019,7 @@ return my_functions]]></ProtectedString>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">-- Demos</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{4d5cbf4a-5070-46c3-a953-346312f90d75}</string>
 					<ProtectedString name="Source"></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -2059,7 +2059,7 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">Source</string>
-				<string name="ScriptGuid"></string>
+				<string name="ScriptGuid">{a3a1129b-d3d0-4e12-89ea-3c05d795cc5a}</string>
 				<ProtectedString name="Source"><![CDATA[---test
 ]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
@@ -2070,7 +2070,7 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">-- Demos</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{a1dfbdce-4ce7-482f-9366-3163ce7b52b3}</string>
 					<ProtectedString name="Source"></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -2080,7 +2080,7 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">bs</string>
-						<string name="ScriptGuid"></string>
+						<string name="ScriptGuid">{172fa98e-e7a8-468c-b32f-7b42d39a9967}</string>
 						<ProtectedString name="Source">--- test</ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
@@ -2101,7 +2101,7 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">Source</string>
-				<string name="ScriptGuid"></string>
+				<string name="ScriptGuid">{0b2f548e-44f3-415f-9d29-2ab8518148d9}</string>
 				<ProtectedString name="Source"><![CDATA[---test
 ]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
@@ -2112,7 +2112,7 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">MyParts</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{a14f4dc6-fa20-4508-a12c-f5469459921e}</string>
 					<ProtectedString name="Source">---test</ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -2292,7 +2292,7 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">MyScripts</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{1107173b-0e28-40de-bd74-64f30faf988c}</string>
 					<ProtectedString name="Source">---test</ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
@@ -2302,7 +2302,7 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">MyScripts</string>
-						<string name="ScriptGuid"></string>
+						<string name="ScriptGuid">{a139a056-b62f-437f-84e2-1d6ddc7dda5b}</string>
 						<ProtectedString name="Source"><![CDATA[local my_functions = {}
 
 function my_functions.foo()
@@ -2325,7 +2325,7 @@ return my_functions]]></ProtectedString>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">-- Demos</string>
-					<string name="ScriptGuid"></string>
+					<string name="ScriptGuid">{f09464df-89d3-47ea-91cf-c59a0755609b}</string>
 					<ProtectedString name="Source"><![CDATA[---test
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
