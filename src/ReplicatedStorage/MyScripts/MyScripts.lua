@@ -1,4 +1,5 @@
 local my_functions = {}
+print('did you get this')
 
 function my_functions.foo()
     print("Foo---------2!")
