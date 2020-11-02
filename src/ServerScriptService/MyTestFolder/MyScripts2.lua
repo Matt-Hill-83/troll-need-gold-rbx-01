@@ -8,5 +8,4 @@ function my_functions.foo(part)
 
 end
 
--- ModuleScripts must return exactly one value
 return my_functions
