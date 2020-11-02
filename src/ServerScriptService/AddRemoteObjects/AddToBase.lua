@@ -7,7 +7,8 @@ local my_functions = {}
 local a = sss.Source.AddRemoteObjects
 local b = a.AddToBase2
 
-local test = require(game.ServerScriptService.Source.test)
+-- local test = require(game.ServerScriptService.Source.test)
+local test = require(sss.Source.test)
 
 print('test001-----------------')
 print(test.func001())

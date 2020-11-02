@@ -1,11 +1,11 @@
-local my_functions = {}
+local module = {}
 
-function my_functions.func001(part)
+function module.func001()
     local newPart = Instance.new("Part")
     print('in sub function')
     return newPart
 
 end
 
-return my_functions
+return module
 
