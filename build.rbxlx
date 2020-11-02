@@ -1050,57 +1050,6 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<Z>123.322571</Z>
 					</Vector3>
 				</Properties>
-				<Item class="Script" referent="RBX1402cb9ce466400cb505cc8e843e2a78">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<bool name="Disabled">false</bool>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">BaseScript</string>
-						<string name="ScriptGuid">{217e422e-4b92-4b98-9299-4e87aa49c738}</string>
-						<ProtectedString name="Source"><![CDATA[local base = script.Parent
-
-local test = require(game.ServerScriptService.Source.MyTestFolder.MyScripts2)
-
-test.foo(base)
-
-
-local testDict01= {
-	name="Log",
-	text = "one",
-	color = BrickColor.new("Really red"),
-	char = "Britta"
-}
-
-local testDict02= {
-	name="Tree",
-	
-	color = BrickColor.new("Blue"),
-	
-}
-
---local scenes = {testDict01,testDict02,testDict01}
-local scenes = {testDict02}
-
-for i, scene in ipairs(scenes) do	
-	print(i)
-	print (scene.color)
-	local newScene = game.ReplicatedStorage.Source.MyParts.MyBlock["NewWall"]
-	print(newScene)
-	newScene.Parent = base
-	---local charName = scenes.name
-	
-	
-	
-	newScene.Position = Vector3.new(1,  1,  i * 10)
-	newScene.BrickColor = scene.color
-	newScene.CanCollide = true
-	newScene.Anchored = true
-
-end]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
 				<Item class="Weld" referent="RBX04bffa60779b4dfcb1a6b64d2cbd6d44">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1175,6 +1124,27 @@ end]]></ProtectedString>
 						<string name="Name">Weld</string>
 						<Ref name="Part0">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
 						<Ref name="Part1">RBX66060b95b6e94f39af9353268593d5dd</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="Script" referent="RBX1402cb9ce466400cb505cc8e843e2a78">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<bool name="Disabled">false</bool>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">BaseScript</string>
+						<string name="ScriptGuid">{217e422e-4b92-4b98-9299-4e87aa49c738}</string>
+						<ProtectedString name="Source"><![CDATA[local base = script.Parent
+local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.AddToBase)
+
+
+local test = game:GetService("HttpService")
+local sss = game:GetService("ServerScriptService")
+
+local output = remoteCode.addRemoteObjects(base,test,sss)
+print(output)
+]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -1784,6 +1754,30 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 				</Properties>
 			</Item>
 		</Item>
+		<Item class="Script" referent="RBXdd5c61cdbbde4ecc84a136a6310fbf8a">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">buttonScript</string>
+				<string name="ScriptGuid">{0f1d6f68-4a9b-49af-9465-bac59bb6f04a}</string>
+				<ProtectedString name="Source"><![CDATA[
+
+
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local buttonEvent = ReplicatedStorage:FindFirstChild("buttonEvent")
+
+function triggerButton(player,myVar)
+	print("button pressed")
+	print(myVar)
+end
+
+buttonEvent.OnServerEvent:Connect(triggerButton)
+]]></ProtectedString>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+		</Item>
 	</Item>
 	<Item class="SoundService" referent="RBX7845308c7ca3451eaa9eca1a685d0279">
 		<Properties>
@@ -2282,38 +2276,59 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 					</Properties>
 				</Item>
 			</Item>
-			<Item class="ModuleScript" referent="RBX60fc0fd21ced4301ac23fccd002d4375">
+			<Item class="ModuleScript" referent="RBXc49035902f9d48d793440992537a4ad8">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
 					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">MyTestFolder</string>
-					<string name="ScriptGuid">{fd04880a-a5fc-4d23-b08f-1794bc110574}</string>
+					<string name="Name">AddRemoteObjects</string>
+					<string name="ScriptGuid">{f1cc327e-acb6-41a5-98aa-1bd0cc4b2383}</string>
 					<ProtectedString name="Source"></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="ModuleScript" referent="RBX9e596b205c43432489a0b09631d216f6">
+				<Item class="ModuleScript" referent="RBXc28227c0f7af41c9bc5c8717dbbaa895">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">MyScripts2</string>
-						<string name="ScriptGuid">{a2c23838-3092-4655-8d78-a599645348b9}</string>
-						<ProtectedString name="Source"><![CDATA[local my_functions = {}
-print('mysss---')
+						<string name="Name">AddToBase</string>
+						<string name="ScriptGuid">{5b0290ad-cf36-4af9-807c-0f88e0f4c6d8}</string>
+						<ProtectedString name="Source"><![CDATA[-- local spawn = import("./spawn")
+local my_functions = {}
+print('mysss')
 
-function my_functions.foo(part)
-    print("Foo---------test!")
+function my_functions.addRemoteObjects(part, test, sss)
     local newPart = Instance.new("Part", part)
-    return newPart
 
+    local test3 = require("./scenes.model.json")
+    print(test3)
+
+    local jsonData =
+        '{"awards":{"died20":false,"kills10":true},"title":"1337 h4x04","is_epic":true,"money":123456}'
+    local characterStats = test:JSONDecode(jsonData)
+    print(characterStats.money)
+
+    return newPart
 end
 
 return my_functions
+
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
+			</Item>
+			<Item class="ModuleScript" referent="RBX3cd467b8cd41417faf4d1c12b8e3ebff">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">test</string>
+					<string name="ScriptGuid">{a540e4ea-ce31-4ee2-9003-ac993a092b81}</string>
+					<ProtectedString name="Source"><![CDATA[return {a = "asdf"}
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
 			</Item>
 		</Item>
 	</Item>
