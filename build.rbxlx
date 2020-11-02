@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-71.9716797</X>
-					<Y>18.3103619</Y>
-					<Z>-6.15302086</Z>
-					<R00>-3.24966786e-05</R00>
-					<R01>0.343668222</R01>
-					<R02>-0.939091206</R02>
-					<R10>-0</R10>
-					<R11>0.939091206</R11>
-					<R12>0.343668222</R12>
-					<R20>1</R20>
-					<R21>1.11680756e-05</R21>
-					<R22>-3.05173453e-05</R22>
+					<X>-91.383316</X>
+					<Y>21.8329372</Y>
+					<Z>3.84783936</Z>
+					<R00>0.0418407843</R00>
+					<R01>0.228153691</R01>
+					<R02>-0.97272563</R02>
+					<R10>9.31322686e-10</R10>
+					<R11>0.973578215</R11>
+					<R12>0.228353664</R12>
+					<R20>0.999124289</R20>
+					<R21>-0.00955449697</R21>
+					<R22>0.0407352746</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-70.093483</X>
-					<Y>17.6230202</Y>
-					<Z>-6.15295982</Z>
+					<X>0.499996185</X>
+					<Y>0.262730956</Y>
+					<Z>0</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1055,7 +1055,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<bool name="Disabled">false</bool>
 						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">Script</string>
+						<string name="Name">BaseScript</string>
 						<string name="ScriptGuid">{217e422e-4b92-4b98-9299-4e87aa49c738}</string>
 						<ProtectedString name="Source"><![CDATA[local base = script.Parent
 
@@ -2298,20 +2298,18 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">MyScripts2</string>
 						<string name="ScriptGuid">{a2c23838-3092-4655-8d78-a599645348b9}</string>
-						<ProtectedString name="Source"><![CDATA[print('mysss')
-
-local my_functions = {}
+						<ProtectedString name="Source"><![CDATA[local my_functions = {}
+print('mysss---')
 
 function my_functions.foo(part)
     print("Foo---------test!")
-    local newPart = Instance.new("Part", part) 
+    local newPart = Instance.new("Part", part)
     return newPart
+
 end
 
-
-
--- ModuleScripts must return exactly one value
-return my_functions]]></ProtectedString>
+return my_functions
+]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -2640,7 +2638,7 @@ return my_functions]]></ProtectedString>
 							<bool name="Disabled">false</bool>
 							<Content name="LinkedSource"><null></null></Content>
 							<string name="Name">Script</string>
-							<string name="ScriptGuid"></string>
+							<string name="ScriptGuid">{77cca61c-6be5-42ae-95d5-714570ffcbd0}</string>
 							<ProtectedString name="Source"><![CDATA[local base = script.Parent
 
 local testDict01= {
@@ -2702,15 +2700,21 @@ end]]></ProtectedString>
 print('did you get this')
 
 function my_functions.foo()
+
     print("Foo---------2!")
+    print("Foo---------2!")
+    print("Foo---------2!")
+
+    print("Foo---------2!")
+    print("Foo---------2!")
+
 end
 
-function my_functions.bar()
-    print("Bar!---------------111")
-end
+function my_functions.bar() print("Bar!---------------111") end
 
 -- ModuleScripts must return exactly one value
-return my_functions]]></ProtectedString>
+return my_functions
+]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
@@ -2727,14 +2731,14 @@ return my_functions]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
-				<Item class="Folder" referent="RBXf17d2d9856d8433ebaa56d82bb0cf180">
+				<Item class="Folder" referent="RBX81452ef533354d9db0b093097dfd2dae">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
-						<string name="Name">test</string>
+						<string name="Name">test2</string>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
-					<Item class="Part" referent="RBX0fd086b53ff34438b4e0d7c255ac8344">
+					<Item class="Part" referent="RBX93159747901c4830894378868e15c9ef">
 						<Properties>
 							<bool name="Anchored">false</bool>
 							<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2778,7 +2782,7 @@ return my_functions]]></ProtectedString>
 							<bool name="Locked">false</bool>
 							<bool name="Massless">false</bool>
 							<token name="Material">256</token>
-							<string name="Name">RootPart</string>
+							<string name="Name">MyCoolModel2</string>
 							<float name="Reflectance">0</float>
 							<float name="RightParamA">-0.5</float>
 							<float name="RightParamB">0.5</float>
@@ -2807,11 +2811,11 @@ return my_functions]]></ProtectedString>
 							<Vector3 name="size">
 								<X>4</X>
 								<Y>4</Y>
-								<Z>4</Z>
+								<Z>5</Z>
 							</Vector3>
 						</Properties>
 					</Item>
-					<Item class="RemoteEvent" referent="RBX1ca930e189b5480996c30bc411dee2cd">
+					<Item class="RemoteEvent" referent="RBX38d8949794a94029a9315378b9a534d2">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<string name="Name">buttonEvent</string>
