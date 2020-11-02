@@ -1,7 +1,7 @@
 local my_functions = {}
 
 function my_functions.foo()
-    print("Foo---------111!")
+    print("Foo---------2!")
 end
 
 function my_functions.bar()

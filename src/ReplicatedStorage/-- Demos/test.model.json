@@ -1,0 +1,23 @@
+{
+  "Name": "My Cool Model",
+  "ClassName": "Folder",
+  "Children": [
+    {
+      "Name": "RootPart",
+      "ClassName": "Part",
+      "Properties": {
+        "Size": {
+          "Type": "Vector3",
+          "Value": [4, 4, 4]
+        }
+      }
+    },
+    {
+      "Name": "buttonEvent",
+      "ClassName": "RemoteEvent",
+      "Properties": {
+        "Archivable": true
+      }
+    }
+  ]
+}
