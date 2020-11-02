@@ -1138,11 +1138,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<ProtectedString name="Source"><![CDATA[local base = script.Parent
 local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.AddToBase)
 
-
-local test = game:GetService("HttpService")
-local sss = game:GetService("ServerScriptService")
-
-local output = remoteCode.addRemoteObjects(base,test,sss)
+local output = remoteCode.addRemoteObjects(base)
 print(output)
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
@@ -1380,7 +1376,7 @@ print(output)
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">StartUpScript</string>
 				<string name="ScriptGuid">{b240a0d6-584a-4ab9-9877-08ec6e7459f1}</string>
-				<ProtectedString name="Source"><![CDATA[print("Hello world!")
+				<ProtectedString name="Source"><![CDATA[print("Startup Script")
 
 ]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
@@ -2240,7 +2236,7 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">Source</string>
 				<string name="ScriptGuid">{fff6187c-e823-4743-a48f-970df0bad40b}</string>
-				<ProtectedString name="Source"><![CDATA[---test
+				<ProtectedString name="Source"><![CDATA[return {a = '234'}
 ]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
@@ -2292,25 +2288,65 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">AddToBase</string>
 						<string name="ScriptGuid">{5b0290ad-cf36-4af9-807c-0f88e0f4c6d8}</string>
-						<ProtectedString name="Source"><![CDATA[-- local spawn = import("./spawn")
+						<ProtectedString name="Source"><![CDATA[-- local test2 = require(script)
+-- local test3 = _G;
+local sss = game:GetService("ServerScriptService")
+local HttpService = game:GetService("HttpService")
+-- local GameRunner = require(game.ServerScriptService.addRemoteObjects)
+
 local my_functions = {}
-print('mysss')
+print('------start')
+print('mysss2')
 
-function my_functions.addRemoteObjects(part, test, sss)
+-- print(test2)
+
+print('------end')
+
+function my_functions.addRemoteObjects(part)
     local newPart = Instance.new("Part", part)
-
-    local test3 = require("./scenes.model.json")
-    print(test3)
 
     local jsonData =
         '{"awards":{"died20":false,"kills10":true},"title":"1337 h4x04","is_epic":true,"money":123456}'
-    local characterStats = test:JSONDecode(jsonData)
+    local characterStats = HttpService:JSONDecode(jsonData)
     print(characterStats.money)
 
     return newPart
 end
 
 return my_functions
+
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBX2e093282d7c34d939721f1c79690d2ff">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Config</string>
+						<string name="ScriptGuid">{11f47b59-b69f-470f-876b-333b86b66824}</string>
+						<ProtectedString name="Source"><![CDATA[return {}
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBX95c130902b3f46989f24edf921d4f7de">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">AddToBase2</string>
+						<string name="ScriptGuid">{535402db-858e-4729-970f-1865b9fa5b1e}</string>
+						<ProtectedString name="Source"><![CDATA[local test = {}
+
+function test.addRemoteObjects(part)
+    local newPart = Instance.new("Part", part)
+
+    return newPart
+end
+
+return test
 
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
