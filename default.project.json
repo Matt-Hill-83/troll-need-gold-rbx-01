@@ -23,10 +23,38 @@
       }
     },
 
-    "Workspace": {
-      "$className": "Workspace",
-      "$properties": {
-        "FilteringEnabled": true
+    "StarterGui": {
+      "$className": "StarterGui",
+      "Source": {
+        "$path": "src/StarterGui"
+      }
+    },
+
+    "ReplicatedFirst": {
+      "$className": "ReplicatedFirst",
+      "Source": {
+        "$path": "src/ReplicatedFirst"
+      }
+    },
+
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "Source": {
+        "$path": "src/ServerStorage"
+      }
+    },
+
+    "StarterPack": {
+      "$className": "StarterPack",
+      "Source": {
+        "$path": "src/StarterPack"
+      }
+    },
+
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "Source": {
+        "$path": "src/StarterPlayer"
       }
     }
   }
