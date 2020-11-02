@@ -1,14 +1,14 @@
 print('mysss2')
-local sss = game:GetService("ServerScriptService")
+local Sss = game:GetService("ServerScriptService")
 local HttpService = game:GetService("HttpService")
 
 local my_functions = {}
 
-local a = sss.Source.AddRemoteObjects
+local a = Sss.Source.AddRemoteObjects
 local b = a.AddToBase2
 
 -- local test = require(game.ServerScriptService.Source.test)
-local test = require(sss.Source.test)
+local test = require(Sss.Source.test)
 
 print('test001-----------------')
 print(test.func001())
