@@ -1,3 +1,2 @@
-print('in the init----------')
-
-return {a = '234'}
+-- print('in the init----------')
+-- return {a = '234'}

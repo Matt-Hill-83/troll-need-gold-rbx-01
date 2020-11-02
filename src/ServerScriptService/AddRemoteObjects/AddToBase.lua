@@ -7,13 +7,15 @@ local my_functions = {}
 local a = Sss.Source.AddRemoteObjects
 local b = a.AddToBase2
 
--- local test = require(game.ServerScriptService.Source.test)
-local test = require(Sss.Source.test)
+-- local test = require(Sss.Source.test)
+local test2 = require(Sss.Source.AddRemoteObjects.AddToBase2)
+local c = test2.getScenes
 
 print('test001-----------------')
-print(test.func001())
+-- print(test.func001())
 print(a)
 print(b)
+print(c())
 print('test001-----------------')
 
 function my_functions.addRemoteObjects(part)

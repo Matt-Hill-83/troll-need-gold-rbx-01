@@ -1,10 +1,10 @@
-local module = {hi = "5"}
+local module2 = {hi = "5"}
 
-function module.addRemoteObjects(part)
+function module2.getScenes(part)
     local newPart = Instance.new("Part", part)
 
     return newPart
 end
 
-return module
+return module2
 
