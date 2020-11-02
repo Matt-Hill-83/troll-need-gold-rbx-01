@@ -1,17 +1,19 @@
--- local test2 = require(script)
--- local test3 = _G;
+print('mysss2')
 local sss = game:GetService("ServerScriptService")
 local HttpService = game:GetService("HttpService")
 
-local a = sss.Source.test
-print(a)
-
 local my_functions = {}
-print('mysss2')
 
-print('test001')
--- print(test001)
-print('test001')
+local a = sss.Source.AddRemoteObjects
+local b = a.AddToBase2
+
+local test = require(game.ServerScriptService.Source.test)
+
+print('test001-----------------')
+print(test.func001())
+print(a)
+print(b)
+print('test001-----------------')
 
 function my_functions.addRemoteObjects(part)
     local newPart = Instance.new("Part", part)

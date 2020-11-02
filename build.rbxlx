@@ -2236,7 +2236,9 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">Source</string>
 				<string name="ScriptGuid">{fff6187c-e823-4743-a48f-970df0bad40b}</string>
-				<ProtectedString name="Source"><![CDATA[return {a = '234'}
+				<ProtectedString name="Source"><![CDATA[print('in the init----------')
+
+return {a = '234'}
 ]]></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
@@ -2288,19 +2290,22 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">AddToBase</string>
 						<string name="ScriptGuid">{5b0290ad-cf36-4af9-807c-0f88e0f4c6d8}</string>
-						<ProtectedString name="Source"><![CDATA[-- local test2 = require(script)
--- local test3 = _G;
+						<ProtectedString name="Source"><![CDATA[print('mysss2')
 local sss = game:GetService("ServerScriptService")
 local HttpService = game:GetService("HttpService")
--- local GameRunner = require(game.ServerScriptService.addRemoteObjects)
 
 local my_functions = {}
-print('------start')
-print('mysss2')
 
--- print(test2)
+local a = sss.Source.AddRemoteObjects
+local b = a.AddToBase2
 
-print('------end')
+local test = require(game.ServerScriptService.Source.test)
+
+print('test001-----------------')
+print(test.func001())
+print(a)
+print(b)
+print('test001-----------------')
 
 function my_functions.addRemoteObjects(part)
     local newPart = Instance.new("Part", part)
@@ -2338,7 +2343,7 @@ return my_functions
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">AddToBase2</string>
 						<string name="ScriptGuid">{535402db-858e-4729-970f-1865b9fa5b1e}</string>
-						<ProtectedString name="Source"><![CDATA[local test = {}
+						<ProtectedString name="Source"><![CDATA[local test = {hi = "5"}
 
 function test.addRemoteObjects(part)
     local newPart = Instance.new("Part", part)
@@ -2360,7 +2365,17 @@ return test
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">test</string>
 					<string name="ScriptGuid">{a540e4ea-ce31-4ee2-9003-ac993a092b81}</string>
-					<ProtectedString name="Source"><![CDATA[return {a = "asdf"}
+					<ProtectedString name="Source"><![CDATA[local my_functions = {}
+
+function my_functions.func001(part)
+    local newPart = Instance.new("Part")
+    print('in sub function')
+    return newPart
+
+end
+
+return my_functions
+
 ]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
