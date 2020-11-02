@@ -6,6 +6,7 @@ function my_functions.foo()
     print("Foo---------2!")
     print("Foo---------2!")
     print("Foo---------2!")
+
     print("Foo---------2!")
     print("Foo---------2!")
 
