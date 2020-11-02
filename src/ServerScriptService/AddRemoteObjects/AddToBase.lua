@@ -9,21 +9,19 @@ local b = a.AddToBase2
 
 -- local test = require(Sss.Source.test)
 local test2 = require(Sss.Source.AddRemoteObjects.AddToBase2)
-local c = test2.getScenes
+local json = test2.getScenes()
 
 print('test001-----------------')
--- print(test.func001())
 print(a)
 print(b)
-print(c())
+print(json)
 print('test001-----------------')
 
 function my_functions.addRemoteObjects(part)
     local newPart = Instance.new("Part", part)
 
-    local jsonData =
-        '{"awards":{"died20":false,"kills10":true},"title":"1337 h4x04","is_epic":true,"money":123456}'
-    local characterStats = HttpService:JSONDecode(jsonData)
+    local characterStats = HttpService:JSONDecode(json)
+    -- local characterStats = HttpService:JSONDecode(jsonData)
     print(characterStats.money)
 
     return newPart
