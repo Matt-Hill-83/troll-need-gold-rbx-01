@@ -5,7 +5,7 @@ function my_functions.foo()
     print("Foo---------2!")
 end
 
-function my_functions.bar()
+    function my_functions.bar()
     print("Bar!---------------111")
 end
 
