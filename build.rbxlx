@@ -974,182 +974,6 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					</Item>
 				</Item>
 			</Item>
-			<Item class="Part" referent="RBX17952b8cd56a4932ae97b79b324a2de1">
-				<Properties>
-					<bool name="Anchored">true</bool>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<float name="BackParamA">-0.5</float>
-					<float name="BackParamB">0.5</float>
-					<token name="BackSurface">0</token>
-					<token name="BackSurfaceInput">0</token>
-					<float name="BottomParamA">-0.5</float>
-					<float name="BottomParamB">0.5</float>
-					<token name="BottomSurface">4</token>
-					<token name="BottomSurfaceInput">0</token>
-					<CoordinateFrame name="CFrame">
-						<X>0.499998003</X>
-						<Y>0.262730986</Y>
-						<Z>0</Z>
-						<R00>0</R00>
-						<R01>0</R01>
-						<R02>1</R02>
-						<R10>0</R10>
-						<R11>1</R11>
-						<R12>-0</R12>
-						<R20>-1</R20>
-						<R21>0</R21>
-						<R22>0</R22>
-					</CoordinateFrame>
-					<bool name="CanCollide">true</bool>
-					<bool name="CastShadow">true</bool>
-					<int name="CollisionGroupId">0</int>
-					<Color3uint8 name="Color3uint8">4282318742</Color3uint8>
-					<PhysicalProperties name="CustomPhysicalProperties">
-						<CustomPhysics>false</CustomPhysics>
-					</PhysicalProperties>
-					<float name="FrontParamA">-0.5</float>
-					<float name="FrontParamB">0.5</float>
-					<token name="FrontSurface">0</token>
-					<token name="FrontSurfaceInput">0</token>
-					<float name="LeftParamA">-0.5</float>
-					<float name="LeftParamB">0.5</float>
-					<token name="LeftSurface">0</token>
-					<token name="LeftSurfaceInput">0</token>
-					<bool name="Locked">false</bool>
-					<bool name="Massless">false</bool>
-					<token name="Material">1280</token>
-					<string name="Name">myBase</string>
-					<float name="Reflectance">0</float>
-					<float name="RightParamA">-0.5</float>
-					<float name="RightParamB">0.5</float>
-					<token name="RightSurface">0</token>
-					<token name="RightSurfaceInput">0</token>
-					<int name="RootPriority">0</int>
-					<Vector3 name="RotVelocity">
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</Vector3>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-					<float name="TopParamA">-0.5</float>
-					<float name="TopParamB">0.5</float>
-					<token name="TopSurface">3</token>
-					<token name="TopSurfaceInput">0</token>
-					<float name="Transparency">0</float>
-					<Vector3 name="Velocity">
-						<X>0</X>
-						<Y>0</Y>
-						<Z>0</Z>
-					</Vector3>
-					<token name="formFactorRaw">1</token>
-					<token name="shape">1</token>
-					<Vector3 name="size">
-						<X>169.459106</X>
-						<Y>0.525434971</Y>
-						<Z>123.322571</Z>
-					</Vector3>
-				</Properties>
-				<Item class="Weld" referent="RBX04bffa60779b4dfcb1a6b64d2cbd6d44">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<CoordinateFrame name="C0">
-							<X>0</X>
-							<Y>0.262717724</Y>
-							<Z>1.90734863e-06</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>-0</R02>
-							<R10>0</R10>
-							<R11>0</R11>
-							<R12>1</R12>
-							<R20>0</R20>
-							<R21>-1</R21>
-							<R22>0</R22>
-						</CoordinateFrame>
-						<CoordinateFrame name="C1">
-							<X>17</X>
-							<Y>-2.4999876</Y>
-							<Z>-17.0494308</Z>
-							<R00>1</R00>
-							<R01>4.64816878e-08</R01>
-							<R02>-2.91038793e-09</R02>
-							<R10>-4.0941238e-08</R10>
-							<R11>1.00000334</R11>
-							<R12>3.8119591e-08</R12>
-							<R20>-2.91039326e-09</R20>
-							<R21>1.25542741e-07</R21>
-							<R22>1.00000525</R22>
-						</CoordinateFrame>
-						<bool name="Enabled">true</bool>
-						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
-						<Ref name="Part1">RBXa34931ee8eb546829020f4aac6ef52fe</Ref>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="Weld" referent="RBX2703751a13334ca9a5ee6e90b57bc00d">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<CoordinateFrame name="C0">
-							<X>0</X>
-							<Y>0.262717724</Y>
-							<Z>1.90734863e-06</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>-0</R02>
-							<R10>0</R10>
-							<R11>0</R11>
-							<R12>1</R12>
-							<R20>0</R20>
-							<R21>-1</R21>
-							<R22>0</R22>
-						</CoordinateFrame>
-						<CoordinateFrame name="C1">
-							<X>1.92834604</X>
-							<Y>-0.983437896</Y>
-							<Z>-24.4624939</Z>
-							<R00>-1</R00>
-							<R01>-5.2550412e-08</R01>
-							<R02>7.27601979e-09</R02>
-							<R10>7.27600469e-09</R10>
-							<R11>2.87733798e-07</R11>
-							<R12>1</R12>
-							<R20>-5.25504156e-08</R20>
-							<R21>1</R21>
-							<R22>-2.87733798e-07</R22>
-						</CoordinateFrame>
-						<bool name="Enabled">true</bool>
-						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
-						<Ref name="Part1">RBX66060b95b6e94f39af9353268593d5dd</Ref>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="Script" referent="RBX1402cb9ce466400cb505cc8e843e2a78">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<bool name="Disabled">false</bool>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">BaseScript</string>
-						<string name="ScriptGuid">{217e422e-4b92-4b98-9299-4e87aa49c738}</string>
-						<ProtectedString name="Source"><![CDATA[local base = script.Parent
-local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.AddToBase)
-
-local output = remoteCode.addRemoteObjects(base)
-print('output-1: ')
-print( output)
-print('output-2: ')
-
-
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-			</Item>
 			<Item class="SpawnLocation" referent="RBX66060b95b6e94f39af9353268593d5dd">
 				<Properties>
 					<bool name="AllowTeamChangeOnTouch">false</bool>
@@ -1779,6 +1603,228 @@ buttonEvent.OnServerEvent:Connect(triggerButton)
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 		</Item>
+		<Item class="Script" referent="RBX10a208f401444cd7b33c65315e0c6da5">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">Script</string>
+				<string name="ScriptGuid">{77cca61c-6be5-42ae-95d5-714570ffcbd0}</string>
+				<ProtectedString name="Source"><![CDATA[local base = script.Parent
+
+local testDict01= {
+	name="Log",
+	text = "one",
+	color = BrickColor.new("Really red"),
+	char = "Britta"
+}
+
+local testDict02= {
+	name="Tree",
+	
+	color = BrickColor.new("Blue"),
+	
+}
+
+--local scenes = {testDict01,testDict02,testDict01}
+local scenes = {testDict02}
+
+for i, scene in ipairs(scenes) do	
+	print(i)
+	print (scene.color)
+	local newScene = game.ReplicatedStorage.Source.MyParts.MyBlock["NewWall"]
+	print(newScene)
+	newScene.Parent = base
+	---local charName = scenes.name
+	
+	
+	
+	newScene.Position = Vector3.new(1,  1,  i * 10)
+	newScene.BrickColor = scene.color
+	newScene.CanCollide = true
+	newScene.Anchored = true
+	
+	color = BrickColor.new("Baby blue")
+	
+end]]></ProtectedString>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+		</Item>
+		<Item class="Part" referent="RBX17952b8cd56a4932ae97b79b324a2de1">
+			<Properties>
+				<bool name="Anchored">true</bool>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<float name="BackParamA">-0.5</float>
+				<float name="BackParamB">0.5</float>
+				<token name="BackSurface">0</token>
+				<token name="BackSurfaceInput">0</token>
+				<float name="BottomParamA">-0.5</float>
+				<float name="BottomParamB">0.5</float>
+				<token name="BottomSurface">4</token>
+				<token name="BottomSurfaceInput">0</token>
+				<CoordinateFrame name="CFrame">
+					<X>0.499998003</X>
+					<Y>0.262730986</Y>
+					<Z>0</Z>
+					<R00>0</R00>
+					<R01>0</R01>
+					<R02>1</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>-0</R12>
+					<R20>-1</R20>
+					<R21>0</R21>
+					<R22>0</R22>
+				</CoordinateFrame>
+				<bool name="CanCollide">true</bool>
+				<bool name="CastShadow">true</bool>
+				<int name="CollisionGroupId">0</int>
+				<Color3uint8 name="Color3uint8">4282318742</Color3uint8>
+				<PhysicalProperties name="CustomPhysicalProperties">
+					<CustomPhysics>false</CustomPhysics>
+				</PhysicalProperties>
+				<float name="FrontParamA">-0.5</float>
+				<float name="FrontParamB">0.5</float>
+				<token name="FrontSurface">0</token>
+				<token name="FrontSurfaceInput">0</token>
+				<float name="LeftParamA">-0.5</float>
+				<float name="LeftParamB">0.5</float>
+				<token name="LeftSurface">0</token>
+				<token name="LeftSurfaceInput">0</token>
+				<bool name="Locked">false</bool>
+				<bool name="Massless">false</bool>
+				<token name="Material">1280</token>
+				<string name="Name">myBase</string>
+				<float name="Reflectance">0</float>
+				<float name="RightParamA">-0.5</float>
+				<float name="RightParamB">0.5</float>
+				<token name="RightSurface">0</token>
+				<token name="RightSurfaceInput">0</token>
+				<int name="RootPriority">0</int>
+				<Vector3 name="RotVelocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<float name="TopParamA">-0.5</float>
+				<float name="TopParamB">0.5</float>
+				<token name="TopSurface">3</token>
+				<token name="TopSurfaceInput">0</token>
+				<float name="Transparency">0</float>
+				<Vector3 name="Velocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<token name="formFactorRaw">1</token>
+				<token name="shape">1</token>
+				<Vector3 name="size">
+					<X>169.459106</X>
+					<Y>0.525434971</Y>
+					<Z>123.322571</Z>
+				</Vector3>
+			</Properties>
+			<Item class="Weld" referent="RBX04bffa60779b4dfcb1a6b64d2cbd6d44">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<CoordinateFrame name="C0">
+						<X>0</X>
+						<Y>0.262717724</Y>
+						<Z>1.90734863e-06</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>-0</R02>
+						<R10>0</R10>
+						<R11>0</R11>
+						<R12>1</R12>
+						<R20>0</R20>
+						<R21>-1</R21>
+						<R22>0</R22>
+					</CoordinateFrame>
+					<CoordinateFrame name="C1">
+						<X>17</X>
+						<Y>-2.4999876</Y>
+						<Z>-17.0494308</Z>
+						<R00>1</R00>
+						<R01>4.64816878e-08</R01>
+						<R02>-2.91038793e-09</R02>
+						<R10>-4.0941238e-08</R10>
+						<R11>1.00000334</R11>
+						<R12>3.8119591e-08</R12>
+						<R20>-2.91039326e-09</R20>
+						<R21>1.25542741e-07</R21>
+						<R22>1.00000525</R22>
+					</CoordinateFrame>
+					<bool name="Enabled">true</bool>
+					<string name="Name">Weld</string>
+					<Ref name="Part0">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
+					<Ref name="Part1">RBXa34931ee8eb546829020f4aac6ef52fe</Ref>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="Weld" referent="RBX2703751a13334ca9a5ee6e90b57bc00d">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<CoordinateFrame name="C0">
+						<X>0</X>
+						<Y>0.262717724</Y>
+						<Z>1.90734863e-06</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>-0</R02>
+						<R10>0</R10>
+						<R11>0</R11>
+						<R12>1</R12>
+						<R20>0</R20>
+						<R21>-1</R21>
+						<R22>0</R22>
+					</CoordinateFrame>
+					<CoordinateFrame name="C1">
+						<X>1.92834604</X>
+						<Y>-0.983437896</Y>
+						<Z>-24.4624939</Z>
+						<R00>-1</R00>
+						<R01>-5.2550412e-08</R01>
+						<R02>7.27601979e-09</R02>
+						<R10>7.27600469e-09</R10>
+						<R11>2.87733798e-07</R11>
+						<R12>1</R12>
+						<R20>-5.25504156e-08</R20>
+						<R21>1</R21>
+						<R22>-2.87733798e-07</R22>
+					</CoordinateFrame>
+					<bool name="Enabled">true</bool>
+					<string name="Name">Weld</string>
+					<Ref name="Part0">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
+					<Ref name="Part1">RBX66060b95b6e94f39af9353268593d5dd</Ref>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="Script" referent="RBX1402cb9ce466400cb505cc8e843e2a78">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">BaseScript</string>
+					<string name="ScriptGuid">{217e422e-4b92-4b98-9299-4e87aa49c738}</string>
+					<ProtectedString name="Source"><![CDATA[local base = script.Parent
+local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.AddToBase)
+
+remoteCode.addRemoteObjects(base)
+
+
+
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+		</Item>
 	</Item>
 	<Item class="SoundService" referent="RBX7845308c7ca3451eaa9eca1a685d0279">
 		<Properties>
@@ -2311,19 +2357,30 @@ print('test002-----------------')
 function module.addRemoteObjects(part)
 
     for i, scene in ipairs(scenes) do
-        local newScene = Instance.new("Part", part)
-        local newLabel = Instance.new("TextLabel", part)
-        newLabel.Size = UDim2.new(0, 800, 0, 100)
-        newLabel.Position = UDim2.new(0, 100, 0, i * 150)
+        local sceneWidth = 10
+        local sceneHeight = 15
+        local yIncrement = sceneWidth * 0.2
+        local yPositionStart = 0
+        local yPosition = yPositionStart + (i - 1) * (sceneWidth + yIncrement)
 
-        newScene.Parent = workspace
+        local xPosition = -5
+        local zPosition = 0
+
+        local newScene = Instance.new("Part", part)
         local name = scene['name']
         print(name)
 
-        newScene.Size = Vector3.new(100, 800, 100)
-        newScene.Position = Vector3.new(100, 100, 100)
+        newScene.Size = Vector3.new(2, sceneHeight, sceneWidth)
+        newScene.Position = Vector3.new(xPosition, zPosition, i * yPosition)
         newScene.Anchored = true
-        -- newScene.Color = Color3.new('red')
+        newScene.BrickColor = BrickColor.new(scene.color)
+
+        local newLabel = Instance.new("TextLabel", newScene)
+
+        newLabel.Size = UDim2.new(0, 10, 0, 10)
+        newLabel.Position = UDim2.new(0, 0, 0, 0)
+        newLabel.Text = name
+        -- newScene.BrickColor = scene.color
 
     end
 
@@ -2355,23 +2412,32 @@ return module
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">AddToBase2</string>
 						<string name="ScriptGuid">{535402db-858e-4729-970f-1865b9fa5b1e}</string>
-						<ProtectedString name="Source"><![CDATA[local module2 = {hi = "5"}
-local myJson =
-    '{"awards":{"died20":false,"kills10":true},"title":"1337 h4x04","is_epic":true,"money":123456}'
+						<ProtectedString name="Source"><![CDATA[local module = {}
 
-function module2.getScenes()
+function module.getScenes()
 
     local char01 = {name = "Britta"}
     local frame01 = {characters = {char01, char01}}
     local frames = {frame01, frame01}
-    local scene01 = {name = "log", frames = {frames}}
-    local scenes = {scene01, scene01}
+    local scene01 = {
+        -- 
+        name = "log",
+        frames = {frames},
+        color = "Baby blue"
+    }
+    local scene02 = {
+        -- 
+        name = "tree",
+        frames = {frames},
+        color = "Baby blue"
+    }
+    local scenes = {scene01, scene02}
 
     return scenes
 
 end
 
-return module2
+return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
@@ -2717,52 +2783,6 @@ return module
 							<Z>123.322571</Z>
 						</Vector3>
 					</Properties>
-					<Item class="Script" referent="RBX10a208f401444cd7b33c65315e0c6da5">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<bool name="Disabled">false</bool>
-							<Content name="LinkedSource"><null></null></Content>
-							<string name="Name">Script</string>
-							<string name="ScriptGuid">{77cca61c-6be5-42ae-95d5-714570ffcbd0}</string>
-							<ProtectedString name="Source"><![CDATA[local base = script.Parent
-
-local testDict01= {
-	name="Log",
-	text = "one",
-	color = BrickColor.new("Really red"),
-	char = "Britta"
-}
-
-local testDict02= {
-	name="Tree",
-	
-	color = BrickColor.new("Blue"),
-	
-}
-
---local scenes = {testDict01,testDict02,testDict01}
-local scenes = {testDict02}
-
-for i, scene in ipairs(scenes) do	
-	print(i)
-	print (scene.color)
-	local newScene = game.ReplicatedStorage.Source.MyParts.MyBlock["NewWall"]
-	print(newScene)
-	newScene.Parent = base
-	---local charName = scenes.name
-	
-	
-	
-	newScene.Position = Vector3.new(1,  1,  i * 10)
-	newScene.BrickColor = scene.color
-	newScene.CanCollide = true
-	newScene.Anchored = true
-
-end]]></ProtectedString>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
 				</Item>
 			</Item>
 			<Item class="ModuleScript" referent="8">
