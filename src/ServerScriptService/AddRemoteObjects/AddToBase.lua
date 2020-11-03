@@ -20,8 +20,13 @@ function module.addRemoteObjects(part)
         local yPosition = size.height / 2
 
         local position = {x = xPosition, y = yPosition, z = zPosition}
-        local props = {name = partName, size = size, position = position}
-        local newScene = Utils.createChildPart(part, props)
+        local props = {
+            name = partName,
+            size = size,
+            position = position,
+            parent = part
+        }
+        local newScene = Utils.createChildPart(props)
 
         local newSurfaceGui = Instance.new("SurfaceGui", newScene)
         local newLabel = Instance.new("TextLabel", newSurfaceGui)

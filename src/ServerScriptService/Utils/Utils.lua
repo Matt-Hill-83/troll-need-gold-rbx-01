@@ -9,10 +9,12 @@ function getParentlLeft(parent, childWidth)
     return outputX
 end
 
-function createChildPart(parent, props)
-    local newPart = Instance.new("Part", parent)
+function createChildPart(props)
     local size = props.size
+    local parent = props.parent
     local position = props.position
+
+    local newPart = Instance.new("Part", parent)
 
     newPart.Size = Vector3.new(size.width, size.height, size.depth)
     newPart.Position = Vector3.new(position.x, position.y, position.z)
