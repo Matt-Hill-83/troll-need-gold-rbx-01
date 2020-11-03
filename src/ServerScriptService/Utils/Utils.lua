@@ -18,6 +18,9 @@ function createChildPart(props)
     local name = props.name
 
     local newPart = Instance.new("Part", parent)
+    print('parent');
+    print(parent);
+    print('parent');
 
     newPart.Size = Vector3.new(size.width, size.height, size.depth)
     newPart.Anchored = true
@@ -72,7 +75,7 @@ function createRowOfParts(props)
 
         if (childProps) then
             childProps.parent = newItem
-            -- local newCharacter = createChildPart(childProps)
+            local newCharacter = createChildPart(childProps)
         end
 
         rowOfParts[i] = newItem

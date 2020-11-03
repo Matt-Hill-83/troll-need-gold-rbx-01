@@ -2,7 +2,12 @@ local module = {}
 
 function module.getScenesConfig()
 
-    local char01 = {name = "Britta"}
+    local char01 = {
+        name = "Britta",
+        decal = 'rbxassetid://5902121857',
+        color = BrickColor.new("Light blue")
+    }
+
     local frame01 = {characters = {char01, char01}}
     local frames = {frame01, frame01}
     local scene01 = {
