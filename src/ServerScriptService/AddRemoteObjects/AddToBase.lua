@@ -8,12 +8,13 @@ local scenes = config.getScenesConfig()
 
 function module.addRemoteObjects(part)
 
+    local childDepth = 2
     local childProps = {
         decal = 'rbxassetid://5897424121',
         name = "log",
         color = BrickColor.new("Light blue"),
-        size = {width = 10, height = 8, depth = 2},
-        position = {x = 0, y = 0, z = -2}
+        size = {width = 10, height = 8, depth = childDepth},
+        position = {x = 0, y = 0, z = -childDepth}
 
         --
     }
