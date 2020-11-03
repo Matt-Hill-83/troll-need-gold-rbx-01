@@ -23,6 +23,10 @@ function createChildPart(props)
     newPart.Name = props.name
     newPart.BrickColor = color
 
+    local decal = Instance.new("Decal", newPart)
+    decal.Texture = 'rbxassetid://5902121857'
+    decal.Face = 'Front'
+
     return newPart
 
 end

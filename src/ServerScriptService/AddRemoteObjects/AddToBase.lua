@@ -9,7 +9,7 @@ local scenes = config.getScenesConfig()
 function module.addRemoteObjects(part)
 
     for i, scene in ipairs(scenes) do
-        local size = {width = 10, height = 16, depth = 2}
+        local size = {width = 20, height = 16, depth = 2}
         local partName = "Scene: " .. i
 
         local xIncrement = size.width * 0.2
