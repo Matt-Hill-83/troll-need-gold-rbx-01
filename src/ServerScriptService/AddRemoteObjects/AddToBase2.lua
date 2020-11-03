@@ -1,16 +1,10 @@
-local module2 = {hi = "5"}
-local myJson =
-    '{"awards":{"died20":false,"kills10":true},"title":"1337 h4x04","is_epic":true,"money":123456}'
+local module = {}
 
-module2.json = myJson
+local myJson01 = {character = 'Britta', text = 'hi'}
+local myJson02 = {character = 'Raven', text = 'hi'}
+local myJson03 = {character = 'Britta', text = 'hi'}
+local myJsonAll = {myJson01, myJson02, myJson03}
 
-function module2.getScenes(part)
-    local newPart = Instance.new("Part", part)
+module.json = myJsonAll
 
-    -- return newPart
-    return myJson
-end
-
--- local myJson = '{ { "character": "kat", "text": "Hi Liz!" } }'
-
-return module2
+return module
