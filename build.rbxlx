@@ -1679,6 +1679,7 @@ for i, dialog in ipairs(texts2) do
 	newLabel.Text = charName .. ": " .. dialog['text']
 	newLabel.Size = UDim2.new(0, 800, 0, 100)
 	newLabel.Position = UDim2.new(0,  100, 0, i * 150)	
+	
 
 end
 
@@ -2315,12 +2316,14 @@ function module.addRemoteObjects(part)
         newLabel.Size = UDim2.new(0, 800, 0, 100)
         newLabel.Position = UDim2.new(0, 100, 0, i * 150)
 
-        newScene.Parent = part
+        newScene.Parent = workspace
         local name = scene['name']
         print(name)
 
         newScene.Size = Vector3.new(100, 800, 100)
-        -- newScene.Position = UDim2.new(0, 100, 0, i * 150)
+        newScene.Position = Vector3.new(100, 100, 100)
+        newScene.Anchored = true
+        -- newScene.Color = Color3.new('red')
 
     end
 

@@ -12,17 +12,26 @@ print('test002-----------------')
 function module.addRemoteObjects(part)
 
     for i, scene in ipairs(scenes) do
-        local newScene = Instance.new("Part", part)
-        local newLabel = Instance.new("TextLabel", part)
-        newLabel.Size = UDim2.new(0, 800, 0, 100)
-        newLabel.Position = UDim2.new(0, 100, 0, i * 150)
+        local sceneWidth = 10
+        local sceneHeight = 30
+        local yIncrement = sceneWidth * 0.1
+        local yPosition = sceneWidth + yIncrement
 
-        newScene.Parent = part
+        local newScene = Instance.new("Part", part)
         local name = scene['name']
         print(name)
 
-        newScene.Size = Vector3.new(100, 800, 100)
-        -- newScene.Position = UDim2.new(0, 100, 0, i * 150)
+        local newLabel = Instance.new("TextLabel", part)
+
+        newLabel.Size = UDim2.new(0, 10, 0, 10)
+        newLabel.Position = UDim2.new(0, 0, 0, 0)
+        newLabel.Text = name
+
+        newScene.Size = Vector3.new(2, sceneHeight, sceneWidth)
+        newScene.Position = Vector3.new(-5, 0, i * yPosition)
+        newScene.Anchored = true
+        newScene.BrickColor = BrickColor.new(scene.color)
+        -- newScene.BrickColor = scene.color
 
     end
 

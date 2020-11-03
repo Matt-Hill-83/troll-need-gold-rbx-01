@@ -1,17 +1,26 @@
-local module2 = {hi = "5"}
-local myJson =
-    '{"awards":{"died20":false,"kills10":true},"title":"1337 h4x04","is_epic":true,"money":123456}'
+local module = {}
 
-function module2.getScenes()
+function module.getScenes()
 
     local char01 = {name = "Britta"}
     local frame01 = {characters = {char01, char01}}
     local frames = {frame01, frame01}
-    local scene01 = {name = "log", frames = {frames}}
-    local scenes = {scene01, scene01}
+    local scene01 = {
+        -- 
+        name = "log",
+        frames = {frames},
+        color = "Baby blue"
+    }
+    local scene02 = {
+        -- 
+        name = "tree",
+        frames = {frames},
+        color = "Baby blue"
+    }
+    local scenes = {scene01, scene02}
 
     return scenes
 
 end
 
-return module2
+return module
