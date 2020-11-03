@@ -772,9 +772,7 @@ local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.AddT
 
 remoteCode.addRemoteObjects(base)
 
-
-
-BrickColor.new("Lilac")]]></ProtectedString>
+]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
@@ -1717,12 +1715,7 @@ return module
 					<string name="ScriptGuid">{a540e4ea-ce31-4ee2-9003-ac993a092b81}</string>
 					<ProtectedString name="Source"><![CDATA[local module = {}
 
-function module.func001()
-    local newPart = Instance.new("Part")
-    print('in sub function')
-    return newPart
-
-end
+function module.func001() print('in sub function') end
 --
 return module
 
@@ -1971,83 +1964,6 @@ return module
 							<int name="ZIndex">1</int>
 						</Properties>
 					</Item>
-				</Item>
-				<Item class="Part" referent="RBX775977239d1b47b383e16cefb258cb20">
-					<Properties>
-						<bool name="Anchored">true</bool>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<float name="BackParamA">-0.5</float>
-						<float name="BackParamB">0.5</float>
-						<token name="BackSurface">0</token>
-						<token name="BackSurfaceInput">0</token>
-						<float name="BottomParamA">-0.5</float>
-						<float name="BottomParamB">0.5</float>
-						<token name="BottomSurface">4</token>
-						<token name="BottomSurfaceInput">0</token>
-						<CoordinateFrame name="CFrame">
-							<X>0.499998003</X>
-							<Y>0.262730986</Y>
-							<Z>0</Z>
-							<R00>0</R00>
-							<R01>0</R01>
-							<R02>1</R02>
-							<R10>0</R10>
-							<R11>1</R11>
-							<R12>-0</R12>
-							<R20>-1</R20>
-							<R21>0</R21>
-							<R22>0</R22>
-						</CoordinateFrame>
-						<bool name="CanCollide">true</bool>
-						<bool name="CastShadow">true</bool>
-						<int name="CollisionGroupId">0</int>
-						<Color3uint8 name="Color3uint8">4282318742</Color3uint8>
-						<PhysicalProperties name="CustomPhysicalProperties">
-							<CustomPhysics>false</CustomPhysics>
-						</PhysicalProperties>
-						<float name="FrontParamA">-0.5</float>
-						<float name="FrontParamB">0.5</float>
-						<token name="FrontSurface">0</token>
-						<token name="FrontSurfaceInput">0</token>
-						<float name="LeftParamA">-0.5</float>
-						<float name="LeftParamB">0.5</float>
-						<token name="LeftSurface">0</token>
-						<token name="LeftSurfaceInput">0</token>
-						<bool name="Locked">false</bool>
-						<bool name="Massless">false</bool>
-						<token name="Material">1280</token>
-						<string name="Name">testPart001</string>
-						<float name="Reflectance">0</float>
-						<float name="RightParamA">-0.5</float>
-						<float name="RightParamB">0.5</float>
-						<token name="RightSurface">0</token>
-						<token name="RightSurfaceInput">0</token>
-						<int name="RootPriority">0</int>
-						<Vector3 name="RotVelocity">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<float name="TopParamA">-0.5</float>
-						<float name="TopParamB">0.5</float>
-						<token name="TopSurface">3</token>
-						<token name="TopSurfaceInput">0</token>
-						<float name="Transparency">0</float>
-						<Vector3 name="Velocity">
-							<X>0</X>
-							<Y>0</Y>
-							<Z>0</Z>
-						</Vector3>
-						<token name="formFactorRaw">1</token>
-						<token name="shape">1</token>
-						<Vector3 name="size">
-							<X>169.459106</X>
-							<Y>0.525434971</Y>
-							<Z>123.322571</Z>
-						</Vector3>
-					</Properties>
 				</Item>
 			</Item>
 			<Item class="ModuleScript" referent="8">

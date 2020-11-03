@@ -3,17 +3,20 @@ print('mysss2')
 local Sss = game:GetService("ServerScriptService")
 
 local config = require(Sss.Source.AddRemoteObjects.AddToBase2)
+local Utils = require(Sss.Source.Utils.Utils)
 local scenes = config.getScenes()
 
 function module.addRemoteObjects(part)
 
     for i, scene in ipairs(scenes) do
+
         local sceneWidth = 10
         local sceneHeight = 16
         local sceneDepth = 2
 
+        local xPositionStart = Utils.getParentlLeft(part, sceneWidth)
+
         local xIncrement = sceneWidth * 0.2
-        local xPositionStart = -sceneWidth / 2
         local xPosition = xPositionStart - (i - 1) * (sceneWidth + xIncrement)
 
         local zPosition = 0
