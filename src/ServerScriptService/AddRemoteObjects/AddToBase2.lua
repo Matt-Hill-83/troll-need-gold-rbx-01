@@ -9,15 +9,15 @@ function module.getScenes()
         -- 
         name = "log",
         frames = {frames},
-        color = "Baby blue"
+        color = BrickColor.new("Really red")
     }
     local scene02 = {
         -- 
         name = "tree",
         frames = {frames},
-        color = "Baby blue"
+        color = BrickColor.new("Baby blue")
     }
-    local scenes = {scene01, scene02}
+    local scenes = {scene01, scene02, scene01, scene02}
 
     return scenes
 
