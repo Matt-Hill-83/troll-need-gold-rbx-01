@@ -13,6 +13,7 @@ function createChildPart(props)
     local size = props.size
     local parent = props.parent
     local position = props.position
+    local color = props.color
 
     local newPart = Instance.new("Part", parent)
 
@@ -20,6 +21,7 @@ function createChildPart(props)
     newPart.Position = Vector3.new(position.x, position.y, position.z)
     newPart.Anchored = true
     newPart.Name = props.name
+    newPart.BrickColor = color
 
     return newPart
 

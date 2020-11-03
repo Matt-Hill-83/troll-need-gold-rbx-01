@@ -24,7 +24,8 @@ function module.addRemoteObjects(part)
             name = partName,
             size = size,
             position = position,
-            parent = part
+            parent = part,
+            color = scene.color
         }
         local newScene = Utils.createChildPart(props)
 
@@ -34,8 +35,6 @@ function module.addRemoteObjects(part)
         newLabel.Size = UDim2.new(0, 10, 0, 10)
         newLabel.Position = UDim2.new(0, 0, 0, 0)
         newLabel.Text = scene['name']
-
-        newScene.BrickColor = scene.color
 
     end
 

@@ -8,7 +8,7 @@ function module.getScenesConfig()
     local scene01 = {
         name = "log",
         frames = {frames},
-        color = BrickColor.new("Lilac")
+        color = BrickColor.new("Light blue")
     }
     local scene02 = {
         name = "tree",

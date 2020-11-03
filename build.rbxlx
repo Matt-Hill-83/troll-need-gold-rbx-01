@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>21.8819122</X>
-					<Y>30.376461</Y>
-					<Z>-53.3640442</Z>
-					<R00>-0.99904865</R00>
-					<R01>-0.0132726002</R01>
-					<R02>0.0415418856</R02>
-					<R10>-9.31322575e-10</R10>
-					<R11>0.95256263</R11>
-					<R12>0.304342955</R12>
-					<R20>-0.0436106659</R20>
-					<R21>0.304053426</R21>
-					<R22>-0.951656282</R22>
+					<X>23.0018692</X>
+					<Y>33.6542816</Y>
+					<Z>-51.7679291</Z>
+					<R00>-0.999193907</R00>
+					<R01>0.0157622825</R01>
+					<R02>-0.0369206481</R02>
+					<R10>-1.86264515e-09</R10>
+					<R11>0.919693053</R11>
+					<R12>0.392638326</R12>
+					<R20>0.0401445366</R20>
+					<R21>0.392321825</R21>
+					<R22>-0.918951631</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>21.7988281</X>
-					<Y>29.7677727</Y>
-					<Z>-51.4607239</Z>
+					<X>23.0757103</X>
+					<Y>32.8690071</Y>
+					<Z>-49.9300308</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -197,14 +197,6 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="Folder" referent="RBXd7b0d1eedf464ac9aca3c91625ecff7c">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<string name="Name">Wall</string>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
 			<Item class="Folder" referent="RBX67198b43499d41979233b4ccbdae3b4c">
 				<Properties>
 					<BinaryString name="AttributesSerialize"></BinaryString>
@@ -1613,37 +1605,39 @@ return {a = '234'}
 print('mysss2')
 local Sss = game:GetService("ServerScriptService")
 
-local config = require(Sss.Source.AddRemoteObjects.AddToBase2)
-local scenes = config.getScenes()
+local config = require(Sss.Source.AddRemoteObjects.ScenesConfig)
+local Utils = require(Sss.Source.Utils.Utils)
+local scenes = config.getScenesConfig()
 
 function module.addRemoteObjects(part)
 
     for i, scene in ipairs(scenes) do
-        local sceneWidth = 10
-        local sceneHeight = 16
-        local sceneDepth = 2
+        local size = {width = 10, height = 16, depth = 2}
+        local partName = "Scene: " .. i
 
-        local xIncrement = sceneWidth * 0.2
-        local xPositionStart = -sceneWidth / 2
-        local xPosition = xPositionStart - (i - 1) * (sceneWidth + xIncrement)
+        local xIncrement = size.width * 0.2
+        local xPositionStart = Utils.getParentlLeft(part, size.width)
+        local xPosition = xPositionStart - (i - 1) * (size.width + xIncrement)
 
         local zPosition = 0
-        local yPosition = sceneHeight / 2
+        local yPosition = size.height / 2
 
-        local newScene = Instance.new("Part", part)
-        local name = scene['name']
-
-        newScene.Size = Vector3.new(sceneWidth, sceneHeight, sceneDepth)
-        newScene.Position = Vector3.new(xPosition, yPosition, zPosition)
-        newScene.Anchored = true
-        newScene.BrickColor = scene.color
+        local position = {x = xPosition, y = yPosition, z = zPosition}
+        local props = {
+            name = partName,
+            size = size,
+            position = position,
+            parent = part,
+            color = scene.color
+        }
+        local newScene = Utils.createChildPart(props)
 
         local newSurfaceGui = Instance.new("SurfaceGui", newScene)
         local newLabel = Instance.new("TextLabel", newSurfaceGui)
 
         newLabel.Size = UDim2.new(0, 10, 0, 10)
         newLabel.Position = UDim2.new(0, 0, 0, 0)
-        newLabel.Text = name
+        newLabel.Text = scene['name']
 
     end
 
@@ -1657,39 +1651,25 @@ return module
 						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
-				<Item class="ModuleScript" referent="RBX2e093282d7c34d939721f1c79690d2ff">
+				<Item class="ModuleScript" referent="RBX443e8ca30c4342ea8def51ba1a5dec3c">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">Config</string>
-						<string name="ScriptGuid">{11f47b59-b69f-470f-876b-333b86b66824}</string>
-						<ProtectedString name="Source"><![CDATA[return {}
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBX95c130902b3f46989f24edf921d4f7de">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">AddToBase2</string>
-						<string name="ScriptGuid">{535402db-858e-4729-970f-1865b9fa5b1e}</string>
+						<string name="Name">ScenesConfig</string>
+						<string name="ScriptGuid">{ff1a6a8d-8c54-4ee3-8228-2da57bbf0af8}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
-function module.getScenes()
+function module.getScenesConfig()
 
     local char01 = {name = "Britta"}
     local frame01 = {characters = {char01, char01}}
     local frames = {frame01, frame01}
     local scene01 = {
-        -- 
         name = "log",
         frames = {frames},
         color = BrickColor.new("Lilac")
     }
     local scene02 = {
-        -- 
         name = "tree",
         frames = {frames},
         color = BrickColor.new("Baby blue")
@@ -1723,6 +1703,63 @@ return module
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
+			</Item>
+			<Item class="ModuleScript" referent="RBX0e9c500d4ebf440a9f3a12551ff0991d">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">Utils</string>
+					<string name="ScriptGuid">{4dc90c15-033c-41ff-b30a-4ab544d42a5d}</string>
+					<ProtectedString name="Source"><![CDATA[print('in the init----------')
+
+return {a = '234'}
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="ModuleScript" referent="RBXc7010e3488d34a2baa06ca066519c00b">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Utils</string>
+						<string name="ScriptGuid">{841adf3c-5fb6-434a-8bbb-7f5708f6107c}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+function getParentlLeft(parent, childWidth)
+    local parentPosition = CFrame.new(parent.Position)
+    local parentSize = parent.Size
+    local parentLeftEdge = parentPosition.X + parentSize.X / 2
+    local outputX = parentLeftEdge - childWidth / 2
+
+    return outputX
+end
+
+function createChildPart(props)
+    local size = props.size
+    local parent = props.parent
+    local position = props.position
+    local color = props.color
+
+    local newPart = Instance.new("Part", parent)
+
+    newPart.Size = Vector3.new(size.width, size.height, size.depth)
+    newPart.Position = Vector3.new(position.x, position.y, position.z)
+    newPart.Anchored = true
+    newPart.Name = props.name
+    newPart.BrickColor = color
+
+    return newPart
+
+end
+
+module.getParentlLeft = getParentlLeft
+module.createChildPart = createChildPart
+return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
 			</Item>
 		</Item>
 	</Item>
