@@ -14,23 +14,26 @@ function module.addRemoteObjects(part)
     for i, scene in ipairs(scenes) do
         local sceneWidth = 10
         local sceneHeight = 15
+        local sceneDepth = 2
+
         local zIncrement = sceneWidth * 0.2
         local zPositionStart = 10
         local zPosition = zPositionStart + (i - 1) * (sceneWidth + zIncrement)
 
-        local xPosition = -5
+        local xPosition = 0
         local yPosition = 10
 
         local newScene = Instance.new("Part", part)
         local name = scene['name']
-        print(name)
 
-        newScene.Size = Vector3.new(2, sceneHeight, sceneWidth)
+        newScene.Size = Vector3.new(sceneWidth, sceneHeight, sceneDepth)
         newScene.Position = Vector3.new(xPosition, yPosition, zPosition)
         newScene.Anchored = true
         newScene.BrickColor = BrickColor.new(scene.color)
 
-        local newLabel = Instance.new("TextLabel", newScene)
+        local newSurfaceGui = Instance.new("SurfaceGui", newScene)
+
+        local newLabel = Instance.new("TextLabel", newSurfaceGui)
 
         newLabel.Size = UDim2.new(0, 10, 0, 10)
         newLabel.Position = UDim2.new(0, 0, 0, 0)
