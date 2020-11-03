@@ -10,12 +10,13 @@ function getParentlLeft(parent, childWidth)
 end
 
 function createChildPart(size, position, parent)
-    local newScene = Instance.new("Part", parent)
-    newScene.Size = size
-    newScene.Position = position
-    newScene.Anchored = true
+    local newPart = Instance.new("Part", parent)
 
-    return newScene
+    newPart.Size = Vector3.new(size.width, size.height, size.depth)
+    newPart.Position = Vector3.new(position.x, position.y, position.z)
+    newPart.Anchored = true
+
+    return newPart
 
 end
 
