@@ -44,10 +44,6 @@ function createRowOfParts(props)
     local childProps = props.childProps
     local xIncrement = props.xIncrement
 
-    -- local xIncrement = itemProps.xIncrement
-    -- local xPositionStart = itemProps.xPositionStart
-    -- local size = itemProps.size
-
     local rowOfParts = {}
 
     for i, scene in ipairs(partArray) do
@@ -62,7 +58,7 @@ function createRowOfParts(props)
             position = position,
             parent = parent,
             color = scene.color,
-            decal = 'rbxassetid://5902121857'
+            decal = scene.decal
         }
 
         local newItem = createChildPart(itemProps)
