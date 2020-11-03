@@ -2,7 +2,7 @@ local module = {}
 print('mysss2')
 local Sss = game:GetService("ServerScriptService")
 
-local config = require(Sss.Source.AddRemoteObjects.AddToBase2)
+local config = require(Sss.Source.AddRemoteObjects.ScenesConfig)
 local Utils = require(Sss.Source.Utils.Utils)
 local scenes = config.getScenesConfig()
 
