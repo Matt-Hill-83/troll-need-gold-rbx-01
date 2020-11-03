@@ -1139,7 +1139,11 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.AddToBase)
 
 local output = remoteCode.addRemoteObjects(base)
-print(output)
+print('output-1: ')
+print( output)
+print('output-2: ')
+
+
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
@@ -2292,36 +2296,38 @@ return {a = '234'}
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">AddToBase</string>
 						<string name="ScriptGuid">{5b0290ad-cf36-4af9-807c-0f88e0f4c6d8}</string>
-						<ProtectedString name="Source"><![CDATA[print('mysss2')
+						<ProtectedString name="Source"><![CDATA[local module = {}
+print('mysss2')
 local Sss = game:GetService("ServerScriptService")
-local HttpService = game:GetService("HttpService")
 
-local my_functions = {}
-
-local a = Sss.Source.AddRemoteObjects
-local b = a.AddToBase2
-
--- local test = require(Sss.Source.test)
-local test2 = require(Sss.Source.AddRemoteObjects.AddToBase2)
-local json = test2.getScenes()
+local config = require(Sss.Source.AddRemoteObjects.AddToBase2)
+local scenes = config.getScenes()
 
 print('test001-----------------')
-print(a)
-print(b)
-print(json)
-print('test001-----------------')
+print(scenes)
+print('test002-----------------')
 
-function my_functions.addRemoteObjects(part)
-    local newPart = Instance.new("Part", part)
+function module.addRemoteObjects(part)
 
-    local characterStats = HttpService:JSONDecode(json)
-    -- local characterStats = HttpService:JSONDecode(jsonData)
-    print(characterStats.money)
+    for i, scene in ipairs(scenes) do
+        local newScene = Instance.new("Part", part)
+        local newLabel = Instance.new("TextLabel", part)
+        newLabel.Size = UDim2.new(0, 800, 0, 100)
+        newLabel.Position = UDim2.new(0, 100, 0, i * 150)
 
-    return newPart
+        newScene.Parent = part
+        local name = scene['name']
+        print(name)
+
+        newScene.Size = Vector3.new(100, 800, 100)
+        -- newScene.Position = UDim2.new(0, 100, 0, i * 150)
+
+    end
+
+    return part
 end
 
-return my_functions
+return module
 
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
@@ -2350,16 +2356,17 @@ return my_functions
 local myJson =
     '{"awards":{"died20":false,"kills10":true},"title":"1337 h4x04","is_epic":true,"money":123456}'
 
-module2.json = myJson
+function module2.getScenes()
 
-function module2.getScenes(part)
-    local newPart = Instance.new("Part", part)
+    local char01 = {name = "Britta"}
+    local frame01 = {characters = {char01, char01}}
+    local frames = {frame01, frame01}
+    local scene01 = {name = "log", frames = {frames}}
+    local scenes = {scene01, scene01}
 
-    -- return newPart
-    return myJson
+    return scenes
+
 end
-
--- local myJson = '{ { "character": "kat", "text": "Hi Liz!" } }'
 
 return module2
 ]]></ProtectedString>
