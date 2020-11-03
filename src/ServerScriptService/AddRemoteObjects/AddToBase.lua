@@ -8,17 +8,11 @@ local scenes = config.getScenesConfig()
 
 function module.addRemoteObjects(part)
 
-    local itemProps = {
-        --  xIncrement = size.width * 0.2,
-        --  xPositionStart = getParentlLeft(parent, size.width),
-    }
-
     local childProps = {
-        partArray = scenes,
+        -- partArray = scenes,
         size = {width = 10, height = 8, depth = 2},
         partNamePrefix = "Character",
         name = "Character",
-        itemProps = itemProps,
         xIncrement = 2
         --
     }
