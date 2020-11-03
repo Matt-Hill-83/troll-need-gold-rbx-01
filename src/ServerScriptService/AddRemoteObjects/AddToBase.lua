@@ -16,18 +16,17 @@ function module.addRemoteObjects(part)
         local xPositionStart = Utils.getParentlLeft(part, size.width)
         local xPosition = xPositionStart - (i - 1) * (size.width + xIncrement)
 
-        local zPosition = 0
-        local yPosition = size.height / 2
-
-        local position = {x = xPosition, y = yPosition, z = zPosition}
-        local props = {
+        local position = {x = xPosition, y = size.height / 2, z = 0}
+        local sceneProps = {
             name = partName,
             size = size,
             position = position,
             parent = part,
-            color = scene.color
+            color = scene.color,
+            decal = 'rbxassetid://5902121857'
         }
-        local newScene = Utils.createChildPart(props)
+        local newScene = Utils.createChildPart(sceneProps)
+        -- local newCharacter = Utils.createChildPart(newScene)
 
         local newSurfaceGui = Instance.new("SurfaceGui", newScene)
         local newLabel = Instance.new("TextLabel", newSurfaceGui)

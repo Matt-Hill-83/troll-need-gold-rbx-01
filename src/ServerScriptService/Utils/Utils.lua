@@ -14,18 +14,24 @@ function createChildPart(props)
     local parent = props.parent
     local position = props.position
     local color = props.color
+    local decal = props.decal
 
     local newPart = Instance.new("Part", parent)
 
     newPart.Size = Vector3.new(size.width, size.height, size.depth)
-    newPart.Position = Vector3.new(position.x, position.y, position.z)
     newPart.Anchored = true
     newPart.Name = props.name
     newPart.BrickColor = color
+    newPart.CFrame = parent.CFrame +
+                         Vector3.new(position.x, position.y, position.z)
 
-    local decal = Instance.new("Decal", newPart)
-    decal.Texture = 'rbxassetid://5902121857'
-    decal.Face = 'Front'
+    -- newPart.Position = Vector3.new(position.x, position.y, position.z)
+
+    if decal then
+        local newDecal = Instance.new("Decal", newPart)
+        newDecal.Texture = decal
+        newDecal.Face = 'Front'
+    end
 
     return newPart
 
