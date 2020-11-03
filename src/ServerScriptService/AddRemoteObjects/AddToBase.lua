@@ -4,7 +4,7 @@ local Sss = game:GetService("ServerScriptService")
 
 local config = require(Sss.Source.AddRemoteObjects.AddToBase2)
 local Utils = require(Sss.Source.Utils.Utils)
-local scenes = config.getScenes()
+local scenes = config.getScenesConfig()
 
 function module.addRemoteObjects(part)
 
