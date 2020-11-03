@@ -10,6 +10,7 @@ function module.addRemoteObjects(part)
 
     for i, scene in ipairs(scenes) do
         local size = {width = 10, height = 16, depth = 2}
+        local partName = "Scene: " .. i
 
         local xIncrement = size.width * 0.2
         local xPositionStart = Utils.getParentlLeft(part, size.width)
@@ -19,7 +20,8 @@ function module.addRemoteObjects(part)
         local yPosition = size.height / 2
 
         local position = {x = xPosition, y = yPosition, z = zPosition}
-        local newScene = Utils.createChildPart(size, position, part)
+        local props = {name = partName, size = size, position = position}
+        local newScene = Utils.createChildPart(part, props)
 
         local newSurfaceGui = Instance.new("SurfaceGui", newScene)
         local newLabel = Instance.new("TextLabel", newSurfaceGui)
