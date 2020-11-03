@@ -25,8 +25,6 @@ function createChildPart(props)
     newPart.CFrame = parent.CFrame +
                          Vector3.new(position.x, position.y, position.z)
 
-    -- newPart.Position = Vector3.new(position.x, position.y, position.z)
-
     if decal then
         local newDecal = Instance.new("Decal", newPart)
         newDecal.Texture = decal
@@ -37,6 +35,59 @@ function createChildPart(props)
 
 end
 
+function createRowOfParts(props)
+    local partArray = props.partArray
+    local parent = props.parent
+
+    local rowOfParts = {}
+
+    for i, scene in ipairs(partArray) do
+
+        local size = {width = 20, height = 16, depth = 2}
+        local partName = "Scene: " .. i
+
+        local xIncrement = size.width * 0.2
+        local xPositionStart = getParentlLeft(parent, size.width)
+        local xPosition = xPositionStart - (i - 1) * (size.width + xIncrement)
+
+        local position = {x = xPosition, y = size.height / 2, z = 0}
+        local sceneProps = {
+            name = partName,
+            size = size,
+            position = position,
+            parent = parent,
+            color = scene.color,
+            decal = 'rbxassetid://5902121857'
+        }
+
+        local newScene = createChildPart(sceneProps)
+
+        local creatureProps = {
+            name = partName,
+            size = size,
+            position = position,
+            parent = newScene,
+            color = scene.color,
+            decal = 'rbxassetid://5897424121'
+        }
+
+        local newCharacter = createChildPart(creatureProps)
+
+        local newSurfaceGui = Instance.new("SurfaceGui", newScene)
+        local newLabel = Instance.new("TextLabel", newSurfaceGui)
+
+        newLabel.Size = UDim2.new(0, 10, 0, 10)
+        newLabel.Position = UDim2.new(0, 0, 0, 0)
+        newLabel.Text = scene['name']
+
+        rowOfParts[i] = newScene
+    end
+
+    return rowOfParts
+
+end
+
 module.getParentlLeft = getParentlLeft
 module.createChildPart = createChildPart
+module.createRowOfParts = createRowOfParts
 return module

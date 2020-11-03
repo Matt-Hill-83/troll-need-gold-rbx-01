@@ -7,37 +7,14 @@ local Utils = require(Sss.Source.Utils.Utils)
 local scenes = config.getScenesConfig()
 
 function module.addRemoteObjects(part)
+    local rowProps = {
+        partArray = scenes,
+        parent = part
+        -- newRow = Utils.createRowOfParts(rowProps)
+    }
 
-    for i, scene in ipairs(scenes) do
-        local size = {width = 20, height = 16, depth = 2}
-        local partName = "Scene: " .. i
+    Utils.createRowOfParts(rowProps)
 
-        local xIncrement = size.width * 0.2
-        local xPositionStart = Utils.getParentlLeft(part, size.width)
-        local xPosition = xPositionStart - (i - 1) * (size.width + xIncrement)
-
-        local position = {x = xPosition, y = size.height / 2, z = 0}
-        local sceneProps = {
-            name = partName,
-            size = size,
-            position = position,
-            parent = part,
-            color = scene.color,
-            decal = 'rbxassetid://5902121857'
-        }
-        local newScene = Utils.createChildPart(sceneProps)
-        -- local newCharacter = Utils.createChildPart(newScene)
-
-        local newSurfaceGui = Instance.new("SurfaceGui", newScene)
-        local newLabel = Instance.new("TextLabel", newSurfaceGui)
-
-        newLabel.Size = UDim2.new(0, 10, 0, 10)
-        newLabel.Position = UDim2.new(0, 0, 0, 0)
-        newLabel.Text = scene['name']
-
-    end
-
-    return part
 end
 
 return module
