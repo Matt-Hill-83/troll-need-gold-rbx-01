@@ -38,21 +38,25 @@ end
 function createRowOfParts(props)
     local partArray = props.partArray
     local parent = props.parent
+    local size = props.size
+    local partNamePrefix = props.partNamePrefix
+    -- local itemProps = props.itemProps
+    local xIncrement = props.xIncrement
+
+    -- local xIncrement = itemProps.xIncrement
+    -- local xPositionStart = itemProps.xPositionStart
+    -- local size = itemProps.size
 
     local rowOfParts = {}
 
     for i, scene in ipairs(partArray) do
 
-        local size = {width = 20, height = 16, depth = 2}
-        local partName = "Scene: " .. i
-
-        local xIncrement = size.width * 0.2
         local xPositionStart = getParentlLeft(parent, size.width)
         local xPosition = xPositionStart - (i - 1) * (size.width + xIncrement)
 
         local position = {x = xPosition, y = size.height / 2, z = 0}
-        local sceneProps = {
-            name = partName,
+        local itemProps = {
+            name = partNamePrefix .. ": " .. i,
             size = size,
             position = position,
             parent = parent,
@@ -60,10 +64,10 @@ function createRowOfParts(props)
             decal = 'rbxassetid://5902121857'
         }
 
-        local newScene = createChildPart(sceneProps)
+        local newScene = createChildPart(itemProps)
 
         local creatureProps = {
-            name = partName,
+            name = 'partName',
             size = size,
             position = position,
             parent = newScene,
