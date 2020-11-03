@@ -9,7 +9,7 @@ function module.getScenes()
         -- 
         name = "log",
         frames = {frames},
-        color = BrickColor.new("Really red")
+        color = BrickColor.new("Lilac")
     }
     local scene02 = {
         -- 
