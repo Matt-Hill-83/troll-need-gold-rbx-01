@@ -13,14 +13,23 @@ function module.addRemoteObjects(part)
         --  xPositionStart = getParentlLeft(parent, size.width),
     }
 
-    local rowProps = {
+    local childProps = {
         partArray = scenes,
-        parent = part,
-        size = {width = 20, height = 16, depth = 2},
-        children = {},
-        partNamePrefix = "Scene",
+        size = {width = 10, height = 8, depth = 2},
+        partNamePrefix = "Character",
+        name = "Character",
         itemProps = itemProps,
         xIncrement = 2
+        --
+    }
+
+    local rowProps = {
+        partArray = scenes,
+        size = {width = 20, height = 16, depth = 2},
+        partNamePrefix = "Scene",
+        xIncrement = 2,
+        parent = part,
+        childProps = childProps
         --
     }
 

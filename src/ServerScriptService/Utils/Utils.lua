@@ -15,12 +15,13 @@ function createChildPart(props)
     local position = props.position
     local color = props.color
     local decal = props.decal
+    local name = props.name
 
     local newPart = Instance.new("Part", parent)
 
     newPart.Size = Vector3.new(size.width, size.height, size.depth)
     newPart.Anchored = true
-    newPart.Name = props.name
+    newPart.Name = name
     newPart.BrickColor = color
     newPart.CFrame = parent.CFrame +
                          Vector3.new(position.x, position.y, position.z)
@@ -40,7 +41,7 @@ function createRowOfParts(props)
     local parent = props.parent
     local size = props.size
     local partNamePrefix = props.partNamePrefix
-    -- local itemProps = props.itemProps
+    local childProps = props.childProps
     local xIncrement = props.xIncrement
 
     -- local xIncrement = itemProps.xIncrement
@@ -64,27 +65,21 @@ function createRowOfParts(props)
             decal = 'rbxassetid://5902121857'
         }
 
-        local newScene = createChildPart(itemProps)
+        local newItem = createChildPart(itemProps)
 
-        local creatureProps = {
-            name = 'partName',
-            size = size,
-            position = position,
-            parent = newScene,
-            color = scene.color,
-            decal = 'rbxassetid://5897424121'
-        }
+        -- local newSurfaceGui = Instance.new("SurfaceGui", newItem)
+        -- local newLabel = Instance.new("TextLabel", newSurfaceGui)
 
-        local newCharacter = createChildPart(creatureProps)
+        -- newLabel.Size = UDim2.new(0, 10, 0, 10)
+        -- newLabel.Position = UDim2.new(0, 0, 0, 0)
+        -- newLabel.Text = scene['name']
 
-        local newSurfaceGui = Instance.new("SurfaceGui", newScene)
-        local newLabel = Instance.new("TextLabel", newSurfaceGui)
+        if (childProps) then
+            childProps.parent = newItem
+            -- local newCharacter = createChildPart(childProps)
+        end
 
-        newLabel.Size = UDim2.new(0, 10, 0, 10)
-        newLabel.Position = UDim2.new(0, 0, 0, 0)
-        newLabel.Text = scene['name']
-
-        rowOfParts[i] = newScene
+        rowOfParts[i] = newItem
     end
 
     return rowOfParts
