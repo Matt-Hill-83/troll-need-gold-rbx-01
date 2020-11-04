@@ -16,7 +16,7 @@ function module.addRemoteObjects(part)
             size = {width = 8, height = 8, depth = characterDepth},
             partArray = childItems,
             partNamePrefix = "Character",
-            xIncrement = 4,
+            xIncrement = 1,
             parent = parent,
             zOffset = -sceneDepth
         }

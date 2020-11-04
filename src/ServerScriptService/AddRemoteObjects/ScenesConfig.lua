@@ -2,45 +2,27 @@ local module = {}
 
 function module.getScenesConfig()
 
-    local char01 = {
-        name = "Britta",
-        decal = 'rbxassetid://5902121857',
-        color = BrickColor.new("Light blue")
-    }
+    local char01 = {name = "Raven", decal = 'rbxassetid://5902121857'}
 
-    local char02 = {
-        name = "Britta",
-        decal = 'rbxassetid://5902121857',
-        color = BrickColor.new("Light blue")
-    }
+    local char02 = {name = "Britta", decal = 'rbxassetid://5897433108'}
 
-    local item01 = {
-        name = "Britta",
-        decal = 'rbxassetid://5902121857',
-        color = BrickColor.new("Light blue")
-    }
+    local item01 = {name = "Troll King", decal = 'rbxassetid://5897428591'}
 
-    local item02 = {
-        name = "Britta",
-        decal = 'rbxassetid://5902121857',
-        color = BrickColor.new("Light blue")
-    }
+    local item02 = {name = "Freckle", decal = 'rbxassetid://5897430768'}
 
-    local frame01 = {characters = {char01, char02}, items = {item01, item02}}
+    local characters = {char01, char02}
+
+    local frame01 = {characters = characters, items = {item01, item02}}
     local frames = {frame01, frame01}
     local scene01 = {
         decal = 'rbxassetid://5902121857',
         name = "log",
-        frames = {frames},
-        color = BrickColor.new("Light blue")
+        -- frames = frames,
+        frames = frame01,
+        characters = characters
     }
-    local scene02 = {
-        decal = 'rbxassetid://5902121857',
-        name = "tree",
-        frames = {frames},
-        color = BrickColor.new("Baby blue")
-    }
-    local scenes = {scene01, scene02, scene01, scene02}
+
+    local scenes = {scene01}
 
     return scenes
 

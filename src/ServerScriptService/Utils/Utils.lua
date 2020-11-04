@@ -70,9 +70,6 @@ function createRowOfParts(props)
         local zPositionStart = getParentFarEdge(calcEdgePropsZ) + zOffset
         local xPosition = xPositionStart - (i - 1) * (size.width + xIncrement)
 
-        print('zPositionStart');
-        print(zPositionStart);
-        print('zPositionStart');
         local position = {
             x = xPosition,
             y = size.height / 2,
@@ -83,7 +80,8 @@ function createRowOfParts(props)
             size = size,
             position = position,
             parent = parent,
-            color = scene.color,
+            -- color = scene.color,
+            color = BrickColor.new("Light blue"),
             decal = scene.decal
         }
 
@@ -95,7 +93,9 @@ function createRowOfParts(props)
             color = BrickColor.new("Light blue")
         }
 
-        local childItems = {char01, char01}
+        local childItems = scene.characters
+        -- local childItems = scene.frame.characters
+        -- local childItems = {char01, char01}
 
         if (funcForEachNewItem) then
             funcForEachNewItem(newItem, childItems)
