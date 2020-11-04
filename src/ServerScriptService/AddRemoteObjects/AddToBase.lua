@@ -34,6 +34,7 @@ function module.addRemoteObjects(part)
         partNamePrefix = "Scene",
         xIncrement = 4,
         parent = part,
+        createNewItemFunc = Utils.createChildPart,
         updateEachNewItemFunc = updateScene,
         xOffset = -basePadding,
         zOffset = -basePadding
