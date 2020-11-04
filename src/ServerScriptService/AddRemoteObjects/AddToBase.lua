@@ -5,40 +5,50 @@ local Sss = game:GetService("ServerScriptService")
 local config = require(Sss.Source.AddRemoteObjects.ScenesConfig)
 local Utils = require(Sss.Source.Utils.Utils)
 local scenes = config.getScenesConfig()
+local sceneDepth = 1
+
+createNewPart = function(item, size)
+    local sceneProps = {decalId = item.decalId, size = size}
+    local newPart = Utils.createPart(sceneProps)
+    return newPart
+end
+
+addChildParts = function(parent, scene)
+    local scenePadding = 1
+    local childItems = scene.frames[2].characters
+
+    local childProps = {
+        parent = parent,
+        size = {width = 8, height = 8, depth = 1},
+        partArray = childItems,
+        partNamePrefix = "Character",
+
+        xIncrement = 1,
+        zOffset = -sceneDepth,
+        xOffset = -scenePadding,
+        yOffset = scenePadding * 2,
+        createNewItemFunc = createNewPart
+    }
+    Utils.createRowOfParts(childProps)
+end
 
 function module.addRemoteObjects(part)
-    local sceneDepth = 1
-    local characterDepth = 1
     local basePadding = 4
-    local scenePadding = 1
-
-    updateScene = function(parent, scene)
-        local childItems = scene.frames[2].characters
-
-        local childProps = {
-            size = {width = 8, height = 8, depth = characterDepth},
-            partArray = childItems,
-            partNamePrefix = "Character",
-            xIncrement = 1,
-            parent = parent,
-            zOffset = -sceneDepth,
-            xOffset = -scenePadding,
-            yOffset = scenePadding * 2,
-            createNewItemFunc = Utils.createChildPart
-        }
-        Utils.createRowOfParts(childProps)
-    end
+    local sceneSize = {width = 48, height = 24, depth = sceneDepth}
+    local sceneParent = part
+    local partNamePrefix = "Scene"
 
     local rowProps = {
+        parent = sceneParent,
         partArray = scenes,
-        size = {width = 48, height = 24, depth = sceneDepth},
-        partNamePrefix = "Scene",
+        partNamePrefix,
+
+        size = sceneSize,
         xIncrement = 4,
-        parent = part,
-        createNewItemFunc = Utils.createChildPart,
-        updateEachNewItemFunc = updateScene,
         xOffset = -basePadding,
-        zOffset = -basePadding
+        zOffset = -basePadding,
+
+        createNewItemFunc = createNewPart
     }
 
     Utils.createRowOfParts(rowProps)

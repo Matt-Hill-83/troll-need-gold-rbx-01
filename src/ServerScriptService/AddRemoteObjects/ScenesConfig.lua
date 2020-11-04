@@ -20,7 +20,7 @@ function module.getScenesConfig()
         characters = characters
     }
 
-    local scenes = {scene01}
+    local scenes = {scene01, scene01}
 
     return scenes
 

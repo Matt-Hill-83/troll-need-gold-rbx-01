@@ -1,11 +1,18 @@
 local module = {}
 
+function module.mergeTables(t1, t2)
+    for k, v in pairs(t2) do
+        t1[k] = v
+        --
+    end
+    --
+end
+
 function getParentFarEdge(props)
     local parent = props.parent
     local childLength = props.childLength
     local axis = props.axis or 'X'
 
-    print(axis)
     local parentPosition = parent.CFrame
     local parentSize = parent.Size
     local parentFarEdge = parentPosition[axis] + parentSize[axis] / 2
@@ -13,21 +20,15 @@ function getParentFarEdge(props)
     return alignedValue
 end
 
-function createChildPart(props)
+function createPart(props)
     local size = props.size
-    local parent = props.parent
-    local position = props.position
     local decalId = props.decalId
-    local name = props.name
 
-    local newPart = Instance.new("Part", parent)
+    local newPart = Instance.new("Part")
 
     newPart.Size = Vector3.new(size.width, size.height, size.depth)
     newPart.Anchored = true
-    newPart.Name = name
     newPart.BrickColor = BrickColor.new("Light blue")
-    newPart.Position = Vector3.new(position.x, position.y, position.z)
-    -- newPart.Transparency = 0.3
 
     if decalId then
         local newDecal = Instance.new("Decal", newPart)
@@ -42,18 +43,19 @@ end
 function createRowOfParts(props)
     local partArray = props.partArray
     local parent = props.parent
-    local size = props.size
     local partNamePrefix = props.partNamePrefix
+
+    local size = props.size
     local xIncrement = props.xIncrement
-    local createNewItemFunc = props.createNewItemFunc
-    local updateEachNewItemFunc = props.updateEachNewItemFunc
     local xOffset = props.xOffset or 0
     local yOffset = props.yOffset or 0
     local zOffset = props.zOffset or 0
 
+    local createNewItemFunc = props.createNewItemFunc
+
     local rowOfParts = {}
 
-    for i, scene in ipairs(partArray) do
+    for i, item in ipairs(partArray) do
 
         local calcEdgePropsX = {
             parent = parent,
@@ -68,28 +70,19 @@ function createRowOfParts(props)
         }
 
         local xPositionStart = getParentFarEdge(calcEdgePropsX) + xOffset
-        local zPositionStart = getParentFarEdge(calcEdgePropsZ) + zOffset
         local xPosition = xPositionStart - (i - 1) * (size.width + xIncrement)
+        local yPosition = size.height / 2 + yOffset
+        local zPosition = getParentFarEdge(calcEdgePropsZ) + zOffset
 
-        local position = {
-            x = xPosition,
-            y = size.height / 2 + yOffset,
-            z = zPositionStart
-        }
-        local itemProps = {
-            name = partNamePrefix .. ": " .. i,
-            size = size,
-            position = position,
-            parent = parent,
-            decalId = scene.decalId
-        }
+        print('size' .. ' - start');
+        print(size);
+        print('size' .. ' - end');
 
-        local newItem = createNewItemFunc(itemProps)
+        local newItem = createNewItemFunc(item, size)
+        newItem.Position = Vector3.new(xPosition, yPosition, zPosition)
+        newItem.Parent = parent
+        newItem.Name = partNamePrefix
 
-        if (updateEachNewItemFunc) then
-            updateEachNewItemFunc(newItem, scene)
-            --
-        end
         rowOfParts[i] = newItem
     end
 
@@ -97,7 +90,6 @@ function createRowOfParts(props)
 
 end
 
-module.getParentFarEdge = getParentFarEdge
-module.createChildPart = createChildPart
+module.createPart = createPart
 module.createRowOfParts = createRowOfParts
 return module
