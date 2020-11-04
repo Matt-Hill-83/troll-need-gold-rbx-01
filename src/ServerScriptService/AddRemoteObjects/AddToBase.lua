@@ -41,7 +41,7 @@ function module.addRemoteObjects(part)
     local rowProps = {
         parent = sceneParent,
         partArray = scenes,
-        partNamePrefix,
+        partNamePrefix = partNamePrefix,
 
         size = sceneSize,
         xIncrement = 4,

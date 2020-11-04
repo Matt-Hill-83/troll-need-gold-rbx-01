@@ -74,14 +74,10 @@ function createRowOfParts(props)
         local yPosition = size.y / 2 + yOffset
         local zPosition = getParentFarEdge(calcEdgePropsZ) + zOffset
 
-        print('partNamePrefix' .. ' - start');
-        print(partNamePrefix);
-        print('partNamePrefix' .. ' - end');
-
         local newItem = createNewItemFunc(item, size)
         newItem.Position = Vector3.new(xPosition, yPosition, zPosition)
         newItem.Parent = parent
-        -- newItem.Name = partNamePrefix
+        newItem.Name = partNamePrefix .. ": " .. i
 
         rowOfParts[i] = newItem
     end
