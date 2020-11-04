@@ -26,7 +26,8 @@ function module.addRemoteObjects(part)
         partNamePrefix = "Scene",
         xIncrement = 2,
         parent = part,
-        funcForEachNewItem = funcForEachNewItem
+        funcForEachNewItem = funcForEachNewItem,
+        xOffset = 2
     }
 
     Utils.createRowOfParts(rowProps)

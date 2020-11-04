@@ -2,16 +2,14 @@ local module = {}
 
 function getParentFarEdge(props)
     local parent = props.parent
-    local childWidth = props.childWidth
+    local childLength = props.childLength
     local axis = props.axis or 'X'
-
-    -- if not axis then axis = 'X' end
 
     local parentPosition = CFrame.new(parent.Position)
     local parentSize = parent.Size
-    local parentLeftEdge = parentPosition[axis] + parentSize[axis] / 2
-    local outputX = parentLeftEdge - childWidth / 2
-    return outputX
+    local parentFarEdge = parentPosition[axis] + parentSize[axis] / 2
+    local alignedValue = parentFarEdge - childLength / 2
+    return alignedValue
 end
 
 function createChildPart(props)
@@ -48,20 +46,36 @@ function createRowOfParts(props)
     local partNamePrefix = props.partNamePrefix
     local xIncrement = props.xIncrement
     local funcForEachNewItem = props.funcForEachNewItem
+    local xOffset = props.xOffset or 0
 
     local rowOfParts = {}
 
     for i, scene in ipairs(partArray) do
 
-        local calcEdgeProps = {
+        local calcEdgePropsX = {
             parent = parent,
-            childWidth = size.width,
+            childLength = size.width,
             axis = "X"
         }
-        local xPositionStart = getParentFarEdge(calcEdgeProps)
+
+        local calcEdgePropsZ = {
+            parent = parent,
+            childLength = size.depth,
+            -- childLength = size.depth,
+            axis = "Z"
+        }
+
+        local xPositionStart = getParentFarEdge(calcEdgePropsX) - xOffset
+        local zPositionStart = getParentFarEdge(calcEdgePropsZ)
         local xPosition = xPositionStart - (i - 1) * (size.width + xIncrement)
 
-        local position = {x = xPosition, y = size.height / 2, z = 0}
+        local position = {
+            x = xPosition,
+            y = size.height / 2,
+            z = 0
+            -- z = zPositionStart
+        }
+        -- local position = {x = xPosition, y = size.height / 2, z = 0}
         local itemProps = {
             name = partNamePrefix .. ": " .. i,
             size = size,
