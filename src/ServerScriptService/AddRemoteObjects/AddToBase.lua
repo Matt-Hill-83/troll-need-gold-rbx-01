@@ -23,7 +23,8 @@ function module.addRemoteObjects(part)
             parent = parent,
             zOffset = -sceneDepth,
             xOffset = -scenePadding,
-            yOffset = scenePadding * 2
+            yOffset = scenePadding * 2,
+            createNewItemFunc = Utils.createChildPart
         }
         Utils.createRowOfParts(childProps)
     end
