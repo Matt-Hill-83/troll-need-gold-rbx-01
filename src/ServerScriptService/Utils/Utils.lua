@@ -17,7 +17,6 @@ function createChildPart(props)
     local size = props.size
     local parent = props.parent
     local position = props.position
-    local color = props.color
     local decal = props.decal
     local name = props.name
 
@@ -26,12 +25,12 @@ function createChildPart(props)
     newPart.Size = Vector3.new(size.width, size.height, size.depth)
     newPart.Anchored = true
     newPart.Name = name
-    newPart.BrickColor = color
+    newPart.BrickColor = BrickColor.new("Light blue")
     newPart.Position = Vector3.new(position.x, position.y, position.z)
 
     if decal then
         local newDecal = Instance.new("Decal", newPart)
-        newDecal.Texture = decal
+        newDecal.Texture = 'rbxassetid://' .. decal
         newDecal.Face = 'Front'
     end
 
@@ -80,18 +79,10 @@ function createRowOfParts(props)
             size = size,
             position = position,
             parent = parent,
-            -- color = scene.color,
-            color = BrickColor.new("Light blue"),
             decal = scene.decal
         }
 
         local newItem = createChildPart(itemProps)
-
-        local char01 = {
-            name = "Britta",
-            decal = 'rbxassetid://5897424121',
-            color = BrickColor.new("Light blue")
-        }
 
         local childItems = scene.characters
         -- local childItems = scene.frame.characters
