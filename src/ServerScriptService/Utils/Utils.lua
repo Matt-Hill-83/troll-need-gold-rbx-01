@@ -7,7 +7,6 @@ function getParentFarEdge(props)
 
     print(axis)
     local parentPosition = parent.CFrame
-    -- local parentPosition = CFrame.new(parent.Position)
     local parentSize = parent.Size
     local parentFarEdge = parentPosition[axis] + parentSize[axis] / 2
     local alignedValue = parentFarEdge - childLength / 2
@@ -32,10 +31,6 @@ function createChildPart(props)
     newPart.Name = name
     newPart.BrickColor = color
     newPart.Position = Vector3.new(position.x, position.y, position.z)
-    -- newPart.Position = parent.Position +
-    --                        Vector3.new(position.x, position.y, position.z)
-    -- newPart.CFrame = parent.CFrame +
-    --                      Vector3.new(position.x, position.y, position.z)
 
     if decal then
         local newDecal = Instance.new("Decal", newPart)
@@ -69,7 +64,6 @@ function createRowOfParts(props)
         local calcEdgePropsZ = {
             parent = parent,
             childLength = size.depth,
-            -- childLength = size.depth,
             axis = "Z"
         }
 
@@ -83,10 +77,8 @@ function createRowOfParts(props)
         local position = {
             x = xPosition,
             y = size.height / 2,
-            -- z = 0
             z = zPositionStart
         }
-        -- local position = {x = xPosition, y = size.height / 2, z = 0}
         local itemProps = {
             name = partNamePrefix .. ": " .. i,
             size = size,
