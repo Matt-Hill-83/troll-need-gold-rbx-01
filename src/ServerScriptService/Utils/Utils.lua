@@ -1,6 +1,9 @@
 local module = {}
 
-function getParentFarEdge(parent, childWidth, axis)
+function getParentFarEdge(props)
+    local parent = props.parent
+    local childWidth = props.childWidth
+    local axis = props.axis
 
     if not axis then axis = 'X' end
 
@@ -50,7 +53,12 @@ function createRowOfParts(props)
 
     for i, scene in ipairs(partArray) do
 
-        local xPositionStart = getParentFarEdge(parent, size.width, "X")
+        local calcEdgeProps = {
+            parent = parent,
+            childWidth = size.width,
+            axis = "X"
+        }
+        local xPositionStart = getParentFarEdge(calcEdgeProps)
         local xPosition = xPositionStart - (i - 1) * (size.width + xIncrement)
 
         local position = {x = xPosition, y = size.height / 2, z = 0}
