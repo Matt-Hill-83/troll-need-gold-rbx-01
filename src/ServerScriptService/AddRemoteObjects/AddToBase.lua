@@ -10,9 +10,10 @@ function module.addRemoteObjects(part)
     local sceneDepth = 1
     local characterDepth = 1
     local basePadding = 4
+    local scenePadding = 1
 
     funcForEachNewItem = function(parent, scene)
-        local childItems = scene.frames[1].characters
+        local childItems = scene.frames[2].characters
 
         local childProps = {
             size = {width = 8, height = 8, depth = characterDepth},
@@ -20,7 +21,9 @@ function module.addRemoteObjects(part)
             partNamePrefix = "Character",
             xIncrement = 1,
             parent = parent,
-            zOffset = -sceneDepth
+            zOffset = -sceneDepth,
+            xOffset = -scenePadding,
+            yOffset = scenePadding * 2
         }
         Utils.createRowOfParts(childProps)
     end

@@ -45,7 +45,6 @@ function createRowOfParts(props)
     local size = props.size
     local partNamePrefix = props.partNamePrefix
     local xIncrement = props.xIncrement
-    local childItems = props.childItems
     local funcForEachNewItem = props.funcForEachNewItem
     local xOffset = props.xOffset or 0
     local yOffset = props.yOffset or 0

@@ -11,7 +11,8 @@ function module.getScenesConfig()
     local characters = {char01, char02}
 
     local frame01 = {characters = characters, items = {item01, item02}}
-    local frames = {frame01, frame01}
+    local frame02 = {characters = {item01, item02}}
+    local frames = {frame01, frame02}
     local scene01 = {
         decalId = '5902121857',
         name = "log",
