@@ -7,14 +7,18 @@ local Utils = require(Sss.Source.Utils.Utils)
 local scenes = config.getScenesConfig()
 
 function module.addRemoteObjects(part)
+    local sceneDepth = 1
+    local characterDepth = 1
+    local basePadding = 4
+
     funcForEachNewItem = function(parent, childItems)
-        local childDepth = 2
         local childProps = {
-            size = {width = 4, height = 8, depth = childDepth},
+            size = {width = 8, height = 8, depth = characterDepth},
             partArray = childItems,
             partNamePrefix = "Scene",
-            xIncrement = 2,
-            parent = parent
+            xIncrement = 4,
+            parent = parent,
+            zOffset = -sceneDepth
         }
         Utils.createRowOfParts(childProps)
         return
@@ -22,12 +26,13 @@ function module.addRemoteObjects(part)
 
     local rowProps = {
         partArray = scenes,
-        size = {width = 20, height = 16, depth = 1},
+        size = {width = 48, height = 24, depth = sceneDepth},
         partNamePrefix = "Scene",
-        xIncrement = 2,
+        xIncrement = 4,
         parent = part,
         funcForEachNewItem = funcForEachNewItem,
-        xOffset = 2
+        xOffset = -basePadding,
+        zOffset = -basePadding
     }
 
     Utils.createRowOfParts(rowProps)

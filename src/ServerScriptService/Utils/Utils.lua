@@ -22,9 +22,6 @@ function createChildPart(props)
     local name = props.name
 
     local newPart = Instance.new("Part", parent)
-    print('position.z');
-    print(position.z);
-    print('position.z');
 
     newPart.Size = Vector3.new(size.width, size.height, size.depth)
     newPart.Anchored = true
@@ -50,6 +47,8 @@ function createRowOfParts(props)
     local xIncrement = props.xIncrement
     local funcForEachNewItem = props.funcForEachNewItem
     local xOffset = props.xOffset or 0
+    local yOffset = props.yOffset or 0
+    local zOffset = props.zOffset or 0
 
     local rowOfParts = {}
 
@@ -67,8 +66,8 @@ function createRowOfParts(props)
             axis = "Z"
         }
 
-        local xPositionStart = getParentFarEdge(calcEdgePropsX) - xOffset
-        local zPositionStart = getParentFarEdge(calcEdgePropsZ)
+        local xPositionStart = getParentFarEdge(calcEdgePropsX) + xOffset
+        local zPositionStart = getParentFarEdge(calcEdgePropsZ) + zOffset
         local xPosition = xPositionStart - (i - 1) * (size.width + xIncrement)
 
         print('zPositionStart');
