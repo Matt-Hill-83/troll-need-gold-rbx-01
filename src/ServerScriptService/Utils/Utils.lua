@@ -18,9 +18,6 @@ function createChildPart(props)
     local name = props.name
 
     local newPart = Instance.new("Part", parent)
-    print('parent');
-    print(parent);
-    print('parent');
 
     newPart.Size = Vector3.new(size.width, size.height, size.depth)
     newPart.Anchored = true
@@ -46,6 +43,7 @@ function createRowOfParts(props)
     local partNamePrefix = props.partNamePrefix
     local childProps = props.childProps
     local xIncrement = props.xIncrement
+    local funcForEachNewItem = props.funcForEachNewItem
 
     local rowOfParts = {}
 
@@ -66,17 +64,7 @@ function createRowOfParts(props)
 
         local newItem = createChildPart(itemProps)
 
-        -- local newSurfaceGui = Instance.new("SurfaceGui", newItem)
-        -- local newLabel = Instance.new("TextLabel", newSurfaceGui)
-
-        -- newLabel.Size = UDim2.new(0, 10, 0, 10)
-        -- newLabel.Position = UDim2.new(0, 0, 0, 0)
-        -- newLabel.Text = scene['name']
-
-        if (childProps) then
-            childProps.parent = newItem
-            local newCharacter = createChildPart(childProps)
-        end
+        if (funcForEachNewItem) then funcForEachNewItem(newItem) end
 
         rowOfParts[i] = newItem
     end
