@@ -9,9 +9,10 @@ function module.getScenesConfig()
     local item02 = {name = "Freckle", decalId = '5897430768'}
 
     local characters = {char01, char02}
+    local items = {item01, item02}
 
-    local frame01 = {characters = characters, items = {item01, item02}}
-    local frame02 = {characters = characters, items = {item01, item02}}
+    local frame01 = {characters = characters, items = items}
+    local frame02 = {characters = characters, items = items}
 
     local scene02 = {
         decalId = '5902110558',
@@ -22,7 +23,7 @@ function module.getScenesConfig()
     local scene01 = {
         decalId = '5902121857',
         name = "log",
-        frames = {frame02, frame02}
+        frames = {frame01, frame02}
     }
     local scenes = {scene01, scene02}
 
