@@ -21,7 +21,6 @@ function module.addRemoteObjects(part)
             zOffset = -sceneDepth
         }
         Utils.createRowOfParts(childProps)
-        return
     end
 
     local rowProps = {

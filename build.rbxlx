@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-7.95114231</X>
-					<Y>49.5902367</Y>
-					<Z>-71.1314011</Z>
-					<R00>-0.993173957</R00>
-					<R01>0.01523179</R01>
-					<R02>-0.115644075</R02>
-					<R10>9.31322575e-10</R10>
-					<R11>0.991437256</R11>
-					<R12>0.130584821</R12>
-					<R20>0.116642877</R20>
-					<R21>0.129693449</R21>
-					<R22>-0.984669566</R22>
+					<X>6.85740852</X>
+					<Y>-2.24804926</Y>
+					<Z>4.18406773</Z>
+					<R00>0.520854354</R00>
+					<R01>0.230053112</R01>
+					<R02>0.822062254</R02>
+					<R10>-7.4505806e-09</R10>
+					<R11>0.963001847</R11>
+					<R12>-0.269494891</R12>
+					<R20>-0.853645563</R20>
+					<R21>0.140367582</R21>
+					<R22>0.501583695</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-7.71985435</X>
-					<Y>49.3290672</Y>
-					<Z>-69.1620636</Z>
+					<X>6.85740852</X>
+					<Y>-2.24804926</Y>
+					<Z>4.18406773</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -893,85 +893,7 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 								<BinaryString name="Tags"></BinaryString>
 							</Properties>
 						</Item>
-						<Item class="Weld" referent="RBX3938092138114b8c8f42b8125c8143f3">
-							<Properties>
-								<BinaryString name="AttributesSerialize"></BinaryString>
-								<CoordinateFrame name="C0">
-									<X>0</X>
-									<Y>-4.5</Y>
-									<Z>0</Z>
-									<R00>1</R00>
-									<R01>0</R01>
-									<R02>0</R02>
-									<R10>0</R10>
-									<R11>0</R11>
-									<R12>-1</R12>
-									<R20>0</R20>
-									<R21>1</R21>
-									<R22>0</R22>
-								</CoordinateFrame>
-								<CoordinateFrame name="C1">
-									<X>-11.5</X>
-									<Y>0.5</Y>
-									<Z>8.50000763</Z>
-									<R00>1</R00>
-									<R01>0</R01>
-									<R02>0</R02>
-									<R10>0</R10>
-									<R11>0</R11>
-									<R12>-1</R12>
-									<R20>0</R20>
-									<R21>1</R21>
-									<R22>0</R22>
-								</CoordinateFrame>
-								<bool name="Enabled">true</bool>
-								<string name="Name">Weld</string>
-								<Ref name="Part0">RBX9c8cd11838b74d629896fe54622af60c</Ref>
-								<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
-								<int64 name="SourceAssetId">-1</int64>
-								<BinaryString name="Tags"></BinaryString>
-							</Properties>
-						</Item>
 					</Item>
-				</Item>
-				<Item class="Weld" referent="RBX8320e78ba4684790bfa94a4114835f2a">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<CoordinateFrame name="C0">
-							<X>0</X>
-							<Y>-15</Y>
-							<Z>0</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>0</R11>
-							<R12>-1</R12>
-							<R20>0</R20>
-							<R21>1</R21>
-							<R22>0</R22>
-						</CoordinateFrame>
-						<CoordinateFrame name="C1">
-							<X>-32</X>
-							<Y>0.5</Y>
-							<Z>9.5</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>0</R11>
-							<R12>-1</R12>
-							<R20>0</R20>
-							<R21>1</R21>
-							<R22>0</R22>
-						</CoordinateFrame>
-						<bool name="Enabled">true</bool>
-						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXa34931ee8eb546829020f4aac6ef52fe</Ref>
-						<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
 				</Item>
 			</Item>
 		</Item>
@@ -1082,6 +1004,186 @@ remoteCode.addRemoteObjects(base)
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
+		</Item>
+		<Item class="ModuleScript" referent="RBX46f1e0bd2ae646c99fc796d27357e67e">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">FirebaseService</string>
+				<string name="ScriptGuid">{A25CA522-E3D9-4531-9BC4-936A62878884}</string>
+				<ProtectedString name="Source"><![CDATA[--[[== Usage:
+	This module supports Documentation Reader by ProbableAI.
+
+	This module is made to mimic the DatastoreService. It's made so it's easily swapable between
+	Datastore and Firebase Realtime Database just by adding .GetDatastore().
+	Understand how to use DatastoreService and this should look really similar.
+	
+	The benefits of using FirebaseService is that you can get specific data from within the database JSON hierarchy.
+		E.g. Firebase:GetAsync("Profile/Stats/Money");
+
+	FirebaseService FirebaseService
+		Functions:
+			void FirebaseService:SetUseFirebase(bool);
+			Firebase FirebaseService:GetFirebase(string name, string scope);
+	
+	Firebase Firebase
+		Functions:
+			GlobalDatastore Firebase.GetDatastore();
+			Variant Firebase:GetAsync(string directory);
+			void Firebase:SetAsync(string directory, variant value, table header);
+			void Firebase:RemoveAsync(string directory);
+			number Firebase:IncrementAsync(string directory, number delta);
+			void Firebase:UpdateAsync(string directory, function callback);
+	
+	Please set your database link and authentication token before using it in Configurations.
+	
+	Enjoy			
+	~MXKhronos
+--]]
+--== Configuration;
+local defaultDatabase = "https://example.firebaseio.com/"; -- Set your database link
+local authenticationToken = "tHiSIsAFakeAuTHEntiCAtiONToKEN"; -- Authentication Token
+
+
+--== Variables;
+local HttpService = game:GetService("HttpService");
+local DataStoreService = game:GetService("DataStoreService");
+
+local FirebaseService = {};
+local UseFirebase = true;
+
+
+--== Script;
+
+--[[**
+	Sets whether Firebase's data can be updated from server. Data can still be read from realtime Database regardless.
+	@param value bool Using Firebase
+**--]]
+function FirebaseService:SetUseFirebase(value)
+	UseFirebase = value and true or false;
+end
+
+--[[**
+	Sets whether Firebase's data can be updated from server. Data can still be read from realtime Database regardless.
+	@param name string Given name of a JSON Object in the Realtime Database.
+	@param scope string Optional scope.
+	@returns FirebaseService FirebaseService
+**--]]
+function FirebaseService:GetFirebase(name, database)
+	database = database or defaultDatabase;
+	local datastore = DataStoreService:GetDataStore(name);
+	
+	local databaseName = database..HttpService:UrlEncode(name);
+	local authentication = ".json?auth="..authenticationToken;
+	
+	local Firebase = {};
+	
+	--[[**
+		A method to get a datastore with the same name and scope.
+		@returns GlobalDataStore GlobalDataStore
+	**--]]
+	function Firebase.GetDatastore()
+		return datastore;
+	end
+	
+	--[[**
+		Returns the value of the entry in the database JSON Object with the given key.
+		@param directory string Directory of the value that you are look for. E.g. "PlayerSaves" or "PlayerSaves/Stats".
+		@returns FirebaseService FirebaseService
+	**--]]
+	function Firebase:GetAsync(directory)
+		local data = nil;
+		
+		--== Firebase Get;
+		local getTick = tick();
+		local tries = 0; repeat until pcall(function() tries = tries +1;
+			data = HttpService:GetAsync(databaseName..HttpService:UrlEncode(directory and "/"..directory or "")..authentication, true);
+		end) or tries > 2;
+		if type(data) == "string" then
+			if data:sub(1,1) == '"' then
+				return data:sub(2, data:len()-1);
+			elseif data:len() <= 0 then
+				return nil;
+			end
+		end
+		return tonumber(data) or data ~= "null" and data or nil;
+	end
+	
+	--[[**
+		Sets the value of the key. This overwrites any existing data stored in the key.
+		@param directory string Directory of the value that you are look for. E.g. "PlayerSaves" or "PlayerSaves/Stats".
+		@param value variant Value can be any basic data types. It's recommened you HttpService:JSONEncode() your values before passing it through.
+		@param header table Optional HTTPRequest Header overwrite. Default is {["X-HTTP-Method-Override"]="PUT"}.
+	**--]]
+	function Firebase:SetAsync(directory, value, header)
+		if not UseFirebase then return end
+		if value == "[]" then self:RemoveAsync(directory); return end;
+		
+		--== Firebase Set;
+		header = header or {["X-HTTP-Method-Override"]="PUT"};
+		local replyJson = "";
+		if type(value) == "string" and value:len() >= 1 and value:sub(1,1) ~= "{" and value:sub(1,1) ~= "[" then
+			value = '"'..value..'"';
+		end
+		local success, errorMessage = pcall(function()
+		replyJson = HttpService:PostAsync(databaseName..HttpService:UrlEncode(directory and "/"..directory or "")..authentication, value,
+			Enum.HttpContentType.ApplicationUrlEncoded, false, header);
+		end);
+		if not success then
+			warn("FirebaseService>> [ERROR] "..errorMessage);
+			pcall(function()
+				replyJson = HttpService:JSONDecode(replyJson or "[]");
+			end)
+		end
+	end
+	
+	--[[**
+		Removes the given key from the data store and returns the value associated with that key.
+		@param directory string Directory of the value that you are look for. E.g. "PlayerSaves" or "PlayerSaves/Stats".
+	**--]]
+	function Firebase:RemoveAsync(directory)
+		if not UseFirebase then return end
+		self:SetAsync(directory, "", {["X-HTTP-Method-Override"]="DELETE"});
+	end
+	
+	--[[**
+		Increments the value of a particular key and returns the incremented value.
+		@param directory string Directory of the value that you are look for. E.g. "PlayerSaves" or "PlayerSaves/Stats".
+		@param delta number The incrementation rate.
+	**--]]
+	function Firebase:IncrementAsync(directory, delta)
+		delta = delta or 1;
+		if type(delta) ~= "number" then warn("FirebaseService>> increment delta is not a number for key ("..directory.."), delta(",delta,")"); return end;
+		local data = self:GetAsync(directory) or 0;
+		if data and type(data) == "number" then
+			data = data+delta;
+			self:SetAsync(directory, data);
+		else
+			warn("FirebaseService>> Invalid data type to increment for key ("..directory..")");
+		end
+		return data;
+	end
+	
+	--[[**
+		Retrieves the value of a key from a data store and updates it with a new value.
+		@param directory string Directory of the value that you are look for. E.g. "PlayerSaves" or "PlayerSaves/Stats".
+		@param callback function Works similarly to Roblox's GlobalDatastore:UpdateAsync().
+	**--]]
+	function Firebase:UpdateAsync(directory, callback)
+		local data = self:GetAsync(directory);
+		local callbackData = callback(data);
+		if callbackData then
+			self:SetAsync(directory, callbackData);
+		end
+	end
+	
+	return Firebase;
+end
+
+return FirebaseService;]]></ProtectedString>
+				<int64 name="SourceAssetId">3348877968</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
 		</Item>
 	</Item>
 	<Item class="SoundService" referent="RBX7845308c7ca3451eaa9eca1a685d0279">
@@ -1610,14 +1712,18 @@ local Utils = require(Sss.Source.Utils.Utils)
 local scenes = config.getScenesConfig()
 
 function module.addRemoteObjects(part)
+    local sceneDepth = 1
+    local characterDepth = 1
+    local basePadding = 4
+
     funcForEachNewItem = function(parent, childItems)
-        local childDepth = 2
         local childProps = {
-            size = {width = 4, height = 8, depth = childDepth},
+            size = {width = 8, height = 8, depth = characterDepth},
             partArray = childItems,
-            partNamePrefix = "Scene",
-            xIncrement = 2,
-            parent = parent
+            partNamePrefix = "Character",
+            xIncrement = 1,
+            parent = parent,
+            zOffset = -sceneDepth
         }
         Utils.createRowOfParts(childProps)
         return
@@ -1625,12 +1731,13 @@ function module.addRemoteObjects(part)
 
     local rowProps = {
         partArray = scenes,
-        size = {width = 20, height = 16, depth = 1},
+        size = {width = 48, height = 24, depth = sceneDepth},
         partNamePrefix = "Scene",
-        xIncrement = 2,
+        xIncrement = 4,
         parent = part,
         funcForEachNewItem = funcForEachNewItem,
-        xOffset = 2
+        xOffset = -basePadding,
+        zOffset = -basePadding
     }
 
     Utils.createRowOfParts(rowProps)
@@ -1654,27 +1761,27 @@ return module
 
 function module.getScenesConfig()
 
-    local char01 = {
-        name = "Britta",
-        decal = 'rbxassetid://5902121857',
-        color = BrickColor.new("Light blue")
-    }
+    local char01 = {name = "Raven", decal = '5897424121'}
 
-    local frame01 = {characters = {char01, char01}}
+    local char02 = {name = "Britta", decal = '5897433108'}
+
+    local item01 = {name = "Troll King", decal = '5897428591'}
+
+    local item02 = {name = "Freckle", decal = '5897430768'}
+
+    local characters = {char01, char02}
+
+    local frame01 = {characters = characters, items = {item01, item02}}
     local frames = {frame01, frame01}
     local scene01 = {
-        decal = 'rbxassetid://5902121857',
+        decal = '5902121857',
         name = "log",
-        frames = {frames},
-        color = BrickColor.new("Light blue")
+        -- frames = frames,
+        frames = frames,
+        characters = characters
     }
-    local scene02 = {
-        decal = 'rbxassetid://5902121857',
-        name = "tree",
-        frames = {frames},
-        color = BrickColor.new("Baby blue")
-    }
-    local scenes = {scene01, scene02, scene01, scene02}
+
+    local scenes = {scene01}
 
     return scenes
 
@@ -1742,24 +1849,20 @@ function createChildPart(props)
     local size = props.size
     local parent = props.parent
     local position = props.position
-    local color = props.color
     local decal = props.decal
     local name = props.name
 
     local newPart = Instance.new("Part", parent)
-    print('position.z');
-    print(position.z);
-    print('position.z');
 
     newPart.Size = Vector3.new(size.width, size.height, size.depth)
     newPart.Anchored = true
     newPart.Name = name
-    newPart.BrickColor = color
+    newPart.BrickColor = BrickColor.new("Light blue")
     newPart.Position = Vector3.new(position.x, position.y, position.z)
 
     if decal then
         local newDecal = Instance.new("Decal", newPart)
-        newDecal.Texture = decal
+        newDecal.Texture = 'rbxassetid://' .. decal
         newDecal.Face = 'Front'
     end
 
@@ -1775,6 +1878,8 @@ function createRowOfParts(props)
     local xIncrement = props.xIncrement
     local funcForEachNewItem = props.funcForEachNewItem
     local xOffset = props.xOffset or 0
+    local yOffset = props.yOffset or 0
+    local zOffset = props.zOffset or 0
 
     local rowOfParts = {}
 
@@ -1792,13 +1897,10 @@ function createRowOfParts(props)
             axis = "Z"
         }
 
-        local xPositionStart = getParentFarEdge(calcEdgePropsX) - xOffset
-        local zPositionStart = getParentFarEdge(calcEdgePropsZ)
+        local xPositionStart = getParentFarEdge(calcEdgePropsX) + xOffset
+        local zPositionStart = getParentFarEdge(calcEdgePropsZ) + zOffset
         local xPosition = xPositionStart - (i - 1) * (size.width + xIncrement)
 
-        print('zPositionStart');
-        print(zPositionStart);
-        print('zPositionStart');
         local position = {
             x = xPosition,
             y = size.height / 2,
@@ -1809,19 +1911,14 @@ function createRowOfParts(props)
             size = size,
             position = position,
             parent = parent,
-            color = scene.color,
             decal = scene.decal
         }
 
         local newItem = createChildPart(itemProps)
 
-        local char01 = {
-            name = "Britta",
-            decal = 'rbxassetid://5897424121',
-            color = BrickColor.new("Light blue")
-        }
-
-        local childItems = {char01, char01}
+        local childItems = scene.characters
+        -- local childItems = scene.frame.characters
+        -- local childItems = {char01, char01}
 
         if (funcForEachNewItem) then
             funcForEachNewItem(newItem, childItems)
