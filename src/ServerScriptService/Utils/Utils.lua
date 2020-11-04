@@ -30,6 +30,10 @@ function createPart(props)
     newPart.Anchored = true
     newPart.BrickColor = BrickColor.new("Light blue")
 
+    print('decalId' .. ' - start');
+    print(decalId or "none----------------------------------");
+    print('decalId' .. ' - end');
+
     if decalId then
         local newDecal = Instance.new("Decal", newPart)
         newDecal.Texture = 'rbxassetid://' .. decalId

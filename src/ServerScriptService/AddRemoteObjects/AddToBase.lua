@@ -55,7 +55,7 @@ function module.addRemoteObjects(part)
     local sceneParent = part
     local partNamePrefix = "Scene"
 
-    local frameIndex = 2
+    local frameIndex = 1
 
     local rowProps = {
         parent = sceneParent,
