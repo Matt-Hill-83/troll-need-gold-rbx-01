@@ -12,7 +12,7 @@ function module.addRemoteObjects(part)
     local basePadding = 4
     local scenePadding = 1
 
-    funcForEachNewItem = function(parent, scene)
+    updateScene = function(parent, scene)
         local childItems = scene.frames[2].characters
 
         local childProps = {
@@ -34,7 +34,7 @@ function module.addRemoteObjects(part)
         partNamePrefix = "Scene",
         xIncrement = 4,
         parent = part,
-        funcForEachNewItem = funcForEachNewItem,
+        updateEachNewItemFunc = updateScene,
         xOffset = -basePadding,
         zOffset = -basePadding
     }

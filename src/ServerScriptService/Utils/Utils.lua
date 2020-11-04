@@ -45,7 +45,7 @@ function createRowOfParts(props)
     local size = props.size
     local partNamePrefix = props.partNamePrefix
     local xIncrement = props.xIncrement
-    local funcForEachNewItem = props.funcForEachNewItem
+    local updateEachNewItemFunc = props.updateEachNewItemFunc
     local xOffset = props.xOffset or 0
     local yOffset = props.yOffset or 0
     local zOffset = props.zOffset or 0
@@ -85,8 +85,8 @@ function createRowOfParts(props)
 
         local newItem = createChildPart(itemProps)
 
-        if (funcForEachNewItem) then
-            funcForEachNewItem(newItem, scene)
+        if (updateEachNewItemFunc) then
+            updateEachNewItemFunc(newItem, scene)
             --
         end
         rowOfParts[i] = newItem
