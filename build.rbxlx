@@ -361,7 +361,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<CoordinateFrame name="CFrame">
 						<X>32</X>
 						<Y>1</Y>
-						<Z>-16</Z>
+						<Z>-24</Z>
 						<R00>-1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
@@ -442,7 +442,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<float name="Transparency">0</float>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBXb370c00732c74547b3dc2274c045a387">
+				<Item class="Weld" referent="RBX58248291e4af481cac3e1b9f0592d68c">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
@@ -462,7 +462,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<CoordinateFrame name="C1">
 							<X>32</X>
 							<Y>0.5</Y>
-							<Z>-16</Z>
+							<Z>-24</Z>
 							<R00>-1</R00>
 							<R01>0</R01>
 							<R02>-0</R02>
@@ -1727,9 +1727,9 @@ return {a = '234'}
 function getParentFarEdge(props)
     local parent = props.parent
     local childWidth = props.childWidth
-    local axis = props.axis
+    local axis = props.axis or 'X'
 
-    if not axis then axis = 'X' end
+    -- if not axis then axis = 'X' end
 
     local parentPosition = CFrame.new(parent.Position)
     local parentSize = parent.Size

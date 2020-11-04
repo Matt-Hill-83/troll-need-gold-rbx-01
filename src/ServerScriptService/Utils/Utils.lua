@@ -3,9 +3,9 @@ local module = {}
 function getParentFarEdge(props)
     local parent = props.parent
     local childWidth = props.childWidth
-    local axis = props.axis
+    local axis = props.axis or 'X'
 
-    if not axis then axis = 'X' end
+    -- if not axis then axis = 'X' end
 
     local parentPosition = CFrame.new(parent.Position)
     local parentSize = parent.Size
