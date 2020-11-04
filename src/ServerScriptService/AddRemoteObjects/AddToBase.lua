@@ -12,13 +12,12 @@ createNewPart = function(item, size)
     return Utils.createPart(sceneProps)
 end
 
-addChildParts = function(parent, scene)
+renderCharacters = function(parent, items)
     local scenePadding = 1
-    local childItems = scene.frames[2].characters
 
     local rowProps = {
         parent = parent,
-        partArray = childItems,
+        partArray = items,
         partNamePrefix = "Character",
 
         size = {x = 8, y = 8, z = 1},
@@ -28,13 +27,26 @@ addChildParts = function(parent, scene)
         yOffset = scenePadding * 2,
         createNewItemFunc = createNewPart
     }
+
     Utils.createRowOfParts(rowProps)
 end
 
-createNewScene = function(item, size)
-    local newPart = createNewPart(item, size)
-    addChildParts(newPart, item)
-    return newPart
+renderItems = function(parent, items)
+    local scenePadding = 1
+
+    local rowProps = {
+        parent = parent,
+        partArray = items,
+        partNamePrefix = "Item",
+
+        size = {x = 6, y = 6, z = 1},
+        xIncrement = 1,
+        zOffset = -sceneDepth,
+        xOffset = -30,
+        yOffset = scenePadding * 2,
+        createNewItemFunc = createNewPart
+    }
+    Utils.createRowOfParts(rowProps)
 end
 
 function module.addRemoteObjects(part)
@@ -42,6 +54,8 @@ function module.addRemoteObjects(part)
     local sceneSize = {x = 48, y = 24, z = sceneDepth}
     local sceneParent = part
     local partNamePrefix = "Scene"
+
+    local frameIndex = 2
 
     local rowProps = {
         parent = sceneParent,
@@ -53,10 +67,18 @@ function module.addRemoteObjects(part)
         xOffset = -basePadding,
         zOffset = -basePadding,
 
-        createNewItemFunc = createNewScene
+        createNewItemFunc = createNewPart
     }
 
-    Utils.createRowOfParts(rowProps)
+    local rowOfScenes = Utils.createRowOfParts(rowProps)
+    for i, newScene in ipairs(rowOfScenes) do
+        local scene = scenes[i]
+        local characters = scene.frames[frameIndex].characters
+        local items = scene.frames[frameIndex].items
+        renderCharacters(newScene, characters)
+        renderItems(newScene, items)
+        -- 
+    end
 
 end
 

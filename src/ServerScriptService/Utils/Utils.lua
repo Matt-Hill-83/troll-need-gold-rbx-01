@@ -42,6 +42,8 @@ end
 
 function createRowOfParts(props)
     local partArray = props.partArray
+    -- if not partArray or not partArray[0] then return {} end
+
     local parent = props.parent
     local partNamePrefix = props.partNamePrefix
 

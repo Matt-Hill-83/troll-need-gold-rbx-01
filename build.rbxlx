@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>6.85740852</X>
-					<Y>-2.24804926</Y>
-					<Z>4.18406773</Z>
-					<R00>0.520854354</R00>
-					<R01>0.230053112</R01>
-					<R02>0.822062254</R02>
-					<R10>-7.4505806e-09</R10>
-					<R11>0.963001847</R11>
-					<R12>-0.269494891</R12>
-					<R20>-0.853645563</R20>
-					<R21>0.140367582</R21>
-					<R22>0.501583695</R22>
+					<X>-63.7914581</X>
+					<Y>31.9760723</Y>
+					<Z>-88.6405869</Z>
+					<R00>-0.995672464</R00>
+					<R01>0.0393712521</R01>
+					<R02>-0.0841799155</R02>
+					<R10>-0</R10>
+					<R11>0.905822873</R11>
+					<R12>0.423656642</R12>
+					<R20>0.0929319859</R20>
+					<R21>0.421823263</R21>
+					<R22>-0.901902914</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>6.85740852</X>
-					<Y>-2.24804926</Y>
-					<Z>4.18406773</Z>
+					<X>-63.6230965</X>
+					<Y>31.1287498</Y>
+					<Z>-86.8367615</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -197,14 +197,6 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-			<Item class="Folder" referent="RBX8c036761c06849529a4f0cd86c556ad5">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<string name="Name">Items</string>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
 			<Item class="SpawnLocation" referent="RBX66060b95b6e94f39af9353268593d5dd">
 				<Properties>
 					<bool name="AllowTeamChangeOnTouch">false</bool>
@@ -324,8 +316,8 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>-32</X>
-						<Y>15.5</Y>
+						<X>-31</X>
+						<Y>-15.5</Y>
 						<Z>9.5</Z>
 						<R00>1</R00>
 						<R01>0</R01>
@@ -416,8 +408,8 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>-22.5</X>
-							<Y>23</Y>
+							<X>-21.5</X>
+							<Y>-8</Y>
 							<Z>8.65500069</Z>
 							<R00>1</R00>
 							<R01>0</R01>
@@ -754,6 +746,45 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBX0296311a7b3847afa7e63e8dcd723219">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>0</X>
+								<Y>7.5</Y>
+								<Z>0</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>1</R12>
+								<R20>0</R20>
+								<R21>-1</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>-21.5</X>
+								<Y>-0.5</Y>
+								<Z>8.65500069</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>1</R12>
+								<R20>0</R20>
+								<R21>-1</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<bool name="Enabled">true</bool>
+							<string name="Name">Weld</string>
+							<Ref name="Part0">RBXe5c8c90c8f224ed480346b9a2b017c1b</Ref>
+							<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
 				</Item>
 				<Item class="Folder" referent="RBX67198b43499d41979233b4ccbdae3b4c">
 					<Properties>
@@ -775,8 +806,8 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 							<token name="BottomSurface">0</token>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
-								<X>-11.5</X>
-								<Y>5</Y>
+								<X>-10.5</X>
+								<Y>-26</Y>
 								<Z>8.50000763</Z>
 								<R00>1</R00>
 								<R01>0</R01>
@@ -894,6 +925,45 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 							</Properties>
 						</Item>
 					</Item>
+				</Item>
+				<Item class="Weld" referent="RBXd74c24f62d9241b4b57602102cba54da">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>0</X>
+							<Y>15</Y>
+							<Z>0</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>0</R11>
+							<R12>1</R12>
+							<R20>0</R20>
+							<R21>-1</R21>
+							<R22>0</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>-31</X>
+							<Y>-0.5</Y>
+							<Z>9.5</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>0</R11>
+							<R12>1</R12>
+							<R20>0</R20>
+							<R21>-1</R21>
+							<R22>0</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Weld</string>
+						<Ref name="Part0">RBXa34931ee8eb546829020f4aac6ef52fe</Ref>
+						<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
 				</Item>
 			</Item>
 		</Item>
@@ -1710,38 +1780,56 @@ local Sss = game:GetService("ServerScriptService")
 local config = require(Sss.Source.AddRemoteObjects.ScenesConfig)
 local Utils = require(Sss.Source.Utils.Utils)
 local scenes = config.getScenesConfig()
+local sceneDepth = 1
 
-function module.addRemoteObjects(part)
-    local sceneDepth = 1
-    local characterDepth = 1
-    local basePadding = 4
+createNewPart = function(item, size)
+    local sceneProps = {decalId = item.decalId, size = size}
+    return Utils.createPart(sceneProps)
+end
 
-    funcForEachNewItem = function(parent, scene)
-        local childItems = scene.frames[1].characters
-
-        local childProps = {
-            size = {width = 8, height = 8, depth = characterDepth},
-            partArray = childItems,
-            partNamePrefix = "Character",
-            xIncrement = 1,
-            parent = parent,
-            zOffset = -sceneDepth
-        }
-        Utils.createRowOfParts(childProps)
-    end
+addChildParts = function(parent, scene)
+    local scenePadding = 1
+    local childItems = scene.frames[2].characters
 
     local rowProps = {
+        parent = parent,
+        partArray = childItems,
+        partNamePrefix = "Character",
+
+        size = {x = 8, y = 8, z = 1},
+        xIncrement = 1,
+        zOffset = -sceneDepth,
+        xOffset = -scenePadding,
+        yOffset = scenePadding * 2,
+        createNewItemFunc = createNewPart
+    }
+    Utils.createRowOfParts(rowProps)
+end
+
+function module.addRemoteObjects(part)
+    local basePadding = 4
+    local sceneSize = {x = 48, y = 24, z = sceneDepth}
+    local sceneParent = part
+    local partNamePrefix = "Scene"
+
+    local rowProps = {
+        parent = sceneParent,
         partArray = scenes,
-        size = {width = 48, height = 24, depth = sceneDepth},
-        partNamePrefix = "Scene",
+        partNamePrefix = partNamePrefix,
+
+        size = sceneSize,
         xIncrement = 4,
-        parent = part,
-        funcForEachNewItem = funcForEachNewItem,
         xOffset = -basePadding,
-        zOffset = -basePadding
+        zOffset = -basePadding,
+
+        createNewItemFunc = createNewPart
     }
 
-    Utils.createRowOfParts(rowProps)
+    local rowOfScenes = Utils.createRowOfParts(rowProps)
+    for i, newScene in ipairs(rowOfScenes) do
+        addChildParts(newScene, scenes[i])
+        -- 
+    end
 
 end
 
@@ -1771,15 +1859,20 @@ function module.getScenesConfig()
     local characters = {char01, char02}
 
     local frame01 = {characters = characters, items = {item01, item02}}
-    local frames = {frame01, frame01}
+    local frame02 = {characters = {item01, item02}}
+
+    local scene02 = {
+        decalId = '5902110558',
+        name = "log",
+        frames = {frame02, frame02}
+    }
+
     local scene01 = {
         decalId = '5902121857',
         name = "log",
-        frames = frames,
-        characters = characters
+        frames = {frame01, frame02}
     }
-
-    local scenes = {scene01}
+    local scenes = {scene01, scene02}
 
     return scenes
 
@@ -1830,12 +1923,19 @@ return {a = '234'}
 						<string name="ScriptGuid">{841adf3c-5fb6-434a-8bbb-7f5708f6107c}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
+function module.mergeTables(t1, t2)
+    for k, v in pairs(t2) do
+        t1[k] = v
+        --
+    end
+    --
+end
+
 function getParentFarEdge(props)
     local parent = props.parent
     local childLength = props.childLength
     local axis = props.axis or 'X'
 
-    print(axis)
     local parentPosition = parent.CFrame
     local parentSize = parent.Size
     local parentFarEdge = parentPosition[axis] + parentSize[axis] / 2
@@ -1843,21 +1943,15 @@ function getParentFarEdge(props)
     return alignedValue
 end
 
-function createChildPart(props)
+function createPart(props)
     local size = props.size
-    local parent = props.parent
-    local position = props.position
     local decalId = props.decalId
-    local name = props.name
 
-    local newPart = Instance.new("Part", parent)
+    local newPart = Instance.new("Part")
 
-    newPart.Size = Vector3.new(size.width, size.height, size.depth)
+    newPart.Size = Vector3.new(size.x, size.y, size.z)
     newPart.Anchored = true
-    newPart.Name = name
     newPart.BrickColor = BrickColor.new("Light blue")
-    newPart.Position = Vector3.new(position.x, position.y, position.z)
-    -- newPart.Transparency = 0.3
 
     if decalId then
         local newDecal = Instance.new("Decal", newPart)
@@ -1872,54 +1966,42 @@ end
 function createRowOfParts(props)
     local partArray = props.partArray
     local parent = props.parent
-    local size = props.size
     local partNamePrefix = props.partNamePrefix
+
+    local size = props.size
     local xIncrement = props.xIncrement
-    local childItems = props.childItems
-    local funcForEachNewItem = props.funcForEachNewItem
     local xOffset = props.xOffset or 0
     local yOffset = props.yOffset or 0
     local zOffset = props.zOffset or 0
 
+    local createNewItemFunc = props.createNewItemFunc
+
     local rowOfParts = {}
 
-    for i, scene in ipairs(partArray) do
+    for i, item in ipairs(partArray) do
 
         local calcEdgePropsX = {
             parent = parent,
-            childLength = size.width,
+            childLength = size.x,
             axis = "X"
         }
 
         local calcEdgePropsZ = {
             parent = parent,
-            childLength = size.depth,
+            childLength = size.z,
             axis = "Z"
         }
 
         local xPositionStart = getParentFarEdge(calcEdgePropsX) + xOffset
-        local zPositionStart = getParentFarEdge(calcEdgePropsZ) + zOffset
-        local xPosition = xPositionStart - (i - 1) * (size.width + xIncrement)
+        local xPosition = xPositionStart - (i - 1) * (size.x + xIncrement)
+        local yPosition = size.y / 2 + yOffset
+        local zPosition = getParentFarEdge(calcEdgePropsZ) + zOffset
 
-        local position = {
-            x = xPosition,
-            y = size.height / 2 + yOffset,
-            z = zPositionStart
-        }
-        local itemProps = {
-            name = partNamePrefix .. ": " .. i,
-            size = size,
-            position = position,
-            parent = parent,
-            decalId = scene.decalId
-        }
+        local newItem = createNewItemFunc(item, size)
+        newItem.Position = Vector3.new(xPosition, yPosition, zPosition)
+        newItem.Parent = parent
+        newItem.Name = partNamePrefix .. ": " .. i
 
-        local newItem = createChildPart(itemProps)
-
-        if (funcForEachNewItem) then
-            funcForEachNewItem(newItem, scene)
-            --
-        end
         rowOfParts[i] = newItem
     end
 
@@ -1927,8 +2009,7 @@ function createRowOfParts(props)
 
 end
 
-module.getParentFarEdge = getParentFarEdge
-module.createChildPart = createChildPart
+module.createPart = createPart
 module.createRowOfParts = createRowOfParts
 return module
 ]]></ProtectedString>
