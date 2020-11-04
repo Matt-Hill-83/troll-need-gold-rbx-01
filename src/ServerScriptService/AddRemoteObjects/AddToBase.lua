@@ -9,27 +9,32 @@ local sceneDepth = 1
 
 createNewPart = function(item, size)
     local sceneProps = {decalId = item.decalId, size = size}
-    local newPart = Utils.createPart(sceneProps)
-    return newPart
+    return Utils.createPart(sceneProps)
 end
 
 addChildParts = function(parent, scene)
     local scenePadding = 1
     local childItems = scene.frames[2].characters
 
-    local childProps = {
+    local rowProps = {
         parent = parent,
-        size = {x = 8, y = 8, z = 1},
         partArray = childItems,
         partNamePrefix = "Character",
 
+        size = {x = 8, y = 8, z = 1},
         xIncrement = 1,
         zOffset = -sceneDepth,
         xOffset = -scenePadding,
         yOffset = scenePadding * 2,
         createNewItemFunc = createNewPart
     }
-    Utils.createRowOfParts(childProps)
+    Utils.createRowOfParts(rowProps)
+end
+
+createNewScene = function(item, size)
+    local newPart = createNewPart(item, size)
+    addChildParts(newPart, item)
+    return newPart
 end
 
 function module.addRemoteObjects(part)
@@ -48,7 +53,7 @@ function module.addRemoteObjects(part)
         xOffset = -basePadding,
         zOffset = -basePadding,
 
-        createNewItemFunc = createNewPart
+        createNewItemFunc = createNewScene
     }
 
     Utils.createRowOfParts(rowProps)
