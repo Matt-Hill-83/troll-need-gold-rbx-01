@@ -8,7 +8,7 @@ local scenes = config.getScenesConfig()
 
 function module.addRemoteObjects(part)
     funcForEachNewItem = function(parent, childItems)
-        local childDepth = 4
+        local childDepth = 2
         local childProps = {
             size = {width = 4, height = 8, depth = childDepth},
             partArray = childItems,
@@ -22,7 +22,7 @@ function module.addRemoteObjects(part)
 
     local rowProps = {
         partArray = scenes,
-        size = {width = 20, height = 16, depth = 2},
+        size = {width = 20, height = 16, depth = 1},
         partNamePrefix = "Scene",
         xIncrement = 2,
         parent = part,
