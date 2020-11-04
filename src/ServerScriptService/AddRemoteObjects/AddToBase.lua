@@ -15,7 +15,7 @@ function module.addRemoteObjects(part)
         local childProps = {
             size = {width = 8, height = 8, depth = characterDepth},
             partArray = childItems,
-            partNamePrefix = "Scene",
+            partNamePrefix = "Character",
             xIncrement = 4,
             parent = parent,
             zOffset = -sceneDepth
