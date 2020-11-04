@@ -26,7 +26,7 @@ function createPart(props)
 
     local newPart = Instance.new("Part")
 
-    newPart.Size = Vector3.new(size.width, size.height, size.depth)
+    newPart.Size = Vector3.new(size.x, size.y, size.z)
     newPart.Anchored = true
     newPart.BrickColor = BrickColor.new("Light blue")
 
@@ -59,29 +59,29 @@ function createRowOfParts(props)
 
         local calcEdgePropsX = {
             parent = parent,
-            childLength = size.width,
+            childLength = size.x,
             axis = "X"
         }
 
         local calcEdgePropsZ = {
             parent = parent,
-            childLength = size.depth,
+            childLength = size.z,
             axis = "Z"
         }
 
         local xPositionStart = getParentFarEdge(calcEdgePropsX) + xOffset
-        local xPosition = xPositionStart - (i - 1) * (size.width + xIncrement)
-        local yPosition = size.height / 2 + yOffset
+        local xPosition = xPositionStart - (i - 1) * (size.x + xIncrement)
+        local yPosition = size.y / 2 + yOffset
         local zPosition = getParentFarEdge(calcEdgePropsZ) + zOffset
 
-        print('size' .. ' - start');
-        print(size);
-        print('size' .. ' - end');
+        print('partNamePrefix' .. ' - start');
+        print(partNamePrefix);
+        print('partNamePrefix' .. ' - end');
 
         local newItem = createNewItemFunc(item, size)
         newItem.Position = Vector3.new(xPosition, yPosition, zPosition)
         newItem.Parent = parent
-        newItem.Name = partNamePrefix
+        -- newItem.Name = partNamePrefix
 
         rowOfParts[i] = newItem
     end

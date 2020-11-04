@@ -19,7 +19,7 @@ addChildParts = function(parent, scene)
 
     local childProps = {
         parent = parent,
-        size = {width = 8, height = 8, depth = 1},
+        size = {x = 8, y = 8, z = 1},
         partArray = childItems,
         partNamePrefix = "Character",
 
@@ -34,7 +34,7 @@ end
 
 function module.addRemoteObjects(part)
     local basePadding = 4
-    local sceneSize = {width = 48, height = 24, depth = sceneDepth}
+    local sceneSize = {x = 48, y = 24, z = sceneDepth}
     local sceneParent = part
     local partNamePrefix = "Scene"
 
