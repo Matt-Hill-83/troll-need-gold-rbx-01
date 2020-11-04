@@ -23,7 +23,6 @@ end
 function createPart(props)
     local size = props.size
     local decalId = props.decalId
-
     local newPart = Instance.new("Part")
 
     newPart.Size = Vector3.new(size.x, size.y, size.z)
