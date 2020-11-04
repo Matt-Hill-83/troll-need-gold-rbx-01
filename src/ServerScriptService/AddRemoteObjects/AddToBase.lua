@@ -7,18 +7,11 @@ local Utils = require(Sss.Source.Utils.Utils)
 local scenes = config.getScenesConfig()
 
 function module.addRemoteObjects(part)
-
-    funcForEachNewItem = function(parent)
-        local char01 = {
-            name = "Britta",
-            decal = 'rbxassetid://5902121857',
-            color = BrickColor.new("Light blue")
-        }
-        local tempChars = {char01, char01}
-        local childDepth = 2
+    funcForEachNewItem = function(parent, childItems)
+        local childDepth = 4
         local childProps = {
             size = {width = 4, height = 8, depth = childDepth},
-            partArray = tempChars,
+            partArray = childItems,
             partNamePrefix = "Scene",
             xIncrement = 2,
             parent = parent

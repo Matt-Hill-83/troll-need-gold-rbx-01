@@ -1,11 +1,13 @@
 local module = {}
 
-function getParentlLeft(parent, childWidth)
+function getParentFarEdge(parent, childWidth, axis)
+
+    if not axis then axis = 'X' end
+
     local parentPosition = CFrame.new(parent.Position)
     local parentSize = parent.Size
-    local parentLeftEdge = parentPosition.X + parentSize.X / 2
+    local parentLeftEdge = parentPosition[axis] + parentSize[axis] / 2
     local outputX = parentLeftEdge - childWidth / 2
-
     return outputX
 end
 
@@ -41,7 +43,6 @@ function createRowOfParts(props)
     local parent = props.parent
     local size = props.size
     local partNamePrefix = props.partNamePrefix
-    local childProps = props.childProps
     local xIncrement = props.xIncrement
     local funcForEachNewItem = props.funcForEachNewItem
 
@@ -49,7 +50,7 @@ function createRowOfParts(props)
 
     for i, scene in ipairs(partArray) do
 
-        local xPositionStart = getParentlLeft(parent, size.width)
+        local xPositionStart = getParentFarEdge(parent, size.width, "X")
         local xPosition = xPositionStart - (i - 1) * (size.width + xIncrement)
 
         local position = {x = xPosition, y = size.height / 2, z = 0}
@@ -64,8 +65,17 @@ function createRowOfParts(props)
 
         local newItem = createChildPart(itemProps)
 
-        if (funcForEachNewItem) then funcForEachNewItem(newItem) end
+        local char01 = {
+            name = "Britta",
+            decal = 'rbxassetid://5897424121',
+            color = BrickColor.new("Light blue")
+        }
 
+        local childItems = {char01, char01}
+
+        if (funcForEachNewItem) then
+            funcForEachNewItem(newItem, childItems)
+        end
         rowOfParts[i] = newItem
     end
 
@@ -73,7 +83,7 @@ function createRowOfParts(props)
 
 end
 
-module.getParentlLeft = getParentlLeft
+module.getParentFarEdge = getParentFarEdge
 module.createChildPart = createChildPart
 module.createRowOfParts = createRowOfParts
 return module
