@@ -1716,7 +1716,9 @@ function module.addRemoteObjects(part)
     local characterDepth = 1
     local basePadding = 4
 
-    funcForEachNewItem = function(parent, childItems)
+    funcForEachNewItem = function(parent, scene)
+        local childItems = scene.frames[1].characters
+
         local childProps = {
             size = {width = 8, height = 8, depth = characterDepth},
             partArray = childItems,
@@ -1726,7 +1728,6 @@ function module.addRemoteObjects(part)
             zOffset = -sceneDepth
         }
         Utils.createRowOfParts(childProps)
-        return
     end
 
     local rowProps = {
@@ -1761,22 +1762,19 @@ return module
 
 function module.getScenesConfig()
 
-    local char01 = {name = "Raven", decal = '5897424121'}
+    local char01 = {name = "Raven", decalId = '5897424121'}
+    local char02 = {name = "Britta", decalId = '5897433108'}
 
-    local char02 = {name = "Britta", decal = '5897433108'}
-
-    local item01 = {name = "Troll King", decal = '5897428591'}
-
-    local item02 = {name = "Freckle", decal = '5897430768'}
+    local item01 = {name = "Troll King", decalId = '5897428591'}
+    local item02 = {name = "Freckle", decalId = '5897430768'}
 
     local characters = {char01, char02}
 
     local frame01 = {characters = characters, items = {item01, item02}}
     local frames = {frame01, frame01}
     local scene01 = {
-        decal = '5902121857',
+        decalId = '5902121857',
         name = "log",
-        -- frames = frames,
         frames = frames,
         characters = characters
     }
@@ -1849,7 +1847,7 @@ function createChildPart(props)
     local size = props.size
     local parent = props.parent
     local position = props.position
-    local decal = props.decal
+    local decalId = props.decalId
     local name = props.name
 
     local newPart = Instance.new("Part", parent)
@@ -1859,10 +1857,11 @@ function createChildPart(props)
     newPart.Name = name
     newPart.BrickColor = BrickColor.new("Light blue")
     newPart.Position = Vector3.new(position.x, position.y, position.z)
+    -- newPart.Transparency = 0.3
 
-    if decal then
+    if decalId then
         local newDecal = Instance.new("Decal", newPart)
-        newDecal.Texture = 'rbxassetid://' .. decal
+        newDecal.Texture = 'rbxassetid://' .. decalId
         newDecal.Face = 'Front'
     end
 
@@ -1876,6 +1875,7 @@ function createRowOfParts(props)
     local size = props.size
     local partNamePrefix = props.partNamePrefix
     local xIncrement = props.xIncrement
+    local childItems = props.childItems
     local funcForEachNewItem = props.funcForEachNewItem
     local xOffset = props.xOffset or 0
     local yOffset = props.yOffset or 0
@@ -1903,7 +1903,7 @@ function createRowOfParts(props)
 
         local position = {
             x = xPosition,
-            y = size.height / 2,
+            y = size.height / 2 + yOffset,
             z = zPositionStart
         }
         local itemProps = {
@@ -1911,17 +1911,14 @@ function createRowOfParts(props)
             size = size,
             position = position,
             parent = parent,
-            decal = scene.decal
+            decalId = scene.decalId
         }
 
         local newItem = createChildPart(itemProps)
 
-        local childItems = scene.characters
-        -- local childItems = scene.frame.characters
-        -- local childItems = {char01, char01}
-
         if (funcForEachNewItem) then
-            funcForEachNewItem(newItem, childItems)
+            funcForEachNewItem(newItem, scene)
+            --
         end
         rowOfParts[i] = newItem
     end

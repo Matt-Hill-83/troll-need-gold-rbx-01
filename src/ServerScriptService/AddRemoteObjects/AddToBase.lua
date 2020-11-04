@@ -11,7 +11,9 @@ function module.addRemoteObjects(part)
     local characterDepth = 1
     local basePadding = 4
 
-    funcForEachNewItem = function(parent, childItems)
+    funcForEachNewItem = function(parent, scene)
+        local childItems = scene.frames[1].characters
+
         local childProps = {
             size = {width = 8, height = 8, depth = characterDepth},
             partArray = childItems,
