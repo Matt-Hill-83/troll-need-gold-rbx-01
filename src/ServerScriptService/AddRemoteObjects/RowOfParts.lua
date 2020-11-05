@@ -13,7 +13,7 @@ function getParentFarEdge(props)
 end
 
 function createRowOfParts(props)
-    local partArray = props.partArray
+    local partConfigs = props.partConfigs
     local parent = props.parent
     local partNamePrefix = props.partNamePrefix
 
@@ -26,7 +26,7 @@ function createRowOfParts(props)
     local createNewItemFunc = props.createNewItemFunc
     local rowOfParts = {}
 
-    for i, item in ipairs(partArray) do
+    for i, partConfig in ipairs(partConfigs) do
 
         local calcEdgePropsX = {
             parent = parent,
@@ -45,7 +45,7 @@ function createRowOfParts(props)
         local yPosition = size.y / 2 + yOffset
         local zPosition = getParentFarEdge(calcEdgePropsZ) + zOffset
 
-        local newItem = createNewItemFunc(item, size)
+        local newItem = createNewItemFunc(partConfig, size)
         newItem.Position = Vector3.new(xPosition, yPosition, zPosition)
         newItem.Parent = parent
         newItem.Name = partNamePrefix .. ": " .. i

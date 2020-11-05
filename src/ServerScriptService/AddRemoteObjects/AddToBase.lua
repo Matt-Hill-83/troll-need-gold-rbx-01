@@ -7,7 +7,7 @@ local Dialog = require(Sss.Source.AddRemoteObjects.Dialog)
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 
-local scenes = config.getScenesConfig()
+local sceneConfigs = config.getScenesConfig()
 local sceneDepth = 1
 
 createNewPart = function(item, size)
@@ -20,7 +20,7 @@ renderCharacters = function(parent, items)
 
     local rowProps = {
         parent = parent,
-        partArray = items,
+        partConfigs = items,
         partNamePrefix = "Character",
 
         size = {x = 8, y = 8, z = 1},
@@ -39,7 +39,7 @@ renderItems = function(parent, items)
 
     local rowProps = {
         parent = parent,
-        partArray = items,
+        partConfigs = items,
         partNamePrefix = "Item",
 
         size = {x = 6, y = 6, z = 1},
@@ -63,7 +63,7 @@ function module.addRemoteObjects(part)
 
     local rowProps = {
         parent = sceneParent,
-        partArray = scenes,
+        partConfigs = sceneConfigs,
         partNamePrefix = partNamePrefix,
 
         size = sceneSize,
@@ -75,8 +75,9 @@ function module.addRemoteObjects(part)
     }
 
     local rowOfScenes = RowOfParts.createRowOfParts(rowProps)
+
     for i, newScene in ipairs(rowOfScenes) do
-        local scene = scenes[i]
+        local scene = sceneConfigs[i]
         local characters = scene.frames[frameIndex].characters
         local items = scene.frames[frameIndex].items
         renderCharacters(newScene, characters)
