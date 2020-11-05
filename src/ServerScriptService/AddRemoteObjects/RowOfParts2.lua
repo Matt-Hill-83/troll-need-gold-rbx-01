@@ -19,28 +19,46 @@ function getPartFarEdge(props)
     local part = props.part
     local axis = props.axis or 'X'
 
+    -- ternary function
+    local alignToParentEdge = props.alignToParentEdge and 1 or -1
     local partPosition = part.CFrame
     local partSize = part.Size
-    local partFarEdge = partPosition[axis] + partSize[axis] / 2
+    local partFarEdge = partPosition[axis] + (partSize[axis] / 2) *
+                            alignToParentEdge
 
     return partFarEdge
 end
 
-function createRowOfParts2(props)
+function createRowOfParts(props)
     local rowProps = props.rowProps
+    local alignToParentEdge = {x = true, y = false, z = true}
+    -- local alignToParentEdge = props.alignToParentEdge or
+    --                               {x = true, y = true, z = true}
     local itemConfigs = props.itemConfigs
-    local sceneProps = props.sceneProps
+    local itemProps = props.itemProps
 
-    local edgePropsX = {part = rowProps.parent, axis = "X"}
+    local edgePropsX = {
+        part = rowProps.parent,
+        axis = "X",
+        alignToParentEdge = alignToParentEdge.x
+    }
     local parentEdgeX = getPartFarEdge(edgePropsX)
 
-    local edgePropsY = {part = rowProps.parent, axis = "Y"}
+    local edgePropsY = {
+        part = rowProps.parent,
+        axis = "Y",
+        alignToParentEdge = alignToParentEdge.y
+    }
     local parentEdgeY = getPartFarEdge(edgePropsY)
 
-    local edgePropsZ = {part = rowProps.parent, axis = "Z"}
+    local edgePropsZ = {
+        part = rowProps.parent,
+        axis = "Z",
+        alignToParentEdge = alignToParentEdge.z
+    }
     local parentEdgeZ = getPartFarEdge(edgePropsZ)
 
-    local sceneWidth = sceneProps.size.x
+    local sceneWidth = itemProps.size.x
     local xIncrement = rowProps.direction * (sceneWidth + rowProps.xGap)
 
     local prevX = parentEdgeX - rowProps.xOffset
@@ -54,7 +72,7 @@ function createRowOfParts2(props)
         local position = {x = x, y = y, z = z}
 
         local adjustmentProps = {
-            size = sceneProps.size,
+            size = itemProps.size,
             position = position,
             moveTowardZero = rowProps.moveTowardZero
         }
@@ -63,8 +81,8 @@ function createRowOfParts2(props)
 
         local newPartProps = {
             decalId = sceneConfig.decalId,
-            size = sceneProps.size,
-            name = sceneProps.partName .. "-" .. i,
+            size = itemProps.size,
+            name = itemProps.partName .. "-" .. i,
             position = edgeAdjustedPosition,
             parent = rowProps.parent
         }
@@ -78,6 +96,6 @@ function createRowOfParts2(props)
     return rowOfParts
 end
 
-module.createRowOfParts2 = createRowOfParts2
+module.createRowOfParts = createRowOfParts
 
 return module
