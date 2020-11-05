@@ -66,7 +66,7 @@ function createRowOfParts(props)
 
     local rowOfParts = {}
 
-    for i, sceneConfig in ipairs(itemConfigs) do
+    for i, itemConfig in ipairs(itemConfigs) do
         local x = prevX
         local position = {x = x, y = y, z = z}
 
@@ -79,7 +79,7 @@ function createRowOfParts(props)
                                          adjustmentProps)
 
         local newPartProps = {
-            decalId = sceneConfig.decalId,
+            decalId = itemConfig.decalId,
             size = itemProps.size,
             name = itemProps.partName .. "-" .. i,
             position = edgeAdjustedPosition,

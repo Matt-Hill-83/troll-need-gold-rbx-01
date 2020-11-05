@@ -63,6 +63,32 @@ renderItems = function(parent, itemConfigs)
     RowOfParts.createRowOfParts(props)
 end
 
+renderDialogs = function(parent, itemConfigs)
+    local parentPadding = 1
+
+    local rowProps = {
+        alignToParentEdge = {x = false, y = true, z = true},
+        xGap = 1,
+        xOffset = -4,
+        zOffset = parentPadding,
+        yOffset = parentPadding,
+
+        parent = parent,
+        direction = 1,
+        moveTowardZero = {x = 1, y = 1, z = -1}
+    }
+
+    local characterProps = {size = {x = 6, y = 8, z = 1}, partName = "Dialog"}
+
+    local props = {
+        rowProps = rowProps,
+        itemConfigs = itemConfigs,
+        itemProps = characterProps
+    }
+
+    RowOfParts.createRowOfParts(props)
+end
+
 function module.addRemoteObjects(part)
     local frameIndex = 1
     local parentPadding = 1
@@ -95,7 +121,12 @@ function module.addRemoteObjects(part)
 
         renderCharacters(newScene, characterConfigs)
         renderItems(newScene, items)
-        Dialog.renderDialog(newScene)
+
+        local dialogs = {{test = 5}}
+        renderDialogs(newScene, dialogs)
+
+        -- local renderedDialogs = RowOfParts.createRowOfParts(props)
+        -- Dialog.renderDialog(newScene)
     end
 
 end

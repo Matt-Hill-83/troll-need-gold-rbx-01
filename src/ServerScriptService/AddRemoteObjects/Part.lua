@@ -41,6 +41,5 @@ function getEdgePositionFromCenter(props)
 end
 
 module.getEdgePositionFromCenter = getEdgePositionFromCenter
-module.createPart = createPart
 module.createPart2 = createPart2
 return module
