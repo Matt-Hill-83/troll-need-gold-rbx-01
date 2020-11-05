@@ -69,7 +69,7 @@ renderDialogs = function(parent, itemConfigs)
     local rowProps = {
         alignToParentEdge = {x = true, y = true, z = false},
         xGap = 1,
-        xOffset = parentPadding,
+        xOffset = 3,
         -- zOffset = parentPadding,
         yOffset = -parentPadding,
 

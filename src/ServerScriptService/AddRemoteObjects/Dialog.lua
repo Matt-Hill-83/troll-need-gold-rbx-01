@@ -4,7 +4,7 @@ local module = {}
 
 renderDialog = function(parent)
 
-    local pixelsPerStud = 50
+    local pixelsPerStud = 40
     local parentWidth = parent.Size.X * pixelsPerStud
     local parentHeight = parent.Size.Y * pixelsPerStud
     local childHeight = 4 * pixelsPerStud
@@ -23,19 +23,20 @@ renderDialog = function(parent)
     local counter = 1
 
     local testDict01 = {
-        text = "one asd fasdf asdf asdf asdf as dfas dfasd fasd fasd fasdf asd ",
+        text = "aaa bbb cccc ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt",
         color = "Yellow",
         char = "Britta"
     }
     local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
 
-    local texts2 = {testDict01}
-    -- local texts2 = {testDict01, testDict02, testDict01}
+    local texts = {testDict01}
+    -- local texts = {testDict01, testDict02, testDict01}
 
-    for i, dialog in ipairs(texts2) do
-        local text = dialog['text']
+    for i, dialog in ipairs(texts) do
+        local charName = texts[counter]['char']
+        local text = charName .. ": " .. dialog['text']
+
         local font = Enum.Font.Legacy
-        local charName = texts2[counter]['char']
         local fontHeight = 50
         local textPadVert = fontHeight / 4
 
@@ -49,31 +50,29 @@ renderDialog = function(parent)
                                                  newLabel.Font, Vector2.new(
                                                      parentWidth, parentHeight))
 
+        local height = calcSize.Y + textPadVert * 2
+
+        newLabel.Name = "Dialog-" .. i
+        newLabel.Text = text
+        newLabel.Size = UDim2.new(0, parentWidth, 0, height)
+        newLabel.Selectable = true
+
+        newLabel.TextWrapped = true
+        newLabel.TextSize = fontHeight
+        newLabel.TextXAlignment = Enum.TextXAlignment.Left
+        newLabel.TextYAlignment = Enum.TextYAlignment.Top
+
+        local abs = newLabel.AbsoluteSize
+
         print('calcSize' .. ' - start');
         print(calcSize);
         print('calcSize' .. ' - end');
 
-        local height = calcSize.Y + textPadVert * 2
-
-        newLabel.Name = "Dialog-" .. i
-        newLabel.Text = charName .. ": " .. text
-        newLabel.TextWrapped = true
-        newLabel.Size = UDim2.new(1, 0, 0, height)
-        newLabel.Selectable = true
-        newLabel.TextSize = fontHeight
-
-        local abs = newLabel.AbsoluteSize
         print('abs' .. ' - start');
         print(abs);
         print('abs' .. ' - end');
-        -- local GetTextSize = newLabel.local 
 
-        -- newLabel.Size = UDim2.new(1, 0, 0, childHeight)
-        -- newLabel.Size = UDim2.new(0, childWidth, 0, 100)
         -- newLabel.Position = UDim2.new(0, 100, 0, i * 150)
-        -- newLabel.Position = UDim2.new(0, 50, 0, 0) -- 50 px from the left
-        -- newLabel.TextXAlignment = 
-        -- newLabel.AutomaticSize = 3
 
     end
 
