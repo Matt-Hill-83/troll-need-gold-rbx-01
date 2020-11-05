@@ -27,12 +27,15 @@ renderCharacters = function(parent, itemConfigs)
         moveTowardZero = {x = -1, y = 1, z = -1}
     }
 
-    local characerProps = {size = {x = 4, y = 4, z = 1}, partName = "Character"}
+    local characterProps = {
+        size = {x = 4, y = 4, z = 1},
+        partName = "Character"
+    }
 
     local props = {
         rowProps = rowProps,
         itemConfigs = itemConfigs,
-        itemProps = characerProps
+        itemProps = characterProps
     }
 
     RowOfParts2.createRowOfParts(props)
