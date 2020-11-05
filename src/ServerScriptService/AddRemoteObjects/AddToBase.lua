@@ -75,10 +75,10 @@ function module.addRemoteObjects(part)
 
     local rowProps = {
         alignToParentEdge = {x = true, y = true, z = true},
-        xGap = 2,
+        xGap = 4,
         xOffset = parentPadding,
         zOffset = parentPadding,
-        yOffset = parentPadding,
+        -- yOffset = parentPadding,
 
         parent = part,
         direction = -1,
