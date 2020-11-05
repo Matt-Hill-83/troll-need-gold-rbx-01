@@ -49,7 +49,7 @@ function getEdgePositionFromCenter(props)
     local position = props.position
     local moveTowardZero = props.moveTowardZero
 
-    local isMoveTowardZero = moveTowardZero or {x = -1, y = 1, z = -1}
+    local isMoveTowardZero = moveTowardZero or {x = -1, y = -1, z = -1}
 
     return {
         x = position.x + (size.x / 2) * isMoveTowardZero.x,

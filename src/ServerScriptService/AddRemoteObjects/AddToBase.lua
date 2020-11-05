@@ -55,38 +55,42 @@ end
 
 function module.addRemoteObjects(part)
     local basePadding = 4
-    -- local sceneSize = {x = 48, y = 24, z = sceneDepth}
-    -- local sceneParent = part
-
     local sceneProps = {
-        size = {x = 4, y = 24, z = sceneDepth},
+        size = {x = 4, y = 4, z = sceneDepth},
         partName = "Scene"
     }
 
     local frameIndex = 1
 
     local rowProps = {
-        xGap = 4,
+        xGap = 2,
         xOffset = -basePadding,
         zOffset = -basePadding,
 
         createNewItemFunc = createNewPart,
+        parent = part,
         direction = -1,
         moveTowardZero = {x = -1, y = 1, z = -1}
     }
 
-    local edgeProps = {part = part, axis = "X"}
-    local parentFarEdge = RowOfParts.getPartFarEdge(edgeProps)
+    local edgePropsX = {part = part, axis = "X"}
+    local parentEdgeX = RowOfParts.getPartFarEdge(edgePropsX)
+
+    local edgePropsY = {part = part, axis = "Y"}
+    local parentEdgeY = RowOfParts.getPartFarEdge(edgePropsY)
+
+    local edgePropsZ = {part = part, axis = "Z"}
+    local parentEdgeZ = RowOfParts.getPartFarEdge(edgePropsZ)
 
     local sceneWidth = sceneProps.size.x
-    local prevX = parentFarEdge
     local xIncrement = rowProps.direction * (sceneWidth + rowProps.xGap)
 
-    for i, sceneConfig in ipairs(sceneConfigs) do
+    local prevX = parentEdgeX
+    local y = parentEdgeY
+    local z = parentEdgeZ
 
+    for i, sceneConfig in ipairs(sceneConfigs) do
         local x = prevX
-        local y = 0
-        local z = 0
 
         local position = {x = x, y = y, z = z}
 
@@ -103,7 +107,7 @@ function module.addRemoteObjects(part)
             size = sceneProps.size,
             name = sceneProps.partName .. "-" .. i,
             position = edgeAdjustedPosition,
-            parent = part
+            parent = rowProps.parent
         }
         local newPart = Part.createPart2(newPartProps)
 
