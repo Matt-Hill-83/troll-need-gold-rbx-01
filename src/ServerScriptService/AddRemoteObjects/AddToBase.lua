@@ -70,15 +70,15 @@ renderDialogs = function(parent, itemConfigs)
         alignToParentEdge = {x = true, y = true, z = true},
         xGap = 1,
         xOffset = parentPadding,
-        -- zOffset = parentPadding,
-        yOffset = parentPadding,
+        zOffset = parentPadding,
+        yOffset = -parentPadding,
 
         parent = parent,
         direction = -1,
         moveTowardZero = {x = -1, y = -1, z = -1}
     }
 
-    local characterProps = {size = {x = 6, y = 8, z = 1}, partName = "Dialog"}
+    local characterProps = {size = {x = 20, y = 8, z = 1}, partName = "Dialog"}
 
     local props = {
         rowProps = rowProps,
@@ -88,10 +88,7 @@ renderDialogs = function(parent, itemConfigs)
 
     local renderedBlocks = RowOfParts.createRowOfParts(props)
 
-    for i, block in ipairs(renderedBlocks) do
-        -- local renderedDialogs = RowOfParts.createRowOfParts(props)
-        Dialog.renderDialog(block)
-    end
+    for i, block in ipairs(renderedBlocks) do Dialog.renderDialog(block) end
 
 end
 

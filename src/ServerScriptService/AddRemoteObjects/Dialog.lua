@@ -1,10 +1,6 @@
 local module = {}
 
 renderDialog = function(parent)
-    -- local part = Instance.new("Part", parent)
-    -- part.Size = Vector3.new(8, 4, 1)
-    -- -- part.Position = Vector3.new(20, 20, 1)
-    -- part.Position = parent.Position
 
     local sgui = Instance.new("SurfaceGui", parent)
     local textButton = Instance.new("TextButton", sgui)
