@@ -51,7 +51,7 @@ renderCharacters = function(parent, itemConfigs)
 
     local props = {
         rowProps = rowProps,
-        sceneConfigs = sceneConfigs,
+        itemConfigs = itemConfigs,
         sceneProps = sceneProps
     }
 
@@ -78,7 +78,7 @@ function module.addRemoteObjects(part)
 
     local props = {
         rowProps = rowProps,
-        sceneConfigs = sceneConfigs,
+        itemConfigs = sceneConfigs,
         sceneProps = sceneProps
     }
 

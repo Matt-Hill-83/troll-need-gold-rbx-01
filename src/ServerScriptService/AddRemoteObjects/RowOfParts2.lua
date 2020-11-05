@@ -28,7 +28,7 @@ end
 
 function createRowOfParts2(props)
     local rowProps = props.rowProps
-    local sceneConfigs = props.sceneConfigs
+    local itemConfigs = props.itemConfigs
     local sceneProps = props.sceneProps
 
     local edgePropsX = {part = rowProps.parent, axis = "X"}
@@ -49,7 +49,7 @@ function createRowOfParts2(props)
 
     local rowOfParts = {}
 
-    for i, sceneConfig in ipairs(sceneConfigs) do
+    for i, sceneConfig in ipairs(itemConfigs) do
         local x = prevX
         local position = {x = x, y = y, z = z}
 
