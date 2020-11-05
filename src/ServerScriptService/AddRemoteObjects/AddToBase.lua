@@ -85,9 +85,9 @@ function module.addRemoteObjects(part)
     local sceneWidth = sceneProps.size.x
     local xIncrement = rowProps.direction * (sceneWidth + rowProps.xGap)
 
-    local prevX = parentEdgeX + rowProps.xOffset
+    local prevX = parentEdgeX - rowProps.xOffset
     local y = parentEdgeY + rowProps.xOffset
-    local z = parentEdgeZ + rowProps.xOffset
+    local z = parentEdgeZ - rowProps.xOffset
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local x = prevX
@@ -116,14 +116,15 @@ function module.addRemoteObjects(part)
         print('x' .. ' - end');
 
         prevX = x + xIncrement
-        -- local scene = sceneConfigs[i]
-        -- local characters = scene.frames[frameIndex].characters
-        -- local items = scene.frames[frameIndex].items
-        -- renderCharacters(newScene, characters)
-        -- renderItems(newScene, items)
-        -- Dialog.renderDialog(newScene)
-        -- 
     end
+
+    -- local scene = sceneConfigs[i]
+    -- local characters = scene.frames[frameIndex].characters
+    -- local items = scene.frames[frameIndex].items
+    -- renderCharacters(newScene, characters)
+    -- renderItems(newScene, items)
+    -- Dialog.renderDialog(newScene)
+    -- 
 
     -- local rowOfScenes = RowOfParts.createRowOfParts(rowProps)
 
