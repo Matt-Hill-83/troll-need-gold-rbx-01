@@ -78,7 +78,6 @@ function module.addRemoteObjects(part)
         xGap = 4,
         xOffset = parentPadding,
         zOffset = parentPadding,
-        -- yOffset = parentPadding,
 
         parent = part,
         direction = -1,
