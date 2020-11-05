@@ -67,9 +67,9 @@ renderDialogs = function(parent, itemConfigs)
     local parentPadding = 1
 
     local rowProps = {
-        alignToParentEdge = {x = false, y = true, z = true},
+        alignToParentEdge = {x = true, y = true, z = true},
         xGap = 1,
-        xOffset = -4,
+        xOffset = -1,
         zOffset = parentPadding,
         yOffset = parentPadding,
 
@@ -86,7 +86,13 @@ renderDialogs = function(parent, itemConfigs)
         itemProps = characterProps
     }
 
-    RowOfParts.createRowOfParts(props)
+    local renderedBlocks = RowOfParts.createRowOfParts(props)
+
+    for i, block in ipairs(renderedBlocks) do
+        -- local renderedDialogs = RowOfParts.createRowOfParts(props)
+        Dialog.renderDialog(block)
+    end
+
 end
 
 function module.addRemoteObjects(part)
@@ -125,8 +131,6 @@ function module.addRemoteObjects(part)
         local dialogs = {{test = 5}}
         renderDialogs(newScene, dialogs)
 
-        -- local renderedDialogs = RowOfParts.createRowOfParts(props)
-        -- Dialog.renderDialog(newScene)
     end
 
 end

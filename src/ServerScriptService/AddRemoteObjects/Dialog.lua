@@ -1,13 +1,15 @@
 local module = {}
 
 renderDialog = function(parent)
-    local part = Instance.new("Part", parent)
-    part.Size = Vector3.new(20, 20, 1)
-    part.Position = Vector3.new(20, 20, 1)
-    part.Position = parent.Position + Vector3.new(4, 4, -4)
+    -- local part = Instance.new("Part", parent)
+    -- part.Size = Vector3.new(8, 4, 1)
+    -- -- part.Position = Vector3.new(20, 20, 1)
+    -- part.Position = parent.Position
 
-    local sgui = Instance.new("SurfaceGui", part)
+    local sgui = Instance.new("SurfaceGui", parent)
     local textButton = Instance.new("TextButton", sgui)
+    textButton.Size = UDim2.new(0, 800, 0, 100)
+
     local dialogSurface = textButton.Parent
     local textLabels = Instance.new("TextLabel", sgui)
     local counter = 1
