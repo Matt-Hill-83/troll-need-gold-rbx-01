@@ -8,7 +8,7 @@ local Part = require(Sss.Source.AddRemoteObjects.Part)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 
 local sceneConfigs = config.getScenesConfig()
-local sceneDepth = 1
+local sceneDepth = 2
 
 createNewPart = function(item, size)
     local sceneProps = {decalId = item.decalId, size = size}
@@ -59,23 +59,20 @@ function module.addRemoteObjects(part)
     -- local sceneParent = part
 
     local sceneProps = {
-        size = {x = 48, y = 24, z = sceneDepth},
+        size = {x = 4, y = 24, z = sceneDepth},
         partName = "Scene"
     }
 
     local frameIndex = 1
 
     local rowProps = {
-        -- parent = sceneParent,
-        -- partConfigs = sceneConfigs,
-        -- partNamePrefix = partNamePrefix,
-
-        -- size = sceneSize,
-        xIncrement = 4,
+        xGap = 4,
         xOffset = -basePadding,
         zOffset = -basePadding,
 
-        createNewItemFunc = createNewPart
+        createNewItemFunc = createNewPart,
+        direction = -1,
+        moveTowardZero = {x = -1, y = 1, z = -1}
     }
 
     local edgeProps = {part = part, axis = "X"}
@@ -83,23 +80,38 @@ function module.addRemoteObjects(part)
 
     local sceneWidth = sceneProps.size.x
     local prevX = parentFarEdge
-    local xIncrement = sceneWidth + rowProps.xIncrement
+    local xIncrement = rowProps.direction * (sceneWidth + rowProps.xGap)
 
     for i, sceneConfig in ipairs(sceneConfigs) do
 
-        local x = prevX + xIncrement
-        local y = 10
-        local z = 10
+        local x = prevX
+        local y = 0
+        local z = 0
+
+        local position = {x = x, y = y, z = z}
+
+        local adjustmentProps = {
+            size = sceneProps.size,
+            position = position,
+            moveTowardZero = rowProps.moveTowardZero
+        }
+        local edgeAdjustedPosition = Part.getEdgePositionFromCenter(
+                                         adjustmentProps)
 
         local newPartProps = {
             decalId = sceneConfig.decalId,
             size = sceneProps.size,
             name = sceneProps.partName .. "-" .. i,
-            position = {x, y, z},
+            position = edgeAdjustedPosition,
             parent = part
         }
         local newPart = Part.createPart2(newPartProps)
 
+        print('x' .. ' - start');
+        print(x);
+        print('x' .. ' - end');
+
+        prevX = x + xIncrement
         -- local scene = sceneConfigs[i]
         -- local characters = scene.frames[frameIndex].characters
         -- local items = scene.frames[frameIndex].items

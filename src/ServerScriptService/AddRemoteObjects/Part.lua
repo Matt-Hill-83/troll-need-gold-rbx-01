@@ -20,12 +20,12 @@ function createPart(props)
 end
 
 function createPart2(props)
+    local parent = props.parent
     local size = props.size
     local name = props.name
     local position = props.position
-    local parent = props.parent
-
     local decalId = props.decalId
+
     local newPart = Instance.new("Part", parent)
 
     newPart.Size = Vector3.new(size.x, size.y, size.z)
@@ -44,6 +44,22 @@ function createPart2(props)
 
 end
 
+function getEdgePositionFromCenter(props)
+    local size = props.size
+    local position = props.position
+    local moveTowardZero = props.moveTowardZero
+
+    local isMoveTowardZero = moveTowardZero or {x = -1, y = 1, z = -1}
+
+    return {
+        x = position.x + (size.x / 2) * isMoveTowardZero.x,
+        y = position.y + (size.y / 2) * isMoveTowardZero.y,
+        z = position.z + (size.z / 2) * isMoveTowardZero.z
+    }
+
+end
+
+module.getEdgePositionFromCenter = getEdgePositionFromCenter
 module.createPart = createPart
 module.createPart2 = createPart2
 return module
