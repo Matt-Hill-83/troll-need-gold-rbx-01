@@ -37,8 +37,6 @@ function createRowOfParts2(props)
         partName = "Scene"
     }
 
-    local frameIndex = 1
-
     local edgePropsX = {part = rowProps.parent, axis = "X"}
     local parentEdgeX = getPartFarEdge(edgePropsX)
 
