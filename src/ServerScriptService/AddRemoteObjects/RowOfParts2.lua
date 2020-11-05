@@ -31,11 +31,6 @@ end
 
 function createRowOfParts(props)
     local rowProps = props.rowProps
-    -- local alignToParentEdge = {x = true, y = false, z = true}
-    print('props.alignToParentEdge' .. ' - start');
-    print(props.alignToParentEdge);
-    print('props.alignToParentEdge' .. ' - end');
-    -- This may be broken
     local alignToParentEdge = rowProps.alignToParentEdge or
                                   {x = true, y = false, z = true}
     local itemConfigs = props.itemConfigs
