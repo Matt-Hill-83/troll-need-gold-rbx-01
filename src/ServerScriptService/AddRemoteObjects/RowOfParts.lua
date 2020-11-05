@@ -1,13 +1,5 @@
 local module = {}
 
-function module.mergeTables(t1, t2)
-    for k, v in pairs(t2) do
-        t1[k] = v
-        --
-    end
-    --
-end
-
 function getParentFarEdge(props)
     local parent = props.parent
     local childLength = props.childLength
@@ -20,29 +12,8 @@ function getParentFarEdge(props)
     return alignedValue
 end
 
-function createPart(props)
-    local size = props.size
-    local decalId = props.decalId
-    local newPart = Instance.new("Part")
-
-    newPart.Size = Vector3.new(size.x, size.y, size.z)
-    newPart.Anchored = true
-    newPart.BrickColor = BrickColor.new("Light blue")
-
-    if decalId then
-        local newDecal = Instance.new("Decal", newPart)
-        newDecal.Texture = 'rbxassetid://' .. decalId
-        newDecal.Face = 'Front'
-    end
-
-    return newPart
-
-end
-
 function createRowOfParts(props)
     local partArray = props.partArray
-    -- if not partArray or not partArray[0] then return {} end
-
     local parent = props.parent
     local partNamePrefix = props.partNamePrefix
 
@@ -53,7 +24,6 @@ function createRowOfParts(props)
     local zOffset = props.zOffset or 0
 
     local createNewItemFunc = props.createNewItemFunc
-
     local rowOfParts = {}
 
     for i, item in ipairs(partArray) do
@@ -87,6 +57,6 @@ function createRowOfParts(props)
 
 end
 
-module.createPart = createPart
 module.createRowOfParts = createRowOfParts
+
 return module
