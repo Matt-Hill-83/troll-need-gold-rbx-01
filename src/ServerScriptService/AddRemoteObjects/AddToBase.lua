@@ -55,18 +55,22 @@ end
 
 function module.addRemoteObjects(part)
     local basePadding = 4
-    local sceneSize = {x = 48, y = 24, z = sceneDepth}
-    local sceneParent = part
-    local partNamePrefix = "Scene"
+    -- local sceneSize = {x = 48, y = 24, z = sceneDepth}
+    -- local sceneParent = part
+
+    local sceneProps = {
+        size = {x = 48, y = 24, z = sceneDepth},
+        partName = "Scene"
+    }
 
     local frameIndex = 1
 
     local rowProps = {
-        parent = sceneParent,
-        partConfigs = sceneConfigs,
-        partNamePrefix = partNamePrefix,
+        -- parent = sceneParent,
+        -- partConfigs = sceneConfigs,
+        -- partNamePrefix = partNamePrefix,
 
-        size = sceneSize,
+        -- size = sceneSize,
         xIncrement = 4,
         xOffset = -basePadding,
         zOffset = -basePadding,
@@ -74,17 +78,48 @@ function module.addRemoteObjects(part)
         createNewItemFunc = createNewPart
     }
 
-    local rowOfScenes = RowOfParts.createRowOfParts(rowProps)
+    local edgeProps = {part = part, axis = "X"}
+    local parentFarEdge = RowOfParts.getPartFarEdge(edgeProps)
 
-    for i, newScene in ipairs(rowOfScenes) do
-        local scene = sceneConfigs[i]
-        local characters = scene.frames[frameIndex].characters
-        local items = scene.frames[frameIndex].items
-        renderCharacters(newScene, characters)
-        renderItems(newScene, items)
-        Dialog.renderDialog(newScene)
+    local sceneWidth = sceneProps.size.x
+    local prevX = parentFarEdge
+    local xIncrement = sceneWidth + rowProps.xIncrement
+
+    for i, sceneConfig in ipairs(sceneConfigs) do
+
+        local x = prevX + xIncrement
+        local y = 10
+        local z = 10
+
+        local newPartProps = {
+            decalId = sceneConfig.decalId,
+            size = sceneProps.size,
+            name = sceneProps.partName .. "-" .. i,
+            position = {x, y, z},
+            parent = part
+        }
+        local newPart = Part.createPart2(newPartProps)
+
+        -- local scene = sceneConfigs[i]
+        -- local characters = scene.frames[frameIndex].characters
+        -- local items = scene.frames[frameIndex].items
+        -- renderCharacters(newScene, characters)
+        -- renderItems(newScene, items)
+        -- Dialog.renderDialog(newScene)
         -- 
     end
+
+    -- local rowOfScenes = RowOfParts.createRowOfParts(rowProps)
+
+    -- for i, newScene in ipairs(rowOfScenes) do
+    --     local scene = sceneConfigs[i]
+    --     local characters = scene.frames[frameIndex].characters
+    --     local items = scene.frames[frameIndex].items
+    --     renderCharacters(newScene, characters)
+    --     renderItems(newScene, items)
+    --     Dialog.renderDialog(newScene)
+    --     -- 
+    -- end
 
 end
 

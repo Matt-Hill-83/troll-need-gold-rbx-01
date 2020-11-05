@@ -12,6 +12,17 @@ function getParentFarEdge(props)
     return alignedValue
 end
 
+function getPartFarEdge(props)
+    local part = props.part
+    local axis = props.axis or 'X'
+
+    local partPosition = part.CFrame
+    local partSize = part.Size
+    local partFarEdge = partPosition[axis] + partSize[axis] / 2
+
+    return partFarEdge
+end
+
 function createRowOfParts(props)
     local partConfigs = props.partConfigs
     local parent = props.parent
@@ -58,5 +69,6 @@ function createRowOfParts(props)
 end
 
 module.createRowOfParts = createRowOfParts
+module.getPartFarEdge = getPartFarEdge
 
 return module
