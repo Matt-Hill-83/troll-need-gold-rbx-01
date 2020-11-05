@@ -4,7 +4,7 @@ local Sss = game:GetService("ServerScriptService")
 
 local SceneConfig = require(Sss.Source.AddRemoteObjects.ScenesConfig)
 local Dialog = require(Sss.Source.AddRemoteObjects.Dialog)
-local RowOfParts2 = require(Sss.Source.AddRemoteObjects.RowOfParts2)
+local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 
 local sceneConfigs = SceneConfig.getScenesConfig()
 
@@ -34,7 +34,7 @@ renderCharacters = function(parent, itemConfigs)
         itemProps = characterProps
     }
 
-    RowOfParts2.createRowOfParts(props)
+    RowOfParts.createRowOfParts(props)
 end
 
 renderItems = function(parent, itemConfigs)
@@ -60,7 +60,7 @@ renderItems = function(parent, itemConfigs)
         itemProps = characterProps
     }
 
-    RowOfParts2.createRowOfParts(props)
+    RowOfParts.createRowOfParts(props)
 end
 
 function module.addRemoteObjects(part)
@@ -86,7 +86,7 @@ function module.addRemoteObjects(part)
         itemProps = sceneProps
     }
 
-    local renderedScenes = RowOfParts2.createRowOfParts(props)
+    local renderedScenes = RowOfParts.createRowOfParts(props)
 
     for i, newScene in ipairs(renderedScenes) do
         local sceneConfig = sceneConfigs[i]
