@@ -5,9 +5,13 @@ local module = {}
 renderDialog = function(parent)
 
     local pixelsPerStud = 50
-    local childWidth = parent.Size.X * pixelsPerStud
+    local parentWidth = parent.Size.X * pixelsPerStud
+    local parentHeight = parent.Size.Y * pixelsPerStud
     local childHeight = 4 * pixelsPerStud
 
+    print('parentWidth' .. ' - start');
+    print(parentWidth);
+    print('parentWidth' .. ' - end');
     -- print('childWidth' .. ' - start');
     -- print(childWidth);
     -- print('childWidth' .. ' - end');
@@ -29,41 +33,47 @@ renderDialog = function(parent)
     -- local texts2 = {testDict01, testDict02, testDict01}
 
     for i, dialog in ipairs(texts2) do
-
         local text = dialog['text']
+        local font = Enum.Font.Legacy
+        local charName = texts2[counter]['char']
+        local fontHeight = 50
+        local textPadVert = fontHeight / 4
+
         local newLabel = Instance.new("TextLabel", sgui)
-        newLabel.Font = Enum.Font.Legacy
-        local font = newLabel.Font
+        newLabel.Font = font
         print('font' .. ' - start');
         print(font);
         print('font' .. ' - end');
 
-        local charName = texts2[counter]['char']
+        local calcSize = TextService:GetTextSize(text, fontHeight,
+                                                 newLabel.Font, Vector2.new(
+                                                     parentWidth, parentHeight))
+
+        print('calcSize' .. ' - start');
+        print(calcSize);
+        print('calcSize' .. ' - end');
+
+        local height = calcSize.Y + textPadVert * 2
+
         newLabel.Name = "Dialog-" .. i
         newLabel.Text = charName .. ": " .. text
         newLabel.TextWrapped = true
-        newLabel.Size = UDim2.new(1, 0, 0, childHeight)
+        newLabel.Size = UDim2.new(1, 0, 0, height)
         newLabel.Selectable = true
+        newLabel.TextSize = fontHeight
 
         local abs = newLabel.AbsoluteSize
         print('abs' .. ' - start');
         print(abs);
         print('abs' .. ' - end');
-        -- local TextService = game:GetService("TextService")
-        local test = TextService:GetTextSize(dialog['text'], 50, newLabel.Font,
-                                             Vector2.new(1000, 300))
+        -- local GetTextSize = newLabel.local 
 
-        print('test' .. ' - start');
-        print(test);
-        print('test' .. ' - end');
-        -- local GetTextSize = newLabel.local cll
-
+        -- newLabel.Size = UDim2.new(1, 0, 0, childHeight)
         -- newLabel.Size = UDim2.new(0, childWidth, 0, 100)
         -- newLabel.Position = UDim2.new(0, 100, 0, i * 150)
         -- newLabel.Position = UDim2.new(0, 50, 0, 0) -- 50 px from the left
-        newLabel.TextSize = 50
         -- newLabel.TextXAlignment = 
-        newLabel.AutomaticSize = 3
+        -- newLabel.AutomaticSize = 3
 
     end
 
