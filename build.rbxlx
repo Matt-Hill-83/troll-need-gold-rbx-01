@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-63.7914581</X>
-					<Y>31.9760723</Y>
-					<Z>-88.6405869</Z>
-					<R00>-0.995672464</R00>
-					<R01>0.0393712521</R01>
-					<R02>-0.0841799155</R02>
+					<X>20.0592022</X>
+					<Y>42.4657631</Y>
+					<Z>-104.894012</Z>
+					<R00>-0.982714832</R00>
+					<R01>-0.011190434</R01>
+					<R02>0.184787557</R02>
 					<R10>-0</R10>
-					<R11>0.905822873</R11>
-					<R12>0.423656642</R12>
-					<R20>0.0929319859</R20>
-					<R21>0.421823263</R21>
-					<R22>-0.901902914</R22>
+					<R11>0.998171508</R11>
+					<R12>0.0604476295</R12>
+					<R20>-0.185126096</R20>
+					<R21>0.0594027825</R21>
+					<R22>-0.980917811</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-63.6230965</X>
-					<Y>31.1287498</Y>
-					<Z>-86.8367615</Z>
+					<X>19.6896267</X>
+					<Y>42.3448677</Y>
+					<Z>-102.932175</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1778,22 +1778,24 @@ print('mysss2')
 local Sss = game:GetService("ServerScriptService")
 
 local config = require(Sss.Source.AddRemoteObjects.ScenesConfig)
-local Utils = require(Sss.Source.Utils.Utils)
-local scenes = config.getScenesConfig()
-local sceneDepth = 1
+local Dialog = require(Sss.Source.AddRemoteObjects.Dialog)
+local Part = require(Sss.Source.AddRemoteObjects.Part)
+local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
+
+local sceneConfigs = config.getScenesConfig()
+local sceneDepth = 2
 
 createNewPart = function(item, size)
     local sceneProps = {decalId = item.decalId, size = size}
-    return Utils.createPart(sceneProps)
+    return Part.createPart(sceneProps)
 end
 
-addChildParts = function(parent, scene)
+renderCharacters = function(parent, items)
     local scenePadding = 1
-    local childItems = scene.frames[2].characters
 
     local rowProps = {
         parent = parent,
-        partArray = childItems,
+        partConfigs = items,
         partNamePrefix = "Character",
 
         size = {x = 8, y = 8, z = 1},
@@ -1803,33 +1805,113 @@ addChildParts = function(parent, scene)
         yOffset = scenePadding * 2,
         createNewItemFunc = createNewPart
     }
-    Utils.createRowOfParts(rowProps)
+
+    RowOfParts.createRowOfParts(rowProps)
 end
 
-function module.addRemoteObjects(part)
-    local basePadding = 4
-    local sceneSize = {x = 48, y = 24, z = sceneDepth}
-    local sceneParent = part
-    local partNamePrefix = "Scene"
+renderItems = function(parent, items)
+    local scenePadding = 1
 
     local rowProps = {
-        parent = sceneParent,
-        partArray = scenes,
-        partNamePrefix = partNamePrefix,
+        parent = parent,
+        partConfigs = items,
+        partNamePrefix = "Item",
 
-        size = sceneSize,
-        xIncrement = 4,
-        xOffset = -basePadding,
-        zOffset = -basePadding,
+        size = {x = 6, y = 6, z = 1},
+        xIncrement = 1,
+        zOffset = -sceneDepth,
+        xOffset = -30,
+        yOffset = scenePadding * 2,
 
         createNewItemFunc = createNewPart
     }
+    RowOfParts.createRowOfParts(rowProps)
+end
 
-    local rowOfScenes = Utils.createRowOfParts(rowProps)
-    for i, newScene in ipairs(rowOfScenes) do
-        addChildParts(newScene, scenes[i])
-        -- 
+function module.addRemoteObjects(part)
+    local basePadding = 1
+    local sceneProps = {
+        size = {x = 4, y = 4, z = sceneDepth},
+        partName = "Scene"
+    }
+
+    local frameIndex = 1
+
+    local rowProps = {
+        xGap = 2,
+        xOffset = basePadding,
+        zOffset = basePadding,
+
+        createNewItemFunc = createNewPart,
+        parent = part,
+        direction = -1,
+        moveTowardZero = {x = -1, y = 1, z = -1}
+    }
+
+    local edgePropsX = {part = part, axis = "X"}
+    local parentEdgeX = RowOfParts.getPartFarEdge(edgePropsX)
+
+    local edgePropsY = {part = part, axis = "Y"}
+    local parentEdgeY = RowOfParts.getPartFarEdge(edgePropsY)
+
+    local edgePropsZ = {part = part, axis = "Z"}
+    local parentEdgeZ = RowOfParts.getPartFarEdge(edgePropsZ)
+
+    local sceneWidth = sceneProps.size.x
+    local xIncrement = rowProps.direction * (sceneWidth + rowProps.xGap)
+
+    local prevX = parentEdgeX - rowProps.xOffset
+    local y = parentEdgeY + rowProps.xOffset
+    local z = parentEdgeZ - rowProps.xOffset
+
+    for i, sceneConfig in ipairs(sceneConfigs) do
+        local x = prevX
+
+        local position = {x = x, y = y, z = z}
+
+        local adjustmentProps = {
+            size = sceneProps.size,
+            position = position,
+            moveTowardZero = rowProps.moveTowardZero
+        }
+        local edgeAdjustedPosition = Part.getEdgePositionFromCenter(
+                                         adjustmentProps)
+
+        local newPartProps = {
+            decalId = sceneConfig.decalId,
+            size = sceneProps.size,
+            name = sceneProps.partName .. "-" .. i,
+            position = edgeAdjustedPosition,
+            parent = rowProps.parent
+        }
+        local newPart = Part.createPart2(newPartProps)
+
+        print('x' .. ' - start');
+        print(x);
+        print('x' .. ' - end');
+
+        prevX = x + xIncrement
     end
+
+    -- local scene = sceneConfigs[i]
+    -- local characters = scene.frames[frameIndex].characters
+    -- local items = scene.frames[frameIndex].items
+    -- renderCharacters(newScene, characters)
+    -- renderItems(newScene, items)
+    -- Dialog.renderDialog(newScene)
+    -- 
+
+    -- local rowOfScenes = RowOfParts.createRowOfParts(rowProps)
+
+    -- for i, newScene in ipairs(rowOfScenes) do
+    --     local scene = sceneConfigs[i]
+    --     local characters = scene.frames[frameIndex].characters
+    --     local items = scene.frames[frameIndex].items
+    --     renderCharacters(newScene, characters)
+    --     renderItems(newScene, items)
+    --     Dialog.renderDialog(newScene)
+    --     -- 
+    -- end
 
 end
 
@@ -1857,9 +1939,10 @@ function module.getScenesConfig()
     local item02 = {name = "Freckle", decalId = '5897430768'}
 
     local characters = {char01, char02}
+    local items = {item01, item02}
 
-    local frame01 = {characters = characters, items = {item01, item02}}
-    local frame02 = {characters = {item01, item02}}
+    local frame01 = {characters = characters, items = items}
+    local frame02 = {characters = characters, items = items}
 
     local scene02 = {
         decalId = '5902110558',
@@ -1877,6 +1960,297 @@ function module.getScenesConfig()
     return scenes
 
 end
+
+return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBX4af71729d48c421584a348cdba8c1fef">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Dialog</string>
+						<string name="ScriptGuid">{9b1cd5c3-dda0-4254-acb2-ec1d5ed5bdd7}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+renderDialog = function(parent)
+    local part = Instance.new("Part", parent)
+    part.Size = Vector3.new(20, 20, 1)
+    local sgui = Instance.new("SurfaceGui", part)
+    local textButton = Instance.new("TextButton", sgui)
+    local dialogSurface = textButton.Parent
+    local textLabels = Instance.new("TextLabel", sgui)
+    local counter = 1
+
+    textButton.Text = "Next Page!"
+
+    local testDict01 = {text = "one", color = "Yellow", char = "Britta"}
+    local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
+
+    local texts2 = {testDict01, testDict02, testDict01}
+
+    for i, dialog in ipairs(texts2) do
+        local newLabel = Instance.new("TextLabel", dialogSurface)
+        local charName = texts2[counter]['char']
+        newLabel.Name = "Dialog Label-0" .. i
+        newLabel.Text = charName .. ": " .. dialog['text']
+        newLabel.Size = UDim2.new(0, 800, 0, 100)
+        newLabel.Position = UDim2.new(0, 100, 0, i * 150)
+
+    end
+
+    local function onActivated()
+        counter = counter + 1
+        textButton.Text = "Page: " .. counter
+
+        for i, textLabel in ipairs({textLabels}) do
+            print(textLabel.Name .. " is child number " .. i)
+        end
+    end
+
+    textButton.MouseButton1Click:Connect(onActivated)
+end
+
+module.renderDialog = renderDialog
+return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBXecec3749863c4205ac573ed6daecf7cb">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Part</string>
+						<string name="ScriptGuid">{3b96471a-8c40-4f75-bc03-965e17accbe8}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+function createPart(props)
+    local size = props.size
+    local decalId = props.decalId
+    local newPart = Instance.new("Part")
+
+    newPart.Size = Vector3.new(size.x, size.y, size.z)
+    newPart.Anchored = true
+    newPart.BrickColor = BrickColor.new("Light blue")
+
+    if decalId then
+        local newDecal = Instance.new("Decal", newPart)
+        newDecal.Texture = 'rbxassetid://' .. decalId
+        newDecal.Face = 'Front'
+    end
+
+    return newPart
+
+end
+
+function createPart2(props)
+    local parent = props.parent
+    local size = props.size
+    local name = props.name
+    local position = props.position
+    local decalId = props.decalId
+
+    local newPart = Instance.new("Part", parent)
+
+    newPart.Size = Vector3.new(size.x, size.y, size.z)
+    newPart.Position = Vector3.new(position.x, position.y, position.z)
+    newPart.Anchored = true
+    newPart.BrickColor = BrickColor.new("Light blue")
+    newPart.Name = name
+
+    if decalId then
+        local newDecal = Instance.new("Decal", newPart)
+        newDecal.Texture = 'rbxassetid://' .. decalId
+        newDecal.Face = 'Front'
+    end
+
+    return newPart
+
+end
+
+function getEdgePositionFromCenter(props)
+    local size = props.size
+    local position = props.position
+    local moveTowardZero = props.moveTowardZero
+
+    local isMoveTowardZero = moveTowardZero or {x = -1, y = -1, z = -1}
+
+    return {
+        x = position.x + (size.x / 2) * isMoveTowardZero.x,
+        y = position.y + (size.y / 2) * isMoveTowardZero.y,
+        z = position.z + (size.z / 2) * isMoveTowardZero.z
+    }
+
+end
+
+module.getEdgePositionFromCenter = getEdgePositionFromCenter
+module.createPart = createPart
+module.createPart2 = createPart2
+return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBX9cce131c6b294a2294643c8c855d6519">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">RowOfParts</string>
+						<string name="ScriptGuid">{d717e11a-0013-44af-af0d-f0c09d1e1811}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+function getParentFarEdge(props)
+    local parent = props.parent
+    local childLength = props.childLength
+    local axis = props.axis or 'X'
+
+    local parentPosition = parent.CFrame
+    local parentSize = parent.Size
+    local parentFarEdge = parentPosition[axis] + parentSize[axis] / 2
+    local alignedValue = parentFarEdge - childLength / 2
+    return alignedValue
+end
+
+function getPartFarEdge(props)
+    local part = props.part
+    local axis = props.axis or 'X'
+
+    local partPosition = part.CFrame
+    local partSize = part.Size
+    local partFarEdge = partPosition[axis] + partSize[axis] / 2
+
+    return partFarEdge
+end
+
+function getPartFarEdges(props)
+    --
+end
+
+function createRowOfParts(props)
+    local partConfigs = props.partConfigs
+    local parent = props.parent
+    local partNamePrefix = props.partNamePrefix
+
+    local size = props.size
+    local xIncrement = props.xIncrement
+    local xOffset = props.xOffset or 0
+    local yOffset = props.yOffset or 0
+    local zOffset = props.zOffset or 0
+
+    local createNewItemFunc = props.createNewItemFunc
+    local rowOfParts = {}
+
+    for i, partConfig in ipairs(partConfigs) do
+
+        local calcEdgePropsX = {
+            parent = parent,
+            childLength = size.x,
+            axis = "X"
+        }
+
+        local calcEdgePropsZ = {
+            parent = parent,
+            childLength = size.z,
+            axis = "Z"
+        }
+
+        local xPositionStart = getParentFarEdge(calcEdgePropsX) + xOffset
+        local xPosition = xPositionStart - (i - 1) * (size.x + xIncrement)
+        local yPosition = size.y / 2 + yOffset
+        local zPosition = getParentFarEdge(calcEdgePropsZ) + zOffset
+
+        local newItem = createNewItemFunc(partConfig, size)
+        newItem.Position = Vector3.new(xPosition, yPosition, zPosition)
+        newItem.Parent = parent
+        newItem.Name = partNamePrefix .. ": " .. i
+
+        rowOfParts[i] = newItem
+    end
+
+    return rowOfParts
+
+end
+
+module.createRowOfParts = createRowOfParts
+module.getPartFarEdge = getPartFarEdge
+module.getPartFarEdges = getPartFarEdges
+
+return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBXbdc2519671294cf5b035a6dbe499f349">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">RowOfParts2</string>
+						<string name="ScriptGuid">{3ed2d550-7a04-481c-b6a1-20af2d13dc15}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+function getParentFarEdge(props)
+    local parent = props.parent
+    local childLength = props.childLength
+    local axis = props.axis or 'X'
+
+    local parentPosition = parent.CFrame
+    local parentSize = parent.Size
+    local parentFarEdge = parentPosition[axis] + parentSize[axis] / 2
+    local alignedValue = parentFarEdge - childLength / 2
+    return alignedValue
+end
+
+function getPartFarEdge(props)
+    local part = props.part
+    local axis = props.axis or 'X'
+
+    local partPosition = part.CFrame
+    local partSize = part.Size
+    local partFarEdge = partPosition[axis] + partSize[axis] / 2
+
+    return partFarEdge
+end
+
+
+
+function createRowOfParts2(props)
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    local rowOfParts = {}
+
+
+        rowOfParts[i] = newItem
+
+        
+        
+        
+        
+    end
+
+    
+    return rowOfParts
+end
+
+module.createRowOfParts2 = createRowOfParts2
+
 
 return module
 ]]></ProtectedString>
@@ -1931,86 +2305,6 @@ function module.mergeTables(t1, t2)
     --
 end
 
-function getParentFarEdge(props)
-    local parent = props.parent
-    local childLength = props.childLength
-    local axis = props.axis or 'X'
-
-    local parentPosition = parent.CFrame
-    local parentSize = parent.Size
-    local parentFarEdge = parentPosition[axis] + parentSize[axis] / 2
-    local alignedValue = parentFarEdge - childLength / 2
-    return alignedValue
-end
-
-function createPart(props)
-    local size = props.size
-    local decalId = props.decalId
-
-    local newPart = Instance.new("Part")
-
-    newPart.Size = Vector3.new(size.x, size.y, size.z)
-    newPart.Anchored = true
-    newPart.BrickColor = BrickColor.new("Light blue")
-
-    if decalId then
-        local newDecal = Instance.new("Decal", newPart)
-        newDecal.Texture = 'rbxassetid://' .. decalId
-        newDecal.Face = 'Front'
-    end
-
-    return newPart
-
-end
-
-function createRowOfParts(props)
-    local partArray = props.partArray
-    local parent = props.parent
-    local partNamePrefix = props.partNamePrefix
-
-    local size = props.size
-    local xIncrement = props.xIncrement
-    local xOffset = props.xOffset or 0
-    local yOffset = props.yOffset or 0
-    local zOffset = props.zOffset or 0
-
-    local createNewItemFunc = props.createNewItemFunc
-
-    local rowOfParts = {}
-
-    for i, item in ipairs(partArray) do
-
-        local calcEdgePropsX = {
-            parent = parent,
-            childLength = size.x,
-            axis = "X"
-        }
-
-        local calcEdgePropsZ = {
-            parent = parent,
-            childLength = size.z,
-            axis = "Z"
-        }
-
-        local xPositionStart = getParentFarEdge(calcEdgePropsX) + xOffset
-        local xPosition = xPositionStart - (i - 1) * (size.x + xIncrement)
-        local yPosition = size.y / 2 + yOffset
-        local zPosition = getParentFarEdge(calcEdgePropsZ) + zOffset
-
-        local newItem = createNewItemFunc(item, size)
-        newItem.Position = Vector3.new(xPosition, yPosition, zPosition)
-        newItem.Parent = parent
-        newItem.Name = partNamePrefix .. ": " .. i
-
-        rowOfParts[i] = newItem
-    end
-
-    return rowOfParts
-
-end
-
-module.createPart = createPart
-module.createRowOfParts = createRowOfParts
 return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
