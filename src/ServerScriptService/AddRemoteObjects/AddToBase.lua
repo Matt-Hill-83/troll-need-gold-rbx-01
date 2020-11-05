@@ -22,6 +22,8 @@ renderCharacters = function(parent, itemConfigs)
         xGap = 1,
         xOffset = parentPadding,
         zOffset = parentPadding,
+        yOffset = parentPadding,
+
         parent = parent,
         direction = -1,
         moveTowardZero = {x = -1, y = 1, z = -1}
@@ -41,6 +43,32 @@ renderCharacters = function(parent, itemConfigs)
     RowOfParts2.createRowOfParts(props)
 end
 
+renderItems = function(parent, itemConfigs)
+    local parentPadding = 1
+
+    local rowProps = {
+        alignToParentEdge = {x = false, y = false, z = true},
+        xGap = 3,
+        xOffset = -parentPadding,
+        zOffset = parentPadding,
+        yOffset = parentPadding,
+
+        parent = parent,
+        direction = 1,
+        moveTowardZero = {x = 1, y = 1, z = -1}
+    }
+
+    local characterProps = {size = {x = 4, y = 4, z = 1}, partName = "Item"}
+
+    local props = {
+        rowProps = rowProps,
+        itemConfigs = itemConfigs,
+        itemProps = characterProps
+    }
+
+    RowOfParts2.createRowOfParts(props)
+end
+
 function module.addRemoteObjects(part)
     local frameIndex = 1
     local parentPadding = 1
@@ -50,12 +78,14 @@ function module.addRemoteObjects(part)
         xGap = 2,
         xOffset = parentPadding,
         zOffset = parentPadding,
+        yOffset = parentPadding,
+
         parent = part,
         direction = -1,
         moveTowardZero = {x = -1, y = 1, z = -1}
     }
 
-    local sceneProps = {size = {x = 36, y = 24, z = 1}, partName = "Scene"}
+    local sceneProps = {size = {x = 48, y = 24, z = 1}, partName = "Scene"}
 
     local props = {
         rowProps = rowProps,
@@ -68,11 +98,11 @@ function module.addRemoteObjects(part)
     for i, newScene in ipairs(renderedScenes) do
         local sceneConfig = sceneConfigs[i]
         local characterConfigs = sceneConfig.frames[frameIndex].characters
-        -- local items = sceneConfig.frames[frameIndex].items
+        local items = sceneConfig.frames[frameIndex].items
+
         renderCharacters(newScene, characterConfigs)
-        -- renderItems(newScene, items)
+        renderItems(newScene, items)
         Dialog.renderDialog(newScene)
-        -- 
     end
 
 end

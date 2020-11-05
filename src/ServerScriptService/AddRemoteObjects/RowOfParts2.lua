@@ -32,7 +32,11 @@ end
 function createRowOfParts(props)
     local rowProps = props.rowProps
     -- local alignToParentEdge = {x = true, y = false, z = true}
-    local alignToParentEdge = props.alignToParentEdge or
+    print('props.alignToParentEdge' .. ' - start');
+    print(props.alignToParentEdge);
+    print('props.alignToParentEdge' .. ' - end');
+    -- This may be broken
+    local alignToParentEdge = rowProps.alignToParentEdge or
                                   {x = true, y = false, z = true}
     local itemConfigs = props.itemConfigs
     local itemProps = props.itemProps
@@ -61,9 +65,9 @@ function createRowOfParts(props)
     local sceneWidth = itemProps.size.x
     local xIncrement = rowProps.direction * (sceneWidth + rowProps.xGap)
 
-    local prevX = parentEdgeX - rowProps.xOffset
-    local y = parentEdgeY + rowProps.xOffset
-    local z = parentEdgeZ - rowProps.xOffset
+    local prevX = parentEdgeX - (rowProps.xOffset or 0)
+    local y = parentEdgeY + (rowProps.yOffset or 0)
+    local z = parentEdgeZ - (rowProps.zOffset or 0)
 
     local rowOfParts = {}
 
