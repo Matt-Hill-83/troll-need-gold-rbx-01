@@ -4,15 +4,9 @@ local Sss = game:GetService("ServerScriptService")
 
 local SceneConfig = require(Sss.Source.AddRemoteObjects.ScenesConfig)
 local Dialog = require(Sss.Source.AddRemoteObjects.Dialog)
-local Part = require(Sss.Source.AddRemoteObjects.Part)
 local RowOfParts2 = require(Sss.Source.AddRemoteObjects.RowOfParts2)
 
 local sceneConfigs = SceneConfig.getScenesConfig()
-
-createNewPart = function(item, size)
-    local sceneProps = {decalId = item.decalId, size = size}
-    return Part.createPart(sceneProps)
-end
 
 renderCharacters = function(parent, itemConfigs)
     local parentPadding = 1
