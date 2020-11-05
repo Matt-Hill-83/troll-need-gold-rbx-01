@@ -55,6 +55,7 @@ renderItems = function(parent, items)
 end
 
 function module.addRemoteObjects(part)
+    local frameIndex = 1
 
     local basePadding = 1
 
@@ -62,40 +63,35 @@ function module.addRemoteObjects(part)
         xGap = 2,
         xOffset = basePadding,
         zOffset = basePadding,
-
-        -- createNewItemFunc = createNewPart,
         parent = part,
         direction = -1,
         moveTowardZero = {x = -1, y = 1, z = -1}
     }
 
+    -- local sceneDepth = 2
+    local sceneProps = {
+        size = {x = 4, y = 4, z = sceneDepth},
+        partName = "Scene"
+    }
+
     local props = {
         rowProps = rowProps,
-        sceneConfigs = sceneConfigs
+        sceneConfigs = sceneConfigs,
+        sceneProps = sceneProps
         --
     }
 
     local renderedScenes = RowOfParts2.createRowOfParts2(props)
 
-    -- local scene = sceneConfigs[i]
-    -- local characters = scene.frames[frameIndex].characters
-    -- local items = scene.frames[frameIndex].items
-    -- renderCharacters(newScene, characters)
-    -- renderItems(newScene, items)
-    -- Dialog.renderDialog(newScene)
-    -- 
-
-    -- local rowOfScenes = RowOfParts.createRowOfParts(rowProps)
-
-    -- for i, newScene in ipairs(rowOfScenes) do
-    --     local scene = sceneConfigs[i]
-    --     local characters = scene.frames[frameIndex].characters
-    --     local items = scene.frames[frameIndex].items
-    --     renderCharacters(newScene, characters)
-    --     renderItems(newScene, items)
-    --     Dialog.renderDialog(newScene)
-    --     -- 
-    -- end
+    for i, newScene in ipairs(renderedScenes) do
+        -- local scene = sceneConfigs[i]
+        -- local characters = scene.frames[frameIndex].characters
+        -- local items = scene.frames[frameIndex].items
+        -- renderCharacters(newScene, characters)
+        -- renderItems(newScene, items)
+        Dialog.renderDialog(newScene)
+        -- 
+    end
 
 end
 

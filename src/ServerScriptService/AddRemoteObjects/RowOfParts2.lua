@@ -29,13 +29,7 @@ end
 function createRowOfParts2(props)
     local rowProps = props.rowProps
     local sceneConfigs = props.sceneConfigs
-
-    local sceneDepth = 2
-
-    local sceneProps = {
-        size = {x = 4, y = 4, z = sceneDepth},
-        partName = "Scene"
-    }
+    local sceneProps = props.sceneProps
 
     local edgePropsX = {part = rowProps.parent, axis = "X"}
     local parentEdgeX = getPartFarEdge(edgePropsX)
@@ -53,9 +47,10 @@ function createRowOfParts2(props)
     local y = parentEdgeY + rowProps.xOffset
     local z = parentEdgeZ - rowProps.xOffset
 
+    local rowOfParts = {}
+
     for i, sceneConfig in ipairs(sceneConfigs) do
         local x = prevX
-
         local position = {x = x, y = y, z = z}
 
         local adjustmentProps = {
@@ -75,9 +70,12 @@ function createRowOfParts2(props)
         }
         local newPart = Part.createPart2(newPartProps)
 
+        rowOfParts[i] = newPart
+
         prevX = x + xIncrement
     end
 
+    return rowOfParts
 end
 
 module.createRowOfParts2 = createRowOfParts2
