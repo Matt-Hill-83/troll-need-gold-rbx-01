@@ -23,7 +23,7 @@ renderItems = function(parent, itemConfigs)
         moveTowardZero = {x = 1, y = 1, z = -1}
     }
 
-    local characterProps = {size = {x = 6, y = 8, z = 2}, partName = "Item"}
+    local characterProps = {size = {x = 6, y = 8, z = 1}, partName = "Item"}
 
     local props = {
         rowProps = rowProps,
@@ -46,11 +46,11 @@ renderCharacters = function(parent, itemConfigs)
 
         parent = parent,
         direction = -1,
-        moveTowardZero = {x = -1, y = 1, z = 1}
+        moveTowardZero = {x = -1, y = 1, z = -1}
     }
 
     local characterProps = {
-        size = {x = 6, y = 8, z = 2},
+        size = {x = 6, y = 8, z = 1},
         partName = "Character"
     }
 
