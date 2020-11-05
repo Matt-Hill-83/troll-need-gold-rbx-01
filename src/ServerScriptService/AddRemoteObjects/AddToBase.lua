@@ -20,7 +20,7 @@ renderCharacters = function(parent, itemConfigs)
     local rowProps = {
         alignToParentEdge = {x = true, y = false, z = true},
         xGap = 1,
-        xOffset = parentPadding,
+        xOffset = 4,
         zOffset = parentPadding,
         yOffset = parentPadding,
 
@@ -30,7 +30,7 @@ renderCharacters = function(parent, itemConfigs)
     }
 
     local characterProps = {
-        size = {x = 4, y = 4, z = 1},
+        size = {x = 6, y = 8, z = 1},
         partName = "Character"
     }
 
@@ -48,8 +48,8 @@ renderItems = function(parent, itemConfigs)
 
     local rowProps = {
         alignToParentEdge = {x = false, y = false, z = true},
-        xGap = 3,
-        xOffset = -parentPadding,
+        xGap = 1,
+        xOffset = -4,
         zOffset = parentPadding,
         yOffset = parentPadding,
 
@@ -58,7 +58,7 @@ renderItems = function(parent, itemConfigs)
         moveTowardZero = {x = 1, y = 1, z = -1}
     }
 
-    local characterProps = {size = {x = 4, y = 4, z = 1}, partName = "Item"}
+    local characterProps = {size = {x = 6, y = 8, z = 1}, partName = "Item"}
 
     local props = {
         rowProps = rowProps,
