@@ -23,6 +23,10 @@ function getPartFarEdge(props)
     return partFarEdge
 end
 
+function getPartFarEdges(props)
+    --
+end
+
 function createRowOfParts(props)
     local partConfigs = props.partConfigs
     local parent = props.parent
@@ -70,5 +74,6 @@ end
 
 module.createRowOfParts = createRowOfParts
 module.getPartFarEdge = getPartFarEdge
+module.getPartFarEdges = getPartFarEdges
 
 return module
