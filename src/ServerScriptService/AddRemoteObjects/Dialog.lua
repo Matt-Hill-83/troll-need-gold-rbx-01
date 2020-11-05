@@ -1,24 +1,22 @@
+local TextService = game:GetService("TextService")
+
 local module = {}
 
 renderDialog = function(parent)
 
     local pixelsPerStud = 50
     local childWidth = parent.Size.X * pixelsPerStud
-    local childHeight = 2 * pixelsPerStud
+    local childHeight = 4 * pixelsPerStud
 
-    print('childWidth' .. ' - start');
-    print(childWidth);
-    print('childWidth' .. ' - end');
+    -- print('childWidth' .. ' - start');
+    -- print(childWidth);
+    -- print('childWidth' .. ' - end');
 
     local sgui = Instance.new("SurfaceGui", parent)
-    local textButton = Instance.new("TextButton", sgui)
-    textButton.Size = UDim2.new(0, childWidth, 0, childHeight)
 
-    local dialogSurface = textButton.Parent
-    local textLabels = Instance.new("TextLabel", sgui)
+    -- local dialogSurface = textButton.Parent
+    -- Instance.new("TextLabel", sgui)
     local counter = 1
-
-    textButton.Text = "Next Page!"
 
     local testDict01 = {
         text = "one asd fasdf asdf asdf asdf as dfas dfasd fasd fasd fasdf asd ",
@@ -27,33 +25,58 @@ renderDialog = function(parent)
     }
     local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
 
-    local texts2 = {testDict01, testDict02, testDict01}
+    local texts2 = {testDict01}
+    -- local texts2 = {testDict01, testDict02, testDict01}
 
     for i, dialog in ipairs(texts2) do
-        local newLabel = Instance.new("TextLabel", dialogSurface)
+
+        local text = dialog['text']
+        local newLabel = Instance.new("TextLabel", sgui)
+        newLabel.Font = Enum.Font.Legacy
+        local font = newLabel.Font
+        print('font' .. ' - start');
+        print(font);
+        print('font' .. ' - end');
+
         local charName = texts2[counter]['char']
-        newLabel.Name = "Dialog Label-0" .. i
-        newLabel.Text = charName .. ": " .. dialog['text']
+        newLabel.Name = "Dialog-" .. i
+        newLabel.Text = charName .. ": " .. text
         newLabel.TextWrapped = true
-        newLabel.Size = UDim2.new(0, childWidth, 0, 100)
+        newLabel.Size = UDim2.new(1, 0, 0, childHeight)
+        newLabel.Selectable = true
+
+        local abs = newLabel.AbsoluteSize
+        print('abs' .. ' - start');
+        print(abs);
+        print('abs' .. ' - end');
+        -- local TextService = game:GetService("TextService")
+        local test = TextService:GetTextSize(dialog['text'], 50, newLabel.Font,
+                                             Vector2.new(1000, 300))
+
+        print('test' .. ' - start');
+        print(test);
+        print('test' .. ' - end');
+        -- local GetTextSize = newLabel.local cll
+
+        -- newLabel.Size = UDim2.new(0, childWidth, 0, 100)
         -- newLabel.Position = UDim2.new(0, 100, 0, i * 150)
-        newLabel.Position = UDim2.new(0, 50, 0, 0) -- 50 px from the left
+        -- newLabel.Position = UDim2.new(0, 50, 0, 0) -- 50 px from the left
         newLabel.TextSize = 50
         -- newLabel.TextXAlignment = 
         newLabel.AutomaticSize = 3
 
     end
 
-    local function onActivated()
-        counter = counter + 1
-        textButton.Text = "Page: " .. counter
+    -- local textButton = Instance.new("TextButton", sgui)
+    -- textButton.Size = UDim2.new(0, childWidth, 0, childHeight)
+    -- textButton.Text = "Next Page!"
+    -- local function onActivated()
+    --     counter = counter + 1
+    --     textButton.Text = "Page: " .. counter
 
-        for i, textLabel in ipairs({textLabels}) do
-            print(textLabel.Name .. " is child number " .. i)
-        end
-    end
+    -- end
 
-    textButton.MouseButton1Click:Connect(onActivated)
+    -- textButton.MouseButton1Click:Connect(onActivated)
 end
 
 module.renderDialog = renderDialog
