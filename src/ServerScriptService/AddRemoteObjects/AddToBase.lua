@@ -54,7 +54,7 @@ renderItems = function(parent, items)
 end
 
 function module.addRemoteObjects(part)
-    local basePadding = 4
+    local basePadding = 1
     local sceneProps = {
         size = {x = 4, y = 4, z = sceneDepth},
         partName = "Scene"
@@ -64,8 +64,8 @@ function module.addRemoteObjects(part)
 
     local rowProps = {
         xGap = 2,
-        xOffset = -basePadding,
-        zOffset = -basePadding,
+        xOffset = basePadding,
+        zOffset = basePadding,
 
         createNewItemFunc = createNewPart,
         parent = part,
@@ -85,9 +85,9 @@ function module.addRemoteObjects(part)
     local sceneWidth = sceneProps.size.x
     local xIncrement = rowProps.direction * (sceneWidth + rowProps.xGap)
 
-    local prevX = parentEdgeX
-    local y = parentEdgeY
-    local z = parentEdgeZ
+    local prevX = parentEdgeX + rowProps.xOffset
+    local y = parentEdgeY + rowProps.xOffset
+    local z = parentEdgeZ + rowProps.xOffset
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local x = prevX
