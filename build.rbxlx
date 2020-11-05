@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>20.0592022</X>
-					<Y>42.4657631</Y>
-					<Z>-104.894012</Z>
-					<R00>-0.982714832</R00>
-					<R01>-0.011190434</R01>
-					<R02>0.184787557</R02>
+					<X>-17.9135132</X>
+					<Y>10.7036591</Y>
+					<Z>-47.2328987</Z>
+					<R00>-0.999501109</R00>
+					<R01>0.00330113177</R01>
+					<R02>-0.0314102061</R02>
 					<R10>-0</R10>
-					<R11>0.998171508</R11>
-					<R12>0.0604476295</R12>
-					<R20>-0.185126096</R20>
-					<R21>0.0594027825</R21>
-					<R22>-0.980917811</R22>
+					<R11>0.994522691</R11>
+					<R12>0.104521774</R12>
+					<R20>0.0315831974</R20>
+					<R21>0.104469627</R21>
+					<R22>-0.994026542</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>19.6896267</X>
-					<Y>42.3448677</Y>
-					<Z>-102.932175</Z>
+					<X>-16.5</X>
+					<Y>6</Y>
+					<Z>-2.5</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1255,6 +1255,282 @@ return FirebaseService;]]></ProtectedString>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
 		</Item>
+		<Item class="Part" referent="RBX57a2108d44e5480faf89497d8b9eee72">
+			<Properties>
+				<bool name="Anchored">false</bool>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<float name="BackParamA">-0.5</float>
+				<float name="BackParamB">0.5</float>
+				<token name="BackSurface">0</token>
+				<token name="BackSurfaceInput">0</token>
+				<float name="BottomParamA">-0.5</float>
+				<float name="BottomParamB">0.5</float>
+				<token name="BottomSurface">0</token>
+				<token name="BottomSurfaceInput">0</token>
+				<CoordinateFrame name="CFrame">
+					<X>-16</X>
+					<Y>7</Y>
+					<Z>-1</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<bool name="CanCollide">true</bool>
+				<bool name="CastShadow">true</bool>
+				<int name="CollisionGroupId">0</int>
+				<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
+				<PhysicalProperties name="CustomPhysicalProperties">
+					<CustomPhysics>false</CustomPhysics>
+				</PhysicalProperties>
+				<float name="FrontParamA">-0.5</float>
+				<float name="FrontParamB">0.5</float>
+				<token name="FrontSurface">0</token>
+				<token name="FrontSurfaceInput">0</token>
+				<float name="LeftParamA">-0.5</float>
+				<float name="LeftParamB">0.5</float>
+				<token name="LeftSurface">0</token>
+				<token name="LeftSurfaceInput">0</token>
+				<bool name="Locked">false</bool>
+				<bool name="Massless">false</bool>
+				<token name="Material">256</token>
+				<string name="Name">Part</string>
+				<float name="Reflectance">0</float>
+				<float name="RightParamA">-0.5</float>
+				<float name="RightParamB">0.5</float>
+				<token name="RightSurface">0</token>
+				<token name="RightSurfaceInput">0</token>
+				<int name="RootPriority">0</int>
+				<Vector3 name="RotVelocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<float name="TopParamA">-0.5</float>
+				<float name="TopParamB">0.5</float>
+				<token name="TopSurface">0</token>
+				<token name="TopSurfaceInput">0</token>
+				<float name="Transparency">0</float>
+				<Vector3 name="Velocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<token name="formFactorRaw">1</token>
+				<token name="shape">1</token>
+				<Vector3 name="size">
+					<X>16</X>
+					<Y>9.99999905</Y>
+					<Z>2</Z>
+				</Vector3>
+			</Properties>
+			<Item class="SurfaceGui" referent="RBXf7cfcd5e21ed42a896162843fe6cc344">
+				<Properties>
+					<bool name="Active">true</bool>
+					<Ref name="Adornee">null</Ref>
+					<bool name="AlwaysOnTop">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="AutoLocalize">true</bool>
+					<Vector2 name="CanvasSize">
+						<X>800</X>
+						<Y>600</Y>
+					</Vector2>
+					<bool name="ClipsDescendants">true</bool>
+					<bool name="Enabled">true</bool>
+					<token name="Face">5</token>
+					<float name="LightInfluence">1</float>
+					<string name="Name">SurfaceGui</string>
+					<float name="PixelsPerStud">50</float>
+					<bool name="ResetOnSpawn">true</bool>
+					<Ref name="RootLocalizationTable">null</Ref>
+					<token name="SizingMode">1</token>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="ToolPunchThroughDistance">0</float>
+					<token name="ZIndexBehavior">1</token>
+					<float name="ZOffset">0</float>
+				</Properties>
+				<Item class="TextLabel" referent="RBX78e4dd5cf8644b9196288c71727ae53e">
+					<Properties>
+						<bool name="Active">false</bool>
+						<Vector2 name="AnchorPoint">
+							<X>0</X>
+							<Y>0</Y>
+						</Vector2>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<bool name="AutoLocalize">true</bool>
+						<token name="AutomaticSize">0</token>
+						<Color3 name="BackgroundColor3">
+							<R>1</R>
+							<G>1</G>
+							<B>1</B>
+						</Color3>
+						<float name="BackgroundTransparency">0</float>
+						<Color3 name="BorderColor3">
+							<R>0.105882362</R>
+							<G>0.164705887</G>
+							<B>0.207843155</B>
+						</Color3>
+						<token name="BorderMode">0</token>
+						<int name="BorderSizePixel">1</int>
+						<bool name="ClipsDescendants">false</bool>
+						<bool name="Draggable">false</bool>
+						<token name="Font">3</token>
+						<int name="LayoutOrder">0</int>
+						<float name="LineHeight">1</float>
+						<string name="Name">TextLabel</string>
+						<Ref name="NextSelectionDown">null</Ref>
+						<Ref name="NextSelectionLeft">null</Ref>
+						<Ref name="NextSelectionRight">null</Ref>
+						<Ref name="NextSelectionUp">null</Ref>
+						<UDim2 name="Position">
+							<XS>0</XS>
+							<XO>0</XO>
+							<YS>0</YS>
+							<YO>0</YO>
+						</UDim2>
+						<bool name="RichText">false</bool>
+						<Ref name="RootLocalizationTable">null</Ref>
+						<float name="Rotation">0</float>
+						<bool name="Selectable">false</bool>
+						<Ref name="SelectionImageObject">null</Ref>
+						<UDim2 name="Size">
+							<XS>0</XS>
+							<XO>200</XO>
+							<YS>0</YS>
+							<YO>50</YO>
+						</UDim2>
+						<token name="SizeConstraint">0</token>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<string name="Text">asdf asdf asfd as fdas fd asdf asdf</string>
+						<Color3 name="TextColor3">
+							<R>0</R>
+							<G>0</G>
+							<B>0</B>
+						</Color3>
+						<bool name="TextScaled">false</bool>
+						<float name="TextSize">50</float>
+						<Color3 name="TextStrokeColor3">
+							<R>0</R>
+							<G>0</G>
+							<B>0</B>
+						</Color3>
+						<float name="TextStrokeTransparency">1</float>
+						<float name="TextTransparency">0</float>
+						<token name="TextTruncate">0</token>
+						<bool name="TextWrapped">false</bool>
+						<token name="TextXAlignment">2</token>
+						<token name="TextYAlignment">1</token>
+						<bool name="Visible">true</bool>
+						<int name="ZIndex">1</int>
+					</Properties>
+				</Item>
+			</Item>
+		</Item>
+		<Item class="Model" referent="RBX0391a9bcce5049ad87e06030840f6a1c">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<token name="LevelOfDetail">0</token>
+				<CoordinateFrame name="ModelInPrimary">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<CoordinateFrame name="ModelMeshCFrame">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
+				<Vector3 name="ModelMeshSize">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<string name="Name">CompiledScripts</string>
+				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+			<Item class="ModuleScript" referent="RBXcc10dc9aa7004195aca72793f9fce4d9">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">Script1</string>
+					<string name="ScriptGuid">{65623eaf-7b02-45d0-a3df-39f6dfec3cac}</string>
+					<ProtectedString name="Source"><![CDATA[
+return function()
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+TextLabel0 = Instance.new("TextLabel")
+TextLabel0.Parent = mas
+TextLabel0.Size = UDim2.new(0, 200, 0, 50)
+TextLabel0.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel0.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel0.Font = Enum.Font.SourceSans
+TextLabel0.FontSize = Enum.FontSize.Size60
+TextLabel0.Text = "asdf asdf asfd as fdas fd asdf asdf"
+TextLabel0.TextColor = BrickColor.new("Really black")
+TextLabel0.TextColor3 = Color3.new(0, 0, 0)
+TextLabel0.TextSize = 50
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = workspace
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
+end]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+		</Item>
 	</Item>
 	<Item class="SoundService" referent="RBX7845308c7ca3451eaa9eca1a685d0279">
 		<Properties>
@@ -1777,141 +2053,133 @@ return {a = '234'}
 print('mysss2')
 local Sss = game:GetService("ServerScriptService")
 
-local config = require(Sss.Source.AddRemoteObjects.ScenesConfig)
+local SceneConfig = require(Sss.Source.AddRemoteObjects.ScenesConfig)
 local Dialog = require(Sss.Source.AddRemoteObjects.Dialog)
-local Part = require(Sss.Source.AddRemoteObjects.Part)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 
-local sceneConfigs = config.getScenesConfig()
-local sceneDepth = 2
+local sceneConfigs = SceneConfig.getScenesConfig()
 
-createNewPart = function(item, size)
-    local sceneProps = {decalId = item.decalId, size = size}
-    return Part.createPart(sceneProps)
-end
-
-renderCharacters = function(parent, items)
-    local scenePadding = 1
+renderItems = function(parent, itemConfigs)
+    local parentPadding = 1
 
     local rowProps = {
-        parent = parent,
-        partConfigs = items,
-        partNamePrefix = "Character",
+        alignToParentEdge = {x = false, y = false, z = true},
+        xGap = 1,
+        xOffset = -4,
+        zOffset = parentPadding,
+        yOffset = parentPadding,
 
-        size = {x = 8, y = 8, z = 1},
-        xIncrement = 1,
-        zOffset = -sceneDepth,
-        xOffset = -scenePadding,
-        yOffset = scenePadding * 2,
-        createNewItemFunc = createNewPart
+        parent = parent,
+        direction = 1,
+        moveTowardZero = {x = 1, y = 1, z = -1}
     }
 
-    RowOfParts.createRowOfParts(rowProps)
+    local characterProps = {size = {x = 6, y = 8, z = 1}, partName = "Item"}
+
+    local props = {
+        rowProps = rowProps,
+        itemConfigs = itemConfigs,
+        itemProps = characterProps
+    }
+
+    RowOfParts.createRowOfParts(props)
 end
 
-renderItems = function(parent, items)
-    local scenePadding = 1
+renderCharacters = function(parent, itemConfigs)
+    local parentPadding = 1
 
     local rowProps = {
+        alignToParentEdge = {x = true, y = false, z = true},
+        xGap = 1,
+        xOffset = 4,
+        zOffset = parentPadding,
+        yOffset = parentPadding,
+
         parent = parent,
-        partConfigs = items,
-        partNamePrefix = "Item",
-
-        size = {x = 6, y = 6, z = 1},
-        xIncrement = 1,
-        zOffset = -sceneDepth,
-        xOffset = -30,
-        yOffset = scenePadding * 2,
-
-        createNewItemFunc = createNewPart
+        direction = -1,
+        moveTowardZero = {x = -1, y = 1, z = -1}
     }
-    RowOfParts.createRowOfParts(rowProps)
+
+    local characterProps = {
+        size = {x = 6, y = 8, z = 1},
+        partName = "Character"
+    }
+
+    local props = {
+        rowProps = rowProps,
+        itemConfigs = itemConfigs,
+        itemProps = characterProps
+    }
+
+    RowOfParts.createRowOfParts(props)
+end
+
+renderDialogs = function(parent, itemConfigs)
+    local parentPadding = 1
+
+    local rowProps = {
+        alignToParentEdge = {x = true, y = true, z = true},
+        xGap = 1,
+        xOffset = parentPadding,
+        zOffset = parentPadding,
+        yOffset = -parentPadding,
+
+        parent = parent,
+        direction = -1,
+        moveTowardZero = {x = -1, y = -1, z = -1}
+    }
+
+    local characterProps = {size = {x = 20, y = 8, z = 1}, partName = "Dialog"}
+
+    local props = {
+        rowProps = rowProps,
+        itemConfigs = itemConfigs,
+        itemProps = characterProps
+    }
+
+    local renderedBlocks = RowOfParts.createRowOfParts(props)
+
+    for i, block in ipairs(renderedBlocks) do Dialog.renderDialog(block) end
+
 end
 
 function module.addRemoteObjects(part)
-    local basePadding = 1
-    local sceneProps = {
-        size = {x = 4, y = 4, z = sceneDepth},
-        partName = "Scene"
-    }
-
     local frameIndex = 1
+    local parentPadding = 1
 
     local rowProps = {
-        xGap = 2,
-        xOffset = basePadding,
-        zOffset = basePadding,
+        alignToParentEdge = {x = true, y = true, z = true},
+        xGap = 4,
+        xOffset = parentPadding,
+        zOffset = parentPadding,
 
-        createNewItemFunc = createNewPart,
         parent = part,
         direction = -1,
         moveTowardZero = {x = -1, y = 1, z = -1}
     }
 
-    local edgePropsX = {part = part, axis = "X"}
-    local parentEdgeX = RowOfParts.getPartFarEdge(edgePropsX)
+    local sceneProps = {size = {x = 48, y = 24, z = 1}, partName = "Scene"}
 
-    local edgePropsY = {part = part, axis = "Y"}
-    local parentEdgeY = RowOfParts.getPartFarEdge(edgePropsY)
+    local props = {
+        rowProps = rowProps,
+        itemConfigs = sceneConfigs,
+        itemProps = sceneProps
+    }
 
-    local edgePropsZ = {part = part, axis = "Z"}
-    local parentEdgeZ = RowOfParts.getPartFarEdge(edgePropsZ)
+    local renderedScenes = RowOfParts.createRowOfParts(props)
 
-    local sceneWidth = sceneProps.size.x
-    local xIncrement = rowProps.direction * (sceneWidth + rowProps.xGap)
+    for i, newScene in ipairs(renderedScenes) do
+        local sceneConfig = sceneConfigs[i]
+        local characterConfigs = sceneConfig.frames[frameIndex].characters
+        local items = sceneConfig.frames[frameIndex].items
 
-    local prevX = parentEdgeX - rowProps.xOffset
-    local y = parentEdgeY + rowProps.xOffset
-    local z = parentEdgeZ - rowProps.xOffset
+        renderCharacters(newScene, characterConfigs)
+        renderItems(newScene, items)
 
-    for i, sceneConfig in ipairs(sceneConfigs) do
-        local x = prevX
+        local dialogs = {{test = 5}}
+        renderDialogs(newScene, dialogs)
 
-        local position = {x = x, y = y, z = z}
-
-        local adjustmentProps = {
-            size = sceneProps.size,
-            position = position,
-            moveTowardZero = rowProps.moveTowardZero
-        }
-        local edgeAdjustedPosition = Part.getEdgePositionFromCenter(
-                                         adjustmentProps)
-
-        local newPartProps = {
-            decalId = sceneConfig.decalId,
-            size = sceneProps.size,
-            name = sceneProps.partName .. "-" .. i,
-            position = edgeAdjustedPosition,
-            parent = rowProps.parent
-        }
-        local newPart = Part.createPart2(newPartProps)
-
-        print('x' .. ' - start');
-        print(x);
-        print('x' .. ' - end');
-
-        prevX = x + xIncrement
     end
-
-    -- local scene = sceneConfigs[i]
-    -- local characters = scene.frames[frameIndex].characters
-    -- local items = scene.frames[frameIndex].items
-    -- renderCharacters(newScene, characters)
-    -- renderItems(newScene, items)
-    -- Dialog.renderDialog(newScene)
-    -- 
-
-    -- local rowOfScenes = RowOfParts.createRowOfParts(rowProps)
-
-    -- for i, newScene in ipairs(rowOfScenes) do
-    --     local scene = sceneConfigs[i]
-    --     local characters = scene.frames[frameIndex].characters
-    --     local items = scene.frames[frameIndex].items
-    --     renderCharacters(newScene, characters)
-    --     renderItems(newScene, items)
-    --     Dialog.renderDialog(newScene)
-    --     -- 
-    -- end
 
 end
 
@@ -1976,17 +2244,30 @@ return module
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
 renderDialog = function(parent)
-    local part = Instance.new("Part", parent)
-    part.Size = Vector3.new(20, 20, 1)
-    local sgui = Instance.new("SurfaceGui", part)
+
+    local pixelsPerStud = 50
+    local childWidth = parent.Size.X * pixelsPerStud
+    local childHeight = 2 * pixelsPerStud
+
+    print('childWidth' .. ' - start');
+    print(childWidth);
+    print('childWidth' .. ' - end');
+
+    local sgui = Instance.new("SurfaceGui", parent)
     local textButton = Instance.new("TextButton", sgui)
+    textButton.Size = UDim2.new(0, childWidth, 0, childHeight)
+
     local dialogSurface = textButton.Parent
     local textLabels = Instance.new("TextLabel", sgui)
     local counter = 1
 
     textButton.Text = "Next Page!"
 
-    local testDict01 = {text = "one", color = "Yellow", char = "Britta"}
+    local testDict01 = {
+        text = "one asd fasdf asdf asdf asdf as dfas dfasd fasd fasd fasdf asd ",
+        color = "Yellow",
+        char = "Britta"
+    }
     local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
 
     local texts2 = {testDict01, testDict02, testDict01}
@@ -1996,8 +2277,13 @@ renderDialog = function(parent)
         local charName = texts2[counter]['char']
         newLabel.Name = "Dialog Label-0" .. i
         newLabel.Text = charName .. ": " .. dialog['text']
-        newLabel.Size = UDim2.new(0, 800, 0, 100)
-        newLabel.Position = UDim2.new(0, 100, 0, i * 150)
+        newLabel.TextWrapped = true
+        newLabel.Size = UDim2.new(0, childWidth, 0, 100)
+        -- newLabel.Position = UDim2.new(0, 100, 0, i * 150)
+        newLabel.Position = UDim2.new(0, 50, 0, 0) -- 50 px from the left
+        newLabel.TextSize = 50
+        -- newLabel.TextXAlignment = 
+        newLabel.AutomaticSize = 3
 
     end
 
@@ -2027,25 +2313,6 @@ return module
 						<string name="Name">Part</string>
 						<string name="ScriptGuid">{3b96471a-8c40-4f75-bc03-965e17accbe8}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
-
-function createPart(props)
-    local size = props.size
-    local decalId = props.decalId
-    local newPart = Instance.new("Part")
-
-    newPart.Size = Vector3.new(size.x, size.y, size.z)
-    newPart.Anchored = true
-    newPart.BrickColor = BrickColor.new("Light blue")
-
-    if decalId then
-        local newDecal = Instance.new("Decal", newPart)
-        newDecal.Texture = 'rbxassetid://' .. decalId
-        newDecal.Face = 'Front'
-    end
-
-    return newPart
-
-end
 
 function createPart2(props)
     local parent = props.parent
@@ -2088,7 +2355,6 @@ function getEdgePositionFromCenter(props)
 end
 
 module.getEdgePositionFromCenter = getEdgePositionFromCenter
-module.createPart = createPart
 module.createPart2 = createPart2
 return module
 ]]></ProtectedString>
@@ -2102,7 +2368,10 @@ return module
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">RowOfParts</string>
 						<string name="ScriptGuid">{d717e11a-0013-44af-af0d-f0c09d1e1811}</string>
-						<ProtectedString name="Source"><![CDATA[local module = {}
+						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
+local Part = require(Sss.Source.AddRemoteObjects.Part)
+
+local module = {}
 
 function getParentFarEdge(props)
     local parent = props.parent
@@ -2120,137 +2389,83 @@ function getPartFarEdge(props)
     local part = props.part
     local axis = props.axis or 'X'
 
+    -- ternary function
+    local alignToParentEdge = props.alignToParentEdge and 1 or -1
     local partPosition = part.CFrame
     local partSize = part.Size
-    local partFarEdge = partPosition[axis] + partSize[axis] / 2
+    local partFarEdge = partPosition[axis] + (partSize[axis] / 2) *
+                            alignToParentEdge
 
     return partFarEdge
-end
-
-function getPartFarEdges(props)
-    --
 end
 
 function createRowOfParts(props)
-    local partConfigs = props.partConfigs
-    local parent = props.parent
-    local partNamePrefix = props.partNamePrefix
+    local rowProps = props.rowProps
+    local alignToParentEdge = rowProps.alignToParentEdge or
+                                  {x = true, y = false, z = true}
+    local itemConfigs = props.itemConfigs
+    local itemProps = props.itemProps
 
-    local size = props.size
-    local xIncrement = props.xIncrement
-    local xOffset = props.xOffset or 0
-    local yOffset = props.yOffset or 0
-    local zOffset = props.zOffset or 0
+    local edgePropsX = {
+        part = rowProps.parent,
+        axis = "X",
+        alignToParentEdge = alignToParentEdge.x
+    }
+    local parentEdgeX = getPartFarEdge(edgePropsX)
 
-    local createNewItemFunc = props.createNewItemFunc
+    local edgePropsY = {
+        part = rowProps.parent,
+        axis = "Y",
+        alignToParentEdge = alignToParentEdge.y
+    }
+    local parentEdgeY = getPartFarEdge(edgePropsY)
+
+    local edgePropsZ = {
+        part = rowProps.parent,
+        axis = "Z",
+        alignToParentEdge = alignToParentEdge.z
+    }
+    local parentEdgeZ = getPartFarEdge(edgePropsZ)
+
+    local sceneWidth = itemProps.size.x
+    local xIncrement = rowProps.direction * (sceneWidth + rowProps.xGap)
+
+    local prevX = parentEdgeX - (rowProps.xOffset or 0)
+    local y = parentEdgeY + (rowProps.yOffset or 0)
+    local z = parentEdgeZ - (rowProps.zOffset or 0)
+
     local rowOfParts = {}
 
-    for i, partConfig in ipairs(partConfigs) do
+    for i, itemConfig in ipairs(itemConfigs) do
+        local x = prevX
+        local position = {x = x, y = y, z = z}
 
-        local calcEdgePropsX = {
-            parent = parent,
-            childLength = size.x,
-            axis = "X"
+        local adjustmentProps = {
+            size = itemProps.size,
+            position = position,
+            moveTowardZero = rowProps.moveTowardZero
         }
+        local edgeAdjustedPosition = Part.getEdgePositionFromCenter(
+                                         adjustmentProps)
 
-        local calcEdgePropsZ = {
-            parent = parent,
-            childLength = size.z,
-            axis = "Z"
+        local newPartProps = {
+            decalId = itemConfig.decalId,
+            size = itemProps.size,
+            name = itemProps.partName .. "-" .. i,
+            position = edgeAdjustedPosition,
+            parent = rowProps.parent
         }
+        local newPart = Part.createPart2(newPartProps)
 
-        local xPositionStart = getParentFarEdge(calcEdgePropsX) + xOffset
-        local xPosition = xPositionStart - (i - 1) * (size.x + xIncrement)
-        local yPosition = size.y / 2 + yOffset
-        local zPosition = getParentFarEdge(calcEdgePropsZ) + zOffset
+        rowOfParts[i] = newPart
 
-        local newItem = createNewItemFunc(partConfig, size)
-        newItem.Position = Vector3.new(xPosition, yPosition, zPosition)
-        newItem.Parent = parent
-        newItem.Name = partNamePrefix .. ": " .. i
-
-        rowOfParts[i] = newItem
+        prevX = x + xIncrement
     end
 
     return rowOfParts
-
 end
 
 module.createRowOfParts = createRowOfParts
-module.getPartFarEdge = getPartFarEdge
-module.getPartFarEdges = getPartFarEdges
-
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBXbdc2519671294cf5b035a6dbe499f349">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">RowOfParts2</string>
-						<string name="ScriptGuid">{3ed2d550-7a04-481c-b6a1-20af2d13dc15}</string>
-						<ProtectedString name="Source"><![CDATA[local module = {}
-
-function getParentFarEdge(props)
-    local parent = props.parent
-    local childLength = props.childLength
-    local axis = props.axis or 'X'
-
-    local parentPosition = parent.CFrame
-    local parentSize = parent.Size
-    local parentFarEdge = parentPosition[axis] + parentSize[axis] / 2
-    local alignedValue = parentFarEdge - childLength / 2
-    return alignedValue
-end
-
-function getPartFarEdge(props)
-    local part = props.part
-    local axis = props.axis or 'X'
-
-    local partPosition = part.CFrame
-    local partSize = part.Size
-    local partFarEdge = partPosition[axis] + partSize[axis] / 2
-
-    return partFarEdge
-end
-
-
-
-function createRowOfParts2(props)
-    
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    local rowOfParts = {}
-
-
-        rowOfParts[i] = newItem
-
-        
-        
-        
-        
-    end
-
-    
-    return rowOfParts
-end
-
-module.createRowOfParts2 = createRowOfParts2
-
 
 return module
 ]]></ProtectedString>
