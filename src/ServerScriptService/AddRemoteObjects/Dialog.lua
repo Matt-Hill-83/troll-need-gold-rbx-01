@@ -20,16 +20,15 @@ renderButtonBlock = function(props)
         parent = parent,
         size = siblingSizeCopy,
         position = sibling.Position + Vector3.new(0, -distanceY, 0),
-        color = BrickColor.new("red")
+        color = BrickColor.new("Red")
     }
 
     local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
-    print('buttonBlock' .. ' - start');
-    print(buttonBlock);
-    print('buttonBlock' .. ' - end');
     return buttonBlock
 
 end
+
+renderDialogBlock = function(props) end
 
 renderDialog = function(base)
 
