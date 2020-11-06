@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-17.9135132</X>
-					<Y>10.7036591</Y>
-					<Z>-47.2328987</Z>
-					<R00>-0.999501109</R00>
-					<R01>0.00330113177</R01>
-					<R02>-0.0314102061</R02>
+					<X>40.8064117</X>
+					<Y>4.97182655</Y>
+					<Z>-35.7730064</Z>
+					<R00>-0.999501169</R00>
+					<R01>0.0033011327</R01>
+					<R02>-0.0314102173</R02>
 					<R10>-0</R10>
 					<R11>0.994522691</R11>
-					<R12>0.104521774</R12>
-					<R20>0.0315831974</R20>
-					<R21>0.104469627</R21>
-					<R22>-0.994026542</R22>
+					<R12>0.104521751</R12>
+					<R20>0.0315832123</R20>
+					<R21>0.104469612</R21>
+					<R22>-0.994026482</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-16.5</X>
-					<Y>6</Y>
-					<Z>-2.5</Z>
+					<X>42</X>
+					<Y>1</Y>
+					<Z>2</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -212,7 +212,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
 						<X>42</X>
-						<Y>1</Y>
+						<Y>9</Y>
 						<Z>2</Z>
 						<R00>-1</R00>
 						<R01>0</R01>
@@ -1641,6 +1641,18 @@ end]]></ProtectedString>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
 	</Item>
+	<Item class="PlayerEmulatorService" referent="RBX9dfc5e24eed34adab93223fb7d1a5bac">
+		<Properties>
+			<BinaryString name="AttributesSerialize"></BinaryString>
+			<string name="EmulatedCountryCode"></string>
+			<string name="EmulatedGameLocale"></string>
+			<string name="Name">PlayerEmulatorService</string>
+			<bool name="PlayerEmulationEnabled">false</bool>
+			<string name="SerializedEmulatedPolicyInfo"></string>
+			<int64 name="SourceAssetId">-1</int64>
+			<BinaryString name="Tags"></BinaryString>
+		</Properties>
+	</Item>
 	<Item class="PermissionsService" referent="RBX0d7dd1ef969f444e9dd1653acc4c64b8">
 		<Properties>
 			<BinaryString name="AttributesSerialize"></BinaryString>
@@ -2063,10 +2075,10 @@ renderItems = function(parent, itemConfigs)
     local parentPadding = 1
 
     local rowProps = {
-        alignToParentEdge = {x = false, y = false, z = true},
+        alignToParentEdge = {x = false, y = false, z = false},
         xGap = 1,
         xOffset = -4,
-        zOffset = parentPadding,
+        -- zOffset = parentPadding,
         yOffset = parentPadding,
 
         parent = parent,
@@ -2089,10 +2101,10 @@ renderCharacters = function(parent, itemConfigs)
     local parentPadding = 1
 
     local rowProps = {
-        alignToParentEdge = {x = true, y = false, z = true},
+        alignToParentEdge = {x = true, y = false, z = false},
         xGap = 1,
         xOffset = 4,
-        zOffset = parentPadding,
+        -- zOffset = -parentPadding,
         yOffset = parentPadding,
 
         parent = parent,
@@ -2118,10 +2130,10 @@ renderDialogs = function(parent, itemConfigs)
     local parentPadding = 1
 
     local rowProps = {
-        alignToParentEdge = {x = true, y = true, z = true},
+        alignToParentEdge = {x = true, y = true, z = false},
         xGap = 1,
-        xOffset = parentPadding,
-        zOffset = parentPadding,
+        xOffset = 3,
+        -- zOffset = parentPadding,
         yOffset = -parentPadding,
 
         parent = parent,
@@ -2151,14 +2163,14 @@ function module.addRemoteObjects(part)
         alignToParentEdge = {x = true, y = true, z = true},
         xGap = 4,
         xOffset = parentPadding,
-        zOffset = parentPadding,
+        -- zOffset = parentPadding,
 
         parent = part,
         direction = -1,
         moveTowardZero = {x = -1, y = 1, z = -1}
     }
 
-    local sceneProps = {size = {x = 48, y = 24, z = 1}, partName = "Scene"}
+    local sceneProps = {size = {x = 48, y = 24, z = 2}, partName = "Scene"}
 
     local props = {
         rowProps = rowProps,
@@ -2241,62 +2253,96 @@ return module
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">Dialog</string>
 						<string name="ScriptGuid">{9b1cd5c3-dda0-4254-acb2-ec1d5ed5bdd7}</string>
-						<ProtectedString name="Source"><![CDATA[local module = {}
+						<ProtectedString name="Source"><![CDATA[local TextService = game:GetService("TextService")
+
+local module = {}
 
 renderDialog = function(parent)
 
-    local pixelsPerStud = 50
-    local childWidth = parent.Size.X * pixelsPerStud
-    local childHeight = 2 * pixelsPerStud
+    local pixelsPerStud = 40
+    local paddingInPx = 1 * pixelsPerStud
 
-    print('childWidth' .. ' - start');
-    print(childWidth);
-    print('childWidth' .. ' - end');
+    local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
+    local parentHeight = parent.Size.Y * pixelsPerStud
+
+    print('parentWidth' .. ' - start');
+    print(parentWidth);
+    print('parentWidth' .. ' - end');
 
     local sgui = Instance.new("SurfaceGui", parent)
-    local textButton = Instance.new("TextButton", sgui)
-    textButton.Size = UDim2.new(0, childWidth, 0, childHeight)
 
-    local dialogSurface = textButton.Parent
-    local textLabels = Instance.new("TextLabel", sgui)
+    -- local dialogSurface = textButton.Parent
+    -- Instance.new("TextLabel", sgui)
     local counter = 1
 
-    textButton.Text = "Next Page!"
-
     local testDict01 = {
-        text = "one asd fasdf asdf asdf asdf as dfas dfasd fasd fasd fasdf asd ",
+        text = "aaa bbb cccc ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt",
         color = "Yellow",
         char = "Britta"
     }
     local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
 
-    local texts2 = {testDict01, testDict02, testDict01}
+    -- local texts = {testDict01}
+    local texts = {testDict01, testDict02, testDict01}
 
-    for i, dialog in ipairs(texts2) do
-        local newLabel = Instance.new("TextLabel", dialogSurface)
-        local charName = texts2[counter]['char']
-        newLabel.Name = "Dialog Label-0" .. i
-        newLabel.Text = charName .. ": " .. dialog['text']
+    local dialogY = paddingInPx
+
+    for i, dialog in ipairs(texts) do
+        local charName = texts[counter]['char']
+        local text = charName .. ": " .. dialog['text']
+
+        local font = Enum.Font.Legacy
+        local fontHeight = 50
+        local textPadVert = fontHeight / 4
+
+        local newLabel = Instance.new("TextLabel", sgui)
+        newLabel.Font = font
+        print('font' .. ' - start');
+        print(font);
+        print('font' .. ' - end');
+
+        local calcSize = TextService:GetTextSize(text, fontHeight,
+                                                 newLabel.Font, Vector2.new(
+                                                     parentWidth, parentHeight))
+
+        local height = calcSize.Y + textPadVert * 2
+
+        newLabel.Name = "Dialog-" .. i
+        newLabel.Text = text
+        newLabel.Size = UDim2.new(0, parentWidth, 0, height)
+        newLabel.Position = UDim2.new(0, paddingInPx, 0, dialogY)
+        newLabel.Selectable = true
+
         newLabel.TextWrapped = true
-        newLabel.Size = UDim2.new(0, childWidth, 0, 100)
+        newLabel.TextSize = fontHeight
+        newLabel.TextXAlignment = Enum.TextXAlignment.Left
+        newLabel.TextYAlignment = Enum.TextYAlignment.Top
+
+        local absoluteHeight = newLabel.AbsoluteSize.Y
+
+        dialogY = dialogY + absoluteHeight + paddingInPx
+        print('calcSize' .. ' - start');
+        print(calcSize);
+        print('calcSize' .. ' - end');
+
+        print('abs' .. ' - start');
+        print(abs);
+        print('abs' .. ' - end');
+
         -- newLabel.Position = UDim2.new(0, 100, 0, i * 150)
-        newLabel.Position = UDim2.new(0, 50, 0, 0) -- 50 px from the left
-        newLabel.TextSize = 50
-        -- newLabel.TextXAlignment = 
-        newLabel.AutomaticSize = 3
 
     end
 
-    local function onActivated()
-        counter = counter + 1
-        textButton.Text = "Page: " .. counter
+    -- local textButton = Instance.new("TextButton", sgui)
+    -- textButton.Size = UDim2.new(0, childWidth, 0, childHeight)
+    -- textButton.Text = "Next Page!"
+    -- local function onActivated()
+    --     counter = counter + 1
+    --     textButton.Text = "Page: " .. counter
 
-        for i, textLabel in ipairs({textLabels}) do
-            print(textLabel.Name .. " is child number " .. i)
-        end
-    end
+    -- end
 
-    textButton.MouseButton1Click:Connect(onActivated)
+    -- textButton.MouseButton1Click:Connect(onActivated)
 end
 
 module.renderDialog = renderDialog

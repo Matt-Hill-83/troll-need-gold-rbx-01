@@ -85,7 +85,7 @@ function createRowOfParts(props)
             position = edgeAdjustedPosition,
             parent = rowProps.parent
         }
-        local newPart = Part.createPart2(newPartProps)
+        local newPart = Part.createPart(newPartProps)
 
         rowOfParts[i] = newPart
 

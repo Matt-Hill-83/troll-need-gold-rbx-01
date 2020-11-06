@@ -1,6 +1,6 @@
 local module = {}
 
-function createPart2(props)
+function createPart(props)
     local parent = props.parent
     local size = props.size
     local name = props.name
@@ -12,7 +12,7 @@ function createPart2(props)
     newPart.Size = Vector3.new(size.x, size.y, size.z)
     newPart.Position = Vector3.new(position.x, position.y, position.z)
     newPart.Anchored = true
-    newPart.BrickColor = BrickColor.new("Light blue")
+    newPart.BrickColor = props.color or BrickColor.new("Light blue")
     newPart.Name = name
 
     if decalId then
@@ -21,6 +21,19 @@ function createPart2(props)
         newDecal.Face = 'Front'
     end
 
+    return newPart
+
+end
+
+function createPartWithVectors(props)
+    props.position = {
+        x = props.position.X,
+        y = props.position.Y,
+        z = props.position.Z
+    }
+    props.size = {x = props.size.X, y = props.size.Y, z = props.size.Z}
+
+    local newPart = createPart(props)
     return newPart
 
 end
@@ -40,6 +53,7 @@ function getEdgePositionFromCenter(props)
 
 end
 
+module.createPartWithVectors = createPartWithVectors
 module.getEdgePositionFromCenter = getEdgePositionFromCenter
-module.createPart2 = createPart2
+module.createPart = createPart
 return module

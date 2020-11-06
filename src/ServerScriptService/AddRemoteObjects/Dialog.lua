@@ -1,22 +1,37 @@
 local TextService = game:GetService("TextService")
+local Sss = game:GetService("ServerScriptService")
+local Part = require(Sss.Source.AddRemoteObjects.Part)
 
 local module = {}
 
 renderDialog = function(parent)
 
     local pixelsPerStud = 40
-    local parentWidth = parent.Size.X * pixelsPerStud
-    local parentHeight = parent.Size.Y * pixelsPerStud
-    local childHeight = 4 * pixelsPerStud
+    local paddingInPx = 1 * pixelsPerStud
+
+    -- local dialogBlock = Instance.new("Part", parent)
+
+    local newPartProps = {
+        name = 'dialogBlock',
+        size = parent.Size + Vector3.new(-2, -2, 0),
+        position = parent.Position + Vector3.new(1, 1, 0),
+        parent = parent,
+        color = BrickColor.new("White")
+    }
+
+    local dialogBlock = Part.createPartWithVectors(newPartProps)
+
+    local parentWidth = dialogBlock.Size.X * pixelsPerStud - (2 * paddingInPx)
+    local parentHeight = dialogBlock.Size.Y * pixelsPerStud
 
     print('parentWidth' .. ' - start');
     print(parentWidth);
     print('parentWidth' .. ' - end');
-    -- print('childWidth' .. ' - start');
-    -- print(childWidth);
-    -- print('childWidth' .. ' - end');
 
-    local sgui = Instance.new("SurfaceGui", parent)
+    -- dialogBlock.Position = parent.Position + Vector3.new(1, 1, 1)
+    -- dialogBlock.Size = parent.Size + Vector3.new(-1, -1, 0)
+
+    local sgui = Instance.new("SurfaceGui", dialogBlock)
 
     -- local dialogSurface = textButton.Parent
     -- Instance.new("TextLabel", sgui)
@@ -29,8 +44,10 @@ renderDialog = function(parent)
     }
     local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
 
-    local texts = {testDict01}
-    -- local texts = {testDict01, testDict02, testDict01}
+    -- local texts = {testDict01}
+    local texts = {testDict01, testDict02, testDict01}
+
+    local dialogY = paddingInPx
 
     for i, dialog in ipairs(texts) do
         local charName = texts[counter]['char']
@@ -55,6 +72,7 @@ renderDialog = function(parent)
         newLabel.Name = "Dialog-" .. i
         newLabel.Text = text
         newLabel.Size = UDim2.new(0, parentWidth, 0, height)
+        newLabel.Position = UDim2.new(0, paddingInPx, 0, dialogY)
         newLabel.Selectable = true
 
         newLabel.TextWrapped = true
@@ -62,17 +80,12 @@ renderDialog = function(parent)
         newLabel.TextXAlignment = Enum.TextXAlignment.Left
         newLabel.TextYAlignment = Enum.TextYAlignment.Top
 
-        local abs = newLabel.AbsoluteSize
+        local absoluteHeight = newLabel.AbsoluteSize.Y
 
+        dialogY = dialogY + absoluteHeight + paddingInPx
         print('calcSize' .. ' - start');
         print(calcSize);
         print('calcSize' .. ' - end');
-
-        print('abs' .. ' - start');
-        print(abs);
-        print('abs' .. ' - end');
-
-        -- newLabel.Position = UDim2.new(0, 100, 0, i * 150)
 
     end
 
