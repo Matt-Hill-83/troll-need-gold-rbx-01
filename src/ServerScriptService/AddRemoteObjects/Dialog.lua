@@ -4,7 +4,34 @@ local Part = require(Sss.Source.AddRemoteObjects.Part)
 
 local module = {}
 
-renderDialog = function(parent)
+renderButtonBlock = function(props)
+    local parent = props.parent
+    local sibling = props.sibling
+
+    local newPartHeight = 4
+    local bottomOffset = 1
+
+    local distanceY = sibling.Size.Y / 2 + newPartHeight / 2 + bottomOffset
+    local siblingSizeCopy = Vector3.new(sibling.Size.X, newPartHeight,
+                                        sibling.Size.Z)
+
+    local buttonBlockProps = {
+        name = 'buttonBlock',
+        parent = parent,
+        size = siblingSizeCopy,
+        position = sibling.Position + Vector3.new(0, -distanceY, 0),
+        color = BrickColor.new("red")
+    }
+
+    local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
+    print('buttonBlock' .. ' - start');
+    print(buttonBlock);
+    print('buttonBlock' .. ' - end');
+    return buttonBlock
+
+end
+
+renderDialog = function(base)
 
     local pixelsPerStud = 40
     local paddingInPx = 1 * pixelsPerStud
@@ -12,28 +39,21 @@ renderDialog = function(parent)
 
     local dialogBlockProps = {
         name = 'dialogBlock',
-        parent = parent,
-        size = parent.Size + Vector3.new(-2, -2, 0),
-        position = parent.Position + Vector3.new(0, 0, -0.5),
+        parent = base,
+        size = base.Size + Vector3.new(-2, -2, 0),
+        position = base.Position + Vector3.new(0, 0, -0.5),
         color = BrickColor.new("White")
     }
 
     local dialogBlock = Part.createPartWithVectors(dialogBlockProps)
 
-    local buttonBlockProps = {
-        name = 'buttonBlock',
-        parent = parent,
-        size = parent.Size + Vector3.new(-1, -1, 0),
-        position = parent.Position + Vector3.new(1, 1, -0.5),
-        color = BrickColor.new("White")
-    }
-
-    local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
-
     local parentWidth = dialogBlock.Size.X * pixelsPerStud - (2 * paddingInPx)
     local parentHeight = dialogBlock.Size.Y * pixelsPerStud
 
     local sgui = Instance.new("SurfaceGui", dialogBlock)
+    local renderButtonBlockProps = {parent = base, sibling = dialogBlock}
+
+    renderButtonBlock(renderButtonBlockProps)
 
     -- local dialogSurface = textButton.Parent
     -- Instance.new("TextLabel", sgui)

@@ -48,6 +48,7 @@ function createRowOfParts(props)
         axis = "Y",
         alignToParentEdge = alignToParentEdge.y
     }
+
     local parentEdgeY = getPartFarEdge(edgePropsY)
 
     local edgePropsZ = {
@@ -96,5 +97,6 @@ function createRowOfParts(props)
 end
 
 module.createRowOfParts = createRowOfParts
+module.getPartFarEdge = getPartFarEdge
 
 return module
