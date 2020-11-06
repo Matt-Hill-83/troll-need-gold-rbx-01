@@ -1,6 +1,7 @@
 local TextService = game:GetService("TextService")
 local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
+local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 
 local module = {}
 
@@ -35,15 +36,43 @@ renderButtonBlock = function(props)
 
 end
 
+renderDialogContainer = function(props)
+    local parent = props.parent
+
+    local childSize = Vector3.new(20, 16, 1)
+    local desiredOffset = Vector3.new(1, 1, 1)
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        desiredOffset = desiredOffset
+    }
+
+    local childPos = RowOfParts.getCenterPosFromDeriredEdgeOffset(offsetProps)
+    print('childPos' .. ' - start');
+    print(childPos);
+    print('childPos' .. ' - end');
+
+    local dialogBlockProps = {
+        name = 'dialogContainer',
+        parent = parent,
+        color = BrickColor.new("Buttermilk"),
+        size = childSize,
+        position = childPos
+    }
+
+    return Part.createPartWithVectors(dialogBlockProps)
+
+end
+
 renderDialogBlock = function(props)
     local parent = props.parent
 
     local dialogBlockProps = {
-        name = 'dialogBlock',
+        name = 'Dialog',
         parent = parent,
+        color = BrickColor.new("Alder"),
         size = parent.Size + Vector3.new(-2, -2, 0),
-        position = parent.Position + Vector3.new(0, 0, -0.5),
-        color = BrickColor.new("Buttermilk")
+        position = parent.Position + Vector3.new(0, 0, -0.5)
     }
 
     return Part.createPartWithVectors(dialogBlockProps)
@@ -102,15 +131,16 @@ renderTexts = function(props)
     end
 end
 
-renderDialog = function(base)
+renderDialog = function(props)
+    local parent = props.parent
 
-    local dialogBlockProps = {parent = base}
-    local dialogBlock = renderDialogBlock(dialogBlockProps)
+    local dialogContainer = renderDialogContainer({parent = parent})
+    local dialogBlock = renderDialogBlock({parent = dialogContainer})
 
     local pixelsPerStud = 40
     local paddingInPx = 1 * pixelsPerStud
 
-    local renderButtonBlockProps = {parent = base, sibling = dialogBlock}
+    local renderButtonBlockProps = {parent = parent, sibling = dialogBlock}
     renderButtonBlock(renderButtonBlockProps)
 
     -- local dialogSurface = textButton.Parent

@@ -5,6 +5,7 @@ local Sss = game:GetService("ServerScriptService")
 local SceneConfig = require(Sss.Source.AddRemoteObjects.ScenesConfig)
 local Dialog = require(Sss.Source.AddRemoteObjects.Dialog)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
+-- local Part = require(Sss.Source.AddRemoteObjects.Part)
 
 local sceneConfigs = SceneConfig.getScenesConfig()
 
@@ -12,7 +13,7 @@ renderItems = function(parent, itemConfigs)
     local parentPadding = 1
 
     local rowProps = {
-        alignToParentEdge = {x = false, y = false, z = false},
+        alignToParentFarEdge = {x = false, y = false, z = false},
         xGap = 1,
         xOffset = -4,
         -- zOffset = parentPadding,
@@ -38,7 +39,7 @@ renderCharacters = function(parent, itemConfigs)
     local parentPadding = 1
 
     local rowProps = {
-        alignToParentEdge = {x = true, y = false, z = false},
+        alignToParentFarEdge = {x = true, y = false, z = false},
         xGap = 1,
         xOffset = 4,
         -- zOffset = -parentPadding,
@@ -63,35 +64,6 @@ renderCharacters = function(parent, itemConfigs)
     RowOfParts.createRowOfParts(props)
 end
 
-renderDialogs = function(parent, itemConfigs)
-    local parentPadding = 1
-
-    local rowProps = {
-        alignToParentEdge = {x = true, y = true, z = false},
-        xGap = 1,
-        xOffset = 3,
-        -- zOffset = parentPadding,
-        yOffset = -parentPadding,
-
-        parent = parent,
-        direction = -1,
-        moveTowardZero = {x = -1, y = -1, z = -1}
-    }
-
-    local characterProps = {size = {x = 20, y = 8, z = 1}, partName = "Dialog"}
-
-    local props = {
-        rowProps = rowProps,
-        itemConfigs = itemConfigs,
-        itemProps = characterProps
-    }
-
-    local renderedBlocks = RowOfParts.createRowOfParts(props)
-
-    for i, block in ipairs(renderedBlocks) do Dialog.renderDialog(block) end
-
-end
-
 function module.addRemoteObjects(base)
     base.Position = Vector3.new(0, 24, 0)
     base.Size = Vector3.new(120, 2, 48)
@@ -99,7 +71,7 @@ function module.addRemoteObjects(base)
     local parentPadding = 1
 
     local rowProps = {
-        alignToParentEdge = {x = true, y = true, z = true},
+        alignToParentFarEdge = {x = true, y = true, z = true},
         xGap = 4,
         xOffset = parentPadding,
         -- zOffset = parentPadding,
@@ -127,8 +99,7 @@ function module.addRemoteObjects(base)
         renderCharacters(newScene, characterConfigs)
         renderItems(newScene, items)
 
-        local dialogs = {{test = 5}}
-        renderDialogs(newScene, dialogs)
+        Dialog.renderDialog({parent = newScene})
 
     end
 

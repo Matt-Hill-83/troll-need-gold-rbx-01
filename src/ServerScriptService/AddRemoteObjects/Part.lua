@@ -38,7 +38,7 @@ function createPartWithVectors(props)
 
 end
 
-function getEdgePositionFromCenter(props)
+function getEdgePositionFromCenterPosition(props)
     local size = props.size
     local position = props.position
     local moveTowardZero = props.moveTowardZero
@@ -54,6 +54,6 @@ function getEdgePositionFromCenter(props)
 end
 
 module.createPartWithVectors = createPartWithVectors
-module.getEdgePositionFromCenter = getEdgePositionFromCenter
+module.getEdgePositionFromCenterPosition = getEdgePositionFromCenterPosition
 module.createPart = createPart
 return module

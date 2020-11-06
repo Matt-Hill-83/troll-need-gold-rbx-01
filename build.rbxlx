@@ -2152,7 +2152,7 @@ function createPartWithVectors(props)
 
 end
 
-function getEdgePositionFromCenter(props)
+function getEdgePositionFromCenterPosition(props)
     local size = props.size
     local position = props.position
     local moveTowardZero = props.moveTowardZero
@@ -2168,7 +2168,7 @@ function getEdgePositionFromCenter(props)
 end
 
 module.createPartWithVectors = createPartWithVectors
-module.getEdgePositionFromCenter = getEdgePositionFromCenter
+module.getEdgePositionFromCenterPosition = getEdgePositionFromCenterPosition
 module.createPart = createPart
 return module
 ]]></ProtectedString>
@@ -2259,7 +2259,7 @@ function createRowOfParts(props)
             position = position,
             moveTowardZero = rowProps.moveTowardZero
         }
-        local edgeAdjustedPosition = Part.getEdgePositionFromCenter(
+        local edgeAdjustedPosition = Part.getEdgePositionFromCenterPosition(
                                          adjustmentProps)
 
         local newPartProps = {
