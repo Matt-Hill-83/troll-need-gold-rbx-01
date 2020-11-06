@@ -46,19 +46,16 @@ function getCenterPosFromDeriredEdgeOffset(props)
 
     local isMoveTowardZero = moveTowardZero or {x = -1, y = -1, z = -1}
 
-    local childCenterX = parentEdgeX + (desiredOffset.X + childSize.X / 2) *
+    local childCenterX = parentEdgeX + desiredOffset.X + (childSize.X / 2) *
                              isMoveTowardZero.x
-    local childCenterY = parentEdgeY + (desiredOffset.Y + childSize.Y / 2) *
+    local childCenterY = parentEdgeY + desiredOffset.Y + (childSize.Y / 2) *
                              isMoveTowardZero.y
-    local childCenterZ = parentEdgeZ + (desiredOffset.Z + childSize.Z / 2) *
+    local childCenterZ = parentEdgeZ + desiredOffset.Z + (childSize.Z / 2) *
                              isMoveTowardZero.z
 
     local parentOffsetPoint = Vector3.new(childCenterX, childCenterY,
                                           childCenterZ)
 
-    print('parentOffsetPoint' .. ' - start');
-    print(parentOffsetPoint);
-    print('parentOffsetPoint' .. ' - end');
     return parentOffsetPoint
 
 end

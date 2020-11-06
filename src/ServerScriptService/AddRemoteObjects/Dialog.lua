@@ -40,7 +40,7 @@ renderDialogContainer = function(props)
     local parent = props.parent
 
     local childSize = Vector3.new(20, 16, 1)
-    local desiredOffset = Vector3.new(1, 1, 1)
+    local desiredOffset = Vector3.new(-1, -1, -1)
     local offsetProps = {
         parent = parent,
         childSize = childSize,
@@ -48,9 +48,6 @@ renderDialogContainer = function(props)
     }
 
     local childPos = RowOfParts.getCenterPosFromDeriredEdgeOffset(offsetProps)
-    print('childPos' .. ' - start');
-    print(childPos);
-    print('childPos' .. ' - end');
 
     local dialogBlockProps = {
         name = 'dialogContainer',
