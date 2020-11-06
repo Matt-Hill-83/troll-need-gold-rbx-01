@@ -5,7 +5,8 @@ local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 
 local module = {}
 
-local testDict01 = {
+local testDict01 = {text = "aaa bbb cccc ", color = "Yellow", char = "Britta"}
+local testDict03 = {
     text = "aaa bbb cccc ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt",
     color = "Yellow",
     char = "Britta"
@@ -84,7 +85,10 @@ renderTexts = function(props)
     local pixelsPerStud = props.pixelsPerStud
 
     local sgui = Instance.new("SurfaceGui", parent)
-    local texts = {testDict01, testDict02, testDict01}
+    local texts = {
+        testDict01, testDict02, testDict03, testDict01, testDict02, testDict03,
+        testDict01, testDict02, testDict03
+    }
 
     print('parent.Size.X' .. ' - start');
     print(parent.Size.X);
@@ -103,8 +107,8 @@ renderTexts = function(props)
         local charName = texts[pageNum]['char']
         local text = charName .. ": " .. dialog['text']
 
-        local font = Enum.Font.Legacy
-        local fontHeight = 25
+        local font = Enum.Font.Arial
+        local fontHeight = 41
         -- local fontHeight = 50
         local textPadVert = 0
         -- local textPadVert = fontHeight / 4
