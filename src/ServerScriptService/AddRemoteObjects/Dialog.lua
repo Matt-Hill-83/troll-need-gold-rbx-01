@@ -164,7 +164,7 @@ renderDialog = function(props)
     local dialogBlock = renderDialogBlock({parent = dialogContainer})
 
     local pixelsPerStud = 45
-    local paddingInPx = 1 * pixelsPerStud
+    local paddingInPx = pixelsPerStud / 4
 
     local renderButtonBlockProps = {
         parent = dialogContainer,
