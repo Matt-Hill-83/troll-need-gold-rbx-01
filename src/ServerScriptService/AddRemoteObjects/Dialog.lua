@@ -28,7 +28,7 @@ renderDialog = function(parent)
         color = BrickColor.new("White")
     }
 
-    -- local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
+    local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
 
     local parentWidth = dialogBlock.Size.X * pixelsPerStud - (2 * paddingInPx)
     local parentHeight = dialogBlock.Size.Y * pixelsPerStud
