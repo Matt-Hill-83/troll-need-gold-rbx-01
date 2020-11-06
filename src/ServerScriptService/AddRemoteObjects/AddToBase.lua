@@ -92,7 +92,9 @@ renderDialogs = function(parent, itemConfigs)
 
 end
 
-function module.addRemoteObjects(part)
+function module.addRemoteObjects(base)
+    base.Position = Vector3.new(0, 24, 0)
+    base.Size = Vector3.new(120, 2, 48)
     local frameIndex = 1
     local parentPadding = 1
 
@@ -102,7 +104,7 @@ function module.addRemoteObjects(part)
         xOffset = parentPadding,
         -- zOffset = parentPadding,
 
-        parent = part,
+        parent = base,
         direction = -1,
         moveTowardZero = {x = -1, y = 1, z = -1}
     }

@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>40.8064117</X>
-					<Y>4.97182655</Y>
-					<Z>-35.7730064</Z>
-					<R00>-0.999501169</R00>
-					<R01>0.0033011327</R01>
-					<R02>-0.0314102173</R02>
+					<X>32.0869026</X>
+					<Y>33.5943604</Y>
+					<Z>-37.1167336</Z>
+					<R00>-0.999697506</R00>
+					<R01>0.00523858797</R01>
+					<R02>-0.0240288433</R02>
 					<R10>-0</R10>
-					<R11>0.994522691</R11>
-					<R12>0.104521751</R12>
-					<R20>0.0315832123</R20>
-					<R21>0.104469612</R21>
-					<R22>-0.994026482</R22>
+					<R11>0.977050185</R11>
+					<R12>0.213009164</R12>
+					<R20>0.0245932508</R20>
+					<R21>0.212944731</R21>
+					<R22>-0.976754725</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>42</X>
-					<Y>1</Y>
-					<Z>2</Z>
+					<X>33</X>
+					<Y>25.5</Y>
+					<Z>0</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -211,9 +211,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>42</X>
-						<Y>9</Y>
-						<Z>2</Z>
+						<X>40</X>
+						<Y>33.5</Y>
+						<Z>1</Z>
 						<R00>-1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
@@ -746,45 +746,6 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Weld" referent="RBX0296311a7b3847afa7e63e8dcd723219">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<CoordinateFrame name="C0">
-								<X>0</X>
-								<Y>7.5</Y>
-								<Z>0</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>1</R12>
-								<R20>0</R20>
-								<R21>-1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>-21.5</X>
-								<Y>-0.5</Y>
-								<Z>8.65500069</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>1</R12>
-								<R20>0</R20>
-								<R21>-1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Weld</string>
-							<Ref name="Part0">RBXe5c8c90c8f224ed480346b9a2b017c1b</Ref>
-							<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
 				</Item>
 				<Item class="Folder" referent="RBX67198b43499d41979233b4ccbdae3b4c">
 					<Properties>
@@ -926,45 +887,6 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 						</Item>
 					</Item>
 				</Item>
-				<Item class="Weld" referent="RBXd74c24f62d9241b4b57602102cba54da">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<CoordinateFrame name="C0">
-							<X>0</X>
-							<Y>15</Y>
-							<Z>0</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>0</R11>
-							<R12>1</R12>
-							<R20>0</R20>
-							<R21>-1</R21>
-							<R22>0</R22>
-						</CoordinateFrame>
-						<CoordinateFrame name="C1">
-							<X>-31</X>
-							<Y>-0.5</Y>
-							<Z>9.5</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>0</R11>
-							<R12>1</R12>
-							<R20>0</R20>
-							<R21>-1</R21>
-							<R22>0</R22>
-						</CoordinateFrame>
-						<bool name="Enabled">true</bool>
-						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXa34931ee8eb546829020f4aac6ef52fe</Ref>
-						<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
 			</Item>
 		</Item>
 		<Item class="Script" referent="RBXa84a614b19674fd6bbf4a22c86f51dac">
@@ -995,7 +917,7 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 				<token name="BottomSurfaceInput">0</token>
 				<CoordinateFrame name="CFrame">
 					<X>0</X>
-					<Y>0</Y>
+					<Y>24</Y>
 					<Z>0</Z>
 					<R00>1</R00>
 					<R01>0</R01>
@@ -1007,7 +929,7 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<bool name="CanCollide">true</bool>
+				<bool name="CanCollide">false</bool>
 				<bool name="CastShadow">true</bool>
 				<int name="CollisionGroupId">0</int>
 				<Color3uint8 name="Color3uint8">4282318742</Color3uint8>
@@ -1053,8 +975,8 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 				<token name="shape">1</token>
 				<Vector3 name="size">
 					<X>120</X>
-					<Y>1</Y>
-					<Z>32</Z>
+					<Y>2</Y>
+					<Z>48</Z>
 				</Vector3>
 			</Properties>
 			<Item class="Script" referent="RBX1402cb9ce466400cb505cc8e843e2a78">
@@ -1065,7 +987,10 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 					<string name="Name">BaseScript</string>
 					<string name="ScriptGuid">{217e422e-4b92-4b98-9299-4e87aa49c738}</string>
 					<ProtectedString name="Source"><![CDATA[local base = script.Parent
+
 local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.AddToBase)
+
+
 
 remoteCode.addRemoteObjects(base)
 
@@ -1254,186 +1179,6 @@ return FirebaseService;]]></ProtectedString>
 				<int64 name="SourceAssetId">3348877968</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
-		</Item>
-		<Item class="Part" referent="RBX57a2108d44e5480faf89497d8b9eee72">
-			<Properties>
-				<bool name="Anchored">false</bool>
-				<BinaryString name="AttributesSerialize"></BinaryString>
-				<float name="BackParamA">-0.5</float>
-				<float name="BackParamB">0.5</float>
-				<token name="BackSurface">0</token>
-				<token name="BackSurfaceInput">0</token>
-				<float name="BottomParamA">-0.5</float>
-				<float name="BottomParamB">0.5</float>
-				<token name="BottomSurface">0</token>
-				<token name="BottomSurfaceInput">0</token>
-				<CoordinateFrame name="CFrame">
-					<X>-16</X>
-					<Y>7</Y>
-					<Z>-1</Z>
-					<R00>1</R00>
-					<R01>0</R01>
-					<R02>0</R02>
-					<R10>0</R10>
-					<R11>1</R11>
-					<R12>0</R12>
-					<R20>0</R20>
-					<R21>0</R21>
-					<R22>1</R22>
-				</CoordinateFrame>
-				<bool name="CanCollide">true</bool>
-				<bool name="CastShadow">true</bool>
-				<int name="CollisionGroupId">0</int>
-				<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
-				<PhysicalProperties name="CustomPhysicalProperties">
-					<CustomPhysics>false</CustomPhysics>
-				</PhysicalProperties>
-				<float name="FrontParamA">-0.5</float>
-				<float name="FrontParamB">0.5</float>
-				<token name="FrontSurface">0</token>
-				<token name="FrontSurfaceInput">0</token>
-				<float name="LeftParamA">-0.5</float>
-				<float name="LeftParamB">0.5</float>
-				<token name="LeftSurface">0</token>
-				<token name="LeftSurfaceInput">0</token>
-				<bool name="Locked">false</bool>
-				<bool name="Massless">false</bool>
-				<token name="Material">256</token>
-				<string name="Name">Part</string>
-				<float name="Reflectance">0</float>
-				<float name="RightParamA">-0.5</float>
-				<float name="RightParamB">0.5</float>
-				<token name="RightSurface">0</token>
-				<token name="RightSurfaceInput">0</token>
-				<int name="RootPriority">0</int>
-				<Vector3 name="RotVelocity">
-					<X>0</X>
-					<Y>0</Y>
-					<Z>0</Z>
-				</Vector3>
-				<int64 name="SourceAssetId">-1</int64>
-				<BinaryString name="Tags"></BinaryString>
-				<float name="TopParamA">-0.5</float>
-				<float name="TopParamB">0.5</float>
-				<token name="TopSurface">0</token>
-				<token name="TopSurfaceInput">0</token>
-				<float name="Transparency">0</float>
-				<Vector3 name="Velocity">
-					<X>0</X>
-					<Y>0</Y>
-					<Z>0</Z>
-				</Vector3>
-				<token name="formFactorRaw">1</token>
-				<token name="shape">1</token>
-				<Vector3 name="size">
-					<X>16</X>
-					<Y>9.99999905</Y>
-					<Z>2</Z>
-				</Vector3>
-			</Properties>
-			<Item class="SurfaceGui" referent="RBXf7cfcd5e21ed42a896162843fe6cc344">
-				<Properties>
-					<bool name="Active">true</bool>
-					<Ref name="Adornee">null</Ref>
-					<bool name="AlwaysOnTop">false</bool>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<bool name="AutoLocalize">true</bool>
-					<Vector2 name="CanvasSize">
-						<X>800</X>
-						<Y>600</Y>
-					</Vector2>
-					<bool name="ClipsDescendants">true</bool>
-					<bool name="Enabled">true</bool>
-					<token name="Face">5</token>
-					<float name="LightInfluence">1</float>
-					<string name="Name">SurfaceGui</string>
-					<float name="PixelsPerStud">50</float>
-					<bool name="ResetOnSpawn">true</bool>
-					<Ref name="RootLocalizationTable">null</Ref>
-					<token name="SizingMode">1</token>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-					<float name="ToolPunchThroughDistance">0</float>
-					<token name="ZIndexBehavior">1</token>
-					<float name="ZOffset">0</float>
-				</Properties>
-				<Item class="TextLabel" referent="RBX78e4dd5cf8644b9196288c71727ae53e">
-					<Properties>
-						<bool name="Active">false</bool>
-						<Vector2 name="AnchorPoint">
-							<X>0</X>
-							<Y>0</Y>
-						</Vector2>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<bool name="AutoLocalize">true</bool>
-						<token name="AutomaticSize">0</token>
-						<Color3 name="BackgroundColor3">
-							<R>1</R>
-							<G>1</G>
-							<B>1</B>
-						</Color3>
-						<float name="BackgroundTransparency">0</float>
-						<Color3 name="BorderColor3">
-							<R>0.105882362</R>
-							<G>0.164705887</G>
-							<B>0.207843155</B>
-						</Color3>
-						<token name="BorderMode">0</token>
-						<int name="BorderSizePixel">1</int>
-						<bool name="ClipsDescendants">false</bool>
-						<bool name="Draggable">false</bool>
-						<token name="Font">3</token>
-						<int name="LayoutOrder">0</int>
-						<float name="LineHeight">1</float>
-						<string name="Name">TextLabel</string>
-						<Ref name="NextSelectionDown">null</Ref>
-						<Ref name="NextSelectionLeft">null</Ref>
-						<Ref name="NextSelectionRight">null</Ref>
-						<Ref name="NextSelectionUp">null</Ref>
-						<UDim2 name="Position">
-							<XS>0</XS>
-							<XO>0</XO>
-							<YS>0</YS>
-							<YO>0</YO>
-						</UDim2>
-						<bool name="RichText">false</bool>
-						<Ref name="RootLocalizationTable">null</Ref>
-						<float name="Rotation">0</float>
-						<bool name="Selectable">false</bool>
-						<Ref name="SelectionImageObject">null</Ref>
-						<UDim2 name="Size">
-							<XS>0</XS>
-							<XO>200</XO>
-							<YS>0</YS>
-							<YO>50</YO>
-						</UDim2>
-						<token name="SizeConstraint">0</token>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-						<string name="Text">asdf asdf asfd as fdas fd asdf asdf</string>
-						<Color3 name="TextColor3">
-							<R>0</R>
-							<G>0</G>
-							<B>0</B>
-						</Color3>
-						<bool name="TextScaled">false</bool>
-						<float name="TextSize">50</float>
-						<Color3 name="TextStrokeColor3">
-							<R>0</R>
-							<G>0</G>
-							<B>0</B>
-						</Color3>
-						<float name="TextStrokeTransparency">1</float>
-						<float name="TextTransparency">0</float>
-						<token name="TextTruncate">0</token>
-						<bool name="TextWrapped">false</bool>
-						<token name="TextXAlignment">2</token>
-						<token name="TextYAlignment">1</token>
-						<bool name="Visible">true</bool>
-						<int name="ZIndex">1</int>
-					</Properties>
-				</Item>
-			</Item>
 		</Item>
 		<Item class="Model" referent="RBX0391a9bcce5049ad87e06030840f6a1c">
 			<Properties>
@@ -2155,7 +1900,9 @@ renderDialogs = function(parent, itemConfigs)
 
 end
 
-function module.addRemoteObjects(part)
+function module.addRemoteObjects(base)
+    base.Position = Vector3.new(0, 24, 0)
+    base.Size = Vector3.new(120, 2, 48)
     local frameIndex = 1
     local parentPadding = 1
 
@@ -2165,7 +1912,7 @@ function module.addRemoteObjects(part)
         xOffset = parentPadding,
         -- zOffset = parentPadding,
 
-        parent = part,
+        parent = base,
         direction = -1,
         moveTowardZero = {x = -1, y = 1, z = -1}
     }
@@ -2254,6 +2001,8 @@ return module
 						<string name="Name">Dialog</string>
 						<string name="ScriptGuid">{9b1cd5c3-dda0-4254-acb2-ec1d5ed5bdd7}</string>
 						<ProtectedString name="Source"><![CDATA[local TextService = game:GetService("TextService")
+local Sss = game:GetService("ServerScriptService")
+local Part = require(Sss.Source.AddRemoteObjects.Part)
 
 local module = {}
 
@@ -2261,15 +2010,32 @@ renderDialog = function(parent)
 
     local pixelsPerStud = 40
     local paddingInPx = 1 * pixelsPerStud
+    local TextButtonPaddingInPx = 1 * pixelsPerStud
 
-    local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
-    local parentHeight = parent.Size.Y * pixelsPerStud
+    local dialogBlockProps = {
+        name = 'dialogBlock',
+        parent = parent,
+        size = parent.Size + Vector3.new(-2, -2, 0),
+        position = parent.Position + Vector3.new(0, 0, -0.5),
+        color = BrickColor.new("White")
+    }
 
-    print('parentWidth' .. ' - start');
-    print(parentWidth);
-    print('parentWidth' .. ' - end');
+    local dialogBlock = Part.createPartWithVectors(dialogBlockProps)
 
-    local sgui = Instance.new("SurfaceGui", parent)
+    local buttonBlockProps = {
+        name = 'buttonBlock',
+        parent = parent,
+        size = parent.Size + Vector3.new(-1, -1, 0),
+        position = parent.Position + Vector3.new(1, 1, -0.5),
+        color = BrickColor.new("White")
+    }
+
+    -- local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
+
+    local parentWidth = dialogBlock.Size.X * pixelsPerStud - (2 * paddingInPx)
+    local parentHeight = dialogBlock.Size.Y * pixelsPerStud
+
+    local sgui = Instance.new("SurfaceGui", dialogBlock)
 
     -- local dialogSurface = textButton.Parent
     -- Instance.new("TextLabel", sgui)
@@ -2297,9 +2063,6 @@ renderDialog = function(parent)
 
         local newLabel = Instance.new("TextLabel", sgui)
         newLabel.Font = font
-        print('font' .. ' - start');
-        print(font);
-        print('font' .. ' - end');
 
         local calcSize = TextService:GetTextSize(text, fontHeight,
                                                  newLabel.Font, Vector2.new(
@@ -2310,7 +2073,7 @@ renderDialog = function(parent)
         newLabel.Name = "Dialog-" .. i
         newLabel.Text = text
         newLabel.Size = UDim2.new(0, parentWidth, 0, height)
-        newLabel.Position = UDim2.new(0, paddingInPx, 0, dialogY)
+        newLabel.Position = UDim2.new(0, TextButtonPaddingInPx, 0, dialogY)
         newLabel.Selectable = true
 
         newLabel.TextWrapped = true
@@ -2321,15 +2084,6 @@ renderDialog = function(parent)
         local absoluteHeight = newLabel.AbsoluteSize.Y
 
         dialogY = dialogY + absoluteHeight + paddingInPx
-        print('calcSize' .. ' - start');
-        print(calcSize);
-        print('calcSize' .. ' - end');
-
-        print('abs' .. ' - start');
-        print(abs);
-        print('abs' .. ' - end');
-
-        -- newLabel.Position = UDim2.new(0, 100, 0, i * 150)
 
     end
 
@@ -2360,7 +2114,7 @@ return module
 						<string name="ScriptGuid">{3b96471a-8c40-4f75-bc03-965e17accbe8}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
-function createPart2(props)
+function createPart(props)
     local parent = props.parent
     local size = props.size
     local name = props.name
@@ -2372,7 +2126,7 @@ function createPart2(props)
     newPart.Size = Vector3.new(size.x, size.y, size.z)
     newPart.Position = Vector3.new(position.x, position.y, position.z)
     newPart.Anchored = true
-    newPart.BrickColor = BrickColor.new("Light blue")
+    newPart.BrickColor = props.color or BrickColor.new("Light blue")
     newPart.Name = name
 
     if decalId then
@@ -2381,6 +2135,19 @@ function createPart2(props)
         newDecal.Face = 'Front'
     end
 
+    return newPart
+
+end
+
+function createPartWithVectors(props)
+    props.position = {
+        x = props.position.X,
+        y = props.position.Y,
+        z = props.position.Z
+    }
+    props.size = {x = props.size.X, y = props.size.Y, z = props.size.Z}
+
+    local newPart = createPart(props)
     return newPart
 
 end
@@ -2400,8 +2167,9 @@ function getEdgePositionFromCenter(props)
 
 end
 
+module.createPartWithVectors = createPartWithVectors
 module.getEdgePositionFromCenter = getEdgePositionFromCenter
-module.createPart2 = createPart2
+module.createPart = createPart
 return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
@@ -2501,7 +2269,7 @@ function createRowOfParts(props)
             position = edgeAdjustedPosition,
             parent = rowProps.parent
         }
-        local newPart = Part.createPart2(newPartProps)
+        local newPart = Part.createPart(newPartProps)
 
         rowOfParts[i] = newPart
 
