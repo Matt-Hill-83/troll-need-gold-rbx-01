@@ -117,11 +117,18 @@ renderTexts = function(props)
                                                              parentHeight))
 
         local height = calcSize.Y
+        print('calcSize' .. ' - start');
+        print(calcSize);
+        print('calcSize' .. ' - end');
         -- local height = calcSize.Y + textPadVert * 2
 
+        print('parentWidth' .. ' - start');
+        print(parentWidth);
+        print('parentWidth' .. ' - end');
         newLabel.Name = "Dialog-" .. i
         newLabel.Text = text
-        newLabel.Size = UDim2.new(0, parentWidth, 0, height)
+        newLabel.Size = UDim2.new(1, 0, 0, height)
+        -- newLabel.Size = UDim2.new(0, parentWidth, 0, height)
         newLabel.Position = UDim2.new(0, 0, 0, dialogY)
         -- newLabel.Position = UDim2.new(0, 50, 0, dialogY)
         -- newLabel.Position = UDim2.new(0, textButtonPaddingInPx, 0, dialogY)
@@ -131,6 +138,10 @@ renderTexts = function(props)
         newLabel.TextSize = fontHeight
         newLabel.TextXAlignment = Enum.TextXAlignment.Left
         newLabel.TextYAlignment = Enum.TextYAlignment.Top
+
+        print('newLabel.AbsoluteSize' .. ' - start');
+        print(newLabel.AbsoluteSize);
+        print('newLabel.AbsoluteSize' .. ' - end');
 
         local absoluteHeight = newLabel.AbsoluteSize.Y
         print('absoluteHeight' .. ' - start');
