@@ -69,6 +69,7 @@ renderDialogBlock = function(props)
         parent = parent,
         color = BrickColor.new("Alder"),
         size = parent.Size + Vector3.new(-2, -2, 0),
+        -- size = parent.Size + Vector3.new(-2, -2, 0),
         position = parent.Position + Vector3.new(0, 0, -0.5)
     }
 
@@ -85,7 +86,12 @@ renderTexts = function(props)
     local sgui = Instance.new("SurfaceGui", parent)
     local texts = {testDict01, testDict02, testDict01}
 
-    local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
+    print('parent.Size.X' .. ' - start');
+    print(parent.Size.X);
+    print('parent.Size.X' .. ' - end');
+
+    local parentWidth = parent.Size.X * pixelsPerStud - (0 * paddingInPx)
+    -- local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
     local parentHeight = parent.Size.Y * pixelsPerStud
 
     local bottomGap = 1
@@ -98,22 +104,27 @@ renderTexts = function(props)
         local text = charName .. ": " .. dialog['text']
 
         local font = Enum.Font.Legacy
-        local fontHeight = 50
-        local textPadVert = fontHeight / 4
+        local fontHeight = 25
+        -- local fontHeight = 50
+        local textPadVert = 0
+        -- local textPadVert = fontHeight / 4
 
         local newLabel = Instance.new("TextLabel", sgui)
         newLabel.Font = font
 
-        local calcSize = TextService:GetTextSize(text, fontHeight,
-                                                 newLabel.Font, Vector2.new(
-                                                     parentWidth, parentHeight))
+        local calcSize = TextService:GetTextSize(text, fontHeight, font,
+                                                 Vector2.new(parentWidth,
+                                                             parentHeight))
 
-        local height = calcSize.Y + textPadVert * 2
+        local height = calcSize.Y
+        -- local height = calcSize.Y + textPadVert * 2
 
         newLabel.Name = "Dialog-" .. i
         newLabel.Text = text
         newLabel.Size = UDim2.new(0, parentWidth, 0, height)
-        newLabel.Position = UDim2.new(0, textButtonPaddingInPx, 0, dialogY)
+        newLabel.Position = UDim2.new(0, 0, 0, dialogY)
+        -- newLabel.Position = UDim2.new(0, 50, 0, dialogY)
+        -- newLabel.Position = UDim2.new(0, textButtonPaddingInPx, 0, dialogY)
         newLabel.Selectable = true
 
         newLabel.TextWrapped = true
@@ -122,6 +133,9 @@ renderTexts = function(props)
         newLabel.TextYAlignment = Enum.TextYAlignment.Top
 
         local absoluteHeight = newLabel.AbsoluteSize.Y
+        print('absoluteHeight' .. ' - start');
+        print(absoluteHeight);
+        print('absoluteHeight' .. ' - end');
 
         dialogY = dialogY + absoluteHeight + paddingInPx
 
@@ -134,11 +148,13 @@ renderDialog = function(props)
     local dialogContainer = renderDialogContainer({parent = parent})
     local dialogBlock = renderDialogBlock({parent = dialogContainer})
 
-    local pixelsPerStud = 40
+    local pixelsPerStud = 45
     local paddingInPx = 1 * pixelsPerStud
 
-    local renderButtonBlockProps = {parent = parent, sibling = dialogBlock}
-    renderButtonBlock(renderButtonBlockProps)
+    local renderButtonBlockProps = {
+        parent = dialogContainer,
+        sibling = dialogBlock
+    }
 
     -- local dialogSurface = textButton.Parent
     -- Instance.new("TextLabel", sgui)
@@ -150,7 +166,9 @@ renderDialog = function(props)
         paddingInPx = paddingInPx,
         pixelsPerStud = pixelsPerStud
     }
+
     renderTexts(renderTextsProps)
+    renderButtonBlock(renderButtonBlockProps)
 
     -- local textButton = Instance.new("TextButton", sgui)
     -- textButton.Size = UDim2.new(0, childWidth, 0, childHeight)

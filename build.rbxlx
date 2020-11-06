@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>32.0869026</X>
-					<Y>33.5943604</Y>
-					<Z>-37.1167336</Z>
-					<R00>-0.999697506</R00>
-					<R01>0.00523858797</R01>
-					<R02>-0.0240288433</R02>
+					<X>33.3513832</X>
+					<Y>63.032486</Y>
+					<Z>-5.93415451</Z>
+					<R00>-0.998251557</R00>
+					<R01>-0.058382418</R01>
+					<R02>0.00924684573</R02>
 					<R10>-0</R10>
-					<R11>0.977050185</R11>
-					<R12>0.213009164</R12>
-					<R20>0.0245932508</R20>
-					<R21>0.212944731</R21>
-					<R22>-0.976754725</R22>
+					<R11>0.156434163</R11>
+					<R12>0.987688422</R12>
+					<R20>-0.0591101572</R20>
+					<R21>0.985961497</R21>
+					<R22>-0.156160608</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -211,9 +211,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>40</X>
-						<Y>33.5</Y>
-						<Z>1</Z>
+						<X>39</X>
+						<Y>35.5</Y>
+						<Z>6</Z>
 						<R00>-1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
@@ -273,9 +273,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
-						<X>8</X>
+						<X>36</X>
 						<Y>1</Y>
-						<Z>8</Z>
+						<Z>18</Z>
 					</Vector3>
 				</Properties>
 				<Item class="Decal" referent="RBXfd476ea92b9b4b89903d57ee9b34857d">
@@ -929,7 +929,7 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<bool name="CanCollide">false</bool>
+				<bool name="CanCollide">true</bool>
 				<bool name="CastShadow">true</bool>
 				<int name="CollisionGroupId">0</int>
 				<Color3uint8 name="Color3uint8">4282318742</Color3uint8>
@@ -1813,6 +1813,7 @@ local Sss = game:GetService("ServerScriptService")
 local SceneConfig = require(Sss.Source.AddRemoteObjects.ScenesConfig)
 local Dialog = require(Sss.Source.AddRemoteObjects.Dialog)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
+-- local Part = require(Sss.Source.AddRemoteObjects.Part)
 
 local sceneConfigs = SceneConfig.getScenesConfig()
 
@@ -1820,7 +1821,7 @@ renderItems = function(parent, itemConfigs)
     local parentPadding = 1
 
     local rowProps = {
-        alignToParentEdge = {x = false, y = false, z = false},
+        alignToParentFarEdge = {x = false, y = false, z = false},
         xGap = 1,
         xOffset = -4,
         -- zOffset = parentPadding,
@@ -1846,7 +1847,7 @@ renderCharacters = function(parent, itemConfigs)
     local parentPadding = 1
 
     local rowProps = {
-        alignToParentEdge = {x = true, y = false, z = false},
+        alignToParentFarEdge = {x = true, y = false, z = false},
         xGap = 1,
         xOffset = 4,
         -- zOffset = -parentPadding,
@@ -1871,35 +1872,6 @@ renderCharacters = function(parent, itemConfigs)
     RowOfParts.createRowOfParts(props)
 end
 
-renderDialogs = function(parent, itemConfigs)
-    local parentPadding = 1
-
-    local rowProps = {
-        alignToParentEdge = {x = true, y = true, z = false},
-        xGap = 1,
-        xOffset = 3,
-        -- zOffset = parentPadding,
-        yOffset = -parentPadding,
-
-        parent = parent,
-        direction = -1,
-        moveTowardZero = {x = -1, y = -1, z = -1}
-    }
-
-    local characterProps = {size = {x = 20, y = 8, z = 1}, partName = "Dialog"}
-
-    local props = {
-        rowProps = rowProps,
-        itemConfigs = itemConfigs,
-        itemProps = characterProps
-    }
-
-    local renderedBlocks = RowOfParts.createRowOfParts(props)
-
-    for i, block in ipairs(renderedBlocks) do Dialog.renderDialog(block) end
-
-end
-
 function module.addRemoteObjects(base)
     base.Position = Vector3.new(0, 24, 0)
     base.Size = Vector3.new(120, 2, 48)
@@ -1907,7 +1879,7 @@ function module.addRemoteObjects(base)
     local parentPadding = 1
 
     local rowProps = {
-        alignToParentEdge = {x = true, y = true, z = true},
+        alignToParentFarEdge = {x = true, y = true, z = true},
         xGap = 4,
         xOffset = parentPadding,
         -- zOffset = parentPadding,
@@ -1935,8 +1907,7 @@ function module.addRemoteObjects(base)
         renderCharacters(newScene, characterConfigs)
         renderItems(newScene, items)
 
-        local dialogs = {{test = 5}}
-        renderDialogs(newScene, dialogs)
+        Dialog.renderDialog({parent = newScene})
 
     end
 
@@ -2003,63 +1974,109 @@ return module
 						<ProtectedString name="Source"><![CDATA[local TextService = game:GetService("TextService")
 local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
+local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 
 local module = {}
 
-renderDialog = function(parent)
+local testDict01 = {
+    text = "aaa bbb cccc ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt",
+    color = "Yellow",
+    char = "Britta"
+}
+local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
 
-    local pixelsPerStud = 40
-    local paddingInPx = 1 * pixelsPerStud
-    local TextButtonPaddingInPx = 1 * pixelsPerStud
+renderButtonBlock = function(props)
+    local parent = props.parent
+    local sibling = props.sibling
 
-    local dialogBlockProps = {
-        name = 'dialogBlock',
-        parent = parent,
-        size = parent.Size + Vector3.new(-2, -2, 0),
-        position = parent.Position + Vector3.new(0, 0, -0.5),
-        color = BrickColor.new("White")
-    }
+    local newPartHeight = 4
+    local bottomOffset = 1
 
-    local dialogBlock = Part.createPartWithVectors(dialogBlockProps)
+    local distanceY = sibling.Size.Y / 2 + newPartHeight / 2 + bottomOffset
+    local siblingSizeCopy = Vector3.new(sibling.Size.X, newPartHeight,
+                                        sibling.Size.Z)
 
     local buttonBlockProps = {
         name = 'buttonBlock',
         parent = parent,
-        size = parent.Size + Vector3.new(-1, -1, 0),
-        position = parent.Position + Vector3.new(1, 1, -0.5),
-        color = BrickColor.new("White")
+        size = siblingSizeCopy,
+        position = sibling.Position + Vector3.new(0, -distanceY, 0),
+        color = BrickColor.new("Red")
     }
 
-    -- local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
+    local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
+    return buttonBlock
 
-    local parentWidth = dialogBlock.Size.X * pixelsPerStud - (2 * paddingInPx)
-    local parentHeight = dialogBlock.Size.Y * pixelsPerStud
+end
 
-    local sgui = Instance.new("SurfaceGui", dialogBlock)
+renderDialogContainer = function(props)
+    local parent = props.parent
 
-    -- local dialogSurface = textButton.Parent
-    -- Instance.new("TextLabel", sgui)
-    local counter = 1
-
-    local testDict01 = {
-        text = "aaa bbb cccc ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt",
-        color = "Yellow",
-        char = "Britta"
+    local childSize = Vector3.new(20, 16, 1)
+    local desiredOffset = Vector3.new(-1, -1, -1)
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        desiredOffset = desiredOffset
     }
-    local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
 
-    -- local texts = {testDict01}
+    local childPos = RowOfParts.getCenterPosFromDeriredEdgeOffset(offsetProps)
+
+    local dialogBlockProps = {
+        name = 'dialogContainer',
+        parent = parent,
+        color = BrickColor.new("Buttermilk"),
+        size = childSize,
+        position = childPos
+    }
+
+    return Part.createPartWithVectors(dialogBlockProps)
+
+end
+
+renderDialogBlock = function(props)
+    local parent = props.parent
+
+    local dialogBlockProps = {
+        name = 'Dialog',
+        parent = parent,
+        color = BrickColor.new("Alder"),
+        size = parent.Size + Vector3.new(-2, -2, 0),
+        -- size = parent.Size + Vector3.new(-2, -2, 0),
+        position = parent.Position + Vector3.new(0, 0, -0.5)
+    }
+
+    return Part.createPartWithVectors(dialogBlockProps)
+
+end
+
+renderTexts = function(props)
+    local parent = props.parent
+    local pageNum = props.pageNum
+    local paddingInPx = props.paddingInPx
+    local pixelsPerStud = props.pixelsPerStud
+
+    local sgui = Instance.new("SurfaceGui", parent)
     local texts = {testDict01, testDict02, testDict01}
 
-    local dialogY = paddingInPx
+    local parentWidth = parent.Size.X * pixelsPerStud - (0 * paddingInPx)
+    -- local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
+    local parentHeight = parent.Size.Y * pixelsPerStud
+
+    local bottomGap = 1
+    local dialogY = bottomGap
+
+    local textButtonPaddingInPx = 1 * pixelsPerStud
 
     for i, dialog in ipairs(texts) do
-        local charName = texts[counter]['char']
+        local charName = texts[pageNum]['char']
         local text = charName .. ": " .. dialog['text']
 
         local font = Enum.Font.Legacy
-        local fontHeight = 50
-        local textPadVert = fontHeight / 4
+        local fontHeight = 30
+        -- local fontHeight = 50
+        local textPadVert = 0
+        -- local textPadVert = fontHeight / 4
 
         local newLabel = Instance.new("TextLabel", sgui)
         newLabel.Font = font
@@ -2068,12 +2085,15 @@ renderDialog = function(parent)
                                                  newLabel.Font, Vector2.new(
                                                      parentWidth, parentHeight))
 
-        local height = calcSize.Y + textPadVert * 2
+        local height = calcSize.Y
+        -- local height = calcSize.Y + textPadVert * 2
 
         newLabel.Name = "Dialog-" .. i
         newLabel.Text = text
         newLabel.Size = UDim2.new(0, parentWidth, 0, height)
-        newLabel.Position = UDim2.new(0, TextButtonPaddingInPx, 0, dialogY)
+        newLabel.Position = UDim2.new(0, 0, 0, dialogY)
+        -- newLabel.Position = UDim2.new(0, 50, 0, dialogY)
+        -- newLabel.Position = UDim2.new(0, textButtonPaddingInPx, 0, dialogY)
         newLabel.Selectable = true
 
         newLabel.TextWrapped = true
@@ -2082,17 +2102,49 @@ renderDialog = function(parent)
         newLabel.TextYAlignment = Enum.TextYAlignment.Top
 
         local absoluteHeight = newLabel.AbsoluteSize.Y
+        print('absoluteHeight' .. ' - start');
+        print(absoluteHeight);
+        print('absoluteHeight' .. ' - end');
 
         dialogY = dialogY + absoluteHeight + paddingInPx
 
     end
+end
+
+renderDialog = function(props)
+    local parent = props.parent
+
+    local dialogContainer = renderDialogContainer({parent = parent})
+    local dialogBlock = renderDialogBlock({parent = dialogContainer})
+
+    local pixelsPerStud = 40
+    local paddingInPx = 1 * pixelsPerStud
+
+    local renderButtonBlockProps = {
+        parent = dialogContainer,
+        sibling = dialogBlock
+    }
+
+    -- local dialogSurface = textButton.Parent
+    -- Instance.new("TextLabel", sgui)
+    local pageNum = 1
+
+    local renderTextsProps = {
+        parent = dialogBlock,
+        pageNum = pageNum,
+        paddingInPx = paddingInPx,
+        pixelsPerStud = pixelsPerStud
+    }
+
+    renderTexts(renderTextsProps)
+    renderButtonBlock(renderButtonBlockProps)
 
     -- local textButton = Instance.new("TextButton", sgui)
     -- textButton.Size = UDim2.new(0, childWidth, 0, childHeight)
     -- textButton.Text = "Next Page!"
     -- local function onActivated()
-    --     counter = counter + 1
-    --     textButton.Text = "Page: " .. counter
+    --     pageNum = pageNum + 1
+    --     textButton.Text = "Page: " .. pageNum
 
     -- end
 
@@ -2189,7 +2241,7 @@ local module = {}
 
 function getParentFarEdge(props)
     local parent = props.parent
-    local childLength = props.childLength
+    local childSizeLength = props.childLength
     local axis = props.axis or 'X'
 
     local parentPosition = parent.CFrame
@@ -2204,40 +2256,72 @@ function getPartFarEdge(props)
     local axis = props.axis or 'X'
 
     -- ternary function
-    local alignToParentEdge = props.alignToParentEdge and 1 or -1
+    local alignToParentFarEdge = props.alignToParentFarEdge and 1 or -1
     local partPosition = part.CFrame
     local partSize = part.Size
     local partFarEdge = partPosition[axis] + (partSize[axis] / 2) *
-                            alignToParentEdge
+                            alignToParentFarEdge
 
     return partFarEdge
 end
 
+function getCenterPosFromDeriredEdgeOffset(props)
+    local parent = props.parent
+    local childSize = props.childSize
+    local desiredOffset = props.desiredOffset
+    local moveTowardZero = props.moveTowardZero
+
+    local edgePropsX = {part = parent, axis = "X", alignToParentFarEdge = true}
+    local parentEdgeX = getPartFarEdge(edgePropsX)
+
+    local edgePropsY = {part = parent, axis = "Y", alignToParentFarEdge = true}
+    local parentEdgeY = getPartFarEdge(edgePropsY)
+
+    local edgePropsZ = {part = parent, axis = "Z", alignToParentFarEdge = false}
+    local parentEdgeZ = getPartFarEdge(edgePropsZ)
+
+    local isMoveTowardZero = moveTowardZero or {x = -1, y = -1, z = -1}
+
+    local childCenterX = parentEdgeX + desiredOffset.X + (childSize.X / 2) *
+                             isMoveTowardZero.x
+    local childCenterY = parentEdgeY + desiredOffset.Y + (childSize.Y / 2) *
+                             isMoveTowardZero.y
+    local childCenterZ = parentEdgeZ + desiredOffset.Z + (childSize.Z / 2) *
+                             isMoveTowardZero.z
+
+    local parentOffsetPoint = Vector3.new(childCenterX, childCenterY,
+                                          childCenterZ)
+
+    return parentOffsetPoint
+
+end
+
 function createRowOfParts(props)
     local rowProps = props.rowProps
-    local alignToParentEdge = rowProps.alignToParentEdge or
-                                  {x = true, y = false, z = true}
+    local alignToParentFarEdge = rowProps.alignToParentFarEdge or
+                                     {x = true, y = false, z = true}
     local itemConfigs = props.itemConfigs
     local itemProps = props.itemProps
 
     local edgePropsX = {
         part = rowProps.parent,
         axis = "X",
-        alignToParentEdge = alignToParentEdge.x
+        alignToParentFarEdge = alignToParentFarEdge.x
     }
     local parentEdgeX = getPartFarEdge(edgePropsX)
 
     local edgePropsY = {
         part = rowProps.parent,
         axis = "Y",
-        alignToParentEdge = alignToParentEdge.y
+        alignToParentFarEdge = alignToParentFarEdge.y
     }
+
     local parentEdgeY = getPartFarEdge(edgePropsY)
 
     local edgePropsZ = {
         part = rowProps.parent,
         axis = "Z",
-        alignToParentEdge = alignToParentEdge.z
+        alignToParentFarEdge = alignToParentFarEdge.z
     }
     local parentEdgeZ = getPartFarEdge(edgePropsZ)
 
@@ -2280,6 +2364,8 @@ function createRowOfParts(props)
 end
 
 module.createRowOfParts = createRowOfParts
+module.getPartFarEdge = getPartFarEdge
+module.getCenterPosFromDeriredEdgeOffset = getCenterPosFromDeriredEdgeOffset
 
 return module
 ]]></ProtectedString>
