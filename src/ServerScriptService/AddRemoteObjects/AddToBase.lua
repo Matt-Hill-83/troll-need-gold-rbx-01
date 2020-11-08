@@ -57,9 +57,9 @@ renderCharacters = function(parent, itemConfigs)
     RowOfParts.createRowOfParts(props)
 end
 
-renderScenes = function(parent)
-    parent.Position = Vector3.new(0, 0, 0)
-    parent.Size = Vector3.new(120, 2, 48)
+renderScenes = function(parent, itemConfigs)
+    -- parent.Position = Vector3.new(0, 0, 0)
+    -- parent.Size = Vector3.new(120, 2, 48)
 
     local parentPadding = 0
     local offset = Vector3.new(parentPadding, 0, 0)
@@ -81,7 +81,7 @@ renderScenes = function(parent)
 
     local props = {
         rowProps = rowProps,
-        itemConfigs = sceneConfigs,
+        itemConfigs = itemConfigs,
         itemProps = itemProps
     }
 
@@ -91,15 +91,15 @@ end
 function module.addRemoteObjects(base)
     local frameIndex = 1
 
-    local renderedScenes = renderScenes(base)
+    local renderedScenes = renderScenes(base, sceneConfigs)
 
     for i, newScene in ipairs(renderedScenes) do
         local sceneConfig = sceneConfigs[i]
         local characterConfigs = sceneConfig.frames[frameIndex].characters
-        local items = sceneConfig.frames[frameIndex].items
+        local itemConfigs = sceneConfig.frames[frameIndex].items
 
         -- renderCharacters(newScene, characterConfigs)
-        -- renderItems(newScene, items)
+        -- renderItems(newScene, itemConfigs)
 
         -- Dialog.renderDialog({parent = newScene})
 

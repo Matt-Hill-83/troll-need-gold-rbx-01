@@ -54,11 +54,9 @@ function createRowOfParts(props)
     local offsetConfig = rowProps.offsetConfig
 
     local rowOfParts = {}
-
     local desiredOffsetFromParentEdge = rowProps.offset
 
     for i, itemConfig in ipairs(itemConfigs) do
-
         local offsetProps = {
             parent = parent,
             childSize = itemProps.size,
@@ -90,7 +88,6 @@ function createRowOfParts(props)
 end
 
 module.createRowOfParts = createRowOfParts
-module.getPartFarEdge = getPartFarEdge
 module.getCenterPosFromDesiredEdgeOffset = getCenterPosFromDesiredEdgeOffset
 
 return module
