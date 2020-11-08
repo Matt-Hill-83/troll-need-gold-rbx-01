@@ -58,11 +58,8 @@ renderCharacters = function(parent, itemConfigs)
 end
 
 renderScenes = function(parent, itemConfigs)
-    -- parent.Position = Vector3.new(0, 0, 0)
-    -- parent.Size = Vector3.new(120, 2, 48)
-
-    local parentPadding = 0
-    local offset = Vector3.new(parentPadding, 0, 0)
+    local offset = Vector3.new(-1, 0, 0)
+    local itemProps = {size = Vector3.new(48, 24, 2), partName = "Scene"}
 
     local offsetConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
@@ -76,8 +73,6 @@ renderScenes = function(parent, itemConfigs)
         offsetConfig = offsetConfig,
         offset = offset
     }
-
-    local itemProps = {size = Vector3.new(48, 24, 2), partName = "Scene"}
 
     local props = {
         rowProps = rowProps,
