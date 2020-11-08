@@ -63,26 +63,26 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>33.3513832</X>
-					<Y>63.032486</Y>
-					<Z>-5.93415451</Z>
-					<R00>-0.998251557</R00>
-					<R01>-0.058382418</R01>
-					<R02>0.00924684573</R02>
-					<R10>-0</R10>
-					<R11>0.156434163</R11>
-					<R12>0.987688422</R12>
-					<R20>-0.0591101572</R20>
-					<R21>0.985961497</R21>
-					<R22>-0.156160608</R22>
+					<X>-4.20045471</X>
+					<Y>41.4411697</Y>
+					<Z>-41.2695351</Z>
+					<R00>-0.994860291</R00>
+					<R01>0.0392455608</R01>
+					<R02>-0.0933431461</R02>
+					<R10>-3.72529074e-09</R10>
+					<R11>0.921836019</R11>
+					<R12>0.387580335</R12>
+					<R20>0.101257883</R20>
+					<R21>0.385588288</R21>
+					<R22>-0.917097867</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>33</X>
-					<Y>25.5</Y>
+					<X>0</X>
+					<Y>24</Y>
 					<Z>0</Z>
 					<R00>1</R00>
 					<R01>0</R01>
@@ -317,8 +317,8 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
 						<X>-31</X>
-						<Y>-15.5</Y>
-						<Z>9.5</Z>
+						<Y>8.00097656</Y>
+						<Z>-15.5</Z>
 						<R00>1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
@@ -409,8 +409,8 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
 							<X>-21.5</X>
-							<Y>-8</Y>
-							<Z>8.65500069</Z>
+							<Y>15.5009766</Y>
+							<Z>-16.3449993</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -746,6 +746,45 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBX3a7c0ab3b270444aba2ae52d211b3425">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>0</X>
+								<Y>7.5</Y>
+								<Z>0</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>1</R12>
+								<R20>0</R20>
+								<R21>-1</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>-21.5</X>
+								<Y>-0.999023438</Y>
+								<Z>-16.3449993</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>0</R11>
+								<R12>1</R12>
+								<R20>0</R20>
+								<R21>-1</R21>
+								<R22>0</R22>
+							</CoordinateFrame>
+							<bool name="Enabled">true</bool>
+							<string name="Name">Weld</string>
+							<Ref name="Part0">RBXe5c8c90c8f224ed480346b9a2b017c1b</Ref>
+							<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
 				</Item>
 				<Item class="Folder" referent="RBX67198b43499d41979233b4ccbdae3b4c">
 					<Properties>
@@ -768,8 +807,8 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 							<token name="BottomSurfaceInput">0</token>
 							<CoordinateFrame name="CFrame">
 								<X>-10.5</X>
-								<Y>-26</Y>
-								<Z>8.50000763</Z>
+								<Y>-2.49902344</Y>
+								<Z>-16.4999924</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -887,6 +926,45 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 						</Item>
 					</Item>
 				</Item>
+				<Item class="Weld" referent="RBX04f2d57a43c143e585ea019d15b3fb32">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<CoordinateFrame name="C0">
+							<X>0</X>
+							<Y>15</Y>
+							<Z>0</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>0</R11>
+							<R12>1</R12>
+							<R20>0</R20>
+							<R21>-1</R21>
+							<R22>0</R22>
+						</CoordinateFrame>
+						<CoordinateFrame name="C1">
+							<X>-31</X>
+							<Y>-0.999023438</Y>
+							<Z>-15.5</Z>
+							<R00>1</R00>
+							<R01>0</R01>
+							<R02>0</R02>
+							<R10>0</R10>
+							<R11>0</R11>
+							<R12>1</R12>
+							<R20>0</R20>
+							<R21>-1</R21>
+							<R22>0</R22>
+						</CoordinateFrame>
+						<bool name="Enabled">true</bool>
+						<string name="Name">Weld</string>
+						<Ref name="Part0">RBXa34931ee8eb546829020f4aac6ef52fe</Ref>
+						<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
 			</Item>
 		</Item>
 		<Item class="Script" referent="RBXa84a614b19674fd6bbf4a22c86f51dac">
@@ -986,6 +1064,26 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 					<Content name="LinkedSource"><null></null></Content>
 					<string name="Name">BaseScript</string>
 					<string name="ScriptGuid">{217e422e-4b92-4b98-9299-4e87aa49c738}</string>
+					<ProtectedString name="Source"><![CDATA[local base = script.Parent
+
+local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.AddToBase)
+
+
+
+remoteCode.addRemoteObjects(base)
+
+]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="Script" referent="RBX5f95d7d1ba8f4f71b0cc4225654e42e6">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">BaseScript</string>
+					<string name="ScriptGuid">{0d43710b-bec4-40b8-afce-3d24ec0ee9e0}</string>
 					<ProtectedString name="Source"><![CDATA[local base = script.Parent
 
 local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.AddToBase)
@@ -1271,6 +1369,289 @@ for i,v in pairs(cors) do
 end
 
 end]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="Part" referent="RBXb58e7d122ac34028b227e94067990b6d">
+			<Properties>
+				<bool name="Anchored">false</bool>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<float name="BackParamA">-0.5</float>
+				<float name="BackParamB">0.5</float>
+				<token name="BackSurface">0</token>
+				<token name="BackSurfaceInput">0</token>
+				<float name="BottomParamA">-0.5</float>
+				<float name="BottomParamB">0.5</float>
+				<token name="BottomSurface">0</token>
+				<token name="BottomSurfaceInput">0</token>
+				<CoordinateFrame name="CFrame">
+					<X>-22.5</X>
+					<Y>32.0000343</Y>
+					<Z>-1.5</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<bool name="CanCollide">true</bool>
+				<bool name="CastShadow">true</bool>
+				<int name="CollisionGroupId">0</int>
+				<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
+				<PhysicalProperties name="CustomPhysicalProperties">
+					<CustomPhysics>false</CustomPhysics>
+				</PhysicalProperties>
+				<float name="FrontParamA">-0.5</float>
+				<float name="FrontParamB">0.5</float>
+				<token name="FrontSurface">0</token>
+				<token name="FrontSurfaceInput">0</token>
+				<float name="LeftParamA">-0.5</float>
+				<float name="LeftParamB">0.5</float>
+				<token name="LeftSurface">0</token>
+				<token name="LeftSurfaceInput">0</token>
+				<bool name="Locked">false</bool>
+				<bool name="Massless">false</bool>
+				<token name="Material">256</token>
+				<string name="Name">Test Gui - 001</string>
+				<float name="Reflectance">0</float>
+				<float name="RightParamA">-0.5</float>
+				<float name="RightParamB">0.5</float>
+				<token name="RightSurface">0</token>
+				<token name="RightSurfaceInput">0</token>
+				<int name="RootPriority">0</int>
+				<Vector3 name="RotVelocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<float name="TopParamA">-0.5</float>
+				<float name="TopParamB">0.5</float>
+				<token name="TopSurface">0</token>
+				<token name="TopSurfaceInput">0</token>
+				<float name="Transparency">0</float>
+				<Vector3 name="Velocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<token name="formFactorRaw">1</token>
+				<token name="shape">1</token>
+				<Vector3 name="size">
+					<X>19</X>
+					<Y>14</Y>
+					<Z>1</Z>
+				</Vector3>
+			</Properties>
+			<Item class="Weld" referent="RBXaac6cae5ccaf45109f7ad36812ce07f9">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<CoordinateFrame name="C0">
+						<X>0</X>
+						<Y>-7</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>0</R11>
+						<R12>-1</R12>
+						<R20>0</R20>
+						<R21>1</R21>
+						<R22>0</R22>
+					</CoordinateFrame>
+					<CoordinateFrame name="C1">
+						<X>-22.5</X>
+						<Y>1.00003433</Y>
+						<Z>-1.5</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>0</R11>
+						<R12>-1</R12>
+						<R20>0</R20>
+						<R21>1</R21>
+						<R22>0</R22>
+					</CoordinateFrame>
+					<bool name="Enabled">true</bool>
+					<string name="Name">Weld</string>
+					<Ref name="Part0">RBXb58e7d122ac34028b227e94067990b6d</Ref>
+					<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="SurfaceGui" referent="RBX584fa13e2b244079869eb7a595c975a9">
+				<Properties>
+					<bool name="Active">true</bool>
+					<Ref name="Adornee">null</Ref>
+					<bool name="AlwaysOnTop">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="AutoLocalize">true</bool>
+					<Vector2 name="CanvasSize">
+						<X>800</X>
+						<Y>600</Y>
+					</Vector2>
+					<bool name="ClipsDescendants">true</bool>
+					<bool name="Enabled">true</bool>
+					<token name="Face">5</token>
+					<float name="LightInfluence">1</float>
+					<string name="Name">SurfaceGui</string>
+					<float name="PixelsPerStud">50</float>
+					<bool name="ResetOnSpawn">true</bool>
+					<Ref name="RootLocalizationTable">null</Ref>
+					<token name="SizingMode">1</token>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="ToolPunchThroughDistance">0</float>
+					<token name="ZIndexBehavior">1</token>
+					<float name="ZOffset">0</float>
+				</Properties>
+				<Item class="ScrollingFrame" referent="RBXbde0fbcefe5141fab8912ee659fa4da0">
+					<Properties>
+						<bool name="Active">true</bool>
+						<Vector2 name="AnchorPoint">
+							<X>0</X>
+							<Y>0</Y>
+						</Vector2>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<bool name="AutoLocalize">true</bool>
+						<token name="AutomaticCanvasSize">0</token>
+						<token name="AutomaticSize">0</token>
+						<Color3 name="BackgroundColor3">
+							<R>1</R>
+							<G>1</G>
+							<B>1</B>
+						</Color3>
+						<float name="BackgroundTransparency">0</float>
+						<Color3 name="BorderColor3">
+							<R>0.105882362</R>
+							<G>0.164705887</G>
+							<B>0.207843155</B>
+						</Color3>
+						<token name="BorderMode">0</token>
+						<int name="BorderSizePixel">1</int>
+						<Content name="BottomImage"><url>rbxasset://textures/ui/Scroll/scroll-bottom.png</url></Content>
+						<Vector2 name="CanvasPosition">
+							<X>0</X>
+							<Y>0</Y>
+						</Vector2>
+						<UDim2 name="CanvasSize">
+							<XS>0</XS>
+							<XO>0</XO>
+							<YS>2</YS>
+							<YO>0</YO>
+						</UDim2>
+						<bool name="ClipsDescendants">true</bool>
+						<bool name="Draggable">false</bool>
+						<token name="ElasticBehavior">0</token>
+						<token name="HorizontalScrollBarInset">0</token>
+						<int name="LayoutOrder">0</int>
+						<Content name="MidImage"><url>rbxasset://textures/ui/Scroll/scroll-middle.png</url></Content>
+						<string name="Name">ScrollingFrame</string>
+						<Ref name="NextSelectionDown">null</Ref>
+						<Ref name="NextSelectionLeft">null</Ref>
+						<Ref name="NextSelectionRight">null</Ref>
+						<Ref name="NextSelectionUp">null</Ref>
+						<UDim2 name="Position">
+							<XS>0</XS>
+							<XO>0</XO>
+							<YS>0</YS>
+							<YO>0</YO>
+						</UDim2>
+						<Ref name="RootLocalizationTable">null</Ref>
+						<float name="Rotation">0</float>
+						<Color3 name="ScrollBarImageColor3">
+							<R>0</R>
+							<G>0</G>
+							<B>0</B>
+						</Color3>
+						<float name="ScrollBarImageTransparency">0</float>
+						<int name="ScrollBarThickness">12</int>
+						<token name="ScrollingDirection">4</token>
+						<bool name="ScrollingEnabled">true</bool>
+						<bool name="Selectable">true</bool>
+						<Ref name="SelectionImageObject">null</Ref>
+						<UDim2 name="Size">
+							<XS>0</XS>
+							<XO>100</XO>
+							<YS>0</YS>
+							<YO>100</YO>
+						</UDim2>
+						<token name="SizeConstraint">0</token>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+						<Content name="TopImage"><url>rbxasset://textures/ui/Scroll/scroll-top.png</url></Content>
+						<token name="VerticalScrollBarInset">0</token>
+						<token name="VerticalScrollBarPosition">0</token>
+						<bool name="Visible">true</bool>
+						<int name="ZIndex">1</int>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="Script" referent="RBXa672e1455f714bf7bcd3539fa0913f77">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">Script</string>
+					<string name="ScriptGuid">{6eb3d285-19da-48a0-993e-4be7a93845f4}</string>
+					<ProtectedString name="Source"><![CDATA[print("Gui test ")
+local sgui = script.Parent:FindFirstChildWhichIsA("SurfaceGui")  
+local scroll = sgui:FindFirstChildWhichIsA("ScrollingFrame")  
+
+
+local size = scroll.Size
+
+
+
+
+local base = script.Parent
+
+local remoteCode = require(game.ServerScriptService.Source.TestStuff.ScrollArea)
+
+
+remoteCode.hello()
+print('------------------------')
+print(scroll)
+print(size)
+print('------------------------')]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="Script" referent="RBX9d952f0982444fb8b3e7b57631be99a3">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="Disabled">false</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">Script</string>
+					<string name="ScriptGuid">{1bc77578-1baf-4feb-975a-44c0d84d36bb}</string>
+					<ProtectedString name="Source"><![CDATA[print("Gui test ")
+local sgui = script.Parent:FindFirstChildWhichIsA("SurfaceGui")  
+local scroll = script.Parent:FindFirstChildWhichIsA("ScrollingFrame")  
+
+
+
+
+local base = script.Parent
+
+local remoteCode = require(game.ServerScriptService.Source.TestStuff.ScrollArea)
+
+
+remoteCode.hello()
+print('------------------------')
+print(sFrame)
+print('------------------------')
+]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
@@ -1978,7 +2359,8 @@ local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 
 local module = {}
 
-local testDict01 = {
+local testDict01 = {text = "aaa bbb cccc ", color = "Yellow", char = "Britta"}
+local testDict03 = {
     text = "aaa bbb cccc ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt",
     color = "Yellow",
     char = "Britta"
@@ -2057,7 +2439,10 @@ renderTexts = function(props)
     local pixelsPerStud = props.pixelsPerStud
 
     local sgui = Instance.new("SurfaceGui", parent)
-    local texts = {testDict01, testDict02, testDict01}
+    local texts = {
+        testDict01, testDict02, testDict03, testDict01, testDict02, testDict03,
+        testDict01, testDict02, testDict03
+    }
 
     local parentWidth = parent.Size.X * pixelsPerStud - (0 * paddingInPx)
     -- local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
@@ -2072,8 +2457,8 @@ renderTexts = function(props)
         local charName = texts[pageNum]['char']
         local text = charName .. ": " .. dialog['text']
 
-        local font = Enum.Font.Legacy
-        local fontHeight = 30
+        local font = Enum.Font.Arial
+        local fontHeight = 41
         -- local fontHeight = 50
         local textPadVert = 0
         -- local textPadVert = fontHeight / 4
@@ -2081,16 +2466,17 @@ renderTexts = function(props)
         local newLabel = Instance.new("TextLabel", sgui)
         newLabel.Font = font
 
-        local calcSize = TextService:GetTextSize(text, fontHeight,
-                                                 newLabel.Font, Vector2.new(
-                                                     parentWidth, parentHeight))
+        local calcSize = TextService:GetTextSize(text, fontHeight, font,
+                                                 Vector2.new(parentWidth,
+                                                             parentHeight))
 
         local height = calcSize.Y
         -- local height = calcSize.Y + textPadVert * 2
 
         newLabel.Name = "Dialog-" .. i
         newLabel.Text = text
-        newLabel.Size = UDim2.new(0, parentWidth, 0, height)
+        newLabel.Size = UDim2.new(1, 0, 0, height)
+        -- newLabel.Size = UDim2.new(0, parentWidth, 0, height)
         newLabel.Position = UDim2.new(0, 0, 0, dialogY)
         -- newLabel.Position = UDim2.new(0, 50, 0, dialogY)
         -- newLabel.Position = UDim2.new(0, textButtonPaddingInPx, 0, dialogY)
@@ -2102,9 +2488,6 @@ renderTexts = function(props)
         newLabel.TextYAlignment = Enum.TextYAlignment.Top
 
         local absoluteHeight = newLabel.AbsoluteSize.Y
-        print('absoluteHeight' .. ' - start');
-        print(absoluteHeight);
-        print('absoluteHeight' .. ' - end');
 
         dialogY = dialogY + absoluteHeight + paddingInPx
 
@@ -2117,8 +2500,8 @@ renderDialog = function(props)
     local dialogContainer = renderDialogContainer({parent = parent})
     local dialogBlock = renderDialogBlock({parent = dialogContainer})
 
-    local pixelsPerStud = 40
-    local paddingInPx = 1 * pixelsPerStud
+    local pixelsPerStud = 45
+    local paddingInPx = pixelsPerStud / 4
 
     local renderButtonBlockProps = {
         parent = dialogContainer,
@@ -2247,7 +2630,7 @@ function getParentFarEdge(props)
     local parentPosition = parent.CFrame
     local parentSize = parent.Size
     local parentFarEdge = parentPosition[axis] + parentSize[axis] / 2
-    local alignedValue = parentFarEdge - childLength / 2
+    local alignedValue = parentFarEdge - childSizeLength / 2
     return alignedValue
 end
 
@@ -2421,6 +2804,31 @@ function module.mergeTables(t1, t2)
 end
 
 return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="Folder" referent="RBXfbe10af566834af8845e069ce069565c">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<string name="Name">TestStuff</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="ModuleScript" referent="RBXd7162b4aa0d548d9b5fc84ee4e742056">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">ScrollArea</string>
+						<string name="ScriptGuid">{1fd9b811-7d68-4319-87e1-046b1869444c}</string>
+						<ProtectedString name="Source"><![CDATA[local module = {}
+
+function hello() print("----------------------------- test-------------------") end
+module.hello = hello
+return module
+
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
@@ -2686,18 +3094,8 @@ return module
 						<string name="Name">MyScripts</string>
 						<string name="ScriptGuid">{a139a056-b62f-437f-84e2-1d6ddc7dda5b}</string>
 						<ProtectedString name="Source"><![CDATA[local my_functions = {}
-print('did you get this')
 
-function my_functions.foo()
-
-    print("Foo---------2!")
-    print("Foo---------2!")
-    print("Foo---------2!")
-
-    print("Foo---------2!")
-    print("Foo---------2!")
-
-end
+function my_functions.foo() end
 
 function my_functions.bar() print("Bar!---------------111") end
 

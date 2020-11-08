@@ -90,10 +90,6 @@ renderTexts = function(props)
         testDict01, testDict02, testDict03
     }
 
-    print('parent.Size.X' .. ' - start');
-    print(parent.Size.X);
-    print('parent.Size.X' .. ' - end');
-
     local parentWidth = parent.Size.X * pixelsPerStud - (0 * paddingInPx)
     -- local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
     local parentHeight = parent.Size.Y * pixelsPerStud
@@ -121,14 +117,8 @@ renderTexts = function(props)
                                                              parentHeight))
 
         local height = calcSize.Y
-        print('calcSize' .. ' - start');
-        print(calcSize);
-        print('calcSize' .. ' - end');
         -- local height = calcSize.Y + textPadVert * 2
 
-        print('parentWidth' .. ' - start');
-        print(parentWidth);
-        print('parentWidth' .. ' - end');
         newLabel.Name = "Dialog-" .. i
         newLabel.Text = text
         newLabel.Size = UDim2.new(1, 0, 0, height)
@@ -143,14 +133,7 @@ renderTexts = function(props)
         newLabel.TextXAlignment = Enum.TextXAlignment.Left
         newLabel.TextYAlignment = Enum.TextYAlignment.Top
 
-        print('newLabel.AbsoluteSize' .. ' - start');
-        print(newLabel.AbsoluteSize);
-        print('newLabel.AbsoluteSize' .. ' - end');
-
         local absoluteHeight = newLabel.AbsoluteSize.Y
-        print('absoluteHeight' .. ' - start');
-        print(absoluteHeight);
-        print('absoluteHeight' .. ' - end');
 
         dialogY = dialogY + absoluteHeight + paddingInPx
 
@@ -159,21 +142,17 @@ end
 
 renderDialog = function(props)
     local parent = props.parent
+    local pixelsPerStud = 45
+    local paddingInPx = pixelsPerStud / 4
+    local pageNum = 1
 
     local dialogContainer = renderDialogContainer({parent = parent})
     local dialogBlock = renderDialogBlock({parent = dialogContainer})
-
-    local pixelsPerStud = 45
-    local paddingInPx = pixelsPerStud / 4
 
     local renderButtonBlockProps = {
         parent = dialogContainer,
         sibling = dialogBlock
     }
-
-    -- local dialogSurface = textButton.Parent
-    -- Instance.new("TextLabel", sgui)
-    local pageNum = 1
 
     local renderTextsProps = {
         parent = dialogBlock,

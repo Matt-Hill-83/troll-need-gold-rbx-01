@@ -11,7 +11,7 @@ function getParentFarEdge(props)
     local parentPosition = parent.CFrame
     local parentSize = parent.Size
     local parentFarEdge = parentPosition[axis] + parentSize[axis] / 2
-    local alignedValue = parentFarEdge - childLength / 2
+    local alignedValue = parentFarEdge - childSizeLength / 2
     return alignedValue
 end
 
