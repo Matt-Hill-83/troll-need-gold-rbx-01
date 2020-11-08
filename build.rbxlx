@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>97.7483215</X>
-					<Y>48.2702675</Y>
-					<Z>-72.2281494</Z>
-					<R00>-0.860269427</R00>
-					<R01>-0.238111317</R01>
-					<R02>0.450821042</R02>
-					<R10>-0</R10>
-					<R11>0.884240687</R11>
-					<R12>0.467031598</R12>
-					<R20>-0.509839833</R20>
-					<R21>0.401773006</R21>
-					<R22>-0.760685146</R22>
+					<X>118.671272</X>
+					<Y>56.8431549</Y>
+					<Z>-91.4355087</Z>
+					<R00>-0.984032989</R00>
+					<R01>-0.0601204336</R01>
+					<R02>0.167525008</R02>
+					<R10>-3.72529074e-09</R10>
+					<R11>0.941224635</R11>
+					<R12>0.33778137</R12>
+					<R20>-0.17798622</R20>
+					<R21>0.332388014</R21>
+					<R22>-0.926196039</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>96.8466797</X>
-					<Y>47.3362045</Y>
-					<Z>-70.7067795</Z>
+					<X>118.336227</X>
+					<Y>56.1676025</Y>
+					<Z>-89.5831451</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -292,45 +292,6 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<BinaryString name="Tags"></BinaryString>
 						<Content name="Texture"><url>rbxassetid://5897658720</url></Content>
 						<float name="Transparency">0</float>
-					</Properties>
-				</Item>
-				<Item class="Weld" referent="RBX647104ada676418bb9f0ba5c6f3a2fbe">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<CoordinateFrame name="C0">
-							<X>0</X>
-							<Y>-0.5</Y>
-							<Z>0</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>0</R11>
-							<R12>-1</R12>
-							<R20>0</R20>
-							<R21>1</R21>
-							<R22>0</R22>
-						</CoordinateFrame>
-						<CoordinateFrame name="C1">
-							<X>42</X>
-							<Y>1</Y>
-							<Z>-1</Z>
-							<R00>-1</R00>
-							<R01>0</R01>
-							<R02>-0</R02>
-							<R10>0</R10>
-							<R11>0</R11>
-							<R12>-1</R12>
-							<R20>0</R20>
-							<R21>-1</R21>
-							<R22>-0</R22>
-						</CoordinateFrame>
-						<bool name="Enabled">true</bool>
-						<string name="Name">Weld</string>
-						<Ref name="Part0">RBX66060b95b6e94f39af9353268593d5dd</Ref>
-						<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
 					</Properties>
 				</Item>
 			</Item>
@@ -785,45 +746,6 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Weld" referent="RBX936a0e3ec5a9426fa5757589d8dbd1ad">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<CoordinateFrame name="C0">
-								<X>0</X>
-								<Y>7.5</Y>
-								<Z>0</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>1</R12>
-								<R20>0</R20>
-								<R21>-1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>-21.5</X>
-								<Y>-0.999023438</Y>
-								<Z>-16.3449993</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>0</R11>
-								<R12>1</R12>
-								<R20>0</R20>
-								<R21>-1</R21>
-								<R22>0</R22>
-							</CoordinateFrame>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Weld</string>
-							<Ref name="Part0">RBXe5c8c90c8f224ed480346b9a2b017c1b</Ref>
-							<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
 				</Item>
 				<Item class="Folder" referent="RBX67198b43499d41979233b4ccbdae3b4c">
 					<Properties>
@@ -965,45 +887,6 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 						</Item>
 					</Item>
 				</Item>
-				<Item class="Weld" referent="RBX375e2c6bf04f46c0a06b2fabbd8a735c">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<CoordinateFrame name="C0">
-							<X>0</X>
-							<Y>15</Y>
-							<Z>0</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>0</R11>
-							<R12>1</R12>
-							<R20>0</R20>
-							<R21>-1</R21>
-							<R22>0</R22>
-						</CoordinateFrame>
-						<CoordinateFrame name="C1">
-							<X>-31</X>
-							<Y>-0.999023438</Y>
-							<Z>-15.5</Z>
-							<R00>1</R00>
-							<R01>0</R01>
-							<R02>0</R02>
-							<R10>0</R10>
-							<R11>0</R11>
-							<R12>1</R12>
-							<R20>0</R20>
-							<R21>-1</R21>
-							<R22>0</R22>
-						</CoordinateFrame>
-						<bool name="Enabled">true</bool>
-						<string name="Name">Weld</string>
-						<Ref name="Part0">RBXa34931ee8eb546829020f4aac6ef52fe</Ref>
-						<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
 			</Item>
 		</Item>
 		<Item class="Script" referent="RBXa84a614b19674fd6bbf4a22c86f51dac">
@@ -1034,7 +917,7 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 				<token name="BottomSurfaceInput">0</token>
 				<CoordinateFrame name="CFrame">
 					<X>0</X>
-					<Y>-0</Y>
+					<Y>0</Y>
 					<Z>0</Z>
 					<R00>1</R00>
 					<R01>0</R01>
@@ -1107,7 +990,7 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 
 local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.AddToBase)
 
-
+-- BrickColor.new("Light orange"),
 
 remoteCode.addRemoteObjects(base)
 
@@ -1935,20 +1818,20 @@ local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local sceneConfigs = SceneConfig.getScenesConfig()
 
 renderItems = function(parent, itemConfigs)
-    local parentPadding = 1
+    local itemProps = {size = Vector3.new(4, 6, 1), partName = "Items"}
 
-    local rowProps = {
-        alignToParentFarEdge = {x = false, y = false, z = false},
-        xGap = 1,
-        xOffset = -4,
-        yOffset = parentPadding,
-
-        parent = parent,
-        moveTowardZero = {x = 1, y = 1, z = -1}
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(-1, -1, -1),
+        moveTowardZero = Vector3.new(1, 1, -1),
+        rowDirection = Vector3.new(1, -1, -1)
     }
 
-    -- local characterProps = {size = {x = , y = 8, z = 1}, partName = "Item"}
-    local itemProps = {size = Vector3.new(4, 6, 1), partName = "Item"}
+    local rowProps = {
+        parent = parent,
+        xGap = Vector3.new(4, 0, 0),
+        itemDuplicationConfig = itemDuplicationConfig,
+        offset = Vector3.new(3, 2, 0)
+    }
 
     local props = {
         rowProps = rowProps,
@@ -1956,22 +1839,24 @@ renderItems = function(parent, itemConfigs)
         itemProps = itemProps
     }
 
-    RowOfParts.createRowOfParts(props)
+    return RowOfParts.createRowOfParts(props)
 end
 
 renderCharacters = function(parent, itemConfigs)
-    local parentPadding = 1
+    local itemProps = {size = Vector3.new(6, 8, 1), partName = "Characters"}
 
-    local rowProps = {
-        alignToParentFarEdge = {x = true, y = false, z = false},
-        xGap = 1,
-        offset = Vector3.new(4, parentPadding, 0),
-        rowDirection = Vector3.new(-1, 1, 1),
-        parent = parent,
-        moveTowardZero = {x = -1, y = 1, z = -1}
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, -1, -1),
+        moveTowardZero = Vector3.new(-1, 1, -1),
+        rowDirection = Vector3.new(-1, -1, -1)
     }
 
-    local itemProps = {size = Vector3.new(6, 8, 1), partName = "Character"}
+    local rowProps = {
+        parent = parent,
+        xGap = Vector3.new(4, 0, 0),
+        itemDuplicationConfig = itemDuplicationConfig,
+        offset = Vector3.new(-3, 2, 0)
+    }
 
     local props = {
         rowProps = rowProps,
@@ -1979,28 +1864,28 @@ renderCharacters = function(parent, itemConfigs)
         itemProps = itemProps
     }
 
-    RowOfParts.createRowOfParts(props)
+    return RowOfParts.createRowOfParts(props)
 end
 
-renderScenes = function(parent)
-    parent.Position = Vector3.new(0, 0, 0)
-    parent.Size = Vector3.new(120, 2, 48)
-    local parentPadding = 1
+renderScenes = function(parent, itemConfigs)
+    local itemProps = {size = Vector3.new(48, 24, 2), partName = "Scene"}
 
-    local rowProps = {
-        alignToParentFarEdge = {x = true, y = true, z = true},
-        xGap = 4,
-        offset = Vector3.new(parentPadding, 0, 15),
-        rowDirection = Vector3.new(-1, 1, 1),
-        parent = parent,
-        moveTowardZero = {x = -1, y = 1, z = -1}
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, 1, 1),
+        moveTowardZero = Vector3.new(-1, 1, -1),
+        rowDirection = Vector3.new(-1, 1, 1)
     }
 
-    local itemProps = {size = Vector3.new(48, 24, 2), partName = "Scene"}
+    local rowProps = {
+        parent = parent,
+        xGap = Vector3.new(4, 0, 0),
+        itemDuplicationConfig = itemDuplicationConfig,
+        offset = Vector3.new(-1, 1, -1)
+    }
 
     local props = {
         rowProps = rowProps,
-        itemConfigs = sceneConfigs,
+        itemConfigs = itemConfigs,
         itemProps = itemProps
     }
 
@@ -2010,15 +1895,15 @@ end
 function module.addRemoteObjects(base)
     local frameIndex = 1
 
-    local renderedScenes = renderScenes(base)
+    local renderedScenes = renderScenes(base, sceneConfigs)
 
     for i, newScene in ipairs(renderedScenes) do
         local sceneConfig = sceneConfigs[i]
         local characterConfigs = sceneConfig.frames[frameIndex].characters
-        local items = sceneConfig.frames[frameIndex].items
+        local itemConfigs = sceneConfig.frames[frameIndex].items
 
-        -- renderCharacters(newScene, characterConfigs)
-        -- renderItems(newScene, items)
+        renderCharacters(newScene, characterConfigs)
+        renderItems(newScene, itemConfigs)
 
         Dialog.renderDialog({parent = newScene})
 
@@ -2109,59 +1994,21 @@ renderDialog = function(props)
 
     local dialogContainer = renderDialogContainer({parent = parent})
     local dialogBlock = renderDialogBlock({parent = dialogContainer})
-
-    local renderButtonBlockProps = {
-        parent = dialogContainer,
-        sibling = dialogBlock
-    }
+    local textsContainer = renderTextsContainer({parent = dialogBlock})
 
     local renderTextsProps = {
-        parent = dialogBlock,
+        parent = textsContainer,
         pageNum = pageNum,
         paddingInPx = paddingInPx,
         pixelsPerStud = pixelsPerStud
     }
-
     renderTexts(renderTextsProps)
-    renderButtonBlock(renderButtonBlockProps)
 
-end
-
-renderButtonBlock = function(props)
-    local parent = props.parent
-    local sibling = props.sibling
-
-    local newPartHeight = 4
-    local bottomOffset = 1
-
-    local distanceY = sibling.Size.Y / 2 + newPartHeight / 2 + bottomOffset
-    local siblingSizeCopy = Vector3.new(sibling.Size.X, newPartHeight,
-                                        sibling.Size.Z)
-
-    local buttonBlockProps = {
-        name = 'buttonBlock',
-        parent = parent,
-        size = siblingSizeCopy,
-        position = sibling.Position + Vector3.new(0, -distanceY, 0),
-        color = BrickColor.new("Red")
+    local renderButtonBlockProps = {
+        parent = dialogBlock,
+        sibling = textsContainer
     }
-
-    local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
-    local sgui = Instance.new("SurfaceGui", buttonBlock)
-
-    local textButton = Instance.new("TextButton", sgui)
-    textButton.Size = UDim2.new(0, 100, 0, 100)
-    textButton.Text = "Next Page!"
-
-    local function onActivated()
-        pageNum = pageNum + 1
-        textButton.Text = "Page: " .. pageNum
-
-    end
-
-    textButton.MouseButton1Click:Connect(onActivated)
-
-    return buttonBlock
+    renderButtonBlock(renderButtonBlockProps)
 
 end
 
@@ -2169,11 +2016,19 @@ renderDialogContainer = function(props)
     local parent = props.parent
 
     local childSize = Vector3.new(20, 16, 1)
-    local desiredOffset = Vector3.new(-1, -1, -1)
+    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 0)
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        moveTowardZero = Vector3.new(-1, -1, -1),
+        rowDirection = Vector3.new(-1, -1, -1)
+    }
+
     local offsetProps = {
         parent = parent,
         childSize = childSize,
-        desiredOffset = desiredOffset
+        itemDuplicationConfig = itemDuplicationConfig,
+        offset = desiredOffsetFromParentEdge
     }
 
     local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
@@ -2193,16 +2048,87 @@ end
 renderDialogBlock = function(props)
     local parent = props.parent
 
-    local dialogBlockProps = {
+    local partProps = {
         name = 'Dialog',
         parent = parent,
-        color = BrickColor.new("Alder"),
-        size = parent.Size + Vector3.new(-2, -2, 0),
+        color = BrickColor.new("Light orange"),
+        size = parent.Size + Vector3.new(-1, -1, 0),
         position = parent.Position + Vector3.new(0, 0, -0.5)
     }
 
-    return Part.createPartWithVectors(dialogBlockProps)
+    return Part.createPartWithVectors(partProps)
 
+end
+
+renderButtonBlock = function(props)
+    local parent = props.parent
+    local sibling = props.sibling
+
+    local newPartHeight = 2
+    local bottomOffset = 1
+
+    local distanceY = sibling.Size.Y / 2 + newPartHeight / 2 + bottomOffset
+    local siblingSizeCopy = Vector3.new(sibling.Size.X, newPartHeight,
+                                        sibling.Size.Z)
+
+    local buttonBlockProps = {
+        name = 'buttonBlock',
+        parent = parent,
+        size = siblingSizeCopy,
+        position = sibling.Position + Vector3.new(0, -distanceY, 0),
+        color = BrickColor.new("Light red")
+    }
+
+    local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
+    local sgui = Instance.new("SurfaceGui", buttonBlock)
+
+    local textButton = Instance.new("TextButton", sgui)
+    textButton.Size = UDim2.new(0.5, 0, 0.5, 0)
+    textButton.Position = UDim2.new(0.5, 0, .5, 0)
+    textButton.Text = "Next Page!"
+
+    local function onActivated()
+        pageNum = pageNum + 1
+        textButton.Text = "Page: " .. pageNum
+
+    end
+
+    textButton.MouseButton1Click:Connect(onActivated)
+
+    return buttonBlock
+
+end
+
+renderTextsContainer = function(props)
+    local parent = props.parent
+
+    local childSize = Vector3.new(parent.Size.X, 10, 1)
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        moveTowardZero = Vector3.new(-1, -1, -1),
+        rowDirection = Vector3.new(-1, -1, -1)
+    }
+
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        itemDuplicationConfig = itemDuplicationConfig,
+        offset = desiredOffsetFromParentEdge
+    }
+
+    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
+
+    local dialogBlockProps = {
+        name = 'textsContainer',
+        parent = parent,
+        color = BrickColor.new("Light blue"),
+        size = childSize,
+        position = childPos
+    }
+
+    return Part.createPartWithVectors(dialogBlockProps)
 end
 
 renderTexts = function(props)
@@ -2259,6 +2185,7 @@ renderTexts = function(props)
         dialogY = dialogY + absoluteHeight + paddingInPx
 
     end
+    return textsBlock
 end
 
 module.renderDialog = renderDialog
@@ -2373,46 +2300,32 @@ end
 
 function getPartFarEdge(props)
     local part = props.part
-    local axis = props.axis or 'X'
+    return part.Position + (part.Size / 2) * props.alignToParentFarEdge
 
-    -- ternary function
-    local alignToParentFarEdge = props.alignToParentFarEdge and 1 or -1
-    local partPosition = part.Position
-    local partSize = part.Size
-    local partFarEdge = partPosition[axis] + (partSize[axis] / 2) *
-                            alignToParentFarEdge
-
-    return partFarEdge
 end
 
 function getCenterPosFromDesiredEdgeOffset(props)
     local parent = props.parent
     local childSize = props.childSize
-    local desiredOffset = props.desiredOffset
-    local moveTowardZero = props.moveTowardZero
 
-    local edgePropsX = {part = parent, axis = "X", alignToParentFarEdge = true}
-    local parentEdgeX = getPartFarEdge(edgePropsX)
+    -- Which direction does the offset move toward?
+    local desiredOffset = props.offset
 
-    local edgePropsY = {part = parent, axis = "Y", alignToParentFarEdge = true}
-    local parentEdgeY = getPartFarEdge(edgePropsY)
+    local itemDuplicationConfig = props.itemDuplicationConfig
 
-    local edgePropsZ = {part = parent, axis = "Z", alignToParentFarEdge = false}
-    local parentEdgeZ = getPartFarEdge(edgePropsZ)
+    -- Is the origin side of the box at the new offset location?
+    local moveTowardZero = itemDuplicationConfig.moveTowardZero
+    local alignToParentFarEdge = itemDuplicationConfig.alignToParentFarEdge
 
-    local isMoveTowardZero = moveTowardZero or {x = -1, y = -1, z = -1}
+    local edgeProps = {
+        part = parent,
+        alignToParentFarEdge = alignToParentFarEdge
+    }
 
-    local childCenterX = parentEdgeX + desiredOffset.X + (childSize.X / 2) *
-                             isMoveTowardZero.x
-    local childCenterY = parent.Position.Y
-    --                          isMoveTowardZero.x
-    -- local childCenterY = parentEdgeY + desiredOffset.Y + (childSize.Y / 2) *
-    --                          isMoveTowardZero.y
-    local childCenterZ = parentEdgeZ + desiredOffset.Z + (childSize.Z / 2) *
-                             isMoveTowardZero.z
+    local parentEdge = getPartFarEdge(edgeProps)
 
-    local parentOffsetPoint = Vector3.new(childCenterX, childCenterY,
-                                          childCenterZ)
+    local parentOffsetPoint = parentEdge + desiredOffset + (childSize / 2) *
+                                  moveTowardZero
 
     return parentOffsetPoint
 
@@ -2420,56 +2333,23 @@ end
 
 function createRowOfParts(props)
     local rowProps = props.rowProps
-    local alignToParentFarEdge = rowProps.alignToParentFarEdge or
-                                     {x = true, y = false, z = true}
     local itemConfigs = props.itemConfigs
     local itemProps = props.itemProps
 
-    local edgePropsX = {
-        part = rowProps.parent,
-        axis = "X",
-        alignToParentFarEdge = alignToParentFarEdge.x
-    }
-    local parentEdgeX = getPartFarEdge(edgePropsX)
-
-    local edgePropsY = {
-        part = rowProps.parent,
-        axis = "Y",
-        alignToParentFarEdge = alignToParentFarEdge.y
-    }
-
-    local parentEdgeY = getPartFarEdge(edgePropsY)
-    print('parentEdgeY' .. ' - start');
-    print(parentEdgeY);
-    print('parentEdgeY' .. ' - end');
-    local edgePropsZ = {
-        part = rowProps.parent,
-        axis = "Z",
-        alignToParentFarEdge = alignToParentFarEdge.z
-    }
-    local parentEdgeZ = getPartFarEdge(edgePropsZ)
-
-    local y = itemProps.size.Y / 2 + (rowProps.yOffset or 0)
-    local z = parentEdgeZ - (rowProps.zOffset or 0)
+    local parent = rowProps.parent
+    local itemDuplicationConfig = rowProps.itemDuplicationConfig
+    local xGap = rowProps.xGap
 
     local rowOfParts = {}
+    local desiredOffsetFromParentEdge = rowProps.offset
 
-    local desiredOffset = Vector3.new(-rowProps.xGap, y, z) + rowProps.offset
-    print('desiredOffset' .. ' - start');
-    print(desiredOffset);
-    print('desiredOffset' .. ' - end');
     for i, itemConfig in ipairs(itemConfigs) do
-
         local offsetProps = {
-            parent = rowProps.parent,
+            parent = parent,
             childSize = itemProps.size,
-            desiredOffset = desiredOffset,
-            moveTowardZero = rowProps.moveTowardZero
+            itemDuplicationConfig = itemDuplicationConfig,
+            offset = desiredOffsetFromParentEdge
         }
-
-        print('offsetProps' .. ' - start');
-        print(offsetProps);
-        print('offsetProps' .. ' - end');
 
         local position = getCenterPosFromDesiredEdgeOffset(offsetProps)
 
@@ -2478,22 +2358,24 @@ function createRowOfParts(props)
             size = itemProps.size,
             name = itemProps.partName .. "-" .. i,
             position = position,
-            parent = rowProps.parent
+            parent = parent
         }
-        local newPart = Part.createPartWithVectors(newPartProps)
 
-        rowOfParts[i] = newPart
-        desiredOffset = desiredOffset +
-                            Vector3.new(rowProps.xGap + itemProps.size.X, 0, 0) *
-                            rowProps.rowDirection
-        -- prevX = x + xIncrement
+        rowOfParts[i] = Part.createPartWithVectors(newPartProps)
+
+        local positionIncrement = Vector3.new(itemProps.size.X, 0, 0) + xGap
+
+        desiredOffsetFromParentEdge = desiredOffsetFromParentEdge +
+                                          positionIncrement *
+                                          rowProps.itemDuplicationConfig
+                                              .rowDirection
+
     end
 
     return rowOfParts
 end
 
 module.createRowOfParts = createRowOfParts
-module.getPartFarEdge = getPartFarEdge
 module.getCenterPosFromDesiredEdgeOffset = getCenterPosFromDesiredEdgeOffset
 
 return module

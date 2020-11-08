@@ -22,59 +22,21 @@ renderDialog = function(props)
 
     local dialogContainer = renderDialogContainer({parent = parent})
     local dialogBlock = renderDialogBlock({parent = dialogContainer})
-
-    local renderButtonBlockProps = {
-        parent = dialogContainer,
-        sibling = dialogBlock
-    }
+    local textsContainer = renderTextsContainer({parent = dialogBlock})
 
     local renderTextsProps = {
-        parent = dialogBlock,
+        parent = textsContainer,
         pageNum = pageNum,
         paddingInPx = paddingInPx,
         pixelsPerStud = pixelsPerStud
     }
-
     renderTexts(renderTextsProps)
-    renderButtonBlock(renderButtonBlockProps)
 
-end
-
-renderButtonBlock = function(props)
-    local parent = props.parent
-    local sibling = props.sibling
-
-    local newPartHeight = 4
-    local bottomOffset = 1
-
-    local distanceY = sibling.Size.Y / 2 + newPartHeight / 2 + bottomOffset
-    local siblingSizeCopy = Vector3.new(sibling.Size.X, newPartHeight,
-                                        sibling.Size.Z)
-
-    local buttonBlockProps = {
-        name = 'buttonBlock',
-        parent = parent,
-        size = siblingSizeCopy,
-        position = sibling.Position + Vector3.new(0, -distanceY, 0),
-        color = BrickColor.new("Red")
+    local renderButtonBlockProps = {
+        parent = dialogBlock,
+        sibling = textsContainer
     }
-
-    local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
-    local sgui = Instance.new("SurfaceGui", buttonBlock)
-
-    local textButton = Instance.new("TextButton", sgui)
-    textButton.Size = UDim2.new(0, 100, 0, 100)
-    textButton.Text = "Next Page!"
-
-    local function onActivated()
-        pageNum = pageNum + 1
-        textButton.Text = "Page: " .. pageNum
-
-    end
-
-    textButton.MouseButton1Click:Connect(onActivated)
-
-    return buttonBlock
+    renderButtonBlock(renderButtonBlockProps)
 
 end
 
@@ -114,16 +76,87 @@ end
 renderDialogBlock = function(props)
     local parent = props.parent
 
-    local dialogBlockProps = {
+    local partProps = {
         name = 'Dialog',
         parent = parent,
-        color = BrickColor.new("Alder"),
-        size = parent.Size + Vector3.new(-2, -2, 0),
+        color = BrickColor.new("Light orange"),
+        size = parent.Size + Vector3.new(-1, -1, 0),
         position = parent.Position + Vector3.new(0, 0, -0.5)
     }
 
-    return Part.createPartWithVectors(dialogBlockProps)
+    return Part.createPartWithVectors(partProps)
 
+end
+
+renderButtonBlock = function(props)
+    local parent = props.parent
+    local sibling = props.sibling
+
+    local newPartHeight = 2
+    local bottomOffset = 1
+
+    local distanceY = sibling.Size.Y / 2 + newPartHeight / 2 + bottomOffset
+    local siblingSizeCopy = Vector3.new(sibling.Size.X, newPartHeight,
+                                        sibling.Size.Z)
+
+    local buttonBlockProps = {
+        name = 'buttonBlock',
+        parent = parent,
+        size = siblingSizeCopy,
+        position = sibling.Position + Vector3.new(0, -distanceY, 0),
+        color = BrickColor.new("Light red")
+    }
+
+    local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
+    local sgui = Instance.new("SurfaceGui", buttonBlock)
+
+    local textButton = Instance.new("TextButton", sgui)
+    textButton.Size = UDim2.new(0.5, 0, 0.5, 0)
+    textButton.Position = UDim2.new(0.5, 0, .5, 0)
+    textButton.Text = "Next Page!"
+
+    local function onActivated()
+        pageNum = pageNum + 1
+        textButton.Text = "Page: " .. pageNum
+
+    end
+
+    textButton.MouseButton1Click:Connect(onActivated)
+
+    return buttonBlock
+
+end
+
+renderTextsContainer = function(props)
+    local parent = props.parent
+
+    local childSize = Vector3.new(parent.Size.X, 10, 1)
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        moveTowardZero = Vector3.new(-1, -1, -1),
+        rowDirection = Vector3.new(-1, -1, -1)
+    }
+
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        itemDuplicationConfig = itemDuplicationConfig,
+        offset = desiredOffsetFromParentEdge
+    }
+
+    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
+
+    local dialogBlockProps = {
+        name = 'textsContainer',
+        parent = parent,
+        color = BrickColor.new("Light blue"),
+        size = childSize,
+        position = childPos
+    }
+
+    return Part.createPartWithVectors(dialogBlockProps)
 end
 
 renderTexts = function(props)
@@ -180,6 +213,7 @@ renderTexts = function(props)
         dialogY = dialogY + absoluteHeight + paddingInPx
 
     end
+    return textsBlock
 end
 
 module.renderDialog = renderDialog
