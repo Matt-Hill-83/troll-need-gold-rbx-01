@@ -79,8 +79,8 @@ renderDialogBlock = function(props)
     local partProps = {
         name = 'Dialog',
         parent = parent,
-        color = BrickColor.new("Light orange"),
-        size = parent.Size + Vector3.new(-1, -1, 0),
+        color = BrickColor.new("Light blue"),
+        size = parent.Size + Vector3.new(-1, -1, 0.2),
         position = parent.Position + Vector3.new(0, 0, 0)
     }
 
@@ -112,26 +112,23 @@ renderButtonBlock = function(props)
 
     local textButton = Instance.new("TextButton", sgui)
     textButton.Size = UDim2.new(0.5, 0, 0.5, 0)
-    -- textButton.Position = UDim2.new(0.5, 0, .5, 0)
+    textButton.Position = UDim2.new(0.25, 0, .25, 0)
     textButton.Text = "Next Page!"
 
     local function onActivated()
         pageNum = pageNum + 1
         textButton.Text = "Page: " .. pageNum
-
     end
 
     textButton.MouseButton1Click:Connect(onActivated)
-
     return buttonBlock
-
 end
 
 renderTextsContainer = function(props)
     local parent = props.parent
 
-    local childSize = Vector3.new(parent.Size.X, 10, 1)
-    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
+    local childSize = Vector3.new(parent.Size.X - 2, 10, 0.2)
+    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 0)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, -1),
@@ -160,7 +157,6 @@ renderTextsContainer = function(props)
 end
 
 renderTexts = function(props)
-
     local parent = props.parent
     local paddingInPx = props.paddingInPx
     local pixelsPerStud = props.pixelsPerStud
