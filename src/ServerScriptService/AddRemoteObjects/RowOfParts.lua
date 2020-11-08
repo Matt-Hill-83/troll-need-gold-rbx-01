@@ -24,10 +24,13 @@ end
 function getCenterPosFromDesiredEdgeOffset(props)
     local parent = props.parent
     local childSize = props.childSize
+
+    -- Which direction does the offset move toward?
     local desiredOffset = props.offset
 
     local itemDuplicationConfig = props.itemDuplicationConfig
 
+    -- Is the origin side of the box at the new offset location?
     local moveTowardZero = itemDuplicationConfig.moveTowardZero
     local alignToParentFarEdge = itemDuplicationConfig.alignToParentFarEdge
 
