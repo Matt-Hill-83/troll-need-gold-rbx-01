@@ -71,7 +71,7 @@ function createRowOfParts(props)
 
     local rowOfParts = {}
 
-    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0) + rowProps.offset
+    local desiredOffsetFromParentEdge = rowProps.offset
 
     for i, itemConfig in ipairs(itemConfigs) do
 
@@ -82,10 +82,6 @@ function createRowOfParts(props)
             moveTowardZero = rowProps.moveTowardZero,
             alignToParentFarEdge = rowProps.alignToParentFarEdge
         }
-
-        print('offsetProps' .. ' - start');
-        print(offsetProps);
-        print('offsetProps' .. ' - end');
 
         local position = getCenterPosFromDesiredEdgeOffset(offsetProps)
 
