@@ -69,7 +69,7 @@ renderScenes = function(parent, itemConfigs)
 
     local rowProps = {
         parent = parent,
-        xGap = 4,
+        xGap = Vector3.new(4, 0, 0),
         offsetConfig = offsetConfig,
         offset = offset
     }

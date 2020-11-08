@@ -52,6 +52,7 @@ function createRowOfParts(props)
 
     local parent = rowProps.parent
     local offsetConfig = rowProps.offsetConfig
+    local xGap = rowProps.xGap
 
     local rowOfParts = {}
     local desiredOffsetFromParentEdge = rowProps.offset
@@ -76,11 +77,11 @@ function createRowOfParts(props)
 
         rowOfParts[i] = Part.createPartWithVectors(newPartProps)
 
-        local positionIncrement = Vector3.new(rowProps.xGap + itemProps.size.X,
-                                              0, 0) *
-                                      rowProps.offsetConfig.rowDirection
+        local positionIncrement = Vector3.new(itemProps.size.X, 0, 0) + xGap
+
         desiredOffsetFromParentEdge = desiredOffsetFromParentEdge +
-                                          positionIncrement
+                                          positionIncrement *
+                                          rowProps.offsetConfig.rowDirection
 
     end
 
