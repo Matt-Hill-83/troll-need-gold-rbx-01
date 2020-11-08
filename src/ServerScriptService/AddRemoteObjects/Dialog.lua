@@ -166,6 +166,7 @@ renderTexts = function(props)
     scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
     scrollingFrame.BackgroundTransparency = 1
 
+    -- local texts = {testDict01}
     local texts = {
         testDict01, testDict02, testDict03, testDict01, testDict02, testDict03,
         testDict01, testDict02, testDict03
@@ -179,12 +180,13 @@ renderTexts = function(props)
 
     for i, dialog in ipairs(texts) do
         local charName = texts[pageNum]['char']
-        local text = charName .. ": " .. dialog['text']
+        local text = "  " .. charName .. ": " .. dialog['text']
 
         local font = Enum.Font.Arial
         local fontHeight = 41
 
-        local newLabel = Instance.new("TextLabel", scrollingFrame)
+        local newLabel2 = Instance.new("TextLabel", scrollingFrame)
+        local newLabel = Instance.new("TextLabel", newLabel2)
         newLabel.Font = font
 
         local calcSize = TextService:GetTextSize(text, fontHeight, font,
@@ -195,21 +197,38 @@ renderTexts = function(props)
 
         newLabel.Name = "Dialog-" .. i
         newLabel.Text = text
+        newLabel2.Text = text
+
+        newLabel2.Size = UDim2.new(1.01, 0, 0, height * 1.05)
+        newLabel2.Position = UDim2.new(0, 0, 0, dialogY)
+        newLabel2.BorderColor3 = Color3.new(255, 10, 92)
+        newLabel2.ZIndex = 1
+        newLabel.ZIndex = 2
+
         newLabel.Size = UDim2.new(1, 0, 0, height)
-        newLabel.Position = UDim2.new(0, 0, 0, dialogY)
+        newLabel.Position = UDim2.new(0, 0, 0, dialogY * 1.0)
+
+        newLabel2.BackgroundTransparency = 0.9
         newLabel.Selectable = true
+        newLabel.BackgroundColor3 = Color3.new(255, 220, 237)
+        newLabel.BorderColor3 = Color3.new(255, 0, 92)
+        newLabel.BorderSizePixel = 1
+        newLabel.TextColor3 = Color3.new(0, 0, 0)
 
         newLabel.TextWrapped = true
         newLabel.TextSize = fontHeight
         newLabel.TextXAlignment = Enum.TextXAlignment.Left
         newLabel.TextYAlignment = Enum.TextYAlignment.Top
 
+        -- '#ff005c'
+        -- '#ff005c'
+
         local absoluteHeight = newLabel.AbsoluteSize.Y
 
-        dialogY = dialogY + absoluteHeight + paddingInPx
+        dialogY = dialogY + absoluteHeight + paddingInPx * 3
 
     end
-    return textsBlock
+
 end
 
 module.renderDialog = renderDialog
