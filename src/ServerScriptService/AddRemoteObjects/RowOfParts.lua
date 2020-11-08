@@ -36,9 +36,10 @@ end
 function getCenterPosFromDesiredEdgeOffset(props)
     local parent = props.parent
     local childSize = props.childSize
+    local desiredOffset = props.offset
+
     local offsetConfig = props.offsetConfig
 
-    local desiredOffset = offsetConfig.offset
     local moveTowardZero = offsetConfig.moveTowardZero
     local alignToParentFarEdge = offsetConfig.alignToParentFarEdge or
                                      Vector3.new(1, 1, -1)
@@ -52,12 +53,12 @@ function getCenterPosFromDesiredEdgeOffset(props)
     local isMoveTowardZero = moveTowardZero or Vector3.new(-1, 1, -1)
 
     local childCenterX = parentEdge.X + desiredOffset.X + (childSize.X / 2) *
-                             isMoveTowardZero.x
+                             isMoveTowardZero.X
 
     local childCenterY = parentEdge.Y + desiredOffset.Y + (childSize.Y / 2) *
-                             isMoveTowardZero.y
+                             isMoveTowardZero.Y
     local childCenterZ = parentEdge.Z + desiredOffset.Z + (childSize.Z / 2) *
-                             isMoveTowardZero.z
+                             isMoveTowardZero.Z
 
     local parentOffsetPoint = Vector3.new(childCenterX, childCenterY,
                                           childCenterZ)
@@ -80,7 +81,8 @@ function createRowOfParts(props)
         local offsetProps = {
             parent = rowProps.parent,
             childSize = itemProps.size,
-            offsetConfig = rowProps.offsetConfig
+            offsetConfig = rowProps.offsetConfig,
+            offset = desiredOffsetFromParentEdge
         }
 
         local position = getCenterPosFromDesiredEdgeOffset(offsetProps)
@@ -95,6 +97,9 @@ function createRowOfParts(props)
         local newPart = Part.createPartWithVectors(newPartProps)
 
         rowOfParts[i] = newPart
+        -- desiredOffsetFromParentEdge = desiredOffsetFromParentEdge +
+        --                                   Vector3.new(20, 0, 0)
+
         desiredOffsetFromParentEdge = desiredOffsetFromParentEdge +
                                           Vector3.new(
                                               rowProps.xGap + itemProps.size.X,
