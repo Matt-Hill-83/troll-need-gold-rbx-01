@@ -26,10 +26,10 @@ function getCenterPosFromDesiredEdgeOffset(props)
     local childSize = props.childSize
     local desiredOffset = props.offset
 
-    local offsetConfig = props.offsetConfig
+    local itemDuplicationConfig = props.itemDuplicationConfig
 
-    local moveTowardZero = offsetConfig.moveTowardZero
-    local alignToParentFarEdge = offsetConfig.alignToParentFarEdge
+    local moveTowardZero = itemDuplicationConfig.moveTowardZero
+    local alignToParentFarEdge = itemDuplicationConfig.alignToParentFarEdge
 
     local edgeProps = {
         part = parent,
@@ -51,7 +51,7 @@ function createRowOfParts(props)
     local itemProps = props.itemProps
 
     local parent = rowProps.parent
-    local offsetConfig = rowProps.offsetConfig
+    local itemDuplicationConfig = rowProps.itemDuplicationConfig
     local xGap = rowProps.xGap
 
     local rowOfParts = {}
@@ -61,7 +61,7 @@ function createRowOfParts(props)
         local offsetProps = {
             parent = parent,
             childSize = itemProps.size,
-            offsetConfig = offsetConfig,
+            itemDuplicationConfig = itemDuplicationConfig,
             offset = desiredOffsetFromParentEdge
         }
 
@@ -81,7 +81,8 @@ function createRowOfParts(props)
 
         desiredOffsetFromParentEdge = desiredOffsetFromParentEdge +
                                           positionIncrement *
-                                          rowProps.offsetConfig.rowDirection
+                                          rowProps.itemDuplicationConfig
+                                              .rowDirection
 
     end
 

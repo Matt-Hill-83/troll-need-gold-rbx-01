@@ -58,10 +58,9 @@ renderCharacters = function(parent, itemConfigs)
 end
 
 renderScenes = function(parent, itemConfigs)
-    local offset = Vector3.new(-1, 0, 0)
     local itemProps = {size = Vector3.new(48, 24, 2), partName = "Scene"}
 
-    local offsetConfig = {
+    local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
         moveTowardZero = Vector3.new(-1, 1, -1),
         rowDirection = Vector3.new(-1, 1, 1)
@@ -70,8 +69,8 @@ renderScenes = function(parent, itemConfigs)
     local rowProps = {
         parent = parent,
         xGap = Vector3.new(4, 0, 0),
-        offsetConfig = offsetConfig,
-        offset = offset
+        itemDuplicationConfig = itemDuplicationConfig,
+        offset = Vector3.new(-1, 0, 0)
     }
 
     local props = {
