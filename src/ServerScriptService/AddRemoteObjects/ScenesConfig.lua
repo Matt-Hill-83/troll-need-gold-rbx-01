@@ -25,7 +25,8 @@ function module.getScenesConfig()
         name = "log",
         frames = {frame01, frame02}
     }
-    local scenes = {scene01, scene02}
+    local scenes = {scene01}
+    -- local scenes = {scene01, scene02}
 
     return scenes
 

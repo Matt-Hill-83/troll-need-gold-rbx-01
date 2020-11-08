@@ -13,6 +13,33 @@ local testDict03 = {
 }
 local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
 
+local pageNum = 1
+
+renderDialog = function(props)
+    local parent = props.parent
+    local pixelsPerStud = 45
+    local paddingInPx = pixelsPerStud / 4
+
+    local dialogContainer = renderDialogContainer({parent = parent})
+    local dialogBlock = renderDialogBlock({parent = dialogContainer})
+
+    local renderButtonBlockProps = {
+        parent = dialogContainer,
+        sibling = dialogBlock
+    }
+
+    local renderTextsProps = {
+        parent = dialogBlock,
+        pageNum = pageNum,
+        paddingInPx = paddingInPx,
+        pixelsPerStud = pixelsPerStud
+    }
+
+    renderTexts(renderTextsProps)
+    renderButtonBlock(renderButtonBlockProps)
+
+end
+
 renderButtonBlock = function(props)
     local parent = props.parent
     local sibling = props.sibling
@@ -33,6 +60,19 @@ renderButtonBlock = function(props)
     }
 
     local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
+    local sgui = Instance.new("SurfaceGui", buttonBlock)
+
+    local textButton = Instance.new("TextButton", sgui)
+    textButton.Size = UDim2.new(0, 100, 0, 100)
+    textButton.Text = "Next Page!"
+    local function onActivated()
+        pageNum = pageNum + 1
+        textButton.Text = "Page: " .. pageNum
+
+    end
+
+    textButton.MouseButton1Click:Connect(onActivated)
+
     return buttonBlock
 
 end
@@ -80,11 +120,14 @@ end
 
 renderTexts = function(props)
     local parent = props.parent
-    local pageNum = props.pageNum
+    -- local pageNum = props.pageNum
     local paddingInPx = props.paddingInPx
     local pixelsPerStud = props.pixelsPerStud
 
     local sgui = Instance.new("SurfaceGui", parent)
+    local scrollingFrame = Instance.new("ScrollingFrame", sgui)
+    scrollingFrame.Size = UDim2.new(1, 0, 0.5, 0)
+
     local texts = {
         testDict01, testDict02, testDict03, testDict01, testDict02, testDict03,
         testDict01, testDict02, testDict03
@@ -97,7 +140,7 @@ renderTexts = function(props)
     local bottomGap = 1
     local dialogY = bottomGap
 
-    local textButtonPaddingInPx = 1 * pixelsPerStud
+    -- local textButtonPaddingInPx = 1 * pixelsPerStud
 
     for i, dialog in ipairs(texts) do
         local charName = texts[pageNum]['char']
@@ -106,10 +149,10 @@ renderTexts = function(props)
         local font = Enum.Font.Arial
         local fontHeight = 41
         -- local fontHeight = 50
-        local textPadVert = 0
+        -- local textPadVert = 0
         -- local textPadVert = fontHeight / 4
 
-        local newLabel = Instance.new("TextLabel", sgui)
+        local newLabel = Instance.new("TextLabel", scrollingFrame)
         newLabel.Font = font
 
         local calcSize = TextService:GetTextSize(text, fontHeight, font,
@@ -138,42 +181,6 @@ renderTexts = function(props)
         dialogY = dialogY + absoluteHeight + paddingInPx
 
     end
-end
-
-renderDialog = function(props)
-    local parent = props.parent
-    local pixelsPerStud = 45
-    local paddingInPx = pixelsPerStud / 4
-    local pageNum = 1
-
-    local dialogContainer = renderDialogContainer({parent = parent})
-    local dialogBlock = renderDialogBlock({parent = dialogContainer})
-
-    local renderButtonBlockProps = {
-        parent = dialogContainer,
-        sibling = dialogBlock
-    }
-
-    local renderTextsProps = {
-        parent = dialogBlock,
-        pageNum = pageNum,
-        paddingInPx = paddingInPx,
-        pixelsPerStud = pixelsPerStud
-    }
-
-    renderTexts(renderTextsProps)
-    renderButtonBlock(renderButtonBlockProps)
-
-    -- local textButton = Instance.new("TextButton", sgui)
-    -- textButton.Size = UDim2.new(0, childWidth, 0, childHeight)
-    -- textButton.Text = "Next Page!"
-    -- local function onActivated()
-    --     pageNum = pageNum + 1
-    --     textButton.Text = "Page: " .. pageNum
-
-    -- end
-
-    -- textButton.MouseButton1Click:Connect(onActivated)
 end
 
 module.renderDialog = renderDialog
