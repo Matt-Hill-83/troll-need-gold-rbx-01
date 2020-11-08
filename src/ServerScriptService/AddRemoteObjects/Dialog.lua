@@ -65,6 +65,7 @@ renderButtonBlock = function(props)
     local textButton = Instance.new("TextButton", sgui)
     textButton.Size = UDim2.new(0, 100, 0, 100)
     textButton.Text = "Next Page!"
+
     local function onActivated()
         pageNum = pageNum + 1
         textButton.Text = "Page: " .. pageNum
@@ -88,7 +89,7 @@ renderDialogContainer = function(props)
         desiredOffset = desiredOffset
     }
 
-    local childPos = RowOfParts.getCenterPosFromDeriredEdgeOffset(offsetProps)
+    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 
     local dialogBlockProps = {
         name = 'dialogContainer',
@@ -110,7 +111,6 @@ renderDialogBlock = function(props)
         parent = parent,
         color = BrickColor.new("Alder"),
         size = parent.Size + Vector3.new(-2, -2, 0),
-        -- size = parent.Size + Vector3.new(-2, -2, 0),
         position = parent.Position + Vector3.new(0, 0, -0.5)
     }
 
@@ -121,7 +121,6 @@ end
 renderTexts = function(props)
 
     local parent = props.parent
-    -- local pageNum = props.pageNum
     local paddingInPx = props.paddingInPx
     local pixelsPerStud = props.pixelsPerStud
 
@@ -136,13 +135,10 @@ renderTexts = function(props)
     }
 
     local parentWidth = parent.Size.X * pixelsPerStud - (0 * paddingInPx)
-    -- local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
     local parentHeight = parent.Size.Y * pixelsPerStud
 
     local bottomGap = 1
     local dialogY = bottomGap
-
-    -- local textButtonPaddingInPx = 1 * pixelsPerStud
 
     for i, dialog in ipairs(texts) do
         local charName = texts[pageNum]['char']
@@ -150,9 +146,6 @@ renderTexts = function(props)
 
         local font = Enum.Font.Arial
         local fontHeight = 41
-        -- local fontHeight = 50
-        -- local textPadVert = 0
-        -- local textPadVert = fontHeight / 4
 
         local newLabel = Instance.new("TextLabel", scrollingFrame)
         newLabel.Font = font
@@ -162,15 +155,11 @@ renderTexts = function(props)
                                                              parentHeight))
 
         local height = calcSize.Y
-        -- local height = calcSize.Y + textPadVert * 2
 
         newLabel.Name = "Dialog-" .. i
         newLabel.Text = text
         newLabel.Size = UDim2.new(1, 0, 0, height)
-        -- newLabel.Size = UDim2.new(0, parentWidth, 0, height)
         newLabel.Position = UDim2.new(0, 0, 0, dialogY)
-        -- newLabel.Position = UDim2.new(0, 50, 0, dialogY)
-        -- newLabel.Position = UDim2.new(0, textButtonPaddingInPx, 0, dialogY)
         newLabel.Selectable = true
 
         newLabel.TextWrapped = true

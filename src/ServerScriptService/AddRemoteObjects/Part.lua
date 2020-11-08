@@ -32,10 +32,6 @@ function createPartWithVectors(props)
     local position = props.position
     local decalId = props.decalId
 
-    print('name' .. ' - start -----------------------------------');
-    print(name);
-    print('name' .. ' - end');
-
     local newPart = Instance.new("Part", parent)
 
     newPart.Size = size

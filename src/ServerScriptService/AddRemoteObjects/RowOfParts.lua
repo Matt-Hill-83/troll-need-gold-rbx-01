@@ -21,7 +21,7 @@ function getPartFarEdge(props)
 
     -- ternary function
     local alignToParentFarEdge = props.alignToParentFarEdge and 1 or -1
-    local partPosition = part.CFrame
+    local partPosition = part.Position
     local partSize = part.Size
     local partFarEdge = partPosition[axis] + (partSize[axis] / 2) *
                             alignToParentFarEdge
@@ -29,25 +29,41 @@ function getPartFarEdge(props)
     return partFarEdge
 end
 
-function getCenterPosFromDeriredEdgeOffset(props)
+function getCenterPosFromDesiredEdgeOffset(props)
     local parent = props.parent
     local childSize = props.childSize
     local desiredOffset = props.desiredOffset
     local moveTowardZero = props.moveTowardZero
+    local alignToParentFarEdge = props.alignToParentFarEdge or
+                                     Vector3.new(1, 1, -1)
 
-    local edgePropsX = {part = parent, axis = "X", alignToParentFarEdge = true}
+    local edgePropsX = {
+        part = parent,
+        axis = "X",
+        alignToParentFarEdge = alignToParentFarEdge.X
+    }
     local parentEdgeX = getPartFarEdge(edgePropsX)
 
-    local edgePropsY = {part = parent, axis = "Y", alignToParentFarEdge = true}
+    local edgePropsY = {
+        part = parent,
+        axis = "Y",
+        alignToParentFarEdge = alignToParentFarEdge.Y
+    }
     local parentEdgeY = getPartFarEdge(edgePropsY)
 
-    local edgePropsZ = {part = parent, axis = "Z", alignToParentFarEdge = false}
+    local edgePropsZ = {
+        part = parent,
+        axis = "Z",
+        alignToParentFarEdge = alignToParentFarEdge.Z
+    }
     local parentEdgeZ = getPartFarEdge(edgePropsZ)
 
     local isMoveTowardZero = moveTowardZero or {x = -1, y = -1, z = -1}
 
     local childCenterX = parentEdgeX + desiredOffset.X + (childSize.X / 2) *
                              isMoveTowardZero.x
+    -- local childCenterY = parent.Position.Y
+    -- --                          isMoveTowardZero.x
     local childCenterY = parentEdgeY + desiredOffset.Y + (childSize.Y / 2) *
                              isMoveTowardZero.y
     local childCenterZ = parentEdgeZ + desiredOffset.Z + (childSize.Z / 2) *
@@ -73,6 +89,9 @@ function createRowOfParts(props)
         alignToParentFarEdge = alignToParentFarEdge.x
     }
     local parentEdgeX = getPartFarEdge(edgePropsX)
+    print('parentEdgeX' .. ' - start');
+    print(parentEdgeX);
+    print('parentEdgeX' .. ' - end');
 
     local edgePropsY = {
         part = rowProps.parent,
@@ -81,7 +100,9 @@ function createRowOfParts(props)
     }
 
     local parentEdgeY = getPartFarEdge(edgePropsY)
-
+    print('parentEdgeY' .. ' - start');
+    print(parentEdgeY);
+    print('parentEdgeY' .. ' - end');
     local edgePropsZ = {
         part = rowProps.parent,
         axis = "Z",
@@ -89,67 +110,45 @@ function createRowOfParts(props)
     }
     local parentEdgeZ = getPartFarEdge(edgePropsZ)
 
-    local sceneWidth = itemProps.size.X
-    local xIncrement = rowProps.direction * (sceneWidth + rowProps.xGap)
-
-    local prevX = parentEdgeX - (rowProps.xOffset or 0)
-    local y = parentEdgeY + (rowProps.yOffset or 0)
-    local z = parentEdgeZ - (rowProps.zOffset or 0)
+    local y = parentEdgeY
+    local z = parentEdgeZ
 
     local rowOfParts = {}
 
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0) + rowProps.offset
+
+    print('desiredOffsetFromParentEdge' .. ' - start');
+    print(desiredOffsetFromParentEdge);
+    print('desiredOffsetFromParentEdge' .. ' - end');
     for i, itemConfig in ipairs(itemConfigs) do
 
-        print('i' .. ' - start');
-        print(i);
-        print('i' .. ' - end');
-        local x = prevX
-        local position = {x = x, y = y, z = z}
-        local newPosition = Vector3.new(x, y, z)
-
-        local adjustmentProps = {
-            size = itemProps.size,
-            position = newPosition,
-            -- position = position,
+        local offsetProps = {
+            parent = rowProps.parent,
+            childSize = itemProps.size,
+            desiredOffset = desiredOffsetFromParentEdge,
             moveTowardZero = rowProps.moveTowardZero
         }
-        local edgeAdjustedPosition = Part.getEdgePositionFromCenterPosition(
-                                         adjustmentProps)
 
-        print('edgeAdjustedPosition' .. ' - start');
-        print(edgeAdjustedPosition);
-        print('edgeAdjustedPosition' .. ' - end');
+        print('offsetProps' .. ' - start');
+        print(offsetProps);
+        print('offsetProps' .. ' - end');
 
-        local position2 = Vector3.new(edgeAdjustedPosition.X,
-                                      edgeAdjustedPosition.Y,
-                                      edgeAdjustedPosition.Z)
-
-        print('position2' .. ' - start');
-        print(position2);
-        print('position2' .. ' - end');
+        local position = getCenterPosFromDesiredEdgeOffset(offsetProps)
 
         local newPartProps = {
             decalId = itemConfig.decalId,
             size = itemProps.size,
             name = itemProps.partName .. "-" .. i,
-            position = position2,
-            -- position = edgeAdjustedPosition,
+            position = position,
             parent = rowProps.parent
         }
         local newPart = Part.createPartWithVectors(newPartProps)
 
-        -- local newPartProps = {
-        --     decalId = itemConfig.decalId,
-        --     size = itemProps.size,
-        --     name = itemProps.partName .. "-" .. i,
-        --     position = edgeAdjustedPosition,
-        --     parent = rowProps.parent
-        -- }
-        -- local newPart = Part.createPart(newPartProps)
-
         rowOfParts[i] = newPart
-
-        prevX = x + xIncrement
+        desiredOffsetFromParentEdge = desiredOffsetFromParentEdge +
+                                          Vector3.new(
+                                              rowProps.xGap + itemProps.size.X,
+                                              0, 0) * rowProps.rowDirection
     end
 
     return rowOfParts
@@ -157,6 +156,6 @@ end
 
 module.createRowOfParts = createRowOfParts
 module.getPartFarEdge = getPartFarEdge
-module.getCenterPosFromDeriredEdgeOffset = getCenterPosFromDeriredEdgeOffset
+module.getCenterPosFromDesiredEdgeOffset = getCenterPosFromDesiredEdgeOffset
 
 return module
