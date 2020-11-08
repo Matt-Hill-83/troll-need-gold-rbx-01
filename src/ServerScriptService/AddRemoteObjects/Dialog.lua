@@ -81,7 +81,7 @@ renderDialogBlock = function(props)
         parent = parent,
         color = BrickColor.new("Light orange"),
         size = parent.Size + Vector3.new(-1, -1, 0),
-        position = parent.Position + Vector3.new(0, 0, -0.5)
+        position = parent.Position + Vector3.new(0, 0, 0)
     }
 
     return Part.createPartWithVectors(partProps)
@@ -112,7 +112,7 @@ renderButtonBlock = function(props)
 
     local textButton = Instance.new("TextButton", sgui)
     textButton.Size = UDim2.new(0.5, 0, 0.5, 0)
-    textButton.Position = UDim2.new(0.5, 0, .5, 0)
+    -- textButton.Position = UDim2.new(0.5, 0, .5, 0)
     textButton.Text = "Next Page!"
 
     local function onActivated()
@@ -167,7 +167,7 @@ renderTexts = function(props)
 
     local sgui = Instance.new("SurfaceGui", parent)
     local scrollingFrame = Instance.new("ScrollingFrame", sgui)
-    scrollingFrame.Size = UDim2.new(1, 0, 0.5, 0)
+    scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
     scrollingFrame.BackgroundTransparency = 1
 
     local texts = {

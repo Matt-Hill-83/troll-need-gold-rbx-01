@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>118.671272</X>
-					<Y>56.8431549</Y>
-					<Z>-91.4355087</Z>
-					<R00>-0.984032989</R00>
-					<R01>-0.0601204336</R01>
-					<R02>0.167525008</R02>
-					<R10>-3.72529074e-09</R10>
-					<R11>0.941224635</R11>
-					<R12>0.33778137</R12>
-					<R20>-0.17798622</R20>
-					<R21>0.332388014</R21>
-					<R22>-0.926196039</R22>
+					<X>1.26026356</X>
+					<Y>47.0800552</Y>
+					<Z>-110.372406</Z>
+					<R00>-0.999934912</R00>
+					<R01>-0.00447945716</R01>
+					<R02>0.0105021279</R02>
+					<R10>4.65661343e-10</R10>
+					<R11>0.919824123</R11>
+					<R12>0.392331213</R12>
+					<R20>-0.0114175407</R20>
+					<R21>0.392305672</R21>
+					<R22>-0.919764042</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>118.336227</X>
-					<Y>56.1676025</Y>
-					<Z>-89.5831451</Z>
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -211,9 +211,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>42</X>
-						<Y>1.5</Y>
-						<Z>-1</Z>
+						<X>50.5</X>
+						<Y>5.5</Y>
+						<Z>8</Z>
 						<R00>-1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
@@ -273,7 +273,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="formFactorRaw">1</token>
 					<token name="shape">1</token>
 					<Vector3 name="size">
-						<X>36</X>
+						<X>17</X>
 						<Y>1</Y>
 						<Z>18</Z>
 					</Vector3>
@@ -2053,7 +2053,7 @@ renderDialogBlock = function(props)
         parent = parent,
         color = BrickColor.new("Light orange"),
         size = parent.Size + Vector3.new(-1, -1, 0),
-        position = parent.Position + Vector3.new(0, 0, -0.5)
+        position = parent.Position + Vector3.new(0, 0, 0)
     }
 
     return Part.createPartWithVectors(partProps)
@@ -2084,7 +2084,7 @@ renderButtonBlock = function(props)
 
     local textButton = Instance.new("TextButton", sgui)
     textButton.Size = UDim2.new(0.5, 0, 0.5, 0)
-    textButton.Position = UDim2.new(0.5, 0, .5, 0)
+    -- textButton.Position = UDim2.new(0.5, 0, .5, 0)
     textButton.Text = "Next Page!"
 
     local function onActivated()
@@ -2139,7 +2139,7 @@ renderTexts = function(props)
 
     local sgui = Instance.new("SurfaceGui", parent)
     local scrollingFrame = Instance.new("ScrollingFrame", sgui)
-    scrollingFrame.Size = UDim2.new(1, 0, 0.5, 0)
+    scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
     scrollingFrame.BackgroundTransparency = 1
 
     local texts = {
