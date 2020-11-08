@@ -17,14 +17,8 @@ end
 
 function getPartFarEdge(props)
     local part = props.part
+    return part.Position + (part.Size / 2) * props.alignToParentFarEdge
 
-    local alignToParentFarEdge = props.alignToParentFarEdge
-
-    local partPosition = part.Position
-    local partSize = part.Size
-    local partFarEdge = partPosition + (partSize / 2) * alignToParentFarEdge
-
-    return partFarEdge
 end
 
 function getCenterPosFromDesiredEdgeOffset(props)
@@ -56,6 +50,9 @@ function createRowOfParts(props)
     local itemConfigs = props.itemConfigs
     local itemProps = props.itemProps
 
+    local parent = rowProps.parent
+    local offsetConfig = rowProps.offsetConfig
+
     local rowOfParts = {}
 
     local desiredOffsetFromParentEdge = rowProps.offset
@@ -63,9 +60,9 @@ function createRowOfParts(props)
     for i, itemConfig in ipairs(itemConfigs) do
 
         local offsetProps = {
-            parent = rowProps.parent,
+            parent = parent,
             childSize = itemProps.size,
-            offsetConfig = rowProps.offsetConfig,
+            offsetConfig = offsetConfig,
             offset = desiredOffsetFromParentEdge
         }
 
@@ -76,17 +73,17 @@ function createRowOfParts(props)
             size = itemProps.size,
             name = itemProps.partName .. "-" .. i,
             position = position,
-            parent = rowProps.parent
+            parent = parent
         }
-        local newPart = Part.createPartWithVectors(newPartProps)
 
-        rowOfParts[i] = newPart
+        rowOfParts[i] = Part.createPartWithVectors(newPartProps)
 
-        desiredOffsetFromParentEdge = desiredOffsetFromParentEdge +
-                                          Vector3.new(
-                                              rowProps.xGap + itemProps.size.X,
+        local positionIncrement = Vector3.new(rowProps.xGap + itemProps.size.X,
                                               0, 0) *
-                                          rowProps.offsetConfig.rowDirection
+                                      rowProps.offsetConfig.rowDirection
+        desiredOffsetFromParentEdge = desiredOffsetFromParentEdge +
+                                          positionIncrement
+
     end
 
     return rowOfParts
