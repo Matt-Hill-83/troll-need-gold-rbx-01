@@ -16,7 +16,6 @@ renderItems = function(parent, itemConfigs)
         alignToParentFarEdge = {x = false, y = false, z = false},
         xGap = 1,
         xOffset = -4,
-        -- zOffset = parentPadding,
         yOffset = parentPadding,
 
         parent = parent,
@@ -24,12 +23,13 @@ renderItems = function(parent, itemConfigs)
         moveTowardZero = {x = 1, y = 1, z = -1}
     }
 
-    local characterProps = {size = {x = 6, y = 8, z = 1}, partName = "Item"}
+    -- local characterProps = {size = {x = , y = 8, z = 1}, partName = "Item"}
+    local itemProps = {size = Vector3.new(4, 6, 1), partName = "Item"}
 
     local props = {
         rowProps = rowProps,
         itemConfigs = itemConfigs,
-        itemProps = characterProps
+        itemProps = itemProps
     }
 
     RowOfParts.createRowOfParts(props)
@@ -48,11 +48,6 @@ renderCharacters = function(parent, itemConfigs)
         direction = -1,
         moveTowardZero = {x = -1, y = 1, z = -1}
     }
-
-    -- local characterProps = {
-    --     size = {x = 6, y = 8, z = 1},
-    --     partName = "Character"
-    -- }
 
     local itemProps = {size = Vector3.new(6, 8, 1), partName = "Character"}
 
@@ -102,7 +97,7 @@ function module.addRemoteObjects(base)
         local items = sceneConfig.frames[frameIndex].items
 
         renderCharacters(newScene, characterConfigs)
-        -- renderItems(newScene, items)
+        renderItems(newScene, items)
 
         Dialog.renderDialog({parent = newScene})
 
