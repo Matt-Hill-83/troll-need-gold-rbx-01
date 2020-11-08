@@ -89,7 +89,7 @@ function createRowOfParts(props)
     }
     local parentEdgeZ = getPartFarEdge(edgePropsZ)
 
-    local sceneWidth = itemProps.size.x
+    local sceneWidth = itemProps.size.X
     local xIncrement = rowProps.direction * (sceneWidth + rowProps.xGap)
 
     local prevX = parentEdgeX - (rowProps.xOffset or 0)
@@ -99,25 +99,53 @@ function createRowOfParts(props)
     local rowOfParts = {}
 
     for i, itemConfig in ipairs(itemConfigs) do
+
+        print('i' .. ' - start');
+        print(i);
+        print('i' .. ' - end');
         local x = prevX
         local position = {x = x, y = y, z = z}
+        local newPosition = Vector3.new(x, y, z)
 
         local adjustmentProps = {
             size = itemProps.size,
-            position = position,
+            position = newPosition,
+            -- position = position,
             moveTowardZero = rowProps.moveTowardZero
         }
         local edgeAdjustedPosition = Part.getEdgePositionFromCenterPosition(
                                          adjustmentProps)
 
+        print('edgeAdjustedPosition' .. ' - start');
+        print(edgeAdjustedPosition);
+        print('edgeAdjustedPosition' .. ' - end');
+
+        local position2 = Vector3.new(edgeAdjustedPosition.X,
+                                      edgeAdjustedPosition.Y,
+                                      edgeAdjustedPosition.Z)
+
+        print('position2' .. ' - start');
+        print(position2);
+        print('position2' .. ' - end');
+
         local newPartProps = {
             decalId = itemConfig.decalId,
             size = itemProps.size,
             name = itemProps.partName .. "-" .. i,
-            position = edgeAdjustedPosition,
+            position = position2,
+            -- position = edgeAdjustedPosition,
             parent = rowProps.parent
         }
-        local newPart = Part.createPart(newPartProps)
+        local newPart = Part.createPartWithVectors(newPartProps)
+
+        -- local newPartProps = {
+        --     decalId = itemConfig.decalId,
+        --     size = itemProps.size,
+        --     name = itemProps.partName .. "-" .. i,
+        --     position = edgeAdjustedPosition,
+        --     parent = rowProps.parent
+        -- }
+        -- local newPart = Part.createPart(newPartProps)
 
         rowOfParts[i] = newPart
 

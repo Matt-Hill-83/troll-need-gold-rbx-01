@@ -119,6 +119,7 @@ renderDialogBlock = function(props)
 end
 
 renderTexts = function(props)
+
     local parent = props.parent
     -- local pageNum = props.pageNum
     local paddingInPx = props.paddingInPx
@@ -127,6 +128,7 @@ renderTexts = function(props)
     local sgui = Instance.new("SurfaceGui", parent)
     local scrollingFrame = Instance.new("ScrollingFrame", sgui)
     scrollingFrame.Size = UDim2.new(1, 0, 0.5, 0)
+    scrollingFrame.BackgroundTransparency = 1
 
     local texts = {
         testDict01, testDict02, testDict03, testDict01, testDict02, testDict03,

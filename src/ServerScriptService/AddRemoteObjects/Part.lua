@@ -26,14 +26,26 @@ function createPart(props)
 end
 
 function createPartWithVectors(props)
-    props.position = {
-        x = props.position.X,
-        y = props.position.Y,
-        z = props.position.Z
-    }
-    props.size = {x = props.size.X, y = props.size.Y, z = props.size.Z}
+    local parent = props.parent
+    local size = props.size
+    local name = props.name
+    local position = props.position
+    local decalId = props.decalId
 
-    local newPart = createPart(props)
+    local newPart = Instance.new("Part", parent)
+
+    newPart.Size = size
+    newPart.Position = position
+    newPart.Anchored = true
+    newPart.BrickColor = props.color or BrickColor.new("Light blue")
+    newPart.Name = name
+
+    if decalId then
+        local newDecal = Instance.new("Decal", newPart)
+        newDecal.Texture = 'rbxassetid://' .. decalId
+        newDecal.Face = 'Front'
+    end
+
     return newPart
 
 end
@@ -43,13 +55,17 @@ function getEdgePositionFromCenterPosition(props)
     local position = props.position
     local moveTowardZero = props.moveTowardZero
 
-    local isMoveTowardZero = moveTowardZero or {x = -1, y = -1, z = -1}
+    -- local isMoveTowardZero = moveTowardZero or {x = -1, y = -1, z = -1}
+    local isMoveTowardZero = Vector3.new(-1, 1, -1)
 
-    return {
-        x = position.x + (size.x / 2) * isMoveTowardZero.x,
-        y = position.y + (size.y / 2) * isMoveTowardZero.y,
-        z = position.z + (size.z / 2) * isMoveTowardZero.z
-    }
+    local halfSize = size * 0.5
+    return position + halfSize * isMoveTowardZero
+
+    -- return {
+    --     x = position.x + (size.x / 2) * isMoveTowardZero.x,
+    --     y = position.y + (size.y / 2) * isMoveTowardZero.y,
+    --     z = position.z + (size.z / 2) * isMoveTowardZero.z
+    -- }
 
 end
 

@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-4.20045471</X>
-					<Y>41.4411697</Y>
-					<Z>-41.2695351</Z>
-					<R00>-0.994860291</R00>
-					<R01>0.0392455608</R01>
-					<R02>-0.0933431461</R02>
-					<R10>-3.72529074e-09</R10>
-					<R11>0.921836019</R11>
-					<R12>0.387580335</R12>
-					<R20>0.101257883</R20>
-					<R21>0.385588288</R21>
-					<R22>-0.917097867</R22>
+					<X>25.230793</X>
+					<Y>30.5146065</Y>
+					<Z>-29.7058105</Z>
+					<R00>-0.999863267</R00>
+					<R01>0.00359177263</R01>
+					<R02>-0.0161457025</R02>
+					<R10>2.32830671e-10</R10>
+					<R11>0.976137936</R11>
+					<R12>0.217151597</R12>
+					<R20>0.0165403914</R20>
+					<R21>0.217121899</R21>
+					<R22>-0.976004362</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>0</X>
-					<Y>24</Y>
-					<Z>0</Z>
+					<X>25.2630844</X>
+					<Y>30.0803032</Y>
+					<Z>-27.7538013</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1077,26 +1077,6 @@ remoteCode.addRemoteObjects(base)
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
 			</Item>
-			<Item class="Script" referent="RBX5f95d7d1ba8f4f71b0cc4225654e42e6">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<bool name="Disabled">false</bool>
-					<Content name="LinkedSource"><null></null></Content>
-					<string name="Name">BaseScript</string>
-					<string name="ScriptGuid">{0d43710b-bec4-40b8-afce-3d24ec0ee9e0}</string>
-					<ProtectedString name="Source"><![CDATA[local base = script.Parent
-
-local remoteCode = require(game.ServerScriptService.Source.AddRemoteObjects.AddToBase)
-
-
-
-remoteCode.addRemoteObjects(base)
-
-]]></ProtectedString>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
 		</Item>
 		<Item class="ModuleScript" referent="RBX46f1e0bd2ae646c99fc796d27357e67e">
 			<Properties>
@@ -1450,45 +1430,6 @@ end]]></ProtectedString>
 					<Z>1</Z>
 				</Vector3>
 			</Properties>
-			<Item class="Weld" referent="RBXaac6cae5ccaf45109f7ad36812ce07f9">
-				<Properties>
-					<BinaryString name="AttributesSerialize"></BinaryString>
-					<CoordinateFrame name="C0">
-						<X>0</X>
-						<Y>-7</Y>
-						<Z>0</Z>
-						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>0</R11>
-						<R12>-1</R12>
-						<R20>0</R20>
-						<R21>1</R21>
-						<R22>0</R22>
-					</CoordinateFrame>
-					<CoordinateFrame name="C1">
-						<X>-22.5</X>
-						<Y>1.00003433</Y>
-						<Z>-1.5</Z>
-						<R00>1</R00>
-						<R01>0</R01>
-						<R02>0</R02>
-						<R10>0</R10>
-						<R11>0</R11>
-						<R12>-1</R12>
-						<R20>0</R20>
-						<R21>1</R21>
-						<R22>0</R22>
-					</CoordinateFrame>
-					<bool name="Enabled">true</bool>
-					<string name="Name">Weld</string>
-					<Ref name="Part0">RBXb58e7d122ac34028b227e94067990b6d</Ref>
-					<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
-					<int64 name="SourceAssetId">-1</int64>
-					<BinaryString name="Tags"></BinaryString>
-				</Properties>
-			</Item>
 			<Item class="SurfaceGui" referent="RBX584fa13e2b244079869eb7a595c975a9">
 				<Properties>
 					<bool name="Active">true</bool>
@@ -1542,12 +1483,12 @@ end]]></ProtectedString>
 						<Content name="BottomImage"><url>rbxasset://textures/ui/Scroll/scroll-bottom.png</url></Content>
 						<Vector2 name="CanvasPosition">
 							<X>0</X>
-							<Y>0</Y>
+							<Y>1030.84216</Y>
 						</Vector2>
 						<UDim2 name="CanvasSize">
 							<XS>0</XS>
 							<XO>0</XO>
-							<YS>2</YS>
+							<YS>3</YS>
 							<YO>0</YO>
 						</UDim2>
 						<bool name="ClipsDescendants">true</bool>
@@ -1581,10 +1522,10 @@ end]]></ProtectedString>
 						<bool name="Selectable">true</bool>
 						<Ref name="SelectionImageObject">null</Ref>
 						<UDim2 name="Size">
-							<XS>0</XS>
-							<XO>100</XO>
-							<YS>0</YS>
-							<YO>100</YO>
+							<XS>0.5</XS>
+							<XO>0</XO>
+							<YS>0.5</YS>
+							<YO>0</YO>
 						</UDim2>
 						<token name="SizeConstraint">0</token>
 						<int64 name="SourceAssetId">-1</int64>
@@ -1595,6 +1536,82 @@ end]]></ProtectedString>
 						<bool name="Visible">true</bool>
 						<int name="ZIndex">1</int>
 					</Properties>
+					<Item class="TextLabel" referent="RBX7c78bde817a44060a73fd9941dc4cb97">
+						<Properties>
+							<bool name="Active">false</bool>
+							<Vector2 name="AnchorPoint">
+								<X>0</X>
+								<Y>0</Y>
+							</Vector2>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<bool name="AutoLocalize">true</bool>
+							<token name="AutomaticSize">0</token>
+							<Color3 name="BackgroundColor3">
+								<R>0.992156923</R>
+								<G>0.564705908</G>
+								<B>0.250980407</B>
+							</Color3>
+							<float name="BackgroundTransparency">0</float>
+							<Color3 name="BorderColor3">
+								<R>0.105882362</R>
+								<G>0.164705887</G>
+								<B>0.207843155</B>
+							</Color3>
+							<token name="BorderMode">0</token>
+							<int name="BorderSizePixel">1</int>
+							<bool name="ClipsDescendants">false</bool>
+							<bool name="Draggable">false</bool>
+							<token name="Font">3</token>
+							<int name="LayoutOrder">0</int>
+							<float name="LineHeight">1</float>
+							<string name="Name">TextLabel</string>
+							<Ref name="NextSelectionDown">null</Ref>
+							<Ref name="NextSelectionLeft">null</Ref>
+							<Ref name="NextSelectionRight">null</Ref>
+							<Ref name="NextSelectionUp">null</Ref>
+							<UDim2 name="Position">
+								<XS>0</XS>
+								<XO>0</XO>
+								<YS>0</YS>
+								<YO>0</YO>
+							</UDim2>
+							<bool name="RichText">false</bool>
+							<Ref name="RootLocalizationTable">null</Ref>
+							<float name="Rotation">0</float>
+							<bool name="Selectable">false</bool>
+							<Ref name="SelectionImageObject">null</Ref>
+							<UDim2 name="Size">
+								<XS>0.5</XS>
+								<XO>0</XO>
+								<YS>0.5</YS>
+								<YO>0</YO>
+							</UDim2>
+							<token name="SizeConstraint">0</token>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+							<string name="Text">Label</string>
+							<Color3 name="TextColor3">
+								<R>0</R>
+								<G>0</G>
+								<B>0</B>
+							</Color3>
+							<bool name="TextScaled">false</bool>
+							<float name="TextSize">14</float>
+							<Color3 name="TextStrokeColor3">
+								<R>0</R>
+								<G>0</G>
+								<B>0</B>
+							</Color3>
+							<float name="TextStrokeTransparency">1</float>
+							<float name="TextTransparency">0</float>
+							<token name="TextTruncate">0</token>
+							<bool name="TextWrapped">false</bool>
+							<token name="TextXAlignment">2</token>
+							<token name="TextYAlignment">1</token>
+							<bool name="Visible">true</bool>
+							<int name="ZIndex">1</int>
+						</Properties>
+					</Item>
 				</Item>
 			</Item>
 			<Item class="Script" referent="RBXa672e1455f714bf7bcd3539fa0913f77">
@@ -1623,7 +1640,7 @@ remoteCode.hello()
 print('------------------------')
 print(scroll)
 print(size)
-print('------------------------')]]></ProtectedString>
+print('------------------------')	]]></ProtectedString>
 					<int64 name="SourceAssetId">-1</int64>
 					<BinaryString name="Tags"></BinaryString>
 				</Properties>
@@ -2285,8 +2302,8 @@ function module.addRemoteObjects(base)
         local characterConfigs = sceneConfig.frames[frameIndex].characters
         local items = sceneConfig.frames[frameIndex].items
 
-        renderCharacters(newScene, characterConfigs)
-        renderItems(newScene, items)
+        -- renderCharacters(newScene, characterConfigs)
+        -- renderItems(newScene, items)
 
         Dialog.renderDialog({parent = newScene})
 
@@ -2334,7 +2351,8 @@ function module.getScenesConfig()
         name = "log",
         frames = {frame01, frame02}
     }
-    local scenes = {scene01, scene02}
+    local scenes = {scene01}
+    -- local scenes = {scene01, scene02}
 
     return scenes
 
@@ -2367,6 +2385,33 @@ local testDict03 = {
 }
 local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
 
+local pageNum = 1
+
+renderDialog = function(props)
+    local parent = props.parent
+    local pixelsPerStud = 45
+    local paddingInPx = pixelsPerStud / 4
+
+    local dialogContainer = renderDialogContainer({parent = parent})
+    local dialogBlock = renderDialogBlock({parent = dialogContainer})
+
+    local renderButtonBlockProps = {
+        parent = dialogContainer,
+        sibling = dialogBlock
+    }
+
+    local renderTextsProps = {
+        parent = dialogBlock,
+        pageNum = pageNum,
+        paddingInPx = paddingInPx,
+        pixelsPerStud = pixelsPerStud
+    }
+
+    renderTexts(renderTextsProps)
+    renderButtonBlock(renderButtonBlockProps)
+
+end
+
 renderButtonBlock = function(props)
     local parent = props.parent
     local sibling = props.sibling
@@ -2387,6 +2432,19 @@ renderButtonBlock = function(props)
     }
 
     local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
+    local sgui = Instance.new("SurfaceGui", buttonBlock)
+
+    local textButton = Instance.new("TextButton", sgui)
+    textButton.Size = UDim2.new(0, 100, 0, 100)
+    textButton.Text = "Next Page!"
+    local function onActivated()
+        pageNum = pageNum + 1
+        textButton.Text = "Page: " .. pageNum
+
+    end
+
+    textButton.MouseButton1Click:Connect(onActivated)
+
     return buttonBlock
 
 end
@@ -2433,12 +2491,17 @@ renderDialogBlock = function(props)
 end
 
 renderTexts = function(props)
+    local newLabel = Instance.new("Part", scrollingFrame)
     local parent = props.parent
-    local pageNum = props.pageNum
+    -- local pageNum = props.pageNum
     local paddingInPx = props.paddingInPx
     local pixelsPerStud = props.pixelsPerStud
 
     local sgui = Instance.new("SurfaceGui", parent)
+    local scrollingFrame = Instance.new("ScrollingFrame", sgui)
+    scrollingFrame.Size = UDim2.new(1, 0, 0.5, 0)
+    scrollingFrame.BackgroundTransparency = 1
+
     local texts = {
         testDict01, testDict02, testDict03, testDict01, testDict02, testDict03,
         testDict01, testDict02, testDict03
@@ -2451,7 +2514,7 @@ renderTexts = function(props)
     local bottomGap = 1
     local dialogY = bottomGap
 
-    local textButtonPaddingInPx = 1 * pixelsPerStud
+    -- local textButtonPaddingInPx = 1 * pixelsPerStud
 
     for i, dialog in ipairs(texts) do
         local charName = texts[pageNum]['char']
@@ -2460,10 +2523,10 @@ renderTexts = function(props)
         local font = Enum.Font.Arial
         local fontHeight = 41
         -- local fontHeight = 50
-        local textPadVert = 0
+        -- local textPadVert = 0
         -- local textPadVert = fontHeight / 4
 
-        local newLabel = Instance.new("TextLabel", sgui)
+        local newLabel = Instance.new("TextLabel", scrollingFrame)
         newLabel.Font = font
 
         local calcSize = TextService:GetTextSize(text, fontHeight, font,
@@ -2492,46 +2555,6 @@ renderTexts = function(props)
         dialogY = dialogY + absoluteHeight + paddingInPx
 
     end
-end
-
-renderDialog = function(props)
-    local parent = props.parent
-
-    local dialogContainer = renderDialogContainer({parent = parent})
-    local dialogBlock = renderDialogBlock({parent = dialogContainer})
-
-    local pixelsPerStud = 45
-    local paddingInPx = pixelsPerStud / 4
-
-    local renderButtonBlockProps = {
-        parent = dialogContainer,
-        sibling = dialogBlock
-    }
-
-    -- local dialogSurface = textButton.Parent
-    -- Instance.new("TextLabel", sgui)
-    local pageNum = 1
-
-    local renderTextsProps = {
-        parent = dialogBlock,
-        pageNum = pageNum,
-        paddingInPx = paddingInPx,
-        pixelsPerStud = pixelsPerStud
-    }
-
-    renderTexts(renderTextsProps)
-    renderButtonBlock(renderButtonBlockProps)
-
-    -- local textButton = Instance.new("TextButton", sgui)
-    -- textButton.Size = UDim2.new(0, childWidth, 0, childHeight)
-    -- textButton.Text = "Next Page!"
-    -- local function onActivated()
-    --     pageNum = pageNum + 1
-    --     textButton.Text = "Page: " .. pageNum
-
-    -- end
-
-    -- textButton.MouseButton1Click:Connect(onActivated)
 end
 
 module.renderDialog = renderDialog
@@ -2718,6 +2741,10 @@ function createRowOfParts(props)
     local rowOfParts = {}
 
     for i, itemConfig in ipairs(itemConfigs) do
+
+        print('i' .. ' - start');
+        print(i);
+        print('i' .. ' - end');
         local x = prevX
         local position = {x = x, y = y, z = z}
 

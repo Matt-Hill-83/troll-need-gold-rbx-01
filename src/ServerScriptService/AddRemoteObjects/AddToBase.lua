@@ -81,7 +81,8 @@ function module.addRemoteObjects(base)
         moveTowardZero = {x = -1, y = 1, z = -1}
     }
 
-    local sceneProps = {size = {x = 48, y = 24, z = 2}, partName = "Scene"}
+    local sceneProps = {size = Vector3.new(48, 24, 2), partName = "Scene"}
+    -- local sceneProps = {size = {x = 48, y = 24, z = 2}, partName = "Scene"}
 
     local props = {
         rowProps = rowProps,
@@ -96,8 +97,8 @@ function module.addRemoteObjects(base)
         local characterConfigs = sceneConfig.frames[frameIndex].characters
         local items = sceneConfig.frames[frameIndex].items
 
-        renderCharacters(newScene, characterConfigs)
-        renderItems(newScene, items)
+        -- renderCharacters(newScene, characterConfigs)
+        -- renderItems(newScene, items)
 
         Dialog.renderDialog({parent = newScene})
 
