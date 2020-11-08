@@ -10,20 +10,20 @@ local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local sceneConfigs = SceneConfig.getScenesConfig()
 
 renderItems = function(parent, itemConfigs)
-    local parentPadding = 1
+    local itemProps = {size = Vector3.new(4, 6, 1), partName = "Items"}
 
-    local rowProps = {
-        alignToParentFarEdge = {x = false, y = false, z = false},
-        xGap = 1,
-        xOffset = -4,
-        yOffset = parentPadding,
-
-        parent = parent,
-        moveTowardZero = {x = 1, y = 1, z = -1}
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(-1, -1, -1),
+        moveTowardZero = Vector3.new(1, 1, -1),
+        rowDirection = Vector3.new(1, -1, -1)
     }
 
-    -- local characterProps = {size = {x = , y = 8, z = 1}, partName = "Item"}
-    local itemProps = {size = Vector3.new(4, 6, 1), partName = "Item"}
+    local rowProps = {
+        parent = parent,
+        xGap = Vector3.new(4, 0, 0),
+        itemDuplicationConfig = itemDuplicationConfig,
+        offset = Vector3.new(3, 2, 0)
+    }
 
     local props = {
         rowProps = rowProps,
@@ -31,11 +31,11 @@ renderItems = function(parent, itemConfigs)
         itemProps = itemProps
     }
 
-    RowOfParts.createRowOfParts(props)
+    return RowOfParts.createRowOfParts(props)
 end
 
 renderCharacters = function(parent, itemConfigs)
-    local itemProps = {size = Vector3.new(6, 8, 2), partName = "Characters"}
+    local itemProps = {size = Vector3.new(6, 8, 1), partName = "Characters"}
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, -1, -1),
@@ -47,7 +47,7 @@ renderCharacters = function(parent, itemConfigs)
         parent = parent,
         xGap = Vector3.new(4, 0, 0),
         itemDuplicationConfig = itemDuplicationConfig,
-        offset = Vector3.new(-1, 0, 0)
+        offset = Vector3.new(-3, 2, 0)
     }
 
     local props = {
@@ -95,9 +95,9 @@ function module.addRemoteObjects(base)
         local itemConfigs = sceneConfig.frames[frameIndex].items
 
         renderCharacters(newScene, characterConfigs)
-        -- renderItems(newScene, itemConfigs)
+        renderItems(newScene, itemConfigs)
 
-        -- Dialog.renderDialog({parent = newScene})
+        Dialog.renderDialog({parent = newScene})
 
     end
 
