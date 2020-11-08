@@ -36,16 +36,18 @@ end
 function getCenterPosFromDesiredEdgeOffset(props)
     local parent = props.parent
     local childSize = props.childSize
-    local desiredOffset = props.desiredOffset
-    local moveTowardZero = props.moveTowardZero
-    local alignToParentFarEdge = props.alignToParentFarEdge or
+    local offsetConfig = props.offsetConfig
+
+    local desiredOffset = offsetConfig.offset
+    local moveTowardZero = offsetConfig.moveTowardZero
+    local alignToParentFarEdge = offsetConfig.alignToParentFarEdge or
                                      Vector3.new(1, 1, -1)
 
-    local edgePropsX = {
+    local edgeProps = {
         part = parent,
         alignToParentFarEdge = alignToParentFarEdge
     }
-    local parentEdge = getPartFarEdge(edgePropsX)
+    local parentEdge = getPartFarEdge(edgeProps)
 
     local isMoveTowardZero = moveTowardZero or Vector3.new(-1, 1, -1)
 
@@ -71,16 +73,14 @@ function createRowOfParts(props)
 
     local rowOfParts = {}
 
-    local desiredOffsetFromParentEdge = rowProps.offset
+    local desiredOffsetFromParentEdge = rowProps.offsetConfig.offset
 
     for i, itemConfig in ipairs(itemConfigs) do
 
         local offsetProps = {
             parent = rowProps.parent,
             childSize = itemProps.size,
-            desiredOffset = desiredOffsetFromParentEdge,
-            moveTowardZero = rowProps.moveTowardZero,
-            alignToParentFarEdge = rowProps.alignToParentFarEdge
+            offsetConfig = rowProps.offsetConfig
         }
 
         local position = getCenterPosFromDesiredEdgeOffset(offsetProps)
@@ -98,7 +98,8 @@ function createRowOfParts(props)
         desiredOffsetFromParentEdge = desiredOffsetFromParentEdge +
                                           Vector3.new(
                                               rowProps.xGap + itemProps.size.X,
-                                              0, 0) * rowProps.rowDirection
+                                              0, 0) *
+                                          rowProps.offsetConfig.rowDirection
     end
 
     return rowOfParts

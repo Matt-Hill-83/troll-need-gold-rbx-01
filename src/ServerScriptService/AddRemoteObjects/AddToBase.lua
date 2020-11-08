@@ -62,14 +62,15 @@ renderScenes = function(parent)
     parent.Size = Vector3.new(120, 2, 48)
     local parentPadding = 0
 
-    local rowProps = {
-        parent = parent,
-        xGap = 4,
+    local offsetConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
-        offset = Vector3.new(parentPadding, 0, 0),
         moveTowardZero = Vector3.new(-1, 1, -1),
-        rowDirection = Vector3.new(-1, 1, 1)
+        rowDirection = Vector3.new(-1, 1, 1),
+        offset = Vector3.new(parentPadding, 0, 0)
+
     }
+
+    local rowProps = {parent = parent, xGap = 4, offsetConfig = offsetConfig}
 
     local itemProps = {size = Vector3.new(48, 24, 2), partName = "Scene"}
 
