@@ -17,18 +17,12 @@ end
 
 function getPartFarEdge(props)
     local part = props.part
-    local axis = props.axis or 'X'
 
-    -- ternary function
-    local alignToParentFarEdge = props.alignToParentFarEdge or
-                                     Vector3.new(1, 1, -1)
-    print('alignToParentFarEdge' .. ' - start');
-    print(alignToParentFarEdge);
-    print('alignToParentFarEdge' .. ' - end');
+    local alignToParentFarEdge = props.alignToParentFarEdge
+
     local partPosition = part.Position
     local partSize = part.Size
-    local partFarEdge = partPosition + (partSize / 2) * alignToParentFarEdge -- local partFarEdge = partPosition[axis] + (partSize[axis] / 2) *
-    --                         alignToParentFarEdge[axis]
+    local partFarEdge = partPosition + (partSize / 2) * alignToParentFarEdge
 
     return partFarEdge
 end
@@ -41,27 +35,17 @@ function getCenterPosFromDesiredEdgeOffset(props)
     local offsetConfig = props.offsetConfig
 
     local moveTowardZero = offsetConfig.moveTowardZero
-    local alignToParentFarEdge = offsetConfig.alignToParentFarEdge or
-                                     Vector3.new(1, 1, -1)
+    local alignToParentFarEdge = offsetConfig.alignToParentFarEdge
 
     local edgeProps = {
         part = parent,
         alignToParentFarEdge = alignToParentFarEdge
     }
+
     local parentEdge = getPartFarEdge(edgeProps)
 
-    local isMoveTowardZero = moveTowardZero or Vector3.new(-1, 1, -1)
-
-    local childCenterX = parentEdge.X + desiredOffset.X + (childSize.X / 2) *
-                             isMoveTowardZero.X
-
-    local childCenterY = parentEdge.Y + desiredOffset.Y + (childSize.Y / 2) *
-                             isMoveTowardZero.Y
-    local childCenterZ = parentEdge.Z + desiredOffset.Z + (childSize.Z / 2) *
-                             isMoveTowardZero.Z
-
-    local parentOffsetPoint = Vector3.new(childCenterX, childCenterY,
-                                          childCenterZ)
+    local parentOffsetPoint = parentEdge + desiredOffset + (childSize / 2) *
+                                  moveTowardZero
 
     return parentOffsetPoint
 
@@ -74,7 +58,7 @@ function createRowOfParts(props)
 
     local rowOfParts = {}
 
-    local desiredOffsetFromParentEdge = rowProps.offsetConfig.offset
+    local desiredOffsetFromParentEdge = rowProps.offset
 
     for i, itemConfig in ipairs(itemConfigs) do
 
@@ -97,8 +81,6 @@ function createRowOfParts(props)
         local newPart = Part.createPartWithVectors(newPartProps)
 
         rowOfParts[i] = newPart
-        -- desiredOffsetFromParentEdge = desiredOffsetFromParentEdge +
-        --                                   Vector3.new(20, 0, 0)
 
         desiredOffsetFromParentEdge = desiredOffsetFromParentEdge +
                                           Vector3.new(
