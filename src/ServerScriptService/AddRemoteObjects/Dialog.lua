@@ -82,7 +82,7 @@ renderDialogContainer = function(props)
     local parent = props.parent
 
     local childSize = Vector3.new(20, 16, 1)
-    local desiredOffsetFromParentEdge = Vector3.new(-1, 0, -1)
+    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 0)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, -1),
