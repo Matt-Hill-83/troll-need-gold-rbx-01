@@ -61,12 +61,6 @@ function getEdgePositionFromCenterPosition(props)
     local halfSize = size * 0.5
     return position + halfSize * isMoveTowardZero
 
-    -- return {
-    --     x = position.x + (size.x / 2) * isMoveTowardZero.x,
-    --     y = position.y + (size.y / 2) * isMoveTowardZero.y,
-    --     z = position.z + (size.z / 2) * isMoveTowardZero.z
-    -- }
-
 end
 
 module.createPartWithVectors = createPartWithVectors
