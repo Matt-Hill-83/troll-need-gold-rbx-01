@@ -195,7 +195,6 @@ renderTexts = function(props)
     for i, dialog in ipairs(texts) do
         local charName = texts[pageNum]['char']
         local text = charName .. ": " .. dialog['text']
-
         local font = Enum.Font.Arial
         local fontHeight = 41
 
@@ -224,9 +223,8 @@ renderTexts = function(props)
         outerLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
         outerLabel.TextColor3 = Color3.new(0, 0, 0)
         outerLabel.ZIndex = 1
-        -------------------
-        local innerLabel = outerLabel:Clone()
 
+        local innerLabel = outerLabel:Clone()
         innerLabel.Parent = outerLabel
         innerLabel.Name = "Dialog-" .. i
         innerLabel.Text = text
