@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>1.26026356</X>
-					<Y>47.0800552</Y>
-					<Z>-110.372406</Z>
-					<R00>-0.999934912</R00>
-					<R01>-0.00447945716</R01>
-					<R02>0.0105021279</R02>
-					<R10>4.65661343e-10</R10>
-					<R11>0.919824123</R11>
-					<R12>0.392331213</R12>
-					<R20>-0.0114175407</R20>
-					<R21>0.392305672</R21>
-					<R22>-0.919764042</R22>
+					<X>0.232170105</X>
+					<Y>20.1823368</Y>
+					<Z>-13.1007366</Z>
+					<R00>-0.994369328</R00>
+					<R01>-0.0275940839</R01>
+					<R02>0.102314726</R02>
+					<R10>-0</R10>
+					<R11>0.965502441</R11>
+					<R12>0.260394126</R12>
+					<R20>-0.105970457</R20>
+					<R21>0.258927941</R21>
+					<R22>-0.960065961</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>0</X>
-					<Y>0</Y>
-					<Z>0</Z>
+					<X>0.0275406837</X>
+					<Y>19.6615486</Y>
+					<Z>-11.1806049</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1276,6 +1276,325 @@ end]]></ProtectedString>
 				</Properties>
 			</Item>
 		</Item>
+		<Item class="Part" referent="RBXf4ce78e660344775868c3f33855db5c0">
+			<Properties>
+				<bool name="Anchored">false</bool>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<float name="BackParamA">-0.5</float>
+				<float name="BackParamB">0.5</float>
+				<token name="BackSurface">0</token>
+				<token name="BackSurfaceInput">0</token>
+				<float name="BottomParamA">-0.5</float>
+				<float name="BottomParamB">0.5</float>
+				<token name="BottomSurface">0</token>
+				<token name="BottomSurfaceInput">0</token>
+				<CoordinateFrame name="CFrame">
+					<X>-16</X>
+					<Y>10.5000019</Y>
+					<Z>-2</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<bool name="CanCollide">true</bool>
+				<bool name="CastShadow">true</bool>
+				<int name="CollisionGroupId">0</int>
+				<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
+				<PhysicalProperties name="CustomPhysicalProperties">
+					<CustomPhysics>false</CustomPhysics>
+				</PhysicalProperties>
+				<float name="FrontParamA">-0.5</float>
+				<float name="FrontParamB">0.5</float>
+				<token name="FrontSurface">0</token>
+				<token name="FrontSurfaceInput">0</token>
+				<float name="LeftParamA">-0.5</float>
+				<float name="LeftParamB">0.5</float>
+				<token name="LeftSurface">0</token>
+				<token name="LeftSurfaceInput">0</token>
+				<bool name="Locked">false</bool>
+				<bool name="Massless">false</bool>
+				<token name="Material">256</token>
+				<string name="Name">Part</string>
+				<float name="Reflectance">0</float>
+				<float name="RightParamA">-0.5</float>
+				<float name="RightParamB">0.5</float>
+				<token name="RightSurface">0</token>
+				<token name="RightSurfaceInput">0</token>
+				<int name="RootPriority">0</int>
+				<Vector3 name="RotVelocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<float name="TopParamA">-0.5</float>
+				<float name="TopParamB">0.5</float>
+				<token name="TopSurface">0</token>
+				<token name="TopSurfaceInput">0</token>
+				<float name="Transparency">0</float>
+				<Vector3 name="Velocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<token name="formFactorRaw">1</token>
+				<token name="shape">1</token>
+				<Vector3 name="size">
+					<X>36</X>
+					<Y>19</Y>
+					<Z>2</Z>
+				</Vector3>
+			</Properties>
+			<Item class="Weld" referent="RBX67455bd4786b423fb5238e5ecdd8581e">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<CoordinateFrame name="C0">
+						<X>0</X>
+						<Y>-9.5</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>0</R11>
+						<R12>-1</R12>
+						<R20>0</R20>
+						<R21>1</R21>
+						<R22>0</R22>
+					</CoordinateFrame>
+					<CoordinateFrame name="C1">
+						<X>-16</X>
+						<Y>1.00000191</Y>
+						<Z>-2</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>0</R11>
+						<R12>-1</R12>
+						<R20>0</R20>
+						<R21>1</R21>
+						<R22>0</R22>
+					</CoordinateFrame>
+					<bool name="Enabled">true</bool>
+					<string name="Name">Weld</string>
+					<Ref name="Part0">RBXf4ce78e660344775868c3f33855db5c0</Ref>
+					<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+			<Item class="SurfaceGui" referent="RBXb4fb085d4aa24827bfd314ace964dcfb">
+				<Properties>
+					<bool name="Active">true</bool>
+					<Ref name="Adornee">null</Ref>
+					<bool name="AlwaysOnTop">false</bool>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<bool name="AutoLocalize">true</bool>
+					<Vector2 name="CanvasSize">
+						<X>800</X>
+						<Y>600</Y>
+					</Vector2>
+					<bool name="ClipsDescendants">true</bool>
+					<bool name="Enabled">true</bool>
+					<token name="Face">5</token>
+					<float name="LightInfluence">1</float>
+					<string name="Name">SurfaceGui</string>
+					<float name="PixelsPerStud">50</float>
+					<bool name="ResetOnSpawn">true</bool>
+					<Ref name="RootLocalizationTable">null</Ref>
+					<token name="SizingMode">1</token>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+					<float name="ToolPunchThroughDistance">0</float>
+					<token name="ZIndexBehavior">1</token>
+					<float name="ZOffset">0</float>
+				</Properties>
+				<Item class="TextButton" referent="RBXa41ef576173349b0892fb79ffa03c48c">
+					<Properties>
+						<bool name="Active">true</bool>
+						<Vector2 name="AnchorPoint">
+							<X>0</X>
+							<Y>0</Y>
+						</Vector2>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<bool name="AutoButtonColor">true</bool>
+						<bool name="AutoLocalize">true</bool>
+						<token name="AutomaticSize">0</token>
+						<Color3 name="BackgroundColor3">
+							<R>1</R>
+							<G>1</G>
+							<B>1</B>
+						</Color3>
+						<float name="BackgroundTransparency">0</float>
+						<Color3 name="BorderColor3">
+							<R>0.105882362</R>
+							<G>0.164705887</G>
+							<B>0.207843155</B>
+						</Color3>
+						<token name="BorderMode">0</token>
+						<int name="BorderSizePixel">1</int>
+						<bool name="ClipsDescendants">false</bool>
+						<bool name="Draggable">false</bool>
+						<token name="Font">3</token>
+						<int name="LayoutOrder">0</int>
+						<float name="LineHeight">1</float>
+						<bool name="Modal">false</bool>
+						<string name="Name">TextButton</string>
+						<Ref name="NextSelectionDown">null</Ref>
+						<Ref name="NextSelectionLeft">null</Ref>
+						<Ref name="NextSelectionRight">null</Ref>
+						<Ref name="NextSelectionUp">null</Ref>
+						<UDim2 name="Position">
+							<XS>0</XS>
+							<XO>0</XO>
+							<YS>0</YS>
+							<YO>0</YO>
+						</UDim2>
+						<bool name="RichText">false</bool>
+						<Ref name="RootLocalizationTable">null</Ref>
+						<float name="Rotation">0</float>
+						<bool name="Selectable">true</bool>
+						<bool name="Selected">false</bool>
+						<Ref name="SelectionImageObject">null</Ref>
+						<UDim2 name="Size">
+							<XS>0</XS>
+							<XO>200</XO>
+							<YS>0</YS>
+							<YO>50</YO>
+						</UDim2>
+						<token name="SizeConstraint">0</token>
+						<int64 name="SourceAssetId">-1</int64>
+						<token name="Style">5</token>
+						<BinaryString name="Tags"></BinaryString>
+						<string name="Text">Button</string>
+						<Color3 name="TextColor3">
+							<R>0</R>
+							<G>0</G>
+							<B>0</B>
+						</Color3>
+						<bool name="TextScaled">false</bool>
+						<float name="TextSize">40</float>
+						<Color3 name="TextStrokeColor3">
+							<R>0</R>
+							<G>0</G>
+							<B>0</B>
+						</Color3>
+						<float name="TextStrokeTransparency">1</float>
+						<float name="TextTransparency">0</float>
+						<token name="TextTruncate">0</token>
+						<bool name="TextWrapped">false</bool>
+						<token name="TextXAlignment">2</token>
+						<token name="TextYAlignment">1</token>
+						<bool name="Visible">true</bool>
+						<int name="ZIndex">1</int>
+					</Properties>
+				</Item>
+			</Item>
+		</Item>
+		<Item class="Model" referent="RBXdadf6bbf51fd47988aa2c9be0c1f4b6e">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<token name="LevelOfDetail">0</token>
+				<CoordinateFrame name="ModelInPrimary">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<CoordinateFrame name="ModelMeshCFrame">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
+				<Vector3 name="ModelMeshSize">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<string name="Name">CompiledScripts</string>
+				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+			<Item class="ModuleScript" referent="RBX21fe7f1d704746e09de581175f852436">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">Script1</string>
+					<string name="ScriptGuid">{d86aed97-d797-4480-b90a-b9c74aea62cc}</string>
+					<ProtectedString name="Source"><![CDATA[
+return function()
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+TextButton0 = Instance.new("TextButton")
+TextButton0.Parent = mas
+TextButton0.Size = UDim2.new(0, 200, 0, 50)
+TextButton0.BackgroundColor = BrickColor.new("Institutional white")
+TextButton0.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton0.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
+TextButton0.Font = Enum.Font.SourceSans
+TextButton0.FontSize = Enum.FontSize.Size48
+TextButton0.TextColor = BrickColor.new("Really black")
+TextButton0.TextColor3 = Color3.new(0, 0, 0)
+TextButton0.TextSize = 40
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = workspace
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
+end]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+		</Item>
 	</Item>
 	<Item class="SoundService" referent="RBX7845308c7ca3451eaa9eca1a685d0279">
 		<Properties>
@@ -1977,13 +2296,13 @@ local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 
 local module = {}
 
-local testDict01 = {text = "aaa bbb cccc ", color = "Yellow", char = "Britta"}
+local testDict01 = {text = "one one one ", color = "Yellow", char = "Britta"}
+local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
 local testDict03 = {
-    text = "aaa bbb cccc ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt",
+    text = "three three thre ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt",
     color = "Yellow",
     char = "Britta"
 }
-local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
 
 local pageNum = 1
 
@@ -2051,8 +2370,8 @@ renderDialogBlock = function(props)
     local partProps = {
         name = 'Dialog',
         parent = parent,
-        color = BrickColor.new("Light orange"),
-        size = parent.Size + Vector3.new(-1, -1, 0),
+        color = BrickColor.new("Light blue"),
+        size = parent.Size + Vector3.new(-1, -1, 0.2),
         position = parent.Position + Vector3.new(0, 0, 0)
     }
 
@@ -2065,7 +2384,7 @@ renderButtonBlock = function(props)
     local sibling = props.sibling
 
     local newPartHeight = 2
-    local bottomOffset = 1
+    local bottomOffset = 0.1
 
     local distanceY = sibling.Size.Y / 2 + newPartHeight / 2 + bottomOffset
     local siblingSizeCopy = Vector3.new(sibling.Size.X, newPartHeight,
@@ -2081,29 +2400,32 @@ renderButtonBlock = function(props)
 
     local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
     local sgui = Instance.new("SurfaceGui", buttonBlock)
+    sgui.SizingMode = "PixelsPerStud"
 
     local textButton = Instance.new("TextButton", sgui)
-    textButton.Size = UDim2.new(0.5, 0, 0.5, 0)
-    -- textButton.Position = UDim2.new(0.5, 0, .5, 0)
-    textButton.Text = "Next Page!"
+
+    textButton.Size = UDim2.new(1, 0, 1, 0)
+    textButton.BackgroundColor3 = Color3.new(1, 1, 1)
+    textButton.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
+
+    textButton.Font = Enum.Font.SourceSans
+    textButton.TextColor3 = Color3.new(0, 0, 0)
+    textButton.TextSize = 40
 
     local function onActivated()
         pageNum = pageNum + 1
         textButton.Text = "Page: " .. pageNum
-
     end
 
     textButton.MouseButton1Click:Connect(onActivated)
-
     return buttonBlock
-
 end
 
 renderTextsContainer = function(props)
     local parent = props.parent
 
-    local childSize = Vector3.new(parent.Size.X, 10, 1)
-    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
+    local childSize = Vector3.new(parent.Size.X - 2, 10, 0.5)
+    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 0)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, -1),
@@ -2123,7 +2445,7 @@ renderTextsContainer = function(props)
     local dialogBlockProps = {
         name = 'textsContainer',
         parent = parent,
-        color = BrickColor.new("Light blue"),
+        color = BrickColor.White,
         size = childSize,
         position = childPos
     }
@@ -2131,26 +2453,44 @@ renderTextsContainer = function(props)
     return Part.createPartWithVectors(dialogBlockProps)
 end
 
-renderTexts = function(props)
+addPadding = function(props)
+    local parent = props.parent
+    local paddingPct = props.paddingPct
 
+    local UIPadding = Instance.new("UIPadding", parent)
+
+    UIPadding.PaddingBottom = UDim.new(paddingPct, 0)
+    UIPadding.PaddingTop = UDim.new(paddingPct, 0)
+    UIPadding.PaddingLeft = UDim.new(paddingPct, 0)
+    UIPadding.PaddingRight = UDim.new(paddingPct, 0)
+
+    -- local UICorner = Instance.new("UICorner", parent)
+    -- UICorner.CornerRadius = UDim.new(5, 0)
+    --
+end
+renderTexts = function(props)
     local parent = props.parent
     local paddingInPx = props.paddingInPx
     local pixelsPerStud = props.pixelsPerStud
 
     local sgui = Instance.new("SurfaceGui", parent)
+    sgui.SizingMode = "PixelsPerStud"
+
     local scrollingFrame = Instance.new("ScrollingFrame", sgui)
+
+    local scrollingFramePaddingPct = 0.02
+    addPadding({parent = scrollingFrame, paddingPct = scrollingFramePaddingPct})
+
     scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
-    scrollingFrame.BackgroundTransparency = 1
+    scrollingFrame.BorderSizePixel = 5
+    scrollingFrame.BackgroundColor3 = Color3.new(196, 132, 225)
 
-    local texts = {
-        testDict01, testDict02, testDict03, testDict01, testDict02, testDict03,
-        testDict01, testDict02, testDict03
-    }
+    local texts = {testDict01, testDict02, testDict03}
 
-    local parentWidth = parent.Size.X * pixelsPerStud - (0 * paddingInPx)
+    local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
     local parentHeight = parent.Size.Y * pixelsPerStud
 
-    local bottomGap = 1
+    local bottomGap = 0
     local dialogY = bottomGap
 
     for i, dialog in ipairs(texts) do
@@ -2160,7 +2500,11 @@ renderTexts = function(props)
         local font = Enum.Font.Arial
         local fontHeight = 41
 
-        local newLabel = Instance.new("TextLabel", scrollingFrame)
+        local outerLabel = Instance.new("TextLabel", scrollingFrame)
+        -- outerLabel.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
+
+        local newLabel = Instance.new("TextLabel", outerLabel)
+        outerLabel.Font = font
         newLabel.Font = font
 
         local calcSize = TextService:GetTextSize(text, fontHeight, font,
@@ -2171,21 +2515,50 @@ renderTexts = function(props)
 
         newLabel.Name = "Dialog-" .. i
         newLabel.Text = text
-        newLabel.Size = UDim2.new(1, 0, 0, height)
-        newLabel.Position = UDim2.new(0, 0, 0, dialogY)
+        outerLabel.Text = text
+
+        outerLabel.BorderColor3 = Color3.new(255, 10, 92)
+        outerLabel.ZIndex = 1
+        newLabel.ZIndex = 2
+
+        outerLabel.Size = UDim2.new(0, parentWidth + 2 * paddingInPx, 0,
+                                    height + 2 * paddingInPx)
+        newLabel.Size = UDim2.new(0, parentWidth, 0, height)
+
+        outerLabel.Position = UDim2.new(0, 0, 0, dialogY)
+        newLabel.Position = UDim2.new(0, paddingInPx, 0, paddingInPx)
+
+        newLabel.BackgroundTransparency = 0.5
         newLabel.Selectable = true
 
+        outerLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
+        newLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
+
+        outerLabel.BorderColor3 = Color3.fromRGB(99, 46, 99)
+        newLabel.BorderColor3 = Color3.new(255, 0, 92)
+
+        outerLabel.BorderSizePixel = 2
+        newLabel.BorderSizePixel = 2
+        newLabel.TextColor3 = Color3.new(0, 0, 0)
+
         newLabel.TextWrapped = true
+        outerLabel.TextWrapped = true
+
         newLabel.TextSize = fontHeight
+        outerLabel.TextSize = fontHeight
+
         newLabel.TextXAlignment = Enum.TextXAlignment.Left
         newLabel.TextYAlignment = Enum.TextYAlignment.Top
 
+        -- '#ff005c'
+        -- '#ff005c'
+
         local absoluteHeight = newLabel.AbsoluteSize.Y
 
-        dialogY = dialogY + absoluteHeight + paddingInPx
+        dialogY = dialogY + (absoluteHeight + paddingInPx * 3)
 
     end
-    return textsBlock
+
 end
 
 module.renderDialog = renderDialog

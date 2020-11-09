@@ -23,6 +23,7 @@ renderDialog = function(props)
     local dialogContainer = renderDialogContainer({parent = parent})
     local dialogBlock = renderDialogBlock({parent = dialogContainer})
     local textsContainer = renderTextsContainer({parent = dialogBlock})
+    textsContainer.BrickColor = BrickColor.new("White")
 
     local renderTextsProps = {
         parent = textsContainer,
@@ -96,14 +97,15 @@ renderButtonBlock = function(props)
     local bottomOffset = 0.1
 
     local distanceY = sibling.Size.Y / 2 + newPartHeight / 2 + bottomOffset
-    local siblingSizeCopy = Vector3.new(sibling.Size.X, newPartHeight,
+    local siblingSizeCopy = Vector3.new(sibling.Size.X / 2, newPartHeight,
                                         sibling.Size.Z)
 
     local buttonBlockProps = {
         name = 'buttonBlock',
         parent = parent,
         size = siblingSizeCopy,
-        position = sibling.Position + Vector3.new(0, -distanceY, 0),
+        position = sibling.Position +
+            Vector3.new(-sibling.Size.X / 4, -distanceY, 0),
         color = BrickColor.new("Light red")
     }
 
@@ -133,7 +135,7 @@ end
 renderTextsContainer = function(props)
     local parent = props.parent
 
-    local childSize = Vector3.new(parent.Size.X - 2, 10, 0.2)
+    local childSize = Vector3.new(parent.Size.X - 2, 10, 0.5)
     local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 0)
 
     local itemDuplicationConfig = {
@@ -154,7 +156,7 @@ renderTextsContainer = function(props)
     local dialogBlockProps = {
         name = 'textsContainer',
         parent = parent,
-        color = BrickColor.new("Pink"),
+        color = BrickColor.new("White"),
         size = childSize,
         position = childPos
     }
@@ -172,14 +174,11 @@ addPadding = function(props)
     UIPadding.PaddingTop = UDim.new(paddingPct, 0)
     UIPadding.PaddingLeft = UDim.new(paddingPct, 0)
     UIPadding.PaddingRight = UDim.new(paddingPct, 0)
-
-    -- local UICorner = Instance.new("UICorner", parent)
-    -- UICorner.CornerRadius = UDim.new(5, 0)
-    --
 end
+
 renderTexts = function(props)
     local parent = props.parent
-    local paddingInPx = props.paddingInPx
+    local paddingInPx = props.paddingInPx / 2
     local pixelsPerStud = props.pixelsPerStud
 
     local sgui = Instance.new("SurfaceGui", parent)
@@ -191,7 +190,8 @@ renderTexts = function(props)
     addPadding({parent = scrollingFrame, paddingPct = scrollingFramePaddingPct})
 
     scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
-    scrollingFrame.BorderSizePixel = 5
+    scrollingFrame.BorderSizePixel = 3
+    scrollingFrame.BorderMode = Enum.BorderMode.Inset
     scrollingFrame.BackgroundColor3 = Color3.new(196, 132, 225)
 
     local texts = {testDict01, testDict02, testDict03}
@@ -213,7 +213,7 @@ renderTexts = function(props)
         -- outerLabel.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
 
         local newLabel = Instance.new("TextLabel", outerLabel)
-        outerLabel.Font = font
+        -- outerLabel.Font = font
         newLabel.Font = font
 
         local calcSize = TextService:GetTextSize(text, fontHeight, font,
@@ -223,8 +223,9 @@ renderTexts = function(props)
         local height = calcSize.Y
 
         newLabel.Name = "Dialog-" .. i
+
+        outerLabel.Text = ""
         newLabel.Text = text
-        outerLabel.Text = text
 
         outerLabel.BorderColor3 = Color3.new(255, 10, 92)
         outerLabel.ZIndex = 1
