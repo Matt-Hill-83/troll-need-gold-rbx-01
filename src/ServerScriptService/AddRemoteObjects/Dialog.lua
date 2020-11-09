@@ -199,56 +199,55 @@ renderTexts = function(props)
         local font = Enum.Font.Arial
         local fontHeight = 41
 
-        local outerLabel = Instance.new("TextLabel", scrollingFrame)
-        -- outerLabel.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
-
-        local newLabel = Instance.new("TextLabel", outerLabel)
-        -- outerLabel.Font = font
-        newLabel.Font = font
-
         local calcSize = TextService:GetTextSize(text, fontHeight, font,
                                                  Vector2.new(parentWidth,
                                                              parentHeight))
 
         local height = calcSize.Y
 
-        newLabel.Name = "Dialog-" .. i
+        local outerLabel = Instance.new("TextLabel", scrollingFrame)
+        -- outerLabel.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
 
+        outerLabel.BorderColor3 = Color3.fromRGB(99, 46, 99)
+        outerLabel.BorderSizePixel = 2
+        outerLabel.Position = UDim2.new(0, 0, 0, dialogY)
         outerLabel.Text = ""
-        newLabel.Text = text
-
-        outerLabel.ZIndex = 1
-        newLabel.ZIndex = 2
+        outerLabel.Name = "Dialog-" .. i
 
         outerLabel.Size = UDim2.new(0, parentWidth + 2 * paddingInPx, 0,
                                     height + 2 * paddingInPx)
-        newLabel.Size = UDim2.new(0, parentWidth, 0, height)
 
-        outerLabel.Position = UDim2.new(0, 0, 0, dialogY)
-        newLabel.Position = UDim2.new(0, paddingInPx, 0, paddingInPx)
-
-        newLabel.BackgroundTransparency = 1
-        newLabel.Selectable = true
-
-        outerLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
-        newLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
-
-        outerLabel.BorderColor3 = Color3.fromRGB(99, 46, 99)
-
-        outerLabel.BorderSizePixel = 2
-        newLabel.TextColor3 = Color3.new(0, 0, 0)
-
-        newLabel.TextWrapped = true
         outerLabel.TextWrapped = true
-
-        newLabel.TextSize = fontHeight
         outerLabel.TextSize = fontHeight
 
-        newLabel.TextXAlignment = Enum.TextXAlignment.Left
-        newLabel.TextYAlignment = Enum.TextYAlignment.Top
+        outerLabel.TextXAlignment = Enum.TextXAlignment.Left
+        outerLabel.Font = font
+        outerLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
+        outerLabel.ZIndex = 1
+        -------------------
+        local newLabel = outerLabel:Clone()
+
+        -----------------------------
+        newLabel.Parent = outerLabel
+        -- local test = outerLabel:Clone()
+        -- local newLabel = Instance.new("TextLabel", outerLabel)
+
+        newLabel.Name = "Dialog-" .. i
+        ------
+
+        outerLabel.TextYAlignment = Enum.TextYAlignment.Top
+
+        newLabel.TextColor3 = Color3.new(0, 0, 0)
+        ------
+
+        newLabel.Text = text
+        newLabel.ZIndex = 2
+        newLabel.Size = UDim2.new(0, parentWidth, 0, height)
+
+        newLabel.Position = UDim2.new(0, paddingInPx, 0, paddingInPx)
+        newLabel.BackgroundTransparency = 1
 
         local absoluteHeight = newLabel.AbsoluteSize.Y
-
         dialogY = dialogY + (absoluteHeight + 25)
 
     end
