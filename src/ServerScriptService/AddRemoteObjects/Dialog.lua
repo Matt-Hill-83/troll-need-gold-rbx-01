@@ -219,11 +219,13 @@ renderTexts = function(props)
         print('height' .. ' - start');
         print(height);
         print('height' .. ' - end');
-
         local textHeight = 50
-        local paddingPct = 0.1
+        local paddingPct = 0.3
 
         local heightAdder = paddingPct * textHeight
+        print('heightAdder' .. ' - start');
+        print(heightAdder);
+        print('heightAdder' .. ' - end');
         local yOffset = heightAdder / 2
         print('yOffset' .. ' - start');
         print(yOffset);
