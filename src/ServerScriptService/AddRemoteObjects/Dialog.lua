@@ -21,8 +21,8 @@ renderDialog = function(props)
     local paddingInPx = pixelsPerStud / 4
 
     local dialogContainer = renderDialogContainer({parent = parent})
-    local dialogBlock = renderDialogBlock({parent = dialogContainer})
-    local textsContainer = renderTextsContainer({parent = dialogBlock})
+    -- local dialogBlock = renderDialogBlock({parent = dialogContainer})
+    local textsContainer = renderTextsContainer({parent = dialogContainer})
     textsContainer.BrickColor = BrickColor.new("White")
 
     local renderTextsProps = {
@@ -34,7 +34,7 @@ renderDialog = function(props)
     renderTexts(renderTextsProps)
 
     local renderButtonBlockProps = {
-        parent = dialogBlock,
+        parent = dialogContainer,
         sibling = textsContainer
     }
     renderButtonBlock(renderButtonBlockProps)
@@ -44,7 +44,7 @@ end
 renderDialogContainer = function(props)
     local parent = props.parent
 
-    local childSize = Vector3.new(20, 16, 1)
+    local childSize = Vector3.new(20, 12, 1)
     local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 0)
 
     local itemDuplicationConfig = {
@@ -63,7 +63,7 @@ renderDialogContainer = function(props)
     local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 
     local dialogBlockProps = {
-        name = 'dialogContainer',
+        name = 'Dialog Container',
         parent = parent,
         color = BrickColor.new("Buttermilk"),
         size = childSize,
@@ -81,8 +81,8 @@ renderDialogBlock = function(props)
         name = 'Dialog',
         parent = parent,
         color = BrickColor.new("Light blue"),
-        size = parent.Size + Vector3.new(-1, -1, 0.2),
-        position = parent.Position + Vector3.new(0, 0, 0)
+        size = parent.Size + Vector3.new(0, 0, 1),
+        position = parent.Position + Vector3.new(0, 0, -1)
     }
 
     return Part.createPartWithVectors(partProps)
@@ -135,8 +135,8 @@ end
 renderTextsContainer = function(props)
     local parent = props.parent
 
-    local childSize = Vector3.new(parent.Size.X - 2, 10, 0.5)
-    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 0)
+    local childSize = Vector3.new(parent.Size.X - 2, 10, 1)
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, -1),
@@ -227,7 +227,6 @@ renderTexts = function(props)
         outerLabel.Text = ""
         newLabel.Text = text
 
-        outerLabel.BorderColor3 = Color3.new(255, 10, 92)
         outerLabel.ZIndex = 1
         newLabel.ZIndex = 2
 
@@ -238,17 +237,15 @@ renderTexts = function(props)
         outerLabel.Position = UDim2.new(0, 0, 0, dialogY)
         newLabel.Position = UDim2.new(0, paddingInPx, 0, paddingInPx)
 
-        newLabel.BackgroundTransparency = 0.5
+        newLabel.BackgroundTransparency = 1
         newLabel.Selectable = true
 
         outerLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
         newLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
 
         outerLabel.BorderColor3 = Color3.fromRGB(99, 46, 99)
-        newLabel.BorderColor3 = Color3.new(255, 0, 92)
 
         outerLabel.BorderSizePixel = 2
-        newLabel.BorderSizePixel = 2
         newLabel.TextColor3 = Color3.new(0, 0, 0)
 
         newLabel.TextWrapped = true
@@ -260,12 +257,9 @@ renderTexts = function(props)
         newLabel.TextXAlignment = Enum.TextXAlignment.Left
         newLabel.TextYAlignment = Enum.TextYAlignment.Top
 
-        -- '#ff005c'
-        -- '#ff005c'
-
         local absoluteHeight = newLabel.AbsoluteSize.Y
 
-        dialogY = dialogY + (absoluteHeight + paddingInPx * 3)
+        dialogY = dialogY + (absoluteHeight + 25)
 
     end
 
