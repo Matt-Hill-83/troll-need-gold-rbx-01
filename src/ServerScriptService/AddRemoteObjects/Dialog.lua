@@ -93,7 +93,7 @@ renderButtonBlock = function(props)
     local sibling = props.sibling
 
     local newPartHeight = 2
-    local bottomOffset = 1
+    local bottomOffset = 0.1
 
     local distanceY = sibling.Size.Y / 2 + newPartHeight / 2 + bottomOffset
     local siblingSizeCopy = Vector3.new(sibling.Size.X, newPartHeight,
@@ -109,11 +109,20 @@ renderButtonBlock = function(props)
 
     local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
     local sgui = Instance.new("SurfaceGui", buttonBlock)
+    sgui.SizingMode = "PixelsPerStud"
 
     local textButton = Instance.new("TextButton", sgui)
-    textButton.Size = UDim2.new(0.5, 0, 0.5, 0)
-    textButton.Position = UDim2.new(0.25, 0, .25, 0)
-    textButton.Text = "Next Page!"
+    -- textButton.Size = UDim2.new(0.25, 0, 0.5, 0)
+    -- textButton.Position = UDim2.new(0.75, 0, 0.25, 0)
+    -- textButton.Text = "Next Page!"
+    -- textButton.TextSize = 50
+
+    textButton.Size = UDim2.new(1, 0, 1, 0)
+    textButton.BackgroundColor3 = Color3.new(1, 1, 1)
+    textButton.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
+    textButton.Font = Enum.Font.SourceSans
+    textButton.TextColor3 = Color3.new(0, 0, 0)
+    textButton.TextSize = 40
 
     local function onActivated()
         pageNum = pageNum + 1
@@ -162,6 +171,7 @@ renderTexts = function(props)
     local pixelsPerStud = props.pixelsPerStud
 
     local sgui = Instance.new("SurfaceGui", parent)
+    sgui.SizingMode = "PixelsPerStud"
     local scrollingFrame = Instance.new("ScrollingFrame", sgui)
     scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
     scrollingFrame.BackgroundTransparency = 1
