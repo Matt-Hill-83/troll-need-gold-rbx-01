@@ -199,6 +199,8 @@ renderTexts = function(props)
         local font = Enum.Font.Arial
         local fontHeight = 41
 
+        local innerLabelWidth = parentWidth - (2 * paddingInPx)
+
         local calcSize = TextService:GetTextSize(text, fontHeight, font,
                                                  Vector2.new(parentWidth,
                                                              parentHeight))
@@ -206,7 +208,6 @@ renderTexts = function(props)
         local height = calcSize.Y
 
         local outerLabel = Instance.new("TextLabel", scrollingFrame)
-        -- outerLabel.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
 
         outerLabel.BorderColor3 = Color3.fromRGB(99, 46, 99)
         outerLabel.BorderSizePixel = 2
@@ -214,8 +215,7 @@ renderTexts = function(props)
         outerLabel.Text = ""
         outerLabel.Name = "Dialog-" .. i
 
-        outerLabel.Size = UDim2.new(0, parentWidth + 2 * paddingInPx, 0,
-                                    height + 2 * paddingInPx)
+        outerLabel.Size = UDim2.new(0, parentWidth, 0, height + 2 * paddingInPx)
 
         outerLabel.TextWrapped = true
         outerLabel.TextSize = fontHeight
@@ -224,30 +224,22 @@ renderTexts = function(props)
         outerLabel.Font = font
         outerLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
         outerLabel.ZIndex = 1
+        outerLabel.TextYAlignment = Enum.TextYAlignment.Top
+        outerLabel.TextColor3 = Color3.new(0, 0, 0)
         -------------------
-        local newLabel = outerLabel:Clone()
+        local innerLabel = outerLabel:Clone()
 
         -----------------------------
-        newLabel.Parent = outerLabel
-        -- local test = outerLabel:Clone()
-        -- local newLabel = Instance.new("TextLabel", outerLabel)
+        innerLabel.Parent = outerLabel
+        innerLabel.Name = "Dialog-" .. i
 
-        newLabel.Name = "Dialog-" .. i
-        ------
+        innerLabel.Text = text
+        innerLabel.ZIndex = 2
+        innerLabel.Size = UDim2.new(0, parentWidth, 0, height)
+        innerLabel.Position = UDim2.new(0, paddingInPx, 0, paddingInPx)
+        innerLabel.BackgroundTransparency = 1
 
-        outerLabel.TextYAlignment = Enum.TextYAlignment.Top
-
-        newLabel.TextColor3 = Color3.new(0, 0, 0)
-        ------
-
-        newLabel.Text = text
-        newLabel.ZIndex = 2
-        newLabel.Size = UDim2.new(0, parentWidth, 0, height)
-
-        newLabel.Position = UDim2.new(0, paddingInPx, 0, paddingInPx)
-        newLabel.BackgroundTransparency = 1
-
-        local absoluteHeight = newLabel.AbsoluteSize.Y
+        local absoluteHeight = outerLabel.AbsoluteSize.Y
         dialogY = dialogY + (absoluteHeight + 25)
 
     end
