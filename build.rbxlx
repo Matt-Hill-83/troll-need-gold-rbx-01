@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>0.232170105</X>
-					<Y>20.1823368</Y>
-					<Z>-13.1007366</Z>
-					<R00>-0.994369328</R00>
-					<R01>-0.0275940839</R01>
-					<R02>0.102314726</R02>
-					<R10>-0</R10>
-					<R11>0.965502441</R11>
-					<R12>0.260394126</R12>
-					<R20>-0.105970457</R20>
-					<R21>0.258927941</R21>
-					<R22>-0.960065961</R22>
+					<X>18.8249912</X>
+					<Y>25.6868782</Y>
+					<Z>-36.2852974</Z>
+					<R00>-0.592195094</R00>
+					<R01>-0.414927781</R01>
+					<R02>0.690753222</R02>
+					<R10>1.49011594e-08</R10>
+					<R11>0.857232332</R11>
+					<R12>0.51492995</R12>
+					<R20>-0.805794597</R20>
+					<R21>0.304939002</R21>
+					<R22>-0.507648766</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>0.0275406837</X>
-					<Y>19.6615486</Y>
-					<Z>-11.1806049</Z>
+					<X>17.44347</X>
+					<Y>24.6570072</Y>
+					<Z>-35.269989</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1305,7 +1305,7 @@ end]]></ProtectedString>
 				<bool name="CanCollide">true</bool>
 				<bool name="CastShadow">true</bool>
 				<int name="CollisionGroupId">0</int>
-				<Color3uint8 name="Color3uint8">4288914085</Color3uint8>
+				<Color3uint8 name="Color3uint8">4293442248</Color3uint8>
 				<PhysicalProperties name="CustomPhysicalProperties">
 					<CustomPhysics>false</CustomPhysics>
 				</PhysicalProperties>
@@ -1319,7 +1319,7 @@ end]]></ProtectedString>
 				<token name="LeftSurfaceInput">0</token>
 				<bool name="Locked">false</bool>
 				<bool name="Massless">false</bool>
-				<token name="Material">256</token>
+				<token name="Material">288</token>
 				<string name="Name">Part</string>
 				<float name="Reflectance">0</float>
 				<float name="RightParamA">-0.5</float>
@@ -1578,6 +1578,128 @@ TextButton0.FontSize = Enum.FontSize.Size48
 TextButton0.TextColor = BrickColor.new("Really black")
 TextButton0.TextColor3 = Color3.new(0, 0, 0)
 TextButton0.TextSize = 40
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = workspace
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+
+end
+
+
+BrickColor.new("White")]]></ProtectedString>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="Model" referent="RBX4e21acaa591146d781d61f9ec2185b5b">
+			<Properties>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<token name="LevelOfDetail">0</token>
+				<CoordinateFrame name="ModelInPrimary">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<CoordinateFrame name="ModelMeshCFrame">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<SharedString name="ModelMeshData">yuZpQdnvvUBOTYh1jqZ2cA==</SharedString>
+				<Vector3 name="ModelMeshSize">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<string name="Name">CompiledScripts</string>
+				<Ref name="PrimaryPart">null</Ref>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+			</Properties>
+			<Item class="ModuleScript" referent="RBX48dbe3f9e22e4116be17edc108680e4d">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">Script1</string>
+					<string name="ScriptGuid">{adceef70-8b8d-4a51-94a0-307d7d51b4db}</string>
+					<ProtectedString name="Source"><![CDATA[
+return function()
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Part0 = Instance.new("Part")
+Weld1 = Instance.new("Weld")
+SurfaceGui2 = Instance.new("SurfaceGui")
+TextButton3 = Instance.new("TextButton")
+Part0.Parent = mas
+Part0.CFrame = CFrame.new(-16, 10.5000019, -2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part0.Position = Vector3.new(-16, 10.5000019, -2)
+Part0.Color = Color3.new(0.909804, 0.729412, 0.784314)
+Part0.Size = Vector3.new(36, 19, 2)
+Part0.BottomSurface = Enum.SurfaceType.Smooth
+Part0.BrickColor = BrickColor.new("Light reddish violet")
+Part0.Material = Enum.Material.Neon
+Part0.TopSurface = Enum.SurfaceType.Smooth
+Part0.brickColor = BrickColor.new("Light reddish violet")
+Weld1.Parent = Part0
+Weld1.C0 = CFrame.new(0, -9.5, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Weld1.C1 = CFrame.new(-16, 1.00000191, -2, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Weld1.Part0 = Part0
+Weld1.Part1 = nil
+Weld1.part1 = nil
+SurfaceGui2.Parent = Part0
+SurfaceGui2.LightInfluence = 1
+SurfaceGui2.ClipsDescendants = true
+SurfaceGui2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+TextButton3.Parent = SurfaceGui2
+TextButton3.Size = UDim2.new(0, 200, 0, 50)
+TextButton3.BackgroundColor = BrickColor.new("Institutional white")
+TextButton3.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton3.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
+TextButton3.Font = Enum.Font.SourceSans
+TextButton3.FontSize = Enum.FontSize.Size48
+TextButton3.TextColor = BrickColor.new("Really black")
+TextButton3.TextColor3 = Color3.new(0, 0, 0)
+TextButton3.TextSize = 40
 for i,v in pairs(mas:GetChildren()) do
 	v.Parent = workspace
 	pcall(function() v:MakeJoints() end)
@@ -2312,8 +2434,11 @@ renderDialog = function(props)
     local paddingInPx = pixelsPerStud / 4
 
     local dialogContainer = renderDialogContainer({parent = parent})
-    local dialogBlock = renderDialogBlock({parent = dialogContainer})
-    local textsContainer = renderTextsContainer({parent = dialogBlock})
+    local textsContainer = renderTextsContainer({parent = dialogContainer})
+
+    textsContainer.Material = Enum.Material.Pebble
+    textsContainer.BrickColor = BrickColor.new("Institutional white")
+    -- textsContainer.BrickColor = BrickColor.new("Light reddish violet")
 
     local renderTextsProps = {
         parent = textsContainer,
@@ -2324,7 +2449,7 @@ renderDialog = function(props)
     renderTexts(renderTextsProps)
 
     local renderButtonBlockProps = {
-        parent = dialogBlock,
+        parent = dialogContainer,
         sibling = textsContainer
     }
     renderButtonBlock(renderButtonBlockProps)
@@ -2334,8 +2459,8 @@ end
 renderDialogContainer = function(props)
     local parent = props.parent
 
-    local childSize = Vector3.new(20, 16, 1)
-    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 0)
+    local childSize = Vector3.new(20, 12, 1)
+    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 1.1)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, -1),
@@ -2353,7 +2478,7 @@ renderDialogContainer = function(props)
     local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 
     local dialogBlockProps = {
-        name = 'dialogContainer',
+        name = 'Dialog Container',
         parent = parent,
         color = BrickColor.new("Buttermilk"),
         size = childSize,
@@ -2361,21 +2486,6 @@ renderDialogContainer = function(props)
     }
 
     return Part.createPartWithVectors(dialogBlockProps)
-
-end
-
-renderDialogBlock = function(props)
-    local parent = props.parent
-
-    local partProps = {
-        name = 'Dialog',
-        parent = parent,
-        color = BrickColor.new("Light blue"),
-        size = parent.Size + Vector3.new(-1, -1, 0.2),
-        position = parent.Position + Vector3.new(0, 0, 0)
-    }
-
-    return Part.createPartWithVectors(partProps)
 
 end
 
@@ -2387,14 +2497,15 @@ renderButtonBlock = function(props)
     local bottomOffset = 0.1
 
     local distanceY = sibling.Size.Y / 2 + newPartHeight / 2 + bottomOffset
-    local siblingSizeCopy = Vector3.new(sibling.Size.X, newPartHeight,
+    local siblingSizeCopy = Vector3.new(sibling.Size.X / 2, newPartHeight,
                                         sibling.Size.Z)
 
     local buttonBlockProps = {
         name = 'buttonBlock',
         parent = parent,
         size = siblingSizeCopy,
-        position = sibling.Position + Vector3.new(0, -distanceY, 0),
+        position = sibling.Position +
+            Vector3.new(-sibling.Size.X / 4, -distanceY, 0),
         color = BrickColor.new("Light red")
     }
 
@@ -2424,8 +2535,8 @@ end
 renderTextsContainer = function(props)
     local parent = props.parent
 
-    local childSize = Vector3.new(parent.Size.X - 2, 10, 0.5)
-    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 0)
+    local childSize = Vector3.new(parent.Size.X - 2, 10, 1)
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, -1),
@@ -2445,7 +2556,7 @@ renderTextsContainer = function(props)
     local dialogBlockProps = {
         name = 'textsContainer',
         parent = parent,
-        color = BrickColor.White,
+        color = BrickColor.new("White"),
         size = childSize,
         position = childPos
     }
@@ -2463,14 +2574,11 @@ addPadding = function(props)
     UIPadding.PaddingTop = UDim.new(paddingPct, 0)
     UIPadding.PaddingLeft = UDim.new(paddingPct, 0)
     UIPadding.PaddingRight = UDim.new(paddingPct, 0)
-
-    -- local UICorner = Instance.new("UICorner", parent)
-    -- UICorner.CornerRadius = UDim.new(5, 0)
-    --
 end
+
 renderTexts = function(props)
     local parent = props.parent
-    local paddingInPx = props.paddingInPx
+    local paddingInPx = props.paddingInPx / 2
     local pixelsPerStud = props.pixelsPerStud
 
     local sgui = Instance.new("SurfaceGui", parent)
@@ -2482,8 +2590,12 @@ renderTexts = function(props)
     addPadding({parent = scrollingFrame, paddingPct = scrollingFramePaddingPct})
 
     scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
-    scrollingFrame.BorderSizePixel = 5
+    scrollingFrame.BorderSizePixel = 3
+    scrollingFrame.BorderMode = Enum.BorderMode.Inset
     scrollingFrame.BackgroundColor3 = Color3.new(196, 132, 225)
+    scrollingFrame.BackgroundTransparency = 0.5
+    scrollingFrame.ScrollBarThickness = 40
+    scrollingFrame.ScrollBarImageColor3 = Color3.new(113, 0, 255)
 
     local texts = {testDict01, testDict02, testDict03}
 
@@ -2504,7 +2616,7 @@ renderTexts = function(props)
         -- outerLabel.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
 
         local newLabel = Instance.new("TextLabel", outerLabel)
-        outerLabel.Font = font
+        -- outerLabel.Font = font
         newLabel.Font = font
 
         local calcSize = TextService:GetTextSize(text, fontHeight, font,
@@ -2514,10 +2626,10 @@ renderTexts = function(props)
         local height = calcSize.Y
 
         newLabel.Name = "Dialog-" .. i
-        newLabel.Text = text
-        outerLabel.Text = text
 
-        outerLabel.BorderColor3 = Color3.new(255, 10, 92)
+        outerLabel.Text = ""
+        newLabel.Text = text
+
         outerLabel.ZIndex = 1
         newLabel.ZIndex = 2
 
@@ -2528,17 +2640,15 @@ renderTexts = function(props)
         outerLabel.Position = UDim2.new(0, 0, 0, dialogY)
         newLabel.Position = UDim2.new(0, paddingInPx, 0, paddingInPx)
 
-        newLabel.BackgroundTransparency = 0.5
+        newLabel.BackgroundTransparency = 1
         newLabel.Selectable = true
 
         outerLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
         newLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
 
         outerLabel.BorderColor3 = Color3.fromRGB(99, 46, 99)
-        newLabel.BorderColor3 = Color3.new(255, 0, 92)
 
         outerLabel.BorderSizePixel = 2
-        newLabel.BorderSizePixel = 2
         newLabel.TextColor3 = Color3.new(0, 0, 0)
 
         newLabel.TextWrapped = true
@@ -2550,12 +2660,9 @@ renderTexts = function(props)
         newLabel.TextXAlignment = Enum.TextXAlignment.Left
         newLabel.TextYAlignment = Enum.TextYAlignment.Top
 
-        -- '#ff005c'
-        -- '#ff005c'
-
         local absoluteHeight = newLabel.AbsoluteSize.Y
 
-        dialogY = dialogY + (absoluteHeight + paddingInPx * 3)
+        dialogY = dialogY + (absoluteHeight + 25)
 
     end
 

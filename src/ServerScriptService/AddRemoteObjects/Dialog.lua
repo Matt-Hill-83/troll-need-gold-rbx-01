@@ -22,7 +22,10 @@ renderDialog = function(props)
 
     local dialogContainer = renderDialogContainer({parent = parent})
     local textsContainer = renderTextsContainer({parent = dialogContainer})
-    textsContainer.BrickColor = BrickColor.new("White")
+
+    textsContainer.Material = Enum.Material.Pebble
+    textsContainer.BrickColor = BrickColor.new("Institutional white")
+    -- textsContainer.BrickColor = BrickColor.new("Light reddish violet")
 
     local renderTextsProps = {
         parent = textsContainer,
@@ -44,7 +47,7 @@ renderDialogContainer = function(props)
     local parent = props.parent
 
     local childSize = Vector3.new(20, 12, 1)
-    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 0)
+    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 1.1)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, -1),
@@ -177,6 +180,9 @@ renderTexts = function(props)
     scrollingFrame.BorderSizePixel = 3
     scrollingFrame.BorderMode = Enum.BorderMode.Inset
     scrollingFrame.BackgroundColor3 = Color3.new(196, 132, 225)
+    scrollingFrame.BackgroundTransparency = 0.5
+    scrollingFrame.ScrollBarThickness = 40
+    scrollingFrame.ScrollBarImageColor3 = Color3.new(113, 0, 255)
 
     local texts = {testDict01, testDict02, testDict03}
 
