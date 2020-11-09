@@ -202,40 +202,36 @@ renderTexts = function(props)
         local innerLabelWidth = parentWidth - (2 * paddingInPx)
 
         local calcSize = TextService:GetTextSize(text, fontHeight, font,
-                                                 Vector2.new(parentWidth,
+                                                 Vector2.new(innerLabelWidth,
                                                              parentHeight))
 
         local height = calcSize.Y
 
         local outerLabel = Instance.new("TextLabel", scrollingFrame)
 
-        outerLabel.BorderColor3 = Color3.fromRGB(99, 46, 99)
-        outerLabel.BorderSizePixel = 2
-        outerLabel.Position = UDim2.new(0, 0, 0, dialogY)
-        outerLabel.Text = ""
         outerLabel.Name = "Dialog-" .. i
-
+        outerLabel.Position = UDim2.new(0, 0, 0, dialogY)
         outerLabel.Size = UDim2.new(0, parentWidth, 0, height + 2 * paddingInPx)
 
-        outerLabel.TextWrapped = true
-        outerLabel.TextSize = fontHeight
-
-        outerLabel.TextXAlignment = Enum.TextXAlignment.Left
+        outerLabel.Text = ""
         outerLabel.Font = font
-        outerLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
-        outerLabel.ZIndex = 1
+        outerLabel.TextSize = fontHeight
+        outerLabel.TextWrapped = true
+        outerLabel.TextXAlignment = Enum.TextXAlignment.Left
         outerLabel.TextYAlignment = Enum.TextYAlignment.Top
+        outerLabel.BorderColor3 = Color3.fromRGB(99, 46, 99)
+        outerLabel.BorderSizePixel = 2
+        outerLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
         outerLabel.TextColor3 = Color3.new(0, 0, 0)
+        outerLabel.ZIndex = 1
         -------------------
         local innerLabel = outerLabel:Clone()
 
-        -----------------------------
         innerLabel.Parent = outerLabel
         innerLabel.Name = "Dialog-" .. i
-
         innerLabel.Text = text
         innerLabel.ZIndex = 2
-        innerLabel.Size = UDim2.new(0, parentWidth, 0, height)
+        innerLabel.Size = UDim2.new(0, innerLabelWidth, 0, height)
         innerLabel.Position = UDim2.new(0, paddingInPx, 0, paddingInPx)
         innerLabel.BackgroundTransparency = 1
 
