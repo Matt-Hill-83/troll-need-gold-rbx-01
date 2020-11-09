@@ -5,13 +5,13 @@ local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 
 local module = {}
 
-local testDict01 = {text = "aaa bbb cccc ", color = "Yellow", char = "Britta"}
+local testDict01 = {text = "one one one ", color = "Yellow", char = "Britta"}
+local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
 local testDict03 = {
-    text = "aaa bbb cccc ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt",
+    text = "three three thre ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt",
     color = "Yellow",
     char = "Britta"
 }
-local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
 
 local pageNum = 1
 
@@ -157,7 +157,7 @@ renderTextsContainer = function(props)
     local dialogBlockProps = {
         name = 'textsContainer',
         parent = parent,
-        color = BrickColor.new("Light blue"),
+        color = BrickColor.new("Pink"),
         size = childSize,
         position = childPos
     }
@@ -172,15 +172,26 @@ renderTexts = function(props)
 
     local sgui = Instance.new("SurfaceGui", parent)
     sgui.SizingMode = "PixelsPerStud"
+
+    local UIPadding0 = Instance.new("UIPadding", sgui)
+    UIPadding0.PaddingBottom = UDim.new(0.1, 0)
+    UIPadding0.PaddingTop = UDim.new(0.1, 0)
+    UIPadding0.PaddingLeft = UDim.new(0.1, 0)
+    UIPadding0.PaddingRight = UDim.new(0.1, 0)
+
     local scrollingFrame = Instance.new("ScrollingFrame", sgui)
     scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
-    scrollingFrame.BackgroundTransparency = 1
+    -- scrollingFrame.Size = UDim2.new(0.9, 0, 0.9, 0)
+    -- scrollingFrame.Position = UDim2.new(0.05, 0, 0.05, 0)
+    scrollingFrame.BorderSizePixel = 5
+    scrollingFrame.BackgroundColor3 = Color3.new(196, 132, 225)
+    -- scrollingFrame.BackgroundTransparency = 1
 
-    -- local texts = {testDict01}
-    local texts = {
-        testDict01, testDict02, testDict03, testDict01, testDict02, testDict03,
-        testDict01, testDict02, testDict03
-    }
+    -- local texts = {
+    --     testDict01, testDict02, testDict03, testDict01, testDict02, testDict03,
+    --     testDict01, testDict02, testDict03
+    -- }
+    local texts = {testDict01, testDict02, testDict03}
 
     local parentWidth = parent.Size.X * pixelsPerStud - (0 * paddingInPx)
     local parentHeight = parent.Size.Y * pixelsPerStud
@@ -195,8 +206,9 @@ renderTexts = function(props)
         local font = Enum.Font.Arial
         local fontHeight = 41
 
-        local newLabel2 = Instance.new("TextLabel", scrollingFrame)
-        local newLabel = Instance.new("TextLabel", newLabel2)
+        local outerLabel = Instance.new("TextLabel", scrollingFrame)
+        local newLabel = Instance.new("TextLabel", outerLabel)
+        outerLabel.Font = font
         newLabel.Font = font
 
         local calcSize = TextService:GetTextSize(text, fontHeight, font,
@@ -204,29 +216,47 @@ renderTexts = function(props)
                                                              parentHeight))
 
         local height = calcSize.Y
+        print('height' .. ' - start');
+        print(height);
+        print('height' .. ' - end');
 
+        local textHeight = 50
+        local paddingPct = 0.1
+
+        local heightAdder = paddingPct * textHeight
+        local yOffset = heightAdder / 2
+        print('yOffset' .. ' - start');
+        print(yOffset);
+        print('yOffset' .. ' - end');
         newLabel.Name = "Dialog-" .. i
         newLabel.Text = text
-        newLabel2.Text = text
+        outerLabel.Text = text
 
-        newLabel2.Size = UDim2.new(1.01, 0, 0, height * 1.05)
-        newLabel2.Position = UDim2.new(0, 0, 0, dialogY)
-        newLabel2.BorderColor3 = Color3.new(255, 10, 92)
-        newLabel2.ZIndex = 1
+        outerLabel.BorderColor3 = Color3.new(255, 10, 92)
+        outerLabel.ZIndex = 1
         newLabel.ZIndex = 2
 
         newLabel.Size = UDim2.new(1, 0, 0, height)
-        newLabel.Position = UDim2.new(0, 0, 0, dialogY * 1.0)
+        outerLabel.Size = UDim2.new(1, 0, 0, height + heightAdder)
+        print('dialogY' .. ' - start');
+        print(dialogY);
+        print('dialogY' .. ' - end');
+        outerLabel.Position = UDim2.new(0, 0, 0, dialogY)
+        newLabel.Position = UDim2.new(0, 0, 0, yOffset)
 
-        newLabel2.BackgroundTransparency = 0.9
+        newLabel.BackgroundTransparency = 0.5
         newLabel.Selectable = true
         newLabel.BackgroundColor3 = Color3.new(255, 220, 237)
         newLabel.BorderColor3 = Color3.new(255, 0, 92)
-        newLabel.BorderSizePixel = 1
+        newLabel.BorderSizePixel = 2
         newLabel.TextColor3 = Color3.new(0, 0, 0)
 
         newLabel.TextWrapped = true
+        outerLabel.TextWrapped = true
+
         newLabel.TextSize = fontHeight
+        outerLabel.TextSize = fontHeight
+
         newLabel.TextXAlignment = Enum.TextXAlignment.Left
         newLabel.TextYAlignment = Enum.TextYAlignment.Top
 
@@ -235,7 +265,7 @@ renderTexts = function(props)
 
         local absoluteHeight = newLabel.AbsoluteSize.Y
 
-        dialogY = dialogY + absoluteHeight + paddingInPx * 3
+        dialogY = dialogY + (absoluteHeight + paddingInPx * 3)
 
     end
 
