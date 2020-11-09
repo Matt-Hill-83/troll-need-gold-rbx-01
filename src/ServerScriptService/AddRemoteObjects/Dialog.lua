@@ -21,7 +21,6 @@ renderDialog = function(props)
     local paddingInPx = pixelsPerStud / 4
 
     local dialogContainer = renderDialogContainer({parent = parent})
-    -- local dialogBlock = renderDialogBlock({parent = dialogContainer})
     local textsContainer = renderTextsContainer({parent = dialogContainer})
     textsContainer.BrickColor = BrickColor.new("White")
 
@@ -71,21 +70,6 @@ renderDialogContainer = function(props)
     }
 
     return Part.createPartWithVectors(dialogBlockProps)
-
-end
-
-renderDialogBlock = function(props)
-    local parent = props.parent
-
-    local partProps = {
-        name = 'Dialog',
-        parent = parent,
-        color = BrickColor.new("Light blue"),
-        size = parent.Size + Vector3.new(0, 0, 1),
-        position = parent.Position + Vector3.new(0, 0, -1)
-    }
-
-    return Part.createPartWithVectors(partProps)
 
 end
 
