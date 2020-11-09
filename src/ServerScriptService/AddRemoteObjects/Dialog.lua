@@ -116,6 +116,7 @@ renderButtonBlock = function(props)
     textButton.Size = UDim2.new(1, 0, 1, 0)
     textButton.BackgroundColor3 = Color3.new(1, 1, 1)
     textButton.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
+
     textButton.Font = Enum.Font.SourceSans
     textButton.TextColor3 = Color3.new(0, 0, 0)
     textButton.TextSize = 40
@@ -166,11 +167,14 @@ addPadding = function(props)
     local paddingPct = props.paddingPct
 
     local UIPadding = Instance.new("UIPadding", parent)
+
     UIPadding.PaddingBottom = UDim.new(paddingPct, 0)
     UIPadding.PaddingTop = UDim.new(paddingPct, 0)
     UIPadding.PaddingLeft = UDim.new(paddingPct, 0)
     UIPadding.PaddingRight = UDim.new(paddingPct, 0)
 
+    -- local UICorner = Instance.new("UICorner", parent)
+    -- UICorner.CornerRadius = UDim.new(5, 0)
     --
 end
 renderTexts = function(props)
@@ -178,13 +182,8 @@ renderTexts = function(props)
     local paddingInPx = props.paddingInPx
     local pixelsPerStud = props.pixelsPerStud
 
-    print('paddingInPx' .. ' - start');
-    print(paddingInPx);
-    print('paddingInPx' .. ' - end');
     local sgui = Instance.new("SurfaceGui", parent)
     sgui.SizingMode = "PixelsPerStud"
-
-    -- addPadding({parent = sgui, paddingPct = 0.02})
 
     local scrollingFrame = Instance.new("ScrollingFrame", sgui)
 
@@ -211,6 +210,8 @@ renderTexts = function(props)
         local fontHeight = 41
 
         local outerLabel = Instance.new("TextLabel", scrollingFrame)
+        -- outerLabel.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
+
         local newLabel = Instance.new("TextLabel", outerLabel)
         outerLabel.Font = font
         newLabel.Font = font
