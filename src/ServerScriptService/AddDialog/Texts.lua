@@ -2,14 +2,24 @@ local TextService = game:GetService("TextService")
 local Sss = game:GetService("ServerScriptService")
 local Utils = require(Sss.Source.Utils.Utils)
 
-local dialogConfig = {Britta = {left = true, color = "Light blue"}}
+local dialogColors = {
+    Color3.fromRGB(253, 158, 240), Color3.fromRGB(225, 253, 158),
+    Color3.fromRGB(253, 228, 158), Color3.fromRGB(158, 253, 179),
+    Color3.fromRGB(158, 215, 253)
+}
+
+local dialogConfig = {
+    Britta = {left = true, backgroundColor = dialogColors[1]},
+    Raven = {left = true, backgroundColor = dialogColors[2]},
+    Freckle = {left = true, backgroundColor = dialogColors[3]}
+}
 
 local testDict01 = {text = "one one one ", color = "Yellow", char = "Britta"}
-local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
+local testDict02 = {text = "two", color = "Yellow", char = "Raven"}
 local testDict03 = {
     text = "three three thre ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt",
     color = "Yellow",
-    char = "Britta"
+    char = "Freckle"
 }
 local lines = {testDict01, testDict02, testDict03}
 
@@ -26,11 +36,7 @@ renderTexts = function(props)
 
     local scrollingFrame = Instance.new("ScrollingFrame", sgui)
 
-    local scrollingFramePaddingPct = 0.02
-    Utils.addPadding({
-        parent = scrollingFrame,
-        paddingPct = scrollingFramePaddingPct
-    })
+    Utils.addPadding({parent = scrollingFrame, paddingPct = 0.02})
 
     scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
     scrollingFrame.BorderSizePixel = 3
@@ -47,10 +53,15 @@ renderTexts = function(props)
     local dialogY = bottomGap
 
     for i, dialog in ipairs(lines) do
-        local line = lines[pageNum]
+        local line = lines[i]
         local charName = line['char']
 
         local left = dialogConfig[charName]['left']
+        local lineConfig = dialogConfig[charName]
+        local backgroundColor = lineConfig.backgroundColor
+        print('backgroundColor' .. ' - start');
+        print(backgroundColor);
+        print('backgroundColor' .. ' - end');
 
         print('left' .. ' - start');
         print(left);
@@ -81,7 +92,8 @@ renderTexts = function(props)
         outerLabel.TextYAlignment = Enum.TextYAlignment.Top
         outerLabel.BorderColor3 = Color3.fromRGB(99, 46, 99)
         outerLabel.BorderSizePixel = 2
-        outerLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
+        -- outerLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
+        outerLabel.BackgroundColor3 = backgroundColor
         outerLabel.TextColor3 = Color3.new(0, 0, 0)
         outerLabel.ZIndex = 1
 

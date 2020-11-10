@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>29.7221699</X>
-					<Y>77.1545639</Y>
-					<Z>-90.3314667</Z>
-					<R00>-0.995076299</R00>
-					<R01>-0.0225634221</R01>
-					<R02>0.0965100601</R02>
+					<X>11.5812073</X>
+					<Y>27.3185387</Y>
+					<Z>-116.273697</Z>
+					<R00>-0.995076239</R00>
+					<R01>-0.0225634202</R01>
+					<R02>0.0965100676</R02>
 					<R10>-0</R10>
 					<R11>0.973742008</R11>
-					<R12>0.227654487</R12>
-					<R20>-0.0991125703</R20>
-					<R21>0.226533577</R21>
-					<R22>-0.96894747</R22>
+					<R12>0.227654502</R12>
+					<R20>-0.0991125628</R20>
+					<R21>0.226533592</R21>
+					<R22>-0.96894753</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>29.4222393</X>
-					<Y>76.4470673</Y>
-					<Z>-87.3202057</Z>
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -929,7 +929,7 @@ textButton.MouseButton1Click:connect(onActivated)]]></ProtectedString>
 					<R21>0</R21>
 					<R22>1</R22>
 				</CoordinateFrame>
-				<bool name="CanCollide">false</bool>
+				<bool name="CanCollide">true</bool>
 				<bool name="CastShadow">true</bool>
 				<int name="CollisionGroupId">0</int>
 				<Color3uint8 name="Color3uint8">4282318742</Color3uint8>
@@ -2413,7 +2413,7 @@ print('mysss2')
 local Sss = game:GetService("ServerScriptService")
 
 local SceneConfig = require(Sss.Source.AddRemoteObjects.ScenesConfig)
-local Dialog = require(Sss.Source.AddRemoteObjects.Dialog)
+local Dialog = require(Sss.Source.AddDialog.Dialog)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 -- local Part = require(Sss.Source.AddRemoteObjects.Part)
 
@@ -2560,276 +2560,6 @@ function module.getScenesConfig()
 
 end
 
-return module
-]]></ProtectedString>
-						<int64 name="SourceAssetId">-1</int64>
-						<BinaryString name="Tags"></BinaryString>
-					</Properties>
-				</Item>
-				<Item class="ModuleScript" referent="RBX4af71729d48c421584a348cdba8c1fef">
-					<Properties>
-						<BinaryString name="AttributesSerialize"></BinaryString>
-						<Content name="LinkedSource"><null></null></Content>
-						<string name="Name">Dialog</string>
-						<string name="ScriptGuid">{9b1cd5c3-dda0-4254-acb2-ec1d5ed5bdd7}</string>
-						<ProtectedString name="Source"><![CDATA[local TextService = game:GetService("TextService")
-local Sss = game:GetService("ServerScriptService")
-local Part = require(Sss.Source.AddRemoteObjects.Part)
-local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
-
-local module = {}
-
-local testDict01 = {text = "one one one ", color = "Yellow", char = "Britta"}
-local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
-local testDict03 = {
-    text = "three three thre ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt",
-    color = "Yellow",
-    char = "Britta"
-}
-
-local pageNum = 1
-
-renderDialog = function(props)
-    local parent = props.parent
-    local pixelsPerStud = 45
-    local paddingInPx = pixelsPerStud / 4
-
-    local dialogContainer = renderDialogContainer({parent = parent})
-    local textsContainer = renderTextsContainer({parent = dialogContainer})
-
-    textsContainer.Material = Enum.Material.Pebble
-    textsContainer.BrickColor = BrickColor.new("Institutional white")
-    -- textsContainer.BrickColor = BrickColor.new("Light reddish violet")
-
-    local renderTextsProps = {
-        parent = textsContainer,
-        pageNum = pageNum,
-        paddingInPx = paddingInPx,
-        pixelsPerStud = pixelsPerStud
-    }
-    renderTexts(renderTextsProps)
-
-    local renderButtonBlockProps = {
-        parent = dialogContainer,
-        sibling = textsContainer
-    }
-    renderButtonBlock(renderButtonBlockProps)
-
-end
-
-renderDialogContainer = function(props)
-    local parent = props.parent
-
-    local childSize = Vector3.new(20, 12, 1)
-    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 1.1)
-
-    local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, -1),
-        moveTowardZero = Vector3.new(-1, -1, -1),
-        rowDirection = Vector3.new(-1, -1, -1)
-    }
-
-    local offsetProps = {
-        parent = parent,
-        childSize = childSize,
-        itemDuplicationConfig = itemDuplicationConfig,
-        offset = desiredOffsetFromParentEdge
-    }
-
-    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-
-    local dialogBlockProps = {
-        name = 'Dialog Container',
-        parent = parent,
-        color = BrickColor.new("Buttermilk"),
-        size = childSize,
-        position = childPos
-    }
-
-    return Part.createPartWithVectors(dialogBlockProps)
-
-end
-
-renderButtonBlock = function(props)
-    local parent = props.parent
-    local sibling = props.sibling
-
-    local newPartHeight = 2
-    local bottomOffset = 0.1
-
-    local distanceY = sibling.Size.Y / 2 + newPartHeight / 2 + bottomOffset
-    local siblingSizeCopy = Vector3.new(sibling.Size.X / 2, newPartHeight,
-                                        sibling.Size.Z)
-
-    local buttonBlockProps = {
-        name = 'buttonBlock',
-        parent = parent,
-        size = siblingSizeCopy,
-        position = sibling.Position +
-            Vector3.new(-sibling.Size.X / 4, -distanceY, 0),
-        color = BrickColor.new("Light red")
-    }
-
-    local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
-    local sgui = Instance.new("SurfaceGui", buttonBlock)
-    sgui.SizingMode = "PixelsPerStud"
-
-    local textButton = Instance.new("TextButton", sgui)
-
-    textButton.Size = UDim2.new(1, 0, 1, 0)
-    textButton.BackgroundColor3 = Color3.new(1, 1, 1)
-    textButton.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
-
-    textButton.Font = Enum.Font.SourceSans
-    textButton.TextColor3 = Color3.new(0, 0, 0)
-    textButton.TextSize = 40
-
-    local function onActivated()
-        pageNum = pageNum + 1
-        textButton.Text = "Page: " .. pageNum
-    end
-
-    textButton.MouseButton1Click:Connect(onActivated)
-    return buttonBlock
-end
-
-renderTextsContainer = function(props)
-    local parent = props.parent
-
-    local childSize = Vector3.new(parent.Size.X - 2, 10, 1)
-    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
-
-    local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, -1),
-        moveTowardZero = Vector3.new(-1, -1, -1),
-        rowDirection = Vector3.new(-1, -1, -1)
-    }
-
-    local offsetProps = {
-        parent = parent,
-        childSize = childSize,
-        itemDuplicationConfig = itemDuplicationConfig,
-        offset = desiredOffsetFromParentEdge
-    }
-
-    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-
-    local dialogBlockProps = {
-        name = 'textsContainer',
-        parent = parent,
-        color = BrickColor.new("White"),
-        size = childSize,
-        position = childPos
-    }
-
-    return Part.createPartWithVectors(dialogBlockProps)
-end
-
-addPadding = function(props)
-    local parent = props.parent
-    local paddingPct = props.paddingPct
-
-    local UIPadding = Instance.new("UIPadding", parent)
-
-    UIPadding.PaddingBottom = UDim.new(paddingPct, 0)
-    UIPadding.PaddingTop = UDim.new(paddingPct, 0)
-    UIPadding.PaddingLeft = UDim.new(paddingPct, 0)
-    UIPadding.PaddingRight = UDim.new(paddingPct, 0)
-end
-
-renderTexts = function(props)
-    local parent = props.parent
-    local paddingInPx = props.paddingInPx / 2
-    local pixelsPerStud = props.pixelsPerStud
-
-    local sgui = Instance.new("SurfaceGui", parent)
-    sgui.SizingMode = "PixelsPerStud"
-
-    local scrollingFrame = Instance.new("ScrollingFrame", sgui)
-
-    local scrollingFramePaddingPct = 0.02
-    addPadding({parent = scrollingFrame, paddingPct = scrollingFramePaddingPct})
-
-    scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
-    scrollingFrame.BorderSizePixel = 3
-    scrollingFrame.BorderMode = Enum.BorderMode.Inset
-    scrollingFrame.BackgroundColor3 = Color3.new(196, 132, 225)
-    scrollingFrame.BackgroundTransparency = 0.5
-    scrollingFrame.ScrollBarThickness = 40
-    scrollingFrame.ScrollBarImageColor3 = Color3.new(113, 0, 255)
-
-    local texts = {testDict01, testDict02, testDict03}
-
-    local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
-    local parentHeight = parent.Size.Y * pixelsPerStud
-
-    local bottomGap = 0
-    local dialogY = bottomGap
-
-    for i, dialog in ipairs(texts) do
-        local charName = texts[pageNum]['char']
-        local text = charName .. ": " .. dialog['text']
-
-        local font = Enum.Font.Arial
-        local fontHeight = 41
-
-        local outerLabel = Instance.new("TextLabel", scrollingFrame)
-        -- outerLabel.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
-
-        local newLabel = Instance.new("TextLabel", outerLabel)
-        -- outerLabel.Font = font
-        newLabel.Font = font
-
-        local calcSize = TextService:GetTextSize(text, fontHeight, font,
-                                                 Vector2.new(parentWidth,
-                                                             parentHeight))
-
-        local height = calcSize.Y
-
-        newLabel.Name = "Dialog-" .. i
-
-        outerLabel.Text = ""
-        newLabel.Text = text
-
-        outerLabel.ZIndex = 1
-        newLabel.ZIndex = 2
-
-        outerLabel.Size = UDim2.new(0, parentWidth + 2 * paddingInPx, 0,
-                                    height + 2 * paddingInPx)
-        newLabel.Size = UDim2.new(0, parentWidth, 0, height)
-
-        outerLabel.Position = UDim2.new(0, 0, 0, dialogY)
-        newLabel.Position = UDim2.new(0, paddingInPx, 0, paddingInPx)
-
-        newLabel.BackgroundTransparency = 1
-        newLabel.Selectable = true
-
-        outerLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
-        newLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
-
-        outerLabel.BorderColor3 = Color3.fromRGB(99, 46, 99)
-
-        outerLabel.BorderSizePixel = 2
-        newLabel.TextColor3 = Color3.new(0, 0, 0)
-
-        newLabel.TextWrapped = true
-        outerLabel.TextWrapped = true
-
-        newLabel.TextSize = fontHeight
-        outerLabel.TextSize = fontHeight
-
-        newLabel.TextXAlignment = Enum.TextXAlignment.Left
-        newLabel.TextYAlignment = Enum.TextYAlignment.Top
-
-        local absoluteHeight = newLabel.AbsoluteSize.Y
-
-        dialogY = dialogY + (absoluteHeight + 25)
-
-    end
-
-end
-
-module.renderDialog = renderDialog
 return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
@@ -3072,6 +2802,20 @@ function module.mergeTables(t1, t2)
     --
 end
 
+addPadding = function(props)
+    local parent = props.parent
+    local paddingPct = props.paddingPct
+
+    local UIPadding = Instance.new("UIPadding", parent)
+
+    UIPadding.PaddingBottom = UDim.new(paddingPct, 0)
+    UIPadding.PaddingTop = UDim.new(paddingPct, 0)
+    UIPadding.PaddingLeft = UDim.new(paddingPct, 0)
+    UIPadding.PaddingRight = UDim.new(paddingPct, 0)
+end
+
+module.addPadding = addPadding
+
 return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
@@ -3098,6 +2842,300 @@ function hello() print("----------------------------- test-------------------") 
 module.hello = hello
 return module
 
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+			</Item>
+			<Item class="Folder" referent="RBX5b2589189389414dbd069dd116e36488">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<string name="Name">AddDialog</string>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+				<Item class="ModuleScript" referent="RBXc4555cfbc5f84237a0727e0925ad15dc">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Dialog</string>
+						<string name="ScriptGuid">{3e3f8afb-86c2-4325-923e-bc718c61f23f}</string>
+						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
+local Part = require(Sss.Source.AddRemoteObjects.Part)
+local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
+local Texts = require(Sss.Source.AddDialog.Texts)
+
+local module = {}
+
+local pageNum = 1
+
+renderDialog = function(props)
+    local parent = props.parent
+    local pixelsPerStud = 45
+    local paddingInPx = pixelsPerStud / 4
+
+    local dialogContainer = renderDialogContainer({parent = parent})
+    local textsContainer = renderTextsContainer({parent = dialogContainer})
+
+    textsContainer.Material = Enum.Material.Pebble
+    textsContainer.BrickColor = BrickColor.new("Institutional white")
+    -- textsContainer.BrickColor = BrickColor.new("Light reddish violet")
+
+    local renderTextsProps = {
+        parent = textsContainer,
+        pageNum = pageNum,
+        paddingInPx = paddingInPx,
+        pixelsPerStud = pixelsPerStud
+    }
+    Texts.renderTexts(renderTextsProps)
+
+    local renderButtonBlockProps = {
+        parent = dialogContainer,
+        sibling = textsContainer
+    }
+    renderButtonBlock(renderButtonBlockProps)
+
+end
+
+renderDialogContainer = function(props)
+    local parent = props.parent
+
+    local childSize = Vector3.new(20, 12, 1)
+    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 1.1)
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        moveTowardZero = Vector3.new(-1, -1, -1),
+        rowDirection = Vector3.new(-1, -1, -1)
+    }
+
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        itemDuplicationConfig = itemDuplicationConfig,
+        offset = desiredOffsetFromParentEdge
+    }
+
+    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
+
+    local dialogBlockProps = {
+        name = 'Dialog Container',
+        parent = parent,
+        color = BrickColor.new("Buttermilk"),
+        size = childSize,
+        position = childPos
+    }
+
+    return Part.createPartWithVectors(dialogBlockProps)
+
+end
+
+renderButtonBlock = function(props)
+    local parent = props.parent
+    local sibling = props.sibling
+
+    local newPartHeight = 2
+    local bottomOffset = 0.1
+
+    local distanceY = sibling.Size.Y / 2 + newPartHeight / 2 + bottomOffset
+    local siblingSizeCopy = Vector3.new(sibling.Size.X / 2, newPartHeight,
+                                        sibling.Size.Z)
+
+    local buttonBlockProps = {
+        name = 'buttonBlock',
+        parent = parent,
+        size = siblingSizeCopy,
+        position = sibling.Position +
+            Vector3.new(-sibling.Size.X / 4, -distanceY, 0),
+        color = BrickColor.new("Light red")
+    }
+
+    local buttonBlock = Part.createPartWithVectors(buttonBlockProps)
+    local sgui = Instance.new("SurfaceGui", buttonBlock)
+    sgui.SizingMode = "PixelsPerStud"
+
+    local textButton = Instance.new("TextButton", sgui)
+
+    textButton.Size = UDim2.new(1, 0, 1, 0)
+    textButton.BackgroundColor3 = Color3.new(1, 1, 1)
+    textButton.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
+
+    textButton.Font = Enum.Font.SourceSans
+    textButton.TextColor3 = Color3.new(0, 0, 0)
+    textButton.TextSize = 40
+
+    local function onActivated()
+        pageNum = pageNum + 1
+        textButton.Text = "Page: " .. pageNum
+    end
+
+    textButton.MouseButton1Click:Connect(onActivated)
+    return buttonBlock
+end
+
+renderTextsContainer = function(props)
+    local parent = props.parent
+
+    local childSize = Vector3.new(parent.Size.X - 2, 10, 1)
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        moveTowardZero = Vector3.new(-1, -1, -1),
+        rowDirection = Vector3.new(-1, -1, -1)
+    }
+
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        itemDuplicationConfig = itemDuplicationConfig,
+        offset = desiredOffsetFromParentEdge
+    }
+
+    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
+
+    local dialogBlockProps = {
+        name = 'textsContainer',
+        parent = parent,
+        color = BrickColor.new("White"),
+        size = childSize,
+        position = childPos
+    }
+
+    return Part.createPartWithVectors(dialogBlockProps)
+end
+
+module.renderDialog = renderDialog
+return module
+]]></ProtectedString>
+						<int64 name="SourceAssetId">-1</int64>
+						<BinaryString name="Tags"></BinaryString>
+					</Properties>
+				</Item>
+				<Item class="ModuleScript" referent="RBX55ae782c1eab49a39b8efa5b2f2274be">
+					<Properties>
+						<BinaryString name="AttributesSerialize"></BinaryString>
+						<Content name="LinkedSource"><null></null></Content>
+						<string name="Name">Texts</string>
+						<string name="ScriptGuid">{a9b90c2d-6219-433d-9de0-6d04699dee85}</string>
+						<ProtectedString name="Source"><![CDATA[local TextService = game:GetService("TextService")
+local Sss = game:GetService("ServerScriptService")
+local Utils = require(Sss.Source.Utils.Utils)
+
+local dialogColors = {
+
+    Color3.fromRGB(253, 158, 240), Color3.fromRGB(225, 253, 158)
+
+}
+
+local dialogConfig = {
+    Britta = {left = true, backgroundColor = dialogColors[1]},
+    Raven = {left = true, backgroundColor = dialogColors[2]},
+    Freckle = {left = true, backgroundColor = Color3.fromRGB(225, 253, 158)}
+}
+
+local testDict01 = {text = "one one one ", color = "Yellow", char = "Britta"}
+local testDict02 = {text = "two", color = "Yellow", char = "Raven"}
+local testDict03 = {
+    text = "three three thre ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt",
+    color = "Yellow",
+    char = "Britta"
+}
+local lines = {testDict01, testDict02, testDict03}
+
+local module = {}
+
+renderTexts = function(props)
+    local parent = props.parent
+    local paddingInPx = props.paddingInPx / 2
+    local pixelsPerStud = props.pixelsPerStud
+    local pageNum = props.pageNum
+
+    local sgui = Instance.new("SurfaceGui", parent)
+    sgui.SizingMode = "PixelsPerStud"
+
+    local scrollingFrame = Instance.new("ScrollingFrame", sgui)
+
+    Utils.addPadding({parent = scrollingFrame, paddingPct = 0.02})
+
+    scrollingFrame.Size = UDim2.new(1, 0, 1, 0)
+    scrollingFrame.BorderSizePixel = 3
+    scrollingFrame.BorderMode = Enum.BorderMode.Inset
+    scrollingFrame.BackgroundColor3 = Color3.new(196, 132, 225)
+    scrollingFrame.BackgroundTransparency = 0.5
+    scrollingFrame.ScrollBarThickness = 40
+    scrollingFrame.ScrollBarImageColor3 = Color3.new(113, 0, 255)
+
+    local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
+    local parentHeight = parent.Size.Y * pixelsPerStud
+
+    local bottomGap = 0
+    local dialogY = bottomGap
+
+    for i, dialog in ipairs(lines) do
+        local line = lines[i]
+        local charName = line['char']
+
+        local left = dialogConfig[charName]['left']
+        local lineConfig = dialogConfig[charName]
+        local backgroundColor = lineConfig.backgroundColor
+        print('backgroundColor' .. ' - start');
+        print(backgroundColor);
+        print('backgroundColor' .. ' - end');
+
+        print('left' .. ' - start');
+        print(left);
+        print('left' .. ' - end');
+        local text = charName .. ": " .. dialog['text']
+        local font = Enum.Font.Arial
+        local fontHeight = 41
+
+        local innerLabelWidth = parentWidth - (2 * paddingInPx)
+
+        local calcSize = TextService:GetTextSize(text, fontHeight, font,
+                                                 Vector2.new(innerLabelWidth,
+                                                             parentHeight))
+
+        local height = calcSize.Y
+
+        local outerLabel = Instance.new("TextLabel", scrollingFrame)
+
+        outerLabel.Name = "Dialog-" .. i
+        outerLabel.Position = UDim2.new(0, 0, 0, dialogY)
+        outerLabel.Size = UDim2.new(0, parentWidth, 0, height + 2 * paddingInPx)
+
+        outerLabel.Text = ""
+        outerLabel.Font = font
+        outerLabel.TextSize = fontHeight
+        outerLabel.TextWrapped = true
+        outerLabel.TextXAlignment = Enum.TextXAlignment.Left
+        outerLabel.TextYAlignment = Enum.TextYAlignment.Top
+        outerLabel.BorderColor3 = Color3.fromRGB(99, 46, 99)
+        outerLabel.BorderSizePixel = 2
+        -- outerLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
+        outerLabel.BackgroundColor3 = backgroundColor
+        outerLabel.TextColor3 = Color3.new(0, 0, 0)
+        outerLabel.ZIndex = 1
+
+        local innerLabel = outerLabel:Clone()
+        innerLabel.Parent = outerLabel
+        innerLabel.Name = "Dialog-" .. i
+        innerLabel.Text = text
+        innerLabel.ZIndex = 2
+        innerLabel.Size = UDim2.new(0, innerLabelWidth, 0, height)
+        innerLabel.Position = UDim2.new(0, paddingInPx, 0, paddingInPx)
+        innerLabel.BackgroundTransparency = 1
+
+        local absoluteHeight = outerLabel.AbsoluteSize.Y
+        dialogY = dialogY + (absoluteHeight + 25)
+
+    end
+
+end
+
+module.renderTexts = renderTexts
+return module
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>
