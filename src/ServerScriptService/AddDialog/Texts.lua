@@ -1,6 +1,6 @@
 local TextService = game:GetService("TextService")
 local Sss = game:GetService("ServerScriptService")
-local Utils = require(Sss.Source.Utils)
+local Utils = require(Sss.Source.Utils.Utils)
 
 local dialogConfig = {Britta = {left = true, color = "Light blue"}}
 
@@ -11,6 +11,7 @@ local testDict03 = {
     color = "Yellow",
     char = "Britta"
 }
+local lines = {testDict01, testDict02, testDict03}
 
 local module = {}
 
@@ -18,6 +19,7 @@ renderTexts = function(props)
     local parent = props.parent
     local paddingInPx = props.paddingInPx / 2
     local pixelsPerStud = props.pixelsPerStud
+    local pageNum = props.pageNum
 
     local sgui = Instance.new("SurfaceGui", parent)
     sgui.SizingMode = "PixelsPerStud"
@@ -38,16 +40,21 @@ renderTexts = function(props)
     scrollingFrame.ScrollBarThickness = 40
     scrollingFrame.ScrollBarImageColor3 = Color3.new(113, 0, 255)
 
-    local texts = {testDict01, testDict02, testDict03}
-
     local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
     local parentHeight = parent.Size.Y * pixelsPerStud
 
     local bottomGap = 0
     local dialogY = bottomGap
 
-    for i, dialog in ipairs(texts) do
-        local charName = texts[pageNum]['char']
+    for i, dialog in ipairs(lines) do
+        local line = lines[pageNum]
+        local charName = line['char']
+
+        local left = dialogConfig[charName]['left']
+
+        print('left' .. ' - start');
+        print(left);
+        print('left' .. ' - end');
         local text = charName .. ": " .. dialog['text']
         local font = Enum.Font.Arial
         local fontHeight = 41
