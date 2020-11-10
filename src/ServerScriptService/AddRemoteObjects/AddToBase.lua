@@ -3,7 +3,7 @@ print('mysss2')
 local Sss = game:GetService("ServerScriptService")
 
 local SceneConfig = require(Sss.Source.AddRemoteObjects.ScenesConfig)
-local Dialog = require(Sss.Source.AddRemoteObjects.Dialog)
+local Dialog = require(Sss.Source.AddDialog.Dialog)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 -- local Part = require(Sss.Source.AddRemoteObjects.Part)
 

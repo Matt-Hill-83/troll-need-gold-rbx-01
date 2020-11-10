@@ -5,6 +5,8 @@ local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 
 local module = {}
 
+local dialogConfig = {Britta = {left = true, color = "Light blue"}}
+
 local testDict01 = {text = "one one one ", color = "Yellow", char = "Britta"}
 local testDict02 = {text = "two", color = "Yellow", char = "Britta"}
 local testDict03 = {
