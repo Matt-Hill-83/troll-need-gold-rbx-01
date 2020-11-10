@@ -5,7 +5,7 @@ local Sss = game:GetService("ServerScriptService")
 local SceneConfig = require(Sss.Source.AddRemoteObjects.ScenesConfig)
 local Dialog = require(Sss.Source.AddDialog.Dialog)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
--- local Part = require(Sss.Source.AddRemoteObjects.Part)
+local Part = require(Sss.Source.AddRemoteObjects.Part)
 
 local sceneConfigs = SceneConfig.getScenesConfig()
 
@@ -59,8 +59,43 @@ renderCharacters = function(parent, itemConfigs)
     return RowOfParts.createRowOfParts(props)
 end
 
+renderWalls = function(parent)
+
+    local childSize = Vector3.new(50, 12, 1)
+    -- local childSize = Vector3.new(parent.Size.X, 12, 1)
+    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 1.1)
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        moveTowardZero = Vector3.new(-1, -1, -1),
+        rowDirection = Vector3.new(-1, -1, -1)
+    }
+
+    local offsetProps = {
+        parent = parent,
+        childSize = childSize,
+        itemDuplicationConfig = itemDuplicationConfig,
+        offset = desiredOffsetFromParentEdge
+    }
+
+    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
+
+    local dialogBlockProps = {
+        name = 'BackWall',
+        parent = parent,
+        color = BrickColor.new("Buttermilk"),
+        size = childSize,
+        position = childPos
+    }
+
+    return Part.createPartWithVectors(dialogBlockProps)
+
+end
+
 renderScenes = function(parent, itemConfigs)
-    local itemProps = {size = Vector3.new(48, 24, 2), partName = "Scene"}
+    renderWalls(parent)
+
+    local itemProps = {size = Vector3.new(36, 16, 2), partName = "Scene"}
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
@@ -93,11 +128,12 @@ function module.addRemoteObjects(base)
         local sceneConfig = sceneConfigs[i]
         local characterConfigs = sceneConfig.frames[frameIndex].characters
         local itemConfigs = sceneConfig.frames[frameIndex].items
+        local dialogConfigs = sceneConfig.frames[frameIndex].dialogs
 
         renderCharacters(newScene, characterConfigs)
         renderItems(newScene, itemConfigs)
 
-        Dialog.renderDialog({parent = newScene})
+        Dialog.renderDialog({parent = newScene, dialogConfigs = dialogConfigs})
 
     end
 

@@ -9,27 +9,20 @@ local dialogColors = {
 }
 
 local dialogConfig = {
-    Britta = {left = true, backgroundColor = dialogColors[1]},
-    Raven = {left = true, backgroundColor = dialogColors[2]},
-    Freckle = {left = true, backgroundColor = dialogColors[3]}
+    Britta = {left = true, backgroundColorIdx = 1},
+    Raven = {left = true, backgroundColorIdx = 2},
+    Freckle = {left = true, backgroundColorIdx = 3}
 }
-
-local testDict01 = {text = "one one one ", color = "Yellow", char = "Britta"}
-local testDict02 = {text = "two", color = "Yellow", char = "Raven"}
-local testDict03 = {
-    text = "three three thre ddd eee fff ggg hhh iii jjj kkk lll mmm nnn ooo ppp qqq rrr sss ttt",
-    color = "Yellow",
-    char = "Freckle"
-}
-local lines = {testDict01, testDict02, testDict03}
 
 local module = {}
 
 renderTexts = function(props)
     local parent = props.parent
-    local paddingInPx = props.paddingInPx / 2
-    local pixelsPerStud = props.pixelsPerStud
-    local pageNum = props.pageNum
+    -- local lines = props.lines
+    local dialogConfigs = props.dialogConfigs
+
+    local pixelsPerStud = 45
+    local paddingInPx = pixelsPerStud / 8
 
     local sgui = Instance.new("SurfaceGui", parent)
     sgui.SizingMode = "PixelsPerStud"
@@ -52,13 +45,13 @@ renderTexts = function(props)
     local bottomGap = 0
     local dialogY = bottomGap
 
-    for i, dialog in ipairs(lines) do
-        local line = lines[i]
+    for i, dialog in ipairs(dialogConfigs) do
+        local line = dialogConfigs[i]
         local charName = line['char']
 
         local left = dialogConfig[charName]['left']
         local lineConfig = dialogConfig[charName]
-        local backgroundColor = lineConfig.backgroundColor
+        local backgroundColor = dialogColors[lineConfig.backgroundColorIdx]
         print('backgroundColor' .. ' - start');
         print(backgroundColor);
         print('backgroundColor' .. ' - end');
@@ -92,7 +85,6 @@ renderTexts = function(props)
         outerLabel.TextYAlignment = Enum.TextYAlignment.Top
         outerLabel.BorderColor3 = Color3.fromRGB(99, 46, 99)
         outerLabel.BorderSizePixel = 2
-        -- outerLabel.BackgroundColor3 = Color3.fromRGB(253, 158, 240)
         outerLabel.BackgroundColor3 = backgroundColor
         outerLabel.TextColor3 = Color3.new(0, 0, 0)
         outerLabel.ZIndex = 1

@@ -9,21 +9,17 @@ local pageNum = 1
 
 renderDialog = function(props)
     local parent = props.parent
-    local pixelsPerStud = 45
-    local paddingInPx = pixelsPerStud / 4
+    local dialogConfigs = props.dialogConfigs
 
     local dialogContainer = renderDialogContainer({parent = parent})
     local textsContainer = renderTextsContainer({parent = dialogContainer})
 
     textsContainer.Material = Enum.Material.Pebble
     textsContainer.BrickColor = BrickColor.new("Institutional white")
-    -- textsContainer.BrickColor = BrickColor.new("Light reddish violet")
 
     local renderTextsProps = {
         parent = textsContainer,
-        pageNum = pageNum,
-        paddingInPx = paddingInPx,
-        pixelsPerStud = pixelsPerStud
+        dialogConfigs = dialogConfigs
     }
     Texts.renderTexts(renderTextsProps)
 

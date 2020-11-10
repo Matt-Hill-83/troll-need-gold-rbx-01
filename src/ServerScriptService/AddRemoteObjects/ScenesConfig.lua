@@ -11,8 +11,30 @@ function module.getScenesConfig()
     local characters = {char01, char02}
     local items = {item01, item02}
 
-    local frame01 = {characters = characters, items = items}
-    local frame02 = {characters = characters, items = items}
+    local dialogs01 = {
+        {text = "Go in the vortex, you said...", char = "Raven"},
+        {text = "Whoa...", char = "Britta"},
+        {text = "What could possibly go wrong, you said...", char = "Raven"},
+        {text = "Holy mother monkey milk...", char = "Britta"},
+        {text = "Lucinda hurt my feelings...", char = "Freckle"}
+    }
+
+    local dialogs02 = {
+        {text = "By the power of...", char = "Troll01"},
+        {text = "I'm new here", char = "Zarla"},
+        {text = "Lucinda hurt my feelings...", char = "Freckle"}
+    }
+
+    local frame01 = {
+        characters = characters,
+        items = items,
+        dialogs = dialogs01
+    }
+    local frame02 = {
+        characters = characters,
+        items = items,
+        dialogs = dialogs02
+    }
 
     local scene02 = {
         decalId = '5902110558',
