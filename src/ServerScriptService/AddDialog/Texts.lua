@@ -49,16 +49,10 @@ renderTexts = function(props)
         local line = dialogConfigs[i]
         local charName = line['char']
 
-        local left = dialogConfig[charName]['left']
+        local left = dialogConfig['left']
         local lineConfig = dialogConfig[charName]
         local backgroundColor = dialogColors[lineConfig.backgroundColorIdx]
-        print('backgroundColor' .. ' - start');
-        print(backgroundColor);
-        print('backgroundColor' .. ' - end');
 
-        print('left' .. ' - start');
-        print(left);
-        print('left' .. ' - end');
         local text = charName .. ": " .. dialog['text']
         local font = Enum.Font.Arial
         local fontHeight = 41
