@@ -23,6 +23,7 @@ renderTexts = function(props)
 
     local pixelsPerStud = 45
     local paddingInPx = pixelsPerStud / 8
+    local fontHeight = pixelsPerStud * 41 / 45
 
     local sgui = Instance.new("SurfaceGui", parent)
     sgui.SizingMode = "PixelsPerStud"
@@ -42,21 +43,21 @@ renderTexts = function(props)
     local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
     local parentHeight = parent.Size.Y * pixelsPerStud
 
-    local bottomGap = 0
-    local dialogY = bottomGap
+    local dialogY = 0
 
     for i, dialog in ipairs(dialogConfigs) do
         local line = dialogConfigs[i]
         local charName = line['char']
-
         local left = dialogConfig['left']
-        local lineConfig = dialogConfig[charName]
-        local backgroundColor = dialogColors[lineConfig.backgroundColorIdx]
+
+        local backgroundColor = dialogColors[4]
+        local charConfig = dialogConfig[charName]
+        if charConfig then
+            backgroundColor = dialogColors[charConfig.backgroundColorIdx]
+        end
 
         local text = charName .. ": " .. dialog['text']
         local font = Enum.Font.Arial
-        local fontHeight = 41
-
         local innerLabelWidth = parentWidth - (2 * paddingInPx)
 
         local calcSize = TextService:GetTextSize(text, fontHeight, font,

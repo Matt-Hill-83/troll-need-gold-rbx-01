@@ -35,7 +35,11 @@ renderItems = function(parent, itemConfigs)
 end
 
 renderCharacters = function(parent, itemConfigs)
-    local itemProps = {size = Vector3.new(6, 8, 1), partName = "Characters"}
+    local characterScale = 0.6
+    local itemProps = {
+        size = Vector3.new(6 * characterScale, 8 * characterScale, 0.5),
+        partName = "Characters"
+    }
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, -1, -1),
@@ -45,9 +49,9 @@ renderCharacters = function(parent, itemConfigs)
 
     local rowProps = {
         parent = parent,
-        xGap = Vector3.new(4, 0, 0),
+        xGap = Vector3.new(1, 0, 0),
         itemDuplicationConfig = itemDuplicationConfig,
-        offset = Vector3.new(-3, 2, 0)
+        offset = Vector3.new(-1, 0, 0)
     }
 
     local props = {
@@ -61,14 +65,14 @@ end
 
 renderWalls = function(parent)
 
-    local childSize = Vector3.new(50, 12, 1)
-    -- local childSize = Vector3.new(parent.Size.X, 12, 1)
-    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 1.1)
+    -- local childSize = Vector3.new(50, 4, 1)
+    local childSize = Vector3.new(parent.Size.X, 4, 1)
+    local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 1)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, -1),
+        alignToParentFarEdge = Vector3.new(1, -1, -1),
         moveTowardZero = Vector3.new(-1, -1, -1),
-        rowDirection = Vector3.new(-1, -1, -1)
+        rowDirection = Vector3.new(-1, 1, -1)
     }
 
     local offsetProps = {
@@ -95,7 +99,7 @@ end
 renderScenes = function(parent, itemConfigs)
     renderWalls(parent)
 
-    local itemProps = {size = Vector3.new(36, 16, 2), partName = "Scene"}
+    local itemProps = {size = Vector3.new(36, 16, 1), partName = "Scene"}
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
@@ -107,7 +111,7 @@ renderScenes = function(parent, itemConfigs)
         parent = parent,
         xGap = Vector3.new(4, 0, 0),
         itemDuplicationConfig = itemDuplicationConfig,
-        offset = Vector3.new(-1, 1, -1)
+        offset = Vector3.new(-1, 0, -1)
     }
 
     local props = {
