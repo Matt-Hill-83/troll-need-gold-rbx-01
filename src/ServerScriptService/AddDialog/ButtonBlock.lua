@@ -15,9 +15,6 @@ renderButtonBlock = function(props)
     local siblingSizeCopy = Vector3.new(sibling.Size.X / 2, newPartHeight,
                                         sibling.Size.Z)
 
-    print('parent.Size.Z' .. ' - start');
-    print(parent.Size.Z);
-    print('parent.Size.Z' .. ' - end');
     local buttonBlockProps = {
         name = 'buttonBlock',
         parent = parent,
