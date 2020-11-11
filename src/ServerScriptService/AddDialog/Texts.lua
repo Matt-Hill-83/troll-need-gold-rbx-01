@@ -18,7 +18,6 @@ local module = {}
 
 renderTexts = function(props)
     local parent = props.parent
-    -- local lines = props.lines
     local dialogConfigs = props.dialogConfigs
 
     local pixelsPerStud = 45
@@ -44,7 +43,6 @@ renderTexts = function(props)
     local parentHeight = parent.Size.Y * pixelsPerStud
 
     local dialogY = 0
-
     for i, dialog in ipairs(dialogConfigs) do
         local line = dialogConfigs[i]
         local charName = line['char']

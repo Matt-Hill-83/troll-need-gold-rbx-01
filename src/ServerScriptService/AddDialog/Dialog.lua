@@ -2,6 +2,7 @@ local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Texts = require(Sss.Source.AddDialog.Texts)
+local Utils = require(Sss.Source.Utils.Utils)
 
 local module = {}
 
@@ -14,8 +15,7 @@ renderDialog = function(props)
     local dialogContainer = renderDialogContainer({parent = parent})
     local textsContainer = renderTextsContainer({parent = dialogContainer})
 
-    textsContainer.Material = Enum.Material.Pebble
-    textsContainer.BrickColor = BrickColor.new("Institutional white")
+    Utils.setMaterialPebble(parent)
 
     local renderTextsProps = {
         parent = textsContainer,
@@ -27,8 +27,8 @@ renderDialog = function(props)
         parent = dialogContainer,
         sibling = textsContainer
     }
-    renderButtonBlock(renderButtonBlockProps)
-
+    -- renderButtonBlock(renderButtonBlockProps)
+    return dialogContainer
 end
 
 renderDialogContainer = function(props)

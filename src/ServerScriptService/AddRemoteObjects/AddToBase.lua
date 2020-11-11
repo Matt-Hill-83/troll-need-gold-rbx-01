@@ -1,11 +1,14 @@
 local module = {}
 print('mysss2')
 local Sss = game:GetService("ServerScriptService")
+local Sss2 = game:GetService("ServerScriptService").Source
 
 local SceneConfig = require(Sss.Source.AddRemoteObjects.ScenesConfig)
 local Dialog = require(Sss.Source.AddDialog.Dialog)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local Part = require(Sss.Source.AddRemoteObjects.Part)
+local ButtonBlock = require(Sss.Source.AddDialog.ButtonBlock)
+local Utils = require(Sss.Source.Utils.Utils)
 
 local sceneConfigs = SceneConfig.getScenesConfig()
 
@@ -49,9 +52,9 @@ renderCharacters = function(parent, itemConfigs)
 
     local rowProps = {
         parent = parent,
-        xGap = Vector3.new(1, 0, 0),
         itemDuplicationConfig = itemDuplicationConfig,
-        offset = Vector3.new(-1, 0, 0)
+        xGap = Vector3.new(1, 0, 0),
+        offset = Vector3.new(-1, 0.5, 0)
     }
 
     local props = {
@@ -64,13 +67,11 @@ renderCharacters = function(parent, itemConfigs)
 end
 
 renderWalls = function(parent)
-
-    -- local childSize = Vector3.new(50, 4, 1)
     local childSize = Vector3.new(parent.Size.X, 4, 1)
     local desiredOffsetFromParentEdge = Vector3.new(-1, -1, 1)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, -1, -1),
+        alignToParentFarEdge = Vector3.new(1, 1, 1),
         moveTowardZero = Vector3.new(-1, -1, -1),
         rowDirection = Vector3.new(-1, 1, -1)
     }
@@ -129,6 +130,8 @@ function module.addRemoteObjects(base)
     local renderedScenes = renderScenes(base, sceneConfigs)
 
     for i, newScene in ipairs(renderedScenes) do
+
+        Utils.setMaterialPebble(newScene)
         local sceneConfig = sceneConfigs[i]
         local characterConfigs = sceneConfig.frames[frameIndex].characters
         local itemConfigs = sceneConfig.frames[frameIndex].items
@@ -137,7 +140,18 @@ function module.addRemoteObjects(base)
         renderCharacters(newScene, characterConfigs)
         renderItems(newScene, itemConfigs)
 
-        Dialog.renderDialog({parent = newScene, dialogConfigs = dialogConfigs})
+        local dialogContainer = Dialog.renderDialog(
+                                    {
+                parent = newScene,
+                dialogConfigs = dialogConfigs
+            })
+
+        local renderButtonBlockProps = {
+            parent = newScene,
+            sibling = dialogContainer
+        }
+
+        ButtonBlock.renderButtonBlock(renderButtonBlockProps)
 
     end
 

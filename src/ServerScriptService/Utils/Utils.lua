@@ -20,6 +20,12 @@ addPadding = function(props)
     UIPadding.PaddingRight = UDim.new(paddingPct, 0)
 end
 
+setMaterialPebble = function(part)
+    part.Material = Enum.Material.Pebble
+    part.BrickColor = BrickColor.new("Institutional white")
+end
+
 module.addPadding = addPadding
+module.setMaterialPebble = setMaterialPebble
 
 return module

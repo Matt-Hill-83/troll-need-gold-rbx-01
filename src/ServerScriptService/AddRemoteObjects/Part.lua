@@ -50,20 +50,6 @@ function createPartWithVectors(props)
 
 end
 
-function getEdgePositionFromCenterPosition(props)
-    local size = props.size
-    local position = props.position
-    local moveTowardZero = props.moveTowardZero
-
-    -- local isMoveTowardZero = moveTowardZero or {x = -1, y = -1, z = -1}
-    local isMoveTowardZero = Vector3.new(-1, 1, -1)
-
-    local halfSize = size * 0.5
-    return position + halfSize * isMoveTowardZero
-
-end
-
 module.createPartWithVectors = createPartWithVectors
-module.getEdgePositionFromCenterPosition = getEdgePositionFromCenterPosition
 module.createPart = createPart
 return module
