@@ -23,11 +23,6 @@ renderDialog = function(props)
     }
     Texts.renderTexts(renderTextsProps)
 
-    local renderButtonBlockProps = {
-        parent = dialogContainer,
-        sibling = textsContainer
-    }
-    -- renderButtonBlock(renderButtonBlockProps)
     return dialogContainer
 end
 

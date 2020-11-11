@@ -15,12 +15,15 @@ renderButtonBlock = function(props)
     local siblingSizeCopy = Vector3.new(sibling.Size.X / 2, newPartHeight,
                                         sibling.Size.Z)
 
+    print('parent.Size.Z' .. ' - start');
+    print(parent.Size.Z);
+    print('parent.Size.Z' .. ' - end');
     local buttonBlockProps = {
         name = 'buttonBlock',
         parent = parent,
         size = siblingSizeCopy,
         position = sibling.Position +
-            Vector3.new(-sibling.Size.X / 4, -distanceY, 0),
+            Vector3.new(-sibling.Size.X / 4, -distanceY, -parent.Size.Z),
         color = BrickColor.new("Light red")
     }
 
