@@ -124,6 +124,19 @@ renderScenes = function(parent, itemConfigs)
     return RowOfParts.createRowOfParts(props)
 end
 
+function cloneScene(props)
+    local parent = props.parent
+    local template = props.template
+    local index = props.index
+
+    local clone = template:Clone()
+    clone.Parent = parent
+    clone.Name = "Scene Clone-" .. index
+    clone.Position = template.Position +
+                         Vector3.new(-5 * index, 5 * index, -5 * index)
+    return clone
+end
+
 function module.addRemoteObjects(base)
     local frameIndex = 1
 
@@ -132,44 +145,56 @@ function module.addRemoteObjects(base)
     local myStuff = workspace:FindFirstChild("My Stuff")
     local templatesFolder = myStuff:FindFirstChild("Templates")
     local sceneTemplate = templatesFolder:FindFirstChild("SceneTemplate")
-
-    local sceneClone = sceneTemplate:Clone()
-
-    sceneClone.Parent = base
-    sceneClone.Name = "Scene Clone"
-    sceneClone.Position = sceneTemplate.Position + Vector3.new(5, 5, 5)
+    local dialogTemplate = templatesFolder:FindFirstChild(
+                               "DialogContainerTemplate")
 
     -- local children = sceneTemplate:GetChildren()
+    -- print('children' .. ' - start');
+    -- print(children);
+    -- print('children' .. ' - end');
+
     -- for i, child in ipairs(children) do
     --     print(child.Name .. " is child number " .. i)
     -- end
 
-    -- for i, newScene in ipairs(renderedScenes) do
+    for i, sceneConfig in ipairs(sceneConfigs) do
 
-    --     Utils.setMaterialPebble(newScene)
-    --     local sceneConfig = sceneConfigs[i]
-    --     local characterConfigs = sceneConfig.frames[frameIndex].characters
-    --     local itemConfigs = sceneConfig.frames[frameIndex].items
-    --     local dialogConfigs = sceneConfig.frames[frameIndex].dialogs
+        --     Utils.setMaterialPebble(newScene)
 
-    --     renderCharacters(newScene, characterConfigs)
-    --     renderItems(newScene, itemConfigs)
+        local sceneClone = cloneScene({
+            parent = base,
+            template = sceneTemplate,
+            index = i - 1
+        })
 
-    --     local dialogContainer = Dialog.renderDialog(
-    --                                 {
-    --             parent = newScene,
-    --             dialogConfigs = dialogConfigs
-    --         })
+        -- local dialogClone = dialogTemplate:Clone()
+        -- dialogClone.Parent = sceneClone
+        -- dialogClone.Name = "Dialog Clone"
+        -- dialogClone.Position = sceneClone.Position + Vector3.new(0, 5, -5)
 
-    --     local renderButtonBlockProps = {
-    --         parent = newScene,
-    --         sibling = dialogContainer
-    --     }
+        --     local characterConfigs = sceneConfig.frames[frameIndex].characters
+        --     local itemConfigs = sceneConfig.frames[frameIndex].items
+        local dialogConfigs = sceneConfig.frames[frameIndex].dialogs
 
-    --     ButtonBlock.renderButtonBlock(renderButtonBlockProps)
+        --     renderCharacters(newScene, characterConfigs)
+        --     renderItems(newScene, itemConfigs)
 
-    -- end
+        local dialogContainer = Dialog.renderDialog(
+                                    {
+                parent = sceneClone,
+                dialogConfigs = dialogConfigs
+            })
 
+        --     local renderButtonBlockProps = {
+        --         parent = newScene,
+        --         sibling = dialogContainer
+        --     }
+
+        --     ButtonBlock.renderButtonBlock(renderButtonBlockProps)
+
+    end
+
+    -- sceneTemplate:Destroy()
 end
 
 return module
