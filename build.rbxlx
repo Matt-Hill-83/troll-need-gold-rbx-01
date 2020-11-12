@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>41.4487762</X>
-					<Y>10.2742453</Y>
-					<Z>-29.3792591</Z>
-					<R00>-0.996658504</R00>
-					<R01>-0.00319685065</R01>
-					<R02>0.081619285</R02>
-					<R10>-2.32830644e-10</R10>
-					<R11>0.999233961</R11>
-					<R12>0.0391378254</R12>
-					<R20>-0.0816818625</R20>
-					<R21>0.0390070453</R21>
-					<R22>-0.995894909</R22>
+					<X>40.5204697</X>
+					<Y>19.1855984</Y>
+					<Z>-27.7155304</Z>
+					<R00>-0.99855125</R00>
+					<R01>-0.018088568</R01>
+					<R02>0.0506781861</R02>
+					<R10>-0</R10>
+					<R11>0.941805422</R11>
+					<R12>0.336158633</R12>
+					<R20>-0.0538096167</R20>
+					<R21>0.335671633</R21>
+					<R22>-0.940440893</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -2961,6 +2961,10 @@ function module.addRemoteObjects(base)
     --     print(child.Name .. " is child number " .. i)
     -- end
 
+    -- TODO: get button to work
+    -- TODO: get button to work
+    -- TODO: get button to work
+
     for i, sceneConfig in ipairs(sceneConfigs) do
 
         --     Utils.setMaterialPebble(newScene)
@@ -2970,6 +2974,7 @@ function module.addRemoteObjects(base)
             template = sceneTemplate,
             index = i - 1
         })
+        local surfaceLight = Instance.new("SurfaceLight", newScene)
 
         local dialogConfigs = sceneConfig.frames[frameIndex].dialogs
 
@@ -3057,8 +3062,8 @@ function module.getScenesConfig()
         name = "log",
         frames = {frame01, frame02}
     }
-    -- local scenes = {scene01}
-    local scenes = {scene01, scene02}
+    local scenes = {scene01}
+    -- local scenes = {scene01, scene02}
 
     return scenes
 

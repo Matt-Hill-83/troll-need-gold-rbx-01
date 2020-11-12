@@ -160,6 +160,10 @@ function module.addRemoteObjects(base)
     --     print(child.Name .. " is child number " .. i)
     -- end
 
+    -- TODO: get button to work
+    -- TODO: get button to work
+    -- TODO: get button to work
+
     for i, sceneConfig in ipairs(sceneConfigs) do
 
         --     Utils.setMaterialPebble(newScene)
@@ -169,6 +173,7 @@ function module.addRemoteObjects(base)
             template = sceneTemplate,
             index = i - 1
         })
+        local surfaceLight = Instance.new("SurfaceLight", newScene)
 
         local dialogConfigs = sceneConfig.frames[frameIndex].dialogs
 
