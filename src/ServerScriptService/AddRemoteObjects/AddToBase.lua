@@ -1,5 +1,4 @@
 local module = {}
-print('mysss2')
 local Sss = game:GetService("ServerScriptService")
 local Sss2 = game:GetService("ServerScriptService").Source
 
@@ -138,31 +137,31 @@ function cloneScene(props)
     clone.Position = template.Position +
                          Vector3.new(-(template.Size.X + gapX) * index,
                                      0 * index, 0 * index)
+    Instance.new("SurfaceLight", clone)
     return clone
 end
 
-function module.addRemoteObjects(base)
-    local frameIndex = 1
+local pageNum = 1
+local savedBase = nil
+function incrementPage()
+    pageNum = pageNum + 1
 
+    local children = savedBase:GetChildren()
+    for _, item in pairs(children) do
+        if item:IsA('Part') then item:Destroy() end
+    end
+
+    addRemoteObjects(savedBase)
+
+end
+
+function addRemoteObjects(base)
+    savedBase = base
     -- local renderedScenes = renderScenes(base, sceneConfigs)
 
     local myStuff = workspace:FindFirstChild("My Stuff")
     local templatesFolder = myStuff:FindFirstChild("Templates")
     local sceneTemplate = templatesFolder:FindFirstChild("SceneTemplate")
-    local dialogTemplate = templatesFolder:FindFirstChild("TextsContainer")
-
-    -- local children = sceneTemplate:GetChildren()
-    -- print('children' .. ' - start');
-    -- print(children);
-    -- print('children' .. ' - end');
-
-    -- for i, child in ipairs(children) do
-    --     print(child.Name .. " is child number " .. i)
-    -- end
-
-    -- TODO: get button to work
-    -- TODO: get button to work
-    -- TODO: get button to work
 
     for i, sceneConfig in ipairs(sceneConfigs) do
 
@@ -171,11 +170,11 @@ function module.addRemoteObjects(base)
         local newScene = cloneScene({
             parent = base,
             template = sceneTemplate,
-            index = i - 1
+            index = i
+            -- index = i - 1
         })
-        local surfaceLight = Instance.new("SurfaceLight", newScene)
 
-        local dialogConfigs = sceneConfig.frames[frameIndex].dialogs
+        local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
         --     renderCharacters(newScene, characterConfigs)
         --     renderItems(newScene, itemConfigs)
@@ -183,21 +182,24 @@ function module.addRemoteObjects(base)
         local dialogContainer = Dialog.renderDialog(
                                     {
                 parent = newScene,
-                dialogConfigs = dialogConfigs
+                dialogConfigs = dialogConfigs,
+                pageNum = pageNum
             })
 
         local renderButtonBlockProps = {
             parent = newScene,
-            sibling = dialogContainer
+            sibling = dialogContainer,
+            incrementPage = incrementPage,
+            pageNum = pageNum
         }
 
         ButtonBlock.renderButtonBlock(renderButtonBlockProps)
 
     end
 
-    sceneTemplate:Destroy()
-    -- dialogTemplate:Destroy()
+    -- sceneTemplate:Destroy()
 end
 
+module.addRemoteObjects = addRemoteObjects
 return module
 

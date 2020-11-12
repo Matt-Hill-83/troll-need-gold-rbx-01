@@ -8,7 +8,7 @@ local dialogColors = {
     Color3.fromRGB(158, 215, 253)
 }
 
-local dialogConfig = {
+local dialogSetup = {
     Britta = {left = true, backgroundColorIdx = 1},
     Raven = {left = true, backgroundColorIdx = 2},
     Freckle = {left = true, backgroundColorIdx = 3}
@@ -46,15 +46,18 @@ renderTexts = function(props)
     for i, dialog in ipairs(dialogConfigs) do
         local line = dialogConfigs[i]
         local charName = line['char']
-        local left = dialogConfig['left']
+        local left = dialogSetup['left']
 
         local backgroundColor = dialogColors[4]
-        local charConfig = dialogConfig[charName]
+        local charConfig = dialogSetup[charName]
         if charConfig then
             backgroundColor = dialogColors[charConfig.backgroundColorIdx]
         end
 
         local text = charName .. ": " .. dialog['text']
+        print('text' .. ' - start');
+        print(text);
+        print('text' .. ' - end');
         local font = Enum.Font.Arial
         local innerLabelWidth = parentWidth - (2 * paddingInPx)
 
