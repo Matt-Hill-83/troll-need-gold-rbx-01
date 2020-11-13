@@ -158,11 +158,14 @@ function addItemsToScene(props)
 
 end
 
-function addScenes(base, sceneTemplate)
+function addScenes(props)
+    local base = props.base
+    local sceneCoords = props.sceneCoords
+    local sceneTemplate = props.sceneTemplate
+
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
         local pageNum = 1
-
         local buttonParent = nil
 
         local newScene = cloneScene({
@@ -183,9 +186,6 @@ function addScenes(base, sceneTemplate)
 
             if newPageNum <= numPages then
                 pageNum = newPageNum
-                print('numPages' .. ' - start');
-                print(numPages);
-                print('numPages' .. ' - end');
 
                 local children = newScene:GetChildren()
                 for _, item in pairs(children) do
@@ -226,16 +226,28 @@ function addRemoteObjects(base)
     savedBase = base
 
     local myStuff = workspace:FindFirstChild("My Stuff")
+    local sceneLocations = myStuff:FindFirstChild("SceneLocations")
+
+    local sceneCoords = {}
+    local children = sceneLocations:GetChildren()
+    for i, item in pairs(children) do
+        if item:IsA('Part') then
+            print(item.Position)
+            sceneCoords[i] = item.Position
+        end
+    end
+
     local templatesFolder = myStuff:FindFirstChild("Templates")
     local sceneTemplate = templatesFolder:FindFirstChild("SceneTemplate")
     local characterTemplate =
         templatesFolder:FindFirstChild("CharacterTemplate")
 
-    print('characterTemplate' .. ' - start');
-    print(characterTemplate);
-    print('characterTemplate' .. ' - end');
-
-    addScenes(base, sceneTemplate)
+    local addScenesProps = {
+        base = base,
+        sceneCoords = sceneCoords,
+        sceneTemplate = sceneTemplate
+    }
+    addScenes(addScenesProps)
 
     -- sceneTemplate.Transparency = 1
     -- sceneTemplate.Position = sceneTemplate.Position +
