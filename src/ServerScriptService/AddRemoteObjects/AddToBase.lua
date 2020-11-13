@@ -123,17 +123,19 @@ function cloneScene(props)
     local parent = props.parent
     local template = props.template
     local index = props.index
+    local sceneOrigin = props.sceneOrigin
 
+    print('parent.Position' .. ' - --------------------start');
+    print(sceneOrigin);
+    print('parent.Position' .. ' - end');
     local gapX = 4
 
     local clone = template:Clone()
     clone.Parent = parent
     clone.Name = "Scene Clone-" .. index
 
-    local startPosition = getStartPosition(parent, clone)
-    clone.Position = startPosition +
-                         Vector3.new(-(template.Size.X + gapX) * index,
-                                     0 * index, -0.5)
+    clone.Position = sceneOrigin
+
     Instance.new("SurfaceLight", clone)
     return clone
 end
@@ -160,7 +162,7 @@ end
 
 function addScenes(props)
     local base = props.base
-    local sceneCoords = props.sceneCoords
+    local sceneOrigins = props.sceneOrigins
     local sceneTemplate = props.sceneTemplate
 
     for i, sceneConfig in ipairs(sceneConfigs) do
@@ -169,7 +171,9 @@ function addScenes(props)
         local buttonParent = nil
 
         local newScene = cloneScene({
-            parent = base,
+            parent = workspace,
+            sceneOrigin = sceneOrigins[i],
+            -- parent = base,
             template = sceneTemplate,
             index = i - 1
         })
@@ -225,15 +229,21 @@ end
 function addRemoteObjects(base)
     savedBase = base
 
-    local myStuff = workspace:FindFirstChild("My Stuff")
+    local myStuff = workspace:FindFirstChild("MyStuff")
     local sceneLocations = myStuff:FindFirstChild("SceneLocations")
 
-    local sceneCoords = {}
+    local sceneOrigins = {}
     local children = sceneLocations:GetChildren()
     for i, item in pairs(children) do
+
+        print('item.Name' .. ' - start');
+        print(item.Name);
+        print('item.Name' .. ' - end');
         if item:IsA('Part') then
-            print(item.Position)
-            sceneCoords[i] = item.Position
+            print('item.Position' .. ' - start');
+            print(item.Position);
+            print('item.Position' .. ' - end');
+            sceneOrigins[i] = item.Position
         end
     end
 
@@ -244,7 +254,7 @@ function addRemoteObjects(base)
 
     local addScenesProps = {
         base = base,
-        sceneCoords = sceneCoords,
+        sceneOrigins = sceneOrigins,
         sceneTemplate = sceneTemplate
     }
     addScenes(addScenesProps)
