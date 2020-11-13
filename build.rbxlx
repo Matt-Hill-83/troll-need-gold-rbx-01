@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>40.4664536</X>
-					<Y>19.4871845</Y>
-					<Z>-17.3811455</Z>
-					<R00>-0.982650101</R00>
-					<R01>-0.0342600904</R01>
-					<R02>0.182277665</R02>
-					<R10>3.7252903e-09</R10>
-					<R11>0.982791066</R11>
-					<R12>0.184720978</R12>
-					<R20>-0.185469419</R20>
-					<R21>0.181516081</R21>
-					<R22>-0.965739608</R22>
+					<X>46.600132</X>
+					<Y>17.6206493</Y>
+					<Z>-17.2073784</Z>
+					<R00>-0.98955524</R00>
+					<R01>-0.0018746272</R01>
+					<R02>0.144142166</R02>
+					<R10>-0</R10>
+					<R11>0.999915481</R11>
+					<R12>0.0130043048</R12>
+					<R20>-0.144154355</R20>
+					<R21>0.012868478</R21>
+					<R22>-0.989471555</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>40.1018982</X>
-					<Y>19.1177425</Y>
-					<Z>-15.449666</Z>
+					<X>46.3118477</X>
+					<Y>17.5946407</Y>
+					<Z>-15.2284355</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -1703,9 +1703,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 				<Content name="LinkedSource"><null></null></Content>
 				<string name="Name">StartUpScript</string>
 				<string name="ScriptGuid">{b240a0d6-584a-4ab9-9877-08ec6e7459f1}</string>
-				<ProtectedString name="Source"><![CDATA[print("Startup Script")
-
-]]></ProtectedString>
+				<ProtectedString name="Source"></ProtectedString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 			</Properties>
@@ -2675,7 +2673,6 @@ getStartPosition = function(parent, child)
 
 end
 
-local pageNum = 1
 local savedBase = nil
 
 function cloneScene(props)
@@ -2697,20 +2694,32 @@ function cloneScene(props)
     return clone
 end
 
-function incrementPage()
-    pageNum = pageNum + 1
+function addItemsToScene(props)
+    local newScene = props.newScene
+    local pageNum = props.pageNum
+    local sceneConfig = props.sceneConfig
 
-    local children = savedBase:GetChildren()
-    for _, item in pairs(children) do
-        if item:IsA('Part') then item:Destroy() end
-    end
+    local characterConfigs = sceneConfig.frames[pageNum].characters
+    local itemConfigs = sceneConfig.frames[pageNum].items
+    local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
-    addRemoteObjects(savedBase)
+    renderCharacters(newScene, characterConfigs)
+    renderItems(newScene, itemConfigs)
+
+    return Dialog.renderDialog({
+        parent = newScene,
+        dialogConfigs = dialogConfigs,
+        pageNum = pageNum
+    })
 
 end
 
 function addScenes(base, sceneTemplate)
     for i, sceneConfig in ipairs(sceneConfigs) do
+        local numPages = #sceneConfig.frames
+        local pageNum = 1
+
+        local buttonParent = nil
 
         local newScene = cloneScene({
             parent = base,
@@ -2718,21 +2727,44 @@ function addScenes(base, sceneTemplate)
             index = i - 1
         })
 
-        local dialogConfigs = sceneConfig.frames[pageNum].dialogs
+        local sceneProps = {
+            newScene = newScene,
+            pageNum = pageNum,
+            sceneConfig = sceneConfig
+        }
+        buttonParent = addItemsToScene(sceneProps)
 
-        --     renderCharacters(newScene, characterConfigs)
-        --     renderItems(newScene, itemConfigs)
+        function incrementPage()
+            local newPageNum = pageNum + 1
 
-        local dialogContainer = Dialog.renderDialog(
-                                    {
-                parent = newScene,
-                dialogConfigs = dialogConfigs,
-                pageNum = pageNum
-            })
+            if newPageNum <= numPages then
+                pageNum = newPageNum
+                print('numPages' .. ' - start');
+                print(numPages);
+                print('numPages' .. ' - end');
+
+                local children = newScene:GetChildren()
+                for _, item in pairs(children) do
+                    local match1 = string.match(item.Name, "Items-")
+                    local match2 = string.match(item.Name, "Characters-")
+                    local match3 = string.match(item.Name, "Dialog-")
+                    if item:IsA('Part') and (match1 or match2 or match3) then
+                        item:Destroy()
+                    end
+                end
+
+                local newSceneProps = {
+                    newScene = newScene,
+                    pageNum = pageNum,
+                    sceneConfig = sceneConfig
+                }
+                buttonParent = addItemsToScene(newSceneProps)
+            end
+        end
 
         local renderButtonBlockProps = {
             parent = newScene,
-            sibling = dialogContainer,
+            sibling = buttonParent,
             incrementPage = incrementPage,
             pageNum = pageNum
         }
@@ -2755,9 +2787,13 @@ function addRemoteObjects(base)
     local characterTemplate =
         templatesFolder:FindFirstChild("CharacterTemplate")
 
+    print('characterTemplate' .. ' - start');
+    print(characterTemplate);
+    print('characterTemplate' .. ' - end');
+
     addScenes(base, sceneTemplate)
 
-    -- sceneTemplate:Destroy()
+    -- sceneTemplate.Transparency = 1
     -- sceneTemplate.Position = sceneTemplate.Position +
     --                              Vector3.new(0, -sceneTemplate.Size.Y * 2, 0)
 end
@@ -2782,11 +2818,14 @@ function module.getScenesConfig()
 
     local char01 = {name = "Raven", decalId = '5897424121'}
     local char02 = {name = "Britta", decalId = '5897433108'}
+    local char03 = {name = "Troll King", decalId = '5897428591'}
+    local char04 = {name = "Freckle", decalId = '5897430768'}
 
     local item01 = {name = "Troll King", decalId = '5897428591'}
     local item02 = {name = "Freckle", decalId = '5897430768'}
 
-    local characters = {char01, char02}
+    local characters01 = {char01, char02}
+    local characters02 = {char03, char04}
     local items = {item01, item02}
 
     local dialogs01 = {
@@ -2804,12 +2843,12 @@ function module.getScenesConfig()
     }
 
     local frame01 = {
-        characters = characters,
+        characters = characters01,
         items = items,
         dialogs = dialogs01
     }
     local frame02 = {
-        characters = characters,
+        characters = characters02,
         items = items,
         dialogs = dialogs02
     }
@@ -3173,7 +3212,7 @@ renderDialogContainer = function(props)
     local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 
     local dialogBlockProps = {
-        name = 'Dialog Container',
+        name = 'DialogContainer',
         parent = parent,
         color = BrickColor.new("Buttermilk"),
         size = childSize,
@@ -3342,7 +3381,33 @@ return module
 						<Content name="LinkedSource"><null></null></Content>
 						<string name="Name">ButtonBlock</string>
 						<string name="ScriptGuid">{e38b0a20-d364-4155-990c-09ef918ff801}</string>
-						<ProtectedString name="Source"><![CDATA[local Sss = game:GetService("ServerScriptService")
+						<ProtectedString name="Source"><![CDATA[-- local run = game:GetService("RunService")
+-- local cam = game.Workspace.CurrentCamera
+-- local player = game.Players.LocalPlayer
+-- local CameraPart = game.Workspace.CurrentCamera
+-- local character = nil
+-- repeat wait() until game.Players.LocalPlayer
+-- local Player = game.Players.LocalPlayer
+-- print('Player' .. ' - start');
+-- print(Player);
+-- print('Player' .. ' - end');
+-- repeat wait() until Player.Character
+-- print('Player.Character' .. ' - start');
+-- print(Player.Character);
+-- print('Player.Character' .. ' - end');
+-- if (not character) or (not character.Parent) then
+--     character = player.CharacterAdded:Wait()
+-- end
+-- while run.RenderStepped:Wait() do
+--     local hrp = player.Character.HumanoidRootPart
+--     CameraPart.CFrame = hrp.CFrame - hrp.CFrame.LookVector * 2
+--     cam.CameraSubject = CameraPart
+--     cam.Focus = hrp.CFrame
+-- end
+--
+--
+--
+local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 
 local module = {}
@@ -3350,7 +3415,6 @@ local module = {}
 renderButtonBlock = function(props)
     local parent = props.parent
     local sibling = props.sibling
-    local pageNum = props.pageNum
     local incrementPage = props.incrementPage
 
     local newPartHeight = 2
@@ -3374,20 +3438,15 @@ renderButtonBlock = function(props)
     sgui.SizingMode = "PixelsPerStud"
 
     local textButton = Instance.new("TextButton", sgui)
-
     textButton.Size = UDim2.new(1, 0, 1, 0)
     textButton.BackgroundColor3 = Color3.new(1, 1, 1)
     textButton.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
-
     textButton.Font = Enum.Font.SourceSans
     textButton.TextColor3 = Color3.new(0, 0, 0)
     textButton.TextSize = 40
+    textButton.Text = "Next Page"
 
-    local function onActivated()
-        pageNum = pageNum + 1
-        textButton.Text = "Page: " .. pageNum
-        incrementPage()
-    end
+    local function onActivated() incrementPage() end
 
     textButton.MouseButton1Click:Connect(onActivated)
     return buttonBlock
@@ -3395,6 +3454,8 @@ end
 
 module.renderButtonBlock = renderButtonBlock
 return module
+
+----
 ]]></ProtectedString>
 						<int64 name="SourceAssetId">-1</int64>
 						<BinaryString name="Tags"></BinaryString>

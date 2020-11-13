@@ -1,3 +1,29 @@
+-- local run = game:GetService("RunService")
+-- local cam = game.Workspace.CurrentCamera
+-- local player = game.Players.LocalPlayer
+-- local CameraPart = game.Workspace.CurrentCamera
+-- local character = nil
+-- repeat wait() until game.Players.LocalPlayer
+-- local Player = game.Players.LocalPlayer
+-- print('Player' .. ' - start');
+-- print(Player);
+-- print('Player' .. ' - end');
+-- repeat wait() until Player.Character
+-- print('Player.Character' .. ' - start');
+-- print(Player.Character);
+-- print('Player.Character' .. ' - end');
+-- if (not character) or (not character.Parent) then
+--     character = player.CharacterAdded:Wait()
+-- end
+-- while run.RenderStepped:Wait() do
+--     local hrp = player.Character.HumanoidRootPart
+--     CameraPart.CFrame = hrp.CFrame - hrp.CFrame.LookVector * 2
+--     cam.CameraSubject = CameraPart
+--     cam.Focus = hrp.CFrame
+-- end
+--
+--
+--
 local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 
@@ -6,7 +32,6 @@ local module = {}
 renderButtonBlock = function(props)
     local parent = props.parent
     local sibling = props.sibling
-    local pageNum = props.pageNum
     local incrementPage = props.incrementPage
 
     local newPartHeight = 2
@@ -36,15 +61,9 @@ renderButtonBlock = function(props)
     textButton.Font = Enum.Font.SourceSans
     textButton.TextColor3 = Color3.new(0, 0, 0)
     textButton.TextSize = 40
+    textButton.Text = "Next Page"
 
-    local function onActivated()
-        pageNum = pageNum + 1
-        textButton.Text = "Page: " .. pageNum
-        print('incrementPage' .. ' - start');
-        print(incrementPage);
-        print('incrementPage' .. ' - end');
-        incrementPage()
-    end
+    local function onActivated() incrementPage() end
 
     textButton.MouseButton1Click:Connect(onActivated)
     return buttonBlock
@@ -52,3 +71,5 @@ end
 
 module.renderButtonBlock = renderButtonBlock
 return module
+
+----

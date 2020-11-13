@@ -46,7 +46,7 @@ renderDialogContainer = function(props)
     local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 
     local dialogBlockProps = {
-        name = 'Dialog Container',
+        name = 'DialogContainer',
         parent = parent,
         color = BrickColor.new("Buttermilk"),
         size = childSize,

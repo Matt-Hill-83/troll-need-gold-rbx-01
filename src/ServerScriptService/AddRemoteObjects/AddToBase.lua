@@ -145,9 +145,16 @@ function addItemsToScene(props)
 
     local characterConfigs = sceneConfig.frames[pageNum].characters
     local itemConfigs = sceneConfig.frames[pageNum].items
+    local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
     renderCharacters(newScene, characterConfigs)
     renderItems(newScene, itemConfigs)
+
+    return Dialog.renderDialog({
+        parent = newScene,
+        dialogConfigs = dialogConfigs,
+        pageNum = pageNum
+    })
 
 end
 
@@ -155,6 +162,8 @@ function addScenes(base, sceneTemplate)
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
         local pageNum = 1
+
+        local buttonParent = nil
 
         local newScene = cloneScene({
             parent = base,
@@ -167,7 +176,7 @@ function addScenes(base, sceneTemplate)
             pageNum = pageNum,
             sceneConfig = sceneConfig
         }
-        addItemsToScene(sceneProps)
+        buttonParent = addItemsToScene(sceneProps)
 
         function incrementPage()
             local newPageNum = pageNum + 1
@@ -180,9 +189,10 @@ function addScenes(base, sceneTemplate)
 
                 local children = newScene:GetChildren()
                 for _, item in pairs(children) do
-                    local match1 = string.match(item.Name, "Scene")
-                    local match2 = string.match(item.Name, "Character")
-                    if item:IsA('Part') and (match1 or match2) then
+                    local match1 = string.match(item.Name, "Items-")
+                    local match2 = string.match(item.Name, "Characters-")
+                    local match3 = string.match(item.Name, "Dialog-")
+                    if item:IsA('Part') and (match1 or match2 or match3) then
                         item:Destroy()
                     end
                 end
@@ -192,22 +202,13 @@ function addScenes(base, sceneTemplate)
                     pageNum = pageNum,
                     sceneConfig = sceneConfig
                 }
-                addItemsToScene(newSceneProps)
+                buttonParent = addItemsToScene(newSceneProps)
             end
         end
 
-        local dialogConfigs = sceneConfig.frames[pageNum].dialogs
-
-        local dialogContainer = Dialog.renderDialog(
-                                    {
-                parent = newScene,
-                dialogConfigs = dialogConfigs,
-                pageNum = pageNum
-            })
-
         local renderButtonBlockProps = {
             parent = newScene,
-            sibling = dialogContainer,
+            sibling = buttonParent,
             incrementPage = incrementPage,
             pageNum = pageNum
         }
