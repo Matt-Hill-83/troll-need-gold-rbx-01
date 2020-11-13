@@ -4757,7 +4757,6 @@ getScenePosition = function(parent, child)
     }
 
     return RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-
 end
 
 getStartPosition = function(parent, child)
@@ -4791,6 +4790,7 @@ function cloneScene(props)
     clone.Name = "Scene Clone-" .. index
     local origin = getScenePosition(sceneOrigin, clone)
     clone.Position = origin
+    sceneOrigin.Transparency = 0.9
 
     Instance.new("SurfaceLight", clone)
     return clone

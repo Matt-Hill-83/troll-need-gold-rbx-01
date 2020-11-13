@@ -115,7 +115,7 @@ function cloneScene(props)
     clone.Name = "Scene Clone-" .. index
     local origin = getScenePosition(sceneOrigin, clone)
     clone.Position = origin
-    sceneOrigin.Transparency = 0.9
+    sceneOrigin.Transparency = 0.7
 
     Instance.new("SurfaceLight", clone)
     return clone
