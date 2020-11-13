@@ -1,29 +1,3 @@
--- local run = game:GetService("RunService")
--- local cam = game.Workspace.CurrentCamera
--- local player = game.Players.LocalPlayer
--- local CameraPart = game.Workspace.CurrentCamera
--- local character = nil
--- repeat wait() until game.Players.LocalPlayer
--- local Player = game.Players.LocalPlayer
--- print('Player' .. ' - start');
--- print(Player);
--- print('Player' .. ' - end');
--- repeat wait() until Player.Character
--- print('Player.Character' .. ' - start');
--- print(Player.Character);
--- print('Player.Character' .. ' - end');
--- if (not character) or (not character.Parent) then
---     character = player.CharacterAdded:Wait()
--- end
--- while run.RenderStepped:Wait() do
---     local hrp = player.Character.HumanoidRootPart
---     CameraPart.CFrame = hrp.CFrame - hrp.CFrame.LookVector * 2
---     cam.CameraSubject = CameraPart
---     cam.Focus = hrp.CFrame
--- end
---
---
---
 local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 
