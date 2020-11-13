@@ -34,7 +34,7 @@ function module.getScenesConfig()
         dialogs = dialogs01
     }
     local frame02 = {
-        characters = characters01,
+        characters = characters02,
         items = items,
         dialogs = dialogs02
     }

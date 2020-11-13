@@ -30,11 +30,9 @@ renderButtonBlock = function(props)
     sgui.SizingMode = "PixelsPerStud"
 
     local textButton = Instance.new("TextButton", sgui)
-
     textButton.Size = UDim2.new(1, 0, 1, 0)
     textButton.BackgroundColor3 = Color3.new(1, 1, 1)
     textButton.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
-
     textButton.Font = Enum.Font.SourceSans
     textButton.TextColor3 = Color3.new(0, 0, 0)
     textButton.TextSize = 40

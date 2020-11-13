@@ -162,9 +162,10 @@ function addScenes(base, sceneTemplate)
 
         local dialogConfigs = sceneConfig.frames[pageNum].dialogs
         local characterConfigs = sceneConfig.frames[pageNum].characters
+        local itemConfigs = sceneConfig.frames[pageNum].items
 
         renderCharacters(newScene, characterConfigs)
-        --     renderItems(newScene, itemConfigs)
+        renderItems(newScene, itemConfigs)
 
         local dialogContainer = Dialog.renderDialog(
                                     {
