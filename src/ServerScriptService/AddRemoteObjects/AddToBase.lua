@@ -65,35 +65,23 @@ renderCharacters = function(parent, itemConfigs)
     return RowOfParts.createRowOfParts(props)
 end
 
-renderWalls = function(parent)
-    local childSize = Vector3.new(parent.Size.X, 6, 1)
+getScenePosition = function(parent, child)
     local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, 1),
+        alignToParentFarEdge = Vector3.new(1, -1, -1),
         moveTowardZero = Vector3.new(-1, 1, -1),
         rowDirection = Vector3.new(-1, 1, -1)
     }
 
     local offsetProps = {
         parent = parent,
-        childSize = childSize,
+        childSize = child.Size,
         itemDuplicationConfig = itemDuplicationConfig,
         offset = desiredOffsetFromParentEdge
     }
 
-    local childPos = RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-
-    local dialogBlockProps = {
-        name = 'BackWall',
-        parent = parent,
-        color = BrickColor.new("Buttermilk"),
-        size = childSize,
-        position = childPos
-    }
-
-    return Part.createPartWithVectors(dialogBlockProps)
-
+    return RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 end
 
 getStartPosition = function(parent, child)
@@ -114,10 +102,7 @@ getStartPosition = function(parent, child)
     }
 
     return RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
-
 end
-
-local savedBase = nil
 
 function cloneScene(props)
     local parent = props.parent
@@ -125,16 +110,12 @@ function cloneScene(props)
     local index = props.index
     local sceneOrigin = props.sceneOrigin
 
-    print('parent.Position' .. ' - --------------------start');
-    print(sceneOrigin);
-    print('parent.Position' .. ' - end');
-    local gapX = 4
-
     local clone = template:Clone()
     clone.Parent = parent
     clone.Name = "Scene Clone-" .. index
-
-    clone.Position = sceneOrigin
+    local origin = getScenePosition(sceneOrigin, clone)
+    clone.Position = origin
+    sceneOrigin.Transparency = 0.9
 
     Instance.new("SurfaceLight", clone)
     return clone
@@ -173,7 +154,6 @@ function addScenes(props)
         local newScene = cloneScene({
             parent = workspace,
             sceneOrigin = sceneOrigins[i],
-            -- parent = base,
             template = sceneTemplate,
             index = i - 1
         })
@@ -227,7 +207,6 @@ end
 -- TODO: abstract out createTexts, so entire scene is not recreated
 
 function addRemoteObjects(base)
-    savedBase = base
 
     local myStuff = workspace:FindFirstChild("MyStuff")
     local sceneLocations = myStuff:FindFirstChild("SceneLocations")
@@ -236,14 +215,10 @@ function addRemoteObjects(base)
     local children = sceneLocations:GetChildren()
     for i, item in pairs(children) do
 
-        print('item.Name' .. ' - start');
-        print(item.Name);
-        print('item.Name' .. ' - end');
         if item:IsA('Part') then
-            print('item.Position' .. ' - start');
-            print(item.Position);
-            print('item.Position' .. ' - end');
-            sceneOrigins[i] = item.Position
+            sceneOrigins[i] = item
+
+            --
         end
     end
 
