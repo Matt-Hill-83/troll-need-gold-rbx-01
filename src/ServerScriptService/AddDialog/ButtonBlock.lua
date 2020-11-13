@@ -40,6 +40,9 @@ renderButtonBlock = function(props)
     local function onActivated()
         pageNum = pageNum + 1
         textButton.Text = "Page: " .. pageNum
+        print('incrementPage' .. ' - start');
+        print(incrementPage);
+        print('incrementPage' .. ' - end');
         incrementPage()
     end
 

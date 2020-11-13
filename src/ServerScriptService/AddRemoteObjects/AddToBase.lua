@@ -117,7 +117,6 @@ getStartPosition = function(parent, child)
 
 end
 
-local pageNum = 1
 local savedBase = nil
 
 function cloneScene(props)
@@ -139,20 +138,23 @@ function cloneScene(props)
     return clone
 end
 
-function incrementPage()
-    pageNum = pageNum + 1
+function addItemsToScene(props)
+    local newScene = props.newScene
+    local pageNum = props.pageNum
+    local sceneConfig = props.sceneConfig
 
-    local children = savedBase:GetChildren()
-    for _, item in pairs(children) do
-        if item:IsA('Part') then item:Destroy() end
-    end
+    local characterConfigs = sceneConfig.frames[pageNum].characters
+    local itemConfigs = sceneConfig.frames[pageNum].items
 
-    addRemoteObjects(savedBase)
+    renderCharacters(newScene, characterConfigs)
+    renderItems(newScene, itemConfigs)
 
 end
 
 function addScenes(base, sceneTemplate)
     for i, sceneConfig in ipairs(sceneConfigs) do
+        local numPages = #sceneConfig.frames
+        local pageNum = 1
 
         local newScene = cloneScene({
             parent = base,
@@ -160,12 +162,41 @@ function addScenes(base, sceneTemplate)
             index = i - 1
         })
 
-        local dialogConfigs = sceneConfig.frames[pageNum].dialogs
-        local characterConfigs = sceneConfig.frames[pageNum].characters
-        local itemConfigs = sceneConfig.frames[pageNum].items
+        local sceneProps = {
+            newScene = newScene,
+            pageNum = pageNum,
+            sceneConfig = sceneConfig
+        }
+        addItemsToScene(sceneProps)
 
-        renderCharacters(newScene, characterConfigs)
-        renderItems(newScene, itemConfigs)
+        function incrementPage()
+            local newPageNum = pageNum + 1
+
+            if newPageNum <= numPages then
+                pageNum = newPageNum
+                print('numPages' .. ' - start');
+                print(numPages);
+                print('numPages' .. ' - end');
+
+                local children = newScene:GetChildren()
+                for _, item in pairs(children) do
+                    local match1 = string.match(item.Name, "Scene")
+                    local match2 = string.match(item.Name, "Character")
+                    if item:IsA('Part') and (match1 or match2) then
+                        item:Destroy()
+                    end
+                end
+
+                local newSceneProps = {
+                    newScene = newScene,
+                    pageNum = pageNum,
+                    sceneConfig = sceneConfig
+                }
+                addItemsToScene(newSceneProps)
+            end
+        end
+
+        local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
         local dialogContainer = Dialog.renderDialog(
                                     {
