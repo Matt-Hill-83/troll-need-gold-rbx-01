@@ -96,32 +96,29 @@ renderWalls = function(parent)
 
 end
 
-renderScenes = function(parent, itemConfigs)
-    renderWalls(parent)
-
-    local itemProps = {size = Vector3.new(42, 16, 1), partName = "Scene"}
+getStartPosition = function(parent, child)
+    local childSize = child.Size
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
         moveTowardZero = Vector3.new(-1, 1, -1),
-        rowDirection = Vector3.new(-1, 1, 1)
+        rowDirection = Vector3.new(-1, 1, -1)
     }
 
-    local rowProps = {
+    local offsetProps = {
         parent = parent,
-        xGap = Vector3.new(4, 0, 0),
+        childSize = childSize,
         itemDuplicationConfig = itemDuplicationConfig,
-        offset = Vector3.new(-1, 0, -1)
+        offset = desiredOffsetFromParentEdge
     }
 
-    local props = {
-        rowProps = rowProps,
-        itemConfigs = itemConfigs,
-        itemProps = itemProps
-    }
+    return RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 
-    return RowOfParts.createRowOfParts(props)
 end
+
+local pageNum = 1
+local savedBase = nil
 
 function cloneScene(props)
     local parent = props.parent
@@ -134,15 +131,14 @@ function cloneScene(props)
     clone.Parent = parent
     clone.Name = "Scene Clone-" .. index
 
-    clone.Position = template.Position +
+    local startPosition = getStartPosition(parent, clone)
+    clone.Position = startPosition +
                          Vector3.new(-(template.Size.X + gapX) * index,
-                                     0 * index, 0 * index)
+                                     0 * index, -0.5)
     Instance.new("SurfaceLight", clone)
     return clone
 end
 
-local pageNum = 1
-local savedBase = nil
 function incrementPage()
     pageNum = pageNum + 1
 
@@ -155,28 +151,19 @@ function incrementPage()
 
 end
 
-function addRemoteObjects(base)
-    savedBase = base
-    -- local renderedScenes = renderScenes(base, sceneConfigs)
-
-    local myStuff = workspace:FindFirstChild("My Stuff")
-    local templatesFolder = myStuff:FindFirstChild("Templates")
-    local sceneTemplate = templatesFolder:FindFirstChild("SceneTemplate")
-
+function addScenes(base, sceneTemplate)
     for i, sceneConfig in ipairs(sceneConfigs) do
-
-        --     Utils.setMaterialPebble(newScene)
 
         local newScene = cloneScene({
             parent = base,
             template = sceneTemplate,
-            index = i
-            -- index = i - 1
+            index = i - 1
         })
 
         local dialogConfigs = sceneConfig.frames[pageNum].dialogs
+        local characterConfigs = sceneConfig.frames[pageNum].characters
 
-        --     renderCharacters(newScene, characterConfigs)
+        renderCharacters(newScene, characterConfigs)
         --     renderItems(newScene, itemConfigs)
 
         local dialogContainer = Dialog.renderDialog(
@@ -196,8 +183,30 @@ function addRemoteObjects(base)
         ButtonBlock.renderButtonBlock(renderButtonBlockProps)
 
     end
+end
 
-    -- sceneTemplate:Destroy()
+-- TODO: develop story
+-- TODO: re-create characters when new frame
+-- TODO: abstract out createTexts, so entire scene is not recreated
+
+function addRemoteObjects(base)
+    savedBase = base
+
+    local myStuff = workspace:FindFirstChild("My Stuff")
+    local templatesFolder = myStuff:FindFirstChild("Templates")
+    local sceneTemplate = templatesFolder:FindFirstChild("SceneTemplate")
+    local characterTemplate =
+        templatesFolder:FindFirstChild("CharacterTemplate")
+
+    print('characterTemplate' .. ' - start');
+    print(characterTemplate);
+    print('characterTemplate' .. ' - end');
+
+    addScenes(base, sceneTemplate)
+
+    -- sceneTemplate.Transparency = 1
+    -- sceneTemplate.Position = sceneTemplate.Position +
+    --                              Vector3.new(0, -sceneTemplate.Size.Y * 2, 0)
 end
 
 module.addRemoteObjects = addRemoteObjects

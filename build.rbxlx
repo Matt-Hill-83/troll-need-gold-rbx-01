@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>24.9067955</X>
-					<Y>10.5015736</Y>
-					<Z>-36.5037346</Z>
-					<R00>-0.999551952</R00>
-					<R01>0.0082725659</R01>
-					<R02>-0.028768532</R02>
-					<R10>9.31322686e-10</R10>
-					<R11>0.9610551</R11>
-					<R12>0.276357114</R12>
-					<R20>0.029934328</R20>
-					<R21>0.276233286</R21>
-					<R22>-0.960624337</R22>
+					<X>40.4664536</X>
+					<Y>19.4871845</Y>
+					<Z>-17.3811455</Z>
+					<R00>-0.982650101</R00>
+					<R01>-0.0342600904</R01>
+					<R02>0.182277665</R02>
+					<R10>3.7252903e-09</R10>
+					<R11>0.982791066</R11>
+					<R12>0.184720978</R12>
+					<R20>-0.185469419</R20>
+					<R21>0.181516081</R21>
+					<R22>-0.965739608</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>26</X>
-					<Y>0</Y>
-					<Z>0</Z>
+					<X>40.1018982</X>
+					<Y>19.1177425</Y>
+					<Z>-15.449666</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -323,9 +323,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">4</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>41</X>
-							<Y>11.9992847</Y>
-							<Z>9.5</Z>
+							<X>42</X>
+							<Y>11</Y>
+							<Z>13</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -402,119 +402,21 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<float name="Transparency">0</float>
 						</Properties>
 					</Item>
-					<Item class="Weld" referent="RBX550837d2d4c04f94bdae3f145fde63bb">
+					<Item class="SurfaceLight" referent="RBX722a84b206694ec89241741cd4205b65">
 						<Properties>
+							<float name="Angle">90</float>
 							<BinaryString name="AttributesSerialize"></BinaryString>
-							<CoordinateFrame name="C0">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>-1</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>-1</R11>
-								<R12>0</R12>
-								<R20>0</R20>
-								<R21>0</R21>
-								<R22>-1</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>-12.7999992</X>
-								<Y>6.40000057</Y>
-								<Z>0.25</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>-1</R11>
-								<R12>0</R12>
-								<R20>0</R20>
-								<R21>0</R21>
-								<R22>-1</R22>
-							</CoordinateFrame>
+							<float name="Brightness">1</float>
+							<Color3 name="Color">
+								<R>1</R>
+								<G>1</G>
+								<B>1</B>
+							</Color3>
 							<bool name="Enabled">true</bool>
-							<string name="Name">Weld</string>
-							<Ref name="Part0">RBX668499a1f5f241b6881d7f0fed7fa2f2</Ref>
-							<Ref name="Part1">RBX898807dbe43c4f539a5ccc3439e39e44</Ref>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-					<Item class="Weld" referent="RBXab4d23be0d5745b5b985d58b111f077f">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<CoordinateFrame name="C0">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>-1</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>-1</R11>
-								<R12>0</R12>
-								<R20>0</R20>
-								<R21>0</R21>
-								<R22>-1</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>-8</X>
-								<Y>-4</Y>
-								<Z>0.5</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>-1</R11>
-								<R12>0</R12>
-								<R20>0</R20>
-								<R21>0</R21>
-								<R22>-1</R22>
-							</CoordinateFrame>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Weld</string>
-							<Ref name="Part0">RBX668499a1f5f241b6881d7f0fed7fa2f2</Ref>
-							<Ref name="Part1">RBXf0ca8dd9d47241beb2ed4c76442bfa38</Ref>
-							<int64 name="SourceAssetId">-1</int64>
-							<BinaryString name="Tags"></BinaryString>
-						</Properties>
-					</Item>
-					<Item class="Weld" referent="RBX8b8739da38784eab99b05f6433ae106b">
-						<Properties>
-							<BinaryString name="AttributesSerialize"></BinaryString>
-							<CoordinateFrame name="C0">
-								<X>0</X>
-								<Y>0</Y>
-								<Z>-1</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>-1</R11>
-								<R12>0</R12>
-								<R20>0</R20>
-								<R21>0</R21>
-								<R22>-1</R22>
-							</CoordinateFrame>
-							<CoordinateFrame name="C1">
-								<X>14</X>
-								<Y>6</Y>
-								<Z>0.5</Z>
-								<R00>1</R00>
-								<R01>0</R01>
-								<R02>0</R02>
-								<R10>0</R10>
-								<R11>-1</R11>
-								<R12>0</R12>
-								<R20>0</R20>
-								<R21>0</R21>
-								<R22>-1</R22>
-							</CoordinateFrame>
-							<bool name="Enabled">true</bool>
-							<string name="Name">Weld</string>
-							<Ref name="Part0">RBX668499a1f5f241b6881d7f0fed7fa2f2</Ref>
-							<Ref name="Part1">RBX0768d321dcdc41f584a2c5dcea229077</Ref>
+							<token name="Face">5</token>
+							<string name="Name">SurfaceLight</string>
+							<float name="Range">16</float>
+							<bool name="Shadows">false</bool>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
@@ -533,9 +435,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">4</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>49</X>
-							<Y>15.9992847</Y>
-							<Z>8</Z>
+							<X>50</X>
+							<Y>14.9992847</Y>
+							<Z>11.5009766</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -1488,6 +1390,45 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							</Item>
 						</Item>
 					</Item>
+					<Item class="Weld" referent="RBX902f59064cab4557887f529e77843d76">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0.5</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>0</R20>
+								<R21>0</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>8</X>
+								<Y>3.99928474</Y>
+								<Z>-0.999023438</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>0</R20>
+								<R21>0</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<bool name="Enabled">true</bool>
+							<string name="Name">Weld</string>
+							<Ref name="Part0">RBXf0ca8dd9d47241beb2ed4c76442bfa38</Ref>
+							<Ref name="Part1">RBX668499a1f5f241b6881d7f0fed7fa2f2</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
 				</Item>
 				<Item class="Part" referent="RBX898807dbe43c4f539a5ccc3439e39e44">
 					<Properties>
@@ -1502,9 +1443,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">4</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>53.7999992</X>
-							<Y>5.59928417</Y>
-							<Z>8.25</Z>
+							<X>57.8000031</X>
+							<Y>4.39999962</Y>
+							<Z>11.75</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -1533,7 +1474,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<bool name="Locked">false</bool>
 						<bool name="Massless">false</bool>
 						<token name="Material">256</token>
-						<string name="Name">Characters-1</string>
+						<string name="Name">CharacterTemplate</string>
 						<float name="Reflectance">0</float>
 						<float name="RightParamA">-0.5</float>
 						<float name="RightParamB">0.5</float>
@@ -1581,6 +1522,45 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<float name="Transparency">0</float>
 						</Properties>
 					</Item>
+					<Item class="Weld" referent="RBXe1ed5c77c5904a8e808753d27e4ed2d8">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0.25</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>0</R20>
+								<R21>0</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>15.8000031</X>
+								<Y>-6.60000038</Y>
+								<Z>-1</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>0</R20>
+								<R21>0</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<bool name="Enabled">true</bool>
+							<string name="Name">Weld</string>
+							<Ref name="Part0">RBX898807dbe43c4f539a5ccc3439e39e44</Ref>
+							<Ref name="Part1">RBX668499a1f5f241b6881d7f0fed7fa2f2</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
+						</Properties>
+					</Item>
 				</Item>
 				<Item class="Part" referent="RBX0768d321dcdc41f584a2c5dcea229077">
 					<Properties>
@@ -1595,9 +1575,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">4</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>27</X>
-							<Y>5.99928474</Y>
-							<Z>8</Z>
+							<X>28</X>
+							<Y>5</Y>
+							<Z>11.5</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -1672,6 +1652,45 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<BinaryString name="Tags"></BinaryString>
 							<Content name="Texture"><url>rbxassetid://5897428591</url></Content>
 							<float name="Transparency">0</float>
+						</Properties>
+					</Item>
+					<Item class="Weld" referent="RBX6bf5dea401cd46ea89ada0992351acc2">
+						<Properties>
+							<BinaryString name="AttributesSerialize"></BinaryString>
+							<CoordinateFrame name="C0">
+								<X>0</X>
+								<Y>0</Y>
+								<Z>0.5</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>0</R20>
+								<R21>0</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<CoordinateFrame name="C1">
+								<X>-14</X>
+								<Y>-6</Y>
+								<Z>-1</Z>
+								<R00>1</R00>
+								<R01>0</R01>
+								<R02>0</R02>
+								<R10>0</R10>
+								<R11>1</R11>
+								<R12>0</R12>
+								<R20>0</R20>
+								<R21>0</R21>
+								<R22>1</R22>
+							</CoordinateFrame>
+							<bool name="Enabled">true</bool>
+							<string name="Name">Weld</string>
+							<Ref name="Part0">RBX0768d321dcdc41f584a2c5dcea229077</Ref>
+							<Ref name="Part1">RBX668499a1f5f241b6881d7f0fed7fa2f2</Ref>
+							<int64 name="SourceAssetId">-1</int64>
+							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
 				</Item>
@@ -2148,8 +2167,8 @@ return FirebaseService;]]></ProtectedString>
 			<bool name="EnableScriptCollabVersionHistoryOnLoad">false</bool>
 			<string name="Name">StudioData</string>
 			<int64 name="SourceAssetId">-1</int64>
-			<int64 name="SrcPlaceId">815107271</int64>
-			<int64 name="SrcUniverseId">341607908</int64>
+			<int64 name="SrcPlaceId">5948744156</int64>
+			<int64 name="SrcUniverseId">2138481984</int64>
 			<BinaryString name="Tags"></BinaryString>
 		</Properties>
 	</Item>
@@ -2182,12 +2201,12 @@ return FirebaseService;]]></ProtectedString>
 			<int64 name="GameSettingsAssetIDShirt">0</int64>
 			<int64 name="GameSettingsAssetIDTeeShirt">0</int64>
 			<int64 name="GameSettingsAssetIDTorso">0</int64>
-			<token name="GameSettingsAvatar">2</token>
+			<token name="GameSettingsAvatar">1</token>
 			<token name="GameSettingsR15Collision">0</token>
-			<NumberRange name="GameSettingsScaleRangeBodyType">0 0 </NumberRange>
+			<NumberRange name="GameSettingsScaleRangeBodyType">0 1 </NumberRange>
 			<NumberRange name="GameSettingsScaleRangeHead">0.95 1 </NumberRange>
 			<NumberRange name="GameSettingsScaleRangeHeight">0.9 1.05 </NumberRange>
-			<NumberRange name="GameSettingsScaleRangeProportion">0 0 </NumberRange>
+			<NumberRange name="GameSettingsScaleRangeProportion">0 1 </NumberRange>
 			<NumberRange name="GameSettingsScaleRangeWidth">0.7 1 </NumberRange>
 			<float name="HealthDisplayDistance">100</float>
 			<bool name="LoadCharacterAppearance">true</bool>
@@ -2538,7 +2557,6 @@ return {a = '234'}
 						<string name="Name">AddToBase</string>
 						<string name="ScriptGuid">{5b0290ad-cf36-4af9-807c-0f88e0f4c6d8}</string>
 						<ProtectedString name="Source"><![CDATA[local module = {}
-print('mysss2')
 local Sss = game:GetService("ServerScriptService")
 local Sss2 = game:GetService("ServerScriptService").Source
 
@@ -2636,32 +2654,29 @@ renderWalls = function(parent)
 
 end
 
-renderScenes = function(parent, itemConfigs)
-    renderWalls(parent)
-
-    local itemProps = {size = Vector3.new(42, 16, 1), partName = "Scene"}
+getStartPosition = function(parent, child)
+    local childSize = child.Size
+    local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
 
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
         moveTowardZero = Vector3.new(-1, 1, -1),
-        rowDirection = Vector3.new(-1, 1, 1)
+        rowDirection = Vector3.new(-1, 1, -1)
     }
 
-    local rowProps = {
+    local offsetProps = {
         parent = parent,
-        xGap = Vector3.new(4, 0, 0),
+        childSize = childSize,
         itemDuplicationConfig = itemDuplicationConfig,
-        offset = Vector3.new(-1, 0, -1)
+        offset = desiredOffsetFromParentEdge
     }
 
-    local props = {
-        rowProps = rowProps,
-        itemConfigs = itemConfigs,
-        itemProps = itemProps
-    }
+    return RowOfParts.getCenterPosFromDesiredEdgeOffset(offsetProps)
 
-    return RowOfParts.createRowOfParts(props)
 end
+
+local pageNum = 1
+local savedBase = nil
 
 function cloneScene(props)
     local parent = props.parent
@@ -2674,82 +2689,35 @@ function cloneScene(props)
     clone.Parent = parent
     clone.Name = "Scene Clone-" .. index
 
-    clone.Position = template.Position +
+    local startPosition = getStartPosition(parent, clone)
+    clone.Position = startPosition +
                          Vector3.new(-(template.Size.X + gapX) * index,
-                                     0 * index, 0 * index)
+                                     0 * index, -0.5)
     Instance.new("SurfaceLight", clone)
     return clone
 end
 
-local pageNum = 1
-local savedBase = nil
 function incrementPage()
-
-    print('savedBase' .. ' - start');
-    print(savedBase);
-    print('savedBase' .. ' - end');
-    print('pageNum' .. ' - start');
-    print(pageNum);
-    print('pageNum' .. ' - end');
     pageNum = pageNum + 1
 
     local children = savedBase:GetChildren()
-
     for _, item in pairs(children) do
         if item:IsA('Part') then item:Destroy() end
     end
 
-    print('children' .. ' - start');
-    print(children);
-    print('children' .. ' - end');
-
-    for i, child in ipairs(children) do
-        print(child.Name .. " is child number " .. i)
-    end
-
-    for _, item in pairs(children) do
-        if item:IsA('Part') then item:Destroy() end
-    end
     addRemoteObjects(savedBase)
 
 end
 
-function addRemoteObjects(base)
-    savedBase = base
-    -- local renderedScenes = renderScenes(base, sceneConfigs)
-
-    local myStuff = workspace:FindFirstChild("My Stuff")
-    local templatesFolder = myStuff:FindFirstChild("Templates")
-    local sceneTemplate = templatesFolder:FindFirstChild("SceneTemplate")
-    local dialogTemplate = templatesFolder:FindFirstChild("TextsContainer")
-
-    -- local children = sceneTemplate:GetChildren()
-    -- print('children' .. ' - start');
-    -- print(children);
-    -- print('children' .. ' - end');
-
-    -- for i, child in ipairs(children) do
-    --     print(child.Name .. " is child number " .. i)
-    -- end
-
-    -- TODO: get button to work
-    -- TODO: get button to work
-    -- TODO: get button to work
-
+function addScenes(base, sceneTemplate)
     for i, sceneConfig in ipairs(sceneConfigs) do
-
-        --     Utils.setMaterialPebble(newScene)
 
         local newScene = cloneScene({
             parent = base,
             template = sceneTemplate,
-            index = i
-            -- index = i - 1
+            index = i - 1
         })
 
-        print('pageNum---scene' .. ' - start');
-        print(pageNum);
-        print('pageNum---scene' .. ' - end');
         local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
         --     renderCharacters(newScene, characterConfigs)
@@ -2772,9 +2740,26 @@ function addRemoteObjects(base)
         ButtonBlock.renderButtonBlock(renderButtonBlockProps)
 
     end
+end
+
+-- TODO: develop story
+-- TODO: re-create characters when new frame
+-- TODO: abstract out createTexts, so entire scene is not recreated
+
+function addRemoteObjects(base)
+    savedBase = base
+
+    local myStuff = workspace:FindFirstChild("My Stuff")
+    local templatesFolder = myStuff:FindFirstChild("Templates")
+    local sceneTemplate = templatesFolder:FindFirstChild("SceneTemplate")
+    local characterTemplate =
+        templatesFolder:FindFirstChild("CharacterTemplate")
+
+    addScenes(base, sceneTemplate)
 
     -- sceneTemplate:Destroy()
-    -- dialogTemplate:Destroy()
+    -- sceneTemplate.Position = sceneTemplate.Position +
+    --                              Vector3.new(0, -sceneTemplate.Size.Y * 2, 0)
 end
 
 module.addRemoteObjects = addRemoteObjects
@@ -2840,8 +2825,8 @@ function module.getScenesConfig()
         name = "log",
         frames = {frame01, frame02}
     }
-    local scenes = {scene01}
-    -- local scenes = {scene01, scene02}
+    -- local scenes = {scene01}
+    local scenes = {scene01, scene02}
 
     return scenes
 
@@ -3301,9 +3286,6 @@ renderTexts = function(props)
         end
 
         local text = charName .. ": " .. dialog['text']
-        print('text' .. ' - start');
-        print(text);
-        print('text' .. ' - end');
         local font = Enum.Font.Arial
         local innerLabelWidth = parentWidth - (2 * paddingInPx)
 
@@ -3364,7 +3346,6 @@ return module
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 
 local module = {}
--- local pageNum = 1
 
 renderButtonBlock = function(props)
     local parent = props.parent

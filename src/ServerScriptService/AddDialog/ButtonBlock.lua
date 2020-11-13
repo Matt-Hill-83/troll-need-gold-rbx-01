@@ -2,7 +2,6 @@ local Sss = game:GetService("ServerScriptService")
 local Part = require(Sss.Source.AddRemoteObjects.Part)
 
 local module = {}
--- local pageNum = 1
 
 renderButtonBlock = function(props)
     local parent = props.parent

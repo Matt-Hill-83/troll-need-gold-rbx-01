@@ -55,9 +55,6 @@ renderTexts = function(props)
         end
 
         local text = charName .. ": " .. dialog['text']
-        print('text' .. ' - start');
-        print(text);
-        print('text' .. ' - end');
         local font = Enum.Font.Arial
         local innerLabelWidth = parentWidth - (2 * paddingInPx)
 
