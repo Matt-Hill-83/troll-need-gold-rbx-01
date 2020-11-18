@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-31.5148048</X>
-					<Y>8.35272884</Y>
-					<Z>64.0858994</Z>
-					<R00>-0.968851924</R00>
-					<R01>0.159858167</R01>
-					<R02>-0.189133435</R02>
+					<X>-33.2254448</X>
+					<Y>96.6675415</Y>
+					<Z>-41.4332924</Z>
+					<R00>-0.976899266</R00>
+					<R01>0.123812579</R01>
+					<R02>-0.174178749</R02>
 					<R10>-0</R10>
-					<R11>0.763740361</R11>
-					<R12>0.645523727</R12>
-					<R20>0.247641042</R20>
-					<R21>0.625416934</R21>
-					<R22>-0.739951193</R22>
+					<R11>0.815061092</R11>
+					<R12>0.579375088</R12>
+					<R20>0.213700205</R20>
+					<R21>0.565991104</R21>
+					<R22>-0.796232641</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-31.1365395</X>
-					<Y>7.06168652</Y>
-					<Z>65.5657959</Z>
+					<X>-32.8770866</X>
+					<Y>95.5087891</Y>
+					<Z>-39.8408241</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -149,9 +149,7 @@
 				<BinaryString name="MaterialColors"><![CDATA[AAAAAAAAan8/P39rf2Y/ilY+j35fi21PZmxvZbDqw8faiVpHOi4kHh4lZlw76JxKc3trhHta
 gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 				<string name="Name">Terrain</string>
-				<BinaryString name="PhysicsGrid"><![CDATA[AgMAAAAJ//8A//8A//8A//4CAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAD/AAD/AAD/AQD+
-AAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAD/AAD/AAD/AQD+AAAAAAAAAAAAAAABAAAAAAAA
-AAAAAAABAAAAAAAAAAA=]]></BinaryString>
+				<BinaryString name="PhysicsGrid">AgMAAAAAAAAAAAAAAAA=</BinaryString>
 				<float name="Reflectance">0</float>
 				<float name="RightParamA">-0.5</float>
 				<float name="RightParamB">0.5</float>
@@ -163,58 +161,7 @@ AAAAAAABAAAAAAAAAAA=]]></BinaryString>
 					<Y>0</Y>
 					<Z>0</Z>
 				</Vector3>
-				<BinaryString name="SmoothGrid"><![CDATA[AQX//wD//wD//wD//wCA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D7lQOAG5UDgBuVA4AblQOAG5UDgBuVA4AblQOAG5UDgBuVA4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP8AAAAAAAAAAAAAAAGA/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gBuVA4AblQOA/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gL8AAP8AAP8AAP8BAP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4Df
-lQ2AEZUNgBGVDYARlQ2AEZUNgBGVDYARlQ2AEZUNgBGVDYD/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+AEQAAAAAAAAAAAAAAAYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+VDYARlQ2A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gNEAAP8AAP8AAP8AAf+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/AAAAAAAAAAAAAAABgP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/wD//wD//wD//wH//4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP8AAAAAAAAAAAAAAAGA/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/AAD/AAD/AAD/AAH/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/wAAAAAAAAAAAAAAAYD/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/gP+A/4D/
-gP+A/4D/gP8=]]></BinaryString>
+				<BinaryString name="SmoothGrid">AQU=</BinaryString>
 				<int64 name="SourceAssetId">-1</int64>
 				<BinaryString name="Tags"></BinaryString>
 				<float name="TopParamA">-0.5</float>
@@ -6127,6 +6074,122 @@ return {
 				</Item>
 			</Item>
 		</Item>
+		<Item class="Part" referent="RBX6a7e6f4583d24710909b16df4e9fa5d1">
+			<Properties>
+				<bool name="Anchored">false</bool>
+				<BinaryString name="AttributesSerialize"></BinaryString>
+				<float name="BackParamA">-0.5</float>
+				<float name="BackParamB">0.5</float>
+				<token name="BackSurface">0</token>
+				<token name="BackSurfaceInput">0</token>
+				<float name="BottomParamA">-0.5</float>
+				<float name="BottomParamB">0.5</float>
+				<token name="BottomSurface">0</token>
+				<token name="BottomSurfaceInput">0</token>
+				<CoordinateFrame name="CFrame">
+					<X>-65.2661133</X>
+					<Y>-42.5</Y>
+					<Z>103.5</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<bool name="CanCollide">true</bool>
+				<bool name="CastShadow">true</bool>
+				<int name="CollisionGroupId">0</int>
+				<Color3uint8 name="Color3uint8">4285438410</Color3uint8>
+				<PhysicalProperties name="CustomPhysicalProperties">
+					<CustomPhysics>false</CustomPhysics>
+				</PhysicalProperties>
+				<float name="FrontParamA">-0.5</float>
+				<float name="FrontParamB">0.5</float>
+				<token name="FrontSurface">0</token>
+				<token name="FrontSurfaceInput">0</token>
+				<float name="LeftParamA">-0.5</float>
+				<float name="LeftParamB">0.5</float>
+				<token name="LeftSurface">0</token>
+				<token name="LeftSurfaceInput">0</token>
+				<bool name="Locked">false</bool>
+				<bool name="Massless">false</bool>
+				<token name="Material">512</token>
+				<string name="Name">Part</string>
+				<float name="Reflectance">0</float>
+				<float name="RightParamA">-0.5</float>
+				<float name="RightParamB">0.5</float>
+				<token name="RightSurface">0</token>
+				<token name="RightSurfaceInput">0</token>
+				<int name="RootPriority">0</int>
+				<Vector3 name="RotVelocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<int64 name="SourceAssetId">-1</int64>
+				<BinaryString name="Tags"></BinaryString>
+				<float name="TopParamA">-0.5</float>
+				<float name="TopParamB">0.5</float>
+				<token name="TopSurface">0</token>
+				<token name="TopSurfaceInput">0</token>
+				<float name="Transparency">0</float>
+				<Vector3 name="Velocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<token name="formFactorRaw">1</token>
+				<token name="shape">1</token>
+				<Vector3 name="size">
+					<X>258</X>
+					<Y>1</Y>
+					<Z>133</Z>
+				</Vector3>
+			</Properties>
+			<Item class="Weld" referent="RBX30b77dcae55b476dbffb82fee8a1299f">
+				<Properties>
+					<BinaryString name="AttributesSerialize"></BinaryString>
+					<CoordinateFrame name="C0">
+						<X>0</X>
+						<Y>0.5</Y>
+						<Z>0</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>0</R11>
+						<R12>1</R12>
+						<R20>0</R20>
+						<R21>-1</R21>
+						<R22>0</R22>
+					</CoordinateFrame>
+					<CoordinateFrame name="C1">
+						<X>-91</X>
+						<Y>-1</Y>
+						<Z>-14.5</Z>
+						<R00>1</R00>
+						<R01>0</R01>
+						<R02>0</R02>
+						<R10>0</R10>
+						<R11>0</R11>
+						<R12>1</R12>
+						<R20>0</R20>
+						<R21>-1</R21>
+						<R22>0</R22>
+					</CoordinateFrame>
+					<bool name="Enabled">true</bool>
+					<string name="Name">Weld</string>
+					<Ref name="Part0">RBX6a7e6f4583d24710909b16df4e9fa5d1</Ref>
+					<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
+					<int64 name="SourceAssetId">-1</int64>
+					<BinaryString name="Tags"></BinaryString>
+				</Properties>
+			</Item>
+		</Item>
 	</Item>
 	<Item class="SoundService" referent="RBX7845308c7ca3451eaa9eca1a685d0279">
 		<Properties>
@@ -6959,13 +7022,40 @@ function module.getScenesConfig()
         frames = {frame02, frame02}
     }
 
+    -- local scene01 = {
+    --     decalId = '5902121857',
+    --     name = "log",
+    --     frames = {frame01, frame02}
+    -- }
+    -- local scenes = {scene01}
+
     local scene01 = {
         decalId = '5902121857',
         name = "log",
-        frames = {frame01, frame02}
+        frames = {
+            {
+                characters = {
+                    {name = "Raven", decalId = '5897424121'},
+                    {name = "Britta", decalId = '5897433108'}
+                },
+                items = {
+                    {name = "Troll King", decalId = '5897428591'},
+                    {name = "Freckle", decalId = '5897430768'}
+                },
+                dialogs = {
+                    {text = "Go in the vortex, you said...", char = "Raven"},
+                    {text = "Whoa...", char = "Britta"},
+                    {
+                        text = "What could possibly go wrong, you said...",
+                        char = "Raven"
+                    }, {text = "Holy mother monkey milk...", char = "Britta"},
+                    {text = "Lucinda hurt my feelings...", char = "Freckle"}
+                }
+            }
+        }
     }
-    -- local scenes = {scene01}
-    local scenes = {scene01, scene02, scene01, scene02, scene01}
+    local scenes = {scene01}
+    -- local scenes = {scene01, scene02, scene01, scene02, scene01}
 
     return scenes
 
