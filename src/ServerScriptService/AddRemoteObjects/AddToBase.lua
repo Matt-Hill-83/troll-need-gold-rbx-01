@@ -126,8 +126,8 @@ function addItemsToScene(props)
     local pageNum = props.pageNum
     local sceneConfig = props.sceneConfig
 
-    local characterConfigs = sceneConfig.frames[pageNum].characters
-    local itemConfigs = sceneConfig.frames[pageNum].items
+    local characterConfigs = sceneConfig.frames[pageNum].characters01
+    local itemConfigs = sceneConfig.frames[pageNum].characters02
     local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
     renderCharacters(newScene, characterConfigs)

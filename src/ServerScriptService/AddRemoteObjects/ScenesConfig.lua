@@ -2,32 +2,200 @@ local module = {}
 
 function module.getScenesConfig()
 
-    local scene01 = {
-        decalId = '5902121857',
-        name = "log",
+    local scene02 = {
+        name = "donutShop01",
         frames = {
             {
-                characters = {
-                    {name = "Raven", decalId = '5897424121'},
-                    {name = "Britta", decalId = '5897433108'}
-                },
-                items = {
-                    {name = "Troll King", decalId = '5897428591'},
-                    {name = "Freckle", decalId = '5897430768'}
-                },
                 dialogs = {
-                    {text = "Go in the vortex, you said...", char = "Raven"},
-                    {text = "Whoa...", char = "Britta"},
+                    {char = "missyMeow01", text = "Meet me."},
+                    {char = "silica01", text = "She's Missy."},
+                    {char = "missyMeow01", text = "Call me Missy Meow."},
                     {
-                        text = "What could possibly go wrong, you said...",
-                        char = "Raven"
-                    }, {text = "Holy mother monkey milk...", char = "Britta"},
-                    {text = "Lucinda hurt my feelings...", char = "Freckle"}
+                        char = "missyMeow01",
+                        text = "If you hit me with a mystery"
+                    }, {char = "silica01", text = "She'll figure it out."}
+                },
+                characters01 = {{name = "missyMeow01"}},
+                characters02 = {{name = "silica01"}, {name = "britta01"}}
+            }, {
+                dialogs = {
+                    {char = "britta01", text = "Freezer Fishy?"},
+                    {char = "tj001", text = "Missing Muffins?"},
+                    {
+                        char = "silica01",
+                        text = "She can find your kitten cousin"
+                    },
+                    {char = "silica01", text = "fifteen dozen missing muffins."},
+                    {
+                        char = "missyMeow01",
+                        text = "But I'll need to keep a couple.."
+                    },
+                    {
+                        char = "missyMeow01",
+                        text = "...for my cousin ...in case she's coming"
+                    }
+                },
+                characters01 = {{name = "missyMeow01"}},
+                characters02 = {
+                    {name = "silica01"}, {name = "britta01"}, {name = "tj001"}
                 }
+            }, {
+                dialogs = {
+                    {
+                        char = "missyMeow01",
+                        text = "This is Mitzy, she's my ritzy cousin"
+                    }, {char = "mitzyMeow01", text = "They say I'm always"},
+                    {char = "mitzyMeow01", text = "scratching, hissing"},
+                    {char = "mitzyMeow01", text = "throwing fits, and fussing"},
+                    {
+                        char = "mitzyMeow01",
+                        text = "Okay it's true. But I wish I wasn't!"
+                    },
+                    {
+                        char = "mitzyMeow01",
+                        text = "How come all these people push my buttons?"
+                    }, {char = "empty", text = ""}, {char = "empty", text = ""},
+                    {char = "empty", text = ""}, {char = "empty", text = ""}
+                },
+                characters01 = {{name = "mitzyMeow01"}, {name = "missyMeow01"}},
+                characters02 = {{name = "silica01"}, {name = "britta01"}}
+            }, {
+                dialogs = {
+                    {
+                        char = "mitzyMeow01",
+                        text = "My dad's always saying to stop screaming"
+                    },
+                    {char = "mitzyMeow01", text = "Last time we were in Target"},
+                    {char = "mitzyMeow01", text = "I latched onto his leg"},
+                    {char = "mitzyMeow01", text = "like a lost lemur"}
+                },
+                characters01 = {{name = "mitzyMeow01"}, {name = "missyMeow01"}},
+                characters02 = {{name = "silica01"}, {name = "britta01"}}
+            }, {
+                dialogs = {
+                    {
+                        char = "missyMeow01",
+                        text = "\"We're not leaving!\", I sob"
+                    }, {char = "mitzyMeow01", text = "And I'm heaving"},
+                    {char = "mitzyMeow01", text = "And I'm trying to stop him"},
+                    {char = "mitzyMeow01", text = "by bobbing and weaving"},
+                    {
+                        char = "mitzyMeow01",
+                        text = "Dad, buy me that barbie!  Stop it! I need it!"
+                    }
+                },
+                characters01 = {{name = "mitzyMeow01"}, {name = "missyMeow01"}},
+                characters02 = {{name = "silica01"}, {name = "britta01"}}
+            }, {
+                dialogs = {
+                    {
+                        char = "mitzyMeow01",
+                        text = "And through the tears, I can see my snot leaving"
+                    }, {
+                        char = "mitzyMeow01",
+                        text = "a giant splotch on his sleeve and it's getting all over"
+                    },
+                    {
+                        char = "mitzyMeow01",
+                        text = "the big pink dog I caught and I'm squeezing..."
+                    }
+                },
+                characters01 = {{name = "mitzyMeow01"}, {name = "missyMeow01"}},
+                characters02 = {{name = "silica01"}, {name = "britta01"}}
+            }, {
+                dialogs = {
+                    {char = "silica01", text = "He has to buy it now!"},
+                    {char = "britta01", text = "The girl's a genius"},
+                    {char = "silica01", text = "...my gosh the details..."}
+                },
+                characters01 = {{name = "mitzyMeow01"}, {name = "missyMeow01"}},
+                characters02 = {{name = "silica01"}, {name = "britta01"}}
+            }, {
+                dialogs = {
+                    {char = "britta01", text = "So that's how she got Pinky..."},
+                    {char = "silica01", text = "Wowww... Just wow..."},
+                    {char = "britta01", text = "I need to write this down."},
+                    {char = "britta01", text = "Does someone have a pen?"}
+                },
+                characters01 = {{name = "mitzyMeow01"}, {name = "missyMeow01"}},
+                characters02 = {{name = "silica01"}, {name = "britta01"}}
+            }, {
+                dialogs = {
+                    {char = "silica01", text = "just use the alphabet blocks."},
+                    {char = "britta01", text = "Oh right."}, {
+                        char = "silica01",
+                        text = "But you only need the blocks that spell out CRAZY..."
+                    }
+                },
+                characters01 = {{name = "mitzyMeow01"}, {name = "missyMeow01"}},
+                characters02 = {{name = "silica01"}, {name = "britta01"}}
+            }, {
+                dialogs = {
+                    {
+                        char = "missyMeow01",
+                        text = "My mom says it's all part of my process"
+                    },
+                    {
+                        char = "missyMeow01",
+                        text = "When the tears gush out of my eyes"
+                    },
+                    {
+                        char = "mitzyMeow01",
+                        text = "Like those old creaky faucets..."
+                    },
+                    {
+                        char = "missyMeow01",
+                        text = "You mean in the art room sink?"
+                    },
+                    {
+                        char = "mitzyMeow01",
+                        text = "The one that's splattered with cartoon ink."
+                    },
+                    {
+                        char = "britta01",
+                        text = "I thought that was Barb's blue drink..."
+                    }
+                },
+                characters01 = {{name = "mitzyMeow01"}, {name = "missyMeow01"}},
+                characters02 = {{name = "silica01"}, {name = "britta01"}}
+            }, {
+                dialogs = {
+                    {
+                        char = "missyMeow01",
+                        text = "My mom says I might grow out of it."
+                    },
+                    {
+                        char = "missyMeow01",
+                        text = "So I go in my room and shout a bit."
+                    }, {char = "missyMeow01", text = "Then I pout and sit."},
+                    {char = "missyMeow01", text = ""}
+                },
+                characters01 = {{name = "mitzyMeow01"}, {name = "missyMeow01"}},
+                characters02 = {{name = "silica01"}, {name = "britta01"}}
+            }, {
+                dialogs = {
+                    {
+                        char = "missyMeow01",
+                        text = "But I'm like Elsa, my powers keep increasing."
+                    },
+                    {
+                        char = "missyMeow01",
+                        text = "This recent weekend I started speaking Swedish"
+                    },
+                    {
+                        char = "missyMeow01",
+                        text = "And now my house is freakin freezing."
+                    }
+                },
+                characters01 = {{name = "mitzyMeow01"}, {name = "missyMeow01"}},
+                characters02 = {{name = "silica01"}, {name = "britta01"}}
             }
         }
     }
-    local scenes = {scene01}
+    -- 
+    -- 
+    -- 
+    local scenes = {scene02}
 
     return scenes
 

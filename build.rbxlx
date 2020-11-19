@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>-33.2254448</X>
-					<Y>96.6675415</Y>
-					<Z>-41.4332924</Z>
-					<R00>-0.976899266</R00>
-					<R01>0.123812579</R01>
-					<R02>-0.174178749</R02>
+					<X>44.0514259</X>
+					<Y>-14.9303093</Y>
+					<Z>95.0360947</Z>
+					<R00>-0.898340583</R00>
+					<R01>-0.243144542</R01>
+					<R02>0.36587581</R02>
 					<R10>-0</R10>
-					<R11>0.815061092</R11>
-					<R12>0.579375088</R12>
-					<R20>0.213700205</R20>
-					<R21>0.565991104</R21>
-					<R22>-0.796232641</R22>
+					<R11>0.832861304</R11>
+					<R12>0.553481936</R12>
+					<R20>-0.439299881</R20>
+					<R21>0.497215271</R21>
+					<R22>-0.748192966</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>-32.8770866</X>
-					<Y>95.5087891</Y>
-					<Z>-39.8408241</Z>
+					<X>36.7338867</X>
+					<Y>-25.9999828</Y>
+					<Z>110</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -2192,9 +2192,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>36.7338867</X>
-							<Y>-38</Y>
-							<Z>110</Z>
+							<X>16.7338867</X>
+							<Y>-40</Y>
+							<Z>84</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -2290,7 +2290,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Weld" referent="RBX819583f1f6e5449d8d55d8a36172e5a4">
+					<Item class="Weld" referent="RBX9fed152784904a188dc5601eb6057589">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -2308,9 +2308,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								<R22>0</R22>
 							</CoordinateFrame>
 							<CoordinateFrame name="C1">
-								<X>11</X>
-								<Y>1</Y>
-								<Z>-8</Z>
+								<X>82</X>
+								<Y>0.5</Y>
+								<Z>-19.5</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -2324,7 +2324,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<bool name="Enabled">true</bool>
 							<string name="Name">Weld</string>
 							<Ref name="Part0">RBXd207cf71550a40cdbaca9bdad35d44a2</Ref>
-							<Ref name="Part1">RBX17952b8cd56a4932ae97b79b324a2de1</Ref>
+							<Ref name="Part1">RBX6a7e6f4583d24710909b16df4e9fa5d1</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
@@ -2343,9 +2343,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>36.7338867</X>
-							<Y>-34</Y>
-							<Z>110</Z>
+							<X>-11.2661133</X>
+							<Y>-40</Y>
+							<Z>87</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -2441,7 +2441,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Weld" referent="RBX3a758286b49c478589ebf54e85c60520">
+					<Item class="Weld" referent="RBX14ac047134c0437fa2179738395a7e73">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -2451,17 +2451,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
-								<R10>-0</R10>
-								<R11>-0</R11>
+								<R10>0</R10>
+								<R11>0</R11>
 								<R12>-1</R12>
 								<R20>0</R20>
 								<R21>1</R21>
 								<R22>0</R22>
 							</CoordinateFrame>
 							<CoordinateFrame name="C1">
-								<X>0</X>
-								<Y>2</Y>
-								<Z>0</Z>
+								<X>54</X>
+								<Y>0.5</Y>
+								<Z>-16.5</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -2475,7 +2475,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<bool name="Enabled">true</bool>
 							<string name="Name">Weld</string>
 							<Ref name="Part0">RBXee2a3a2d2679442395809ba0392bcd31</Ref>
-							<Ref name="Part1">RBXd207cf71550a40cdbaca9bdad35d44a2</Ref>
+							<Ref name="Part1">RBX6a7e6f4583d24710909b16df4e9fa5d1</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
@@ -2494,9 +2494,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>36.7338867</X>
-							<Y>-30</Y>
-							<Z>110</Z>
+							<X>-39.2661133</X>
+							<Y>-40</Y>
+							<Z>77</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -2592,7 +2592,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Weld" referent="RBXb4ec7d6e32204a6aa7433c4f0f630708">
+					<Item class="Weld" referent="RBX8868a8a456c5485d86df8e185e2aab8b">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -2602,17 +2602,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
-								<R10>-0</R10>
-								<R11>-0</R11>
+								<R10>0</R10>
+								<R11>0</R11>
 								<R12>-1</R12>
 								<R20>0</R20>
 								<R21>1</R21>
 								<R22>0</R22>
 							</CoordinateFrame>
 							<CoordinateFrame name="C1">
-								<X>0</X>
-								<Y>2</Y>
-								<Z>0</Z>
+								<X>26</X>
+								<Y>0.5</Y>
+								<Z>-26.5</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -2626,7 +2626,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<bool name="Enabled">true</bool>
 							<string name="Name">Weld</string>
 							<Ref name="Part0">RBX77c5e68c1e1d4052b5ccb29f6321c4ef</Ref>
-							<Ref name="Part1">RBXee2a3a2d2679442395809ba0392bcd31</Ref>
+							<Ref name="Part1">RBX6a7e6f4583d24710909b16df4e9fa5d1</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
@@ -2645,9 +2645,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>36.7338867</X>
-							<Y>-25.9999828</Y>
-							<Z>110</Z>
+							<X>-93.2661133</X>
+							<Y>-40</Y>
+							<Z>76</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -2743,7 +2743,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Weld" referent="RBX285c9cc3eb664bc1a68bbfc262f84026">
+					<Item class="Weld" referent="RBXff1138f9c0704ec3b47a129d13f632d9">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -2753,17 +2753,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
-								<R10>-0</R10>
-								<R11>-0</R11>
+								<R10>0</R10>
+								<R11>0</R11>
 								<R12>-1</R12>
 								<R20>0</R20>
 								<R21>1</R21>
 								<R22>0</R22>
 							</CoordinateFrame>
 							<CoordinateFrame name="C1">
-								<X>0</X>
-								<Y>2.00001717</Y>
-								<Z>0</Z>
+								<X>-28</X>
+								<Y>0.5</Y>
+								<Z>-27.5</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -2777,7 +2777,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<bool name="Enabled">true</bool>
 							<string name="Name">Weld</string>
 							<Ref name="Part0">RBX1244a3f98d9648a9905368fb0d9df605</Ref>
-							<Ref name="Part1">RBX77c5e68c1e1d4052b5ccb29f6321c4ef</Ref>
+							<Ref name="Part1">RBX6a7e6f4583d24710909b16df4e9fa5d1</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
@@ -2796,9 +2796,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>36.7338867</X>
-							<Y>-21.9999695</Y>
-							<Z>110</Z>
+							<X>-86.2661133</X>
+							<Y>-40</Y>
+							<Z>98</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -2894,7 +2894,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Weld" referent="RBXedb23c99ec35471f86e55a35776f3a57">
+					<Item class="Weld" referent="RBX5f03c7a1cfc0458399cd647da4b27445">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -2904,17 +2904,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
-								<R10>-0</R10>
-								<R11>-0</R11>
+								<R10>0</R10>
+								<R11>0</R11>
 								<R12>-1</R12>
 								<R20>0</R20>
 								<R21>1</R21>
 								<R22>0</R22>
 							</CoordinateFrame>
 							<CoordinateFrame name="C1">
-								<X>0</X>
-								<Y>2.00001335</Y>
-								<Z>0</Z>
+								<X>-21</X>
+								<Y>0.5</Y>
+								<Z>-5.5</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -2928,7 +2928,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<bool name="Enabled">true</bool>
 							<string name="Name">Weld</string>
 							<Ref name="Part0">RBX02bfe8e439154ad3af7d436d0d5e3ccb</Ref>
-							<Ref name="Part1">RBX1244a3f98d9648a9905368fb0d9df605</Ref>
+							<Ref name="Part1">RBX6a7e6f4583d24710909b16df4e9fa5d1</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
@@ -2947,9 +2947,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<token name="BottomSurface">0</token>
 						<token name="BottomSurfaceInput">0</token>
 						<CoordinateFrame name="CFrame">
-							<X>36.7338867</X>
-							<Y>-17.9999542</Y>
-							<Z>110</Z>
+							<X>-20.2661133</X>
+							<Y>-40</Y>
+							<Z>111</Z>
 							<R00>1</R00>
 							<R01>0</R01>
 							<R02>0</R02>
@@ -3045,7 +3045,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
 					</Item>
-					<Item class="Weld" referent="RBX4837004e67d5442f8e2b1c2efde10d85">
+					<Item class="Weld" referent="RBX4d79270aeaae41aa8082006dd8bbc373">
 						<Properties>
 							<BinaryString name="AttributesSerialize"></BinaryString>
 							<CoordinateFrame name="C0">
@@ -3055,17 +3055,17 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
-								<R10>-0</R10>
-								<R11>-0</R11>
+								<R10>0</R10>
+								<R11>0</R11>
 								<R12>-1</R12>
 								<R20>0</R20>
 								<R21>1</R21>
 								<R22>0</R22>
 							</CoordinateFrame>
 							<CoordinateFrame name="C1">
-								<X>0</X>
-								<Y>2.00001526</Y>
-								<Z>0</Z>
+								<X>45</X>
+								<Y>0.5</Y>
+								<Z>7.5</Z>
 								<R00>1</R00>
 								<R01>0</R01>
 								<R02>0</R02>
@@ -3079,7 +3079,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<bool name="Enabled">true</bool>
 							<string name="Name">Weld</string>
 							<Ref name="Part0">RBXad40a4ba92e3457bacec7d742e277a10</Ref>
-							<Ref name="Part1">RBX02bfe8e439154ad3af7d436d0d5e3ccb</Ref>
+							<Ref name="Part1">RBX6a7e6f4583d24710909b16df4e9fa5d1</Ref>
 							<int64 name="SourceAssetId">-1</int64>
 							<BinaryString name="Tags"></BinaryString>
 						</Properties>
@@ -6978,57 +6978,6 @@ return module
 						<ProtectedString name="Source"><![CDATA[local module = {}
 
 function module.getScenesConfig()
-
-    local char01 = {name = "Raven", decalId = '5897424121'}
-    local char02 = {name = "Britta", decalId = '5897433108'}
-    local char03 = {name = "Troll King", decalId = '5897428591'}
-    local char04 = {name = "Freckle", decalId = '5897430768'}
-
-    local item01 = {name = "Troll King", decalId = '5897428591'}
-    local item02 = {name = "Freckle", decalId = '5897430768'}
-
-    local characters01 = {char01, char02}
-    local characters02 = {char03, char04}
-    local items = {item01, item02}
-
-    local dialogs01 = {
-        {text = "Go in the vortex, you said...", char = "Raven"},
-        {text = "Whoa...", char = "Britta"},
-        {text = "What could possibly go wrong, you said...", char = "Raven"},
-        {text = "Holy mother monkey milk...", char = "Britta"},
-        {text = "Lucinda hurt my feelings...", char = "Freckle"}
-    }
-
-    local dialogs02 = {
-        {text = "By the power of...", char = "Troll01"},
-        {text = "I'm new here", char = "Zarla"},
-        {text = "Lucinda hurt my feelings...", char = "Freckle"}
-    }
-
-    local frame01 = {
-        characters = characters01,
-        items = items,
-        dialogs = dialogs01
-    }
-    local frame02 = {
-        characters = characters02,
-        items = items,
-        dialogs = dialogs02
-    }
-
-    local scene02 = {
-        decalId = '5902110558',
-        name = "log",
-        frames = {frame02, frame02}
-    }
-
-    -- local scene01 = {
-    --     decalId = '5902121857',
-    --     name = "log",
-    --     frames = {frame01, frame02}
-    -- }
-    -- local scenes = {scene01}
-
     local scene01 = {
         decalId = '5902121857',
         name = "log",
@@ -7054,8 +7003,24 @@ function module.getScenesConfig()
             }
         }
     }
-    local scenes = {scene01}
-    -- local scenes = {scene01, scene02, scene01, scene02, scene01}
+
+    local scene02 = {
+        name = "stump",
+        frames = {
+            {
+                dialogs = {
+                    {char = "goblinKing01", text = "Hi Will"},
+                    {char = "will01", text = "Me not Will!  Me baby troll!"},
+                    {char = "goblinKing01", text = "Cool.  What is in the bag?"},
+                    {char = "will01", text = "Cup cakes!"},
+                    {char = "goblinKing01", text = "I want some!"}
+                },
+                characters01 = {{name = "goblinKing01"}},
+                characters02 = {{name = "will01"}}
+            }
+        }
+    }
+    local scenes = {scene02}
 
     return scenes
 

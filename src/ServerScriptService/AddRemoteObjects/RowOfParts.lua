@@ -59,7 +59,9 @@ function createRowOfParts(props)
 
     local rowOfParts = {}
     local desiredOffsetFromParentEdge = rowProps.offset
-
+    print('itemConfigs' .. ' - start');
+    print(itemConfigs);
+    print('itemConfigs' .. ' - end');
     for i, itemConfig in ipairs(itemConfigs) do
         local offsetProps = {
             parent = parent,
