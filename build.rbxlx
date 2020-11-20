@@ -63,27 +63,27 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>51.3782959</X>
-					<Y>-14.4125757</Y>
-					<Z>117.160843</Z>
-					<R00>0.439277261</R00>
-					<R01>-0.520475447</R01>
-					<R02>0.732216418</R02>
-					<R10>-1.49011647e-08</R10>
-					<R11>0.815066755</R11>
-					<R12>0.579367161</R12>
-					<R20>-0.898351669</R20>
-					<R21>-0.254502833</R21>
-					<R22>0.358040184</R22>
+					<X>42.6761322</X>
+					<Y>-33.1342278</Y>
+					<Z>100.860535</Z>
+					<R00>-0.994625211</R00>
+					<R01>0.00705350144</R01>
+					<R02>-0.103300229</R02>
+					<R10>-0</R10>
+					<R11>0.997676969</R11>
+					<R12>0.0681229532</R12>
+					<R20>0.103540748</R20>
+					<R21>0.0677568093</R21>
+					<R22>-0.992314696</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
 				<float name="FieldOfView">70</float>
 				<token name="FieldOfViewMode">0</token>
 				<CoordinateFrame name="Focus">
-					<X>36.7338867</X>
-					<Y>-25.9999828</Y>
-					<Z>110</Z>
+					<X>42.8827324</X>
+					<Y>-33.2704735</Y>
+					<Z>102.845161</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
