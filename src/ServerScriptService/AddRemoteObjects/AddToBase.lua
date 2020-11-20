@@ -118,6 +118,9 @@ function cloneScene(props)
     local parent = props.parent
     local template = props.template
     local index = props.index
+    local gapZ = props.gapZ
+
+    print('gapZ' .. ': ' .. gapZ); -- zzz
 
     local gapX = 4
 
@@ -127,7 +130,7 @@ function cloneScene(props)
     local startPosition = getStartPosition(parent, clone)
     clone.Position = startPosition +
                          Vector3.new(-(template.Size.X + gapX) * index,
-                                     0 * index, -0.5)
+                                     0 * index, gapZ)
 
     -- sceneOrigin.Transparency = 0.7
 
@@ -159,6 +162,7 @@ function addScenes(props)
     local sceneTemplate = props.sceneTemplate
     local parent = props.parent
     local sceneConfigs = props.sceneConfigs
+    local gapZ = props.gapZ
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
@@ -166,6 +170,7 @@ function addScenes(props)
         local buttonParent = nil
 
         local newScene = cloneScene({
+            gapZ = gapZ,
             parent = parent,
             template = sceneTemplate,
             index = i - 1
@@ -215,13 +220,10 @@ function addScenes(props)
     end
 end
 
--- TODO: develop story
--- TODO: re-create characters when new frame
--- TODO: abstract out createTexts, so entire scene is not recreated
-
 function addRemoteObjects()
-
     local sceneConfigs = SceneConfig.getScenesConfig()
+
+    local quests = {sceneConfigs, sceneConfigs}
 
     local myStuff = workspace:FindFirstChild("MyStuff")
     local sceneLocations = myStuff:FindFirstChild("SceneLocations")
@@ -240,16 +242,18 @@ function addRemoteObjects()
     -- local characterTemplate =
     --     templatesFolder:FindFirstChild("CharacterTemplate")
 
-    local addScenesProps = {
-        sceneTemplate = sceneTemplate,
-        sceneConfigs = sceneConfigs,
-        parent = sceneOrigins[1]
-    }
-    addScenes(addScenesProps)
+    for i, quest in pairs(quests) do
 
-    -- sceneTemplate.Transparency = 1
-    -- sceneTemplate.Position = sceneTemplate.Position +
-    --                              Vector3.new(0, -sceneTemplate.Size.Y * 2, 0)
+        local addScenesProps = {
+            gapZ = -20 * i,
+            sceneTemplate = sceneTemplate,
+            sceneConfigs = quest,
+            -- sceneConfigs = sceneConfigs,
+            parent = sceneOrigins[1]
+        }
+        addScenes(addScenesProps)
+    end
+
 end
 
 module.addRemoteObjects = addRemoteObjects

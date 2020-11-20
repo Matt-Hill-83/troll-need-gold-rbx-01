@@ -63,18 +63,18 @@
 			<Properties>
 				<BinaryString name="AttributesSerialize"></BinaryString>
 				<CoordinateFrame name="CFrame">
-					<X>21.6143723</X>
-					<Y>17.3431606</Y>
-					<Z>11.104929</Z>
-					<R00>-0.989412963</R00>
-					<R01>0.0665768012</R01>
-					<R02>-0.128956109</R02>
+					<X>25.4429016</X>
+					<Y>-0.737995148</Y>
+					<Z>2.963974</Z>
+					<R00>-0.99462235</R00>
+					<R01>0.032530576</R01>
+					<R02>-0.0983276442</R02>
 					<R10>-0</R10>
-					<R11>0.888567984</R11>
-					<R12>0.458745271</R12>
-					<R20>0.145128042</R20>
-					<R21>0.453888506</R21>
-					<R22>-0.879160523</R22>
+					<R11>0.949391603</R11>
+					<R12>0.314095289</R12>
+					<R20>0.103569135</R20>
+					<R21>0.312406182</R21>
+					<R22>-0.944285929</R22>
 				</CoordinateFrame>
 				<Ref name="CameraSubject">null</Ref>
 				<token name="CameraType">0</token>
@@ -211,9 +211,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="BottomSurface">0</token>
 					<token name="BottomSurfaceInput">0</token>
 					<CoordinateFrame name="CFrame">
-						<X>38.7338867</X>
-						<Y>-41.9500008</Y>
-						<Z>93</Z>
+						<X>50.7338867</X>
+						<Y>-31.9999981</Y>
+						<Z>43</Z>
 						<R00>-1</R00>
 						<R01>0</R01>
 						<R02>0</R02>
@@ -227,7 +227,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<bool name="CanCollide">true</bool>
 					<bool name="CastShadow">true</bool>
 					<int name="CollisionGroupId">0</int>
-					<Color3uint8 name="Color3uint8">4294498669</Color3uint8>
+					<Color3uint8 name="Color3uint8">4283144011</Color3uint8>
 					<PhysicalProperties name="CustomPhysicalProperties">
 						<CustomPhysics>false</CustomPhysics>
 					</PhysicalProperties>
@@ -243,7 +243,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="LeftSurfaceInput">0</token>
 					<bool name="Locked">false</bool>
 					<bool name="Massless">false</bool>
-					<token name="Material">1568</token>
+					<token name="Material">864</token>
 					<string name="Name">SpawnLocation</string>
 					<bool name="Neutral">true</bool>
 					<float name="Reflectance">0</float>
@@ -274,7 +274,7 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 					<token name="shape">1</token>
 					<Vector3 name="size">
 						<X>6</X>
-						<Y>0.100000001</Y>
+						<Y>20</Y>
 						<Z>6</Z>
 					</Vector3>
 				</Properties>
@@ -294,12 +294,12 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 						<float name="Transparency">0</float>
 					</Properties>
 				</Item>
-				<Item class="Weld" referent="RBXfd892e0cb0794838b57f831ec8ff23a8">
+				<Item class="Weld" referent="RBX5725457fa9ec47f08a951d033471d671">
 					<Properties>
 						<BinaryString name="AttributesSerialize"></BinaryString>
 						<CoordinateFrame name="C0">
 							<X>0</X>
-							<Y>-0.0499992371</Y>
+							<Y>-10.0000019</Y>
 							<Z>0</Z>
 							<R00>1</R00>
 							<R01>0</R01>
@@ -312,9 +312,9 @@ gcLgc4RKxr21zq2UlJSM]]></BinaryString>
 							<R22>0</R22>
 						</CoordinateFrame>
 						<CoordinateFrame name="C1">
-							<X>104</X>
+							<X>116</X>
 							<Y>0.5</Y>
-							<Z>-10.5</Z>
+							<Z>-60.5</Z>
 							<R00>-1</R00>
 							<R01>0</R01>
 							<R02>-0</R02>
@@ -2464,8 +2464,6 @@ local ButtonBlock = require(Sss.Source.AddDialog.ButtonBlock)
 local Utils = require(Sss.Source.Utils.Utils)
 local Constants = require(Sss.Source.Constants.Constants)
 
-local sceneConfigs = SceneConfig.getScenesConfig()
-
 renderCharacters02 = function(parent, itemConfigs)
     local itemProps = {size = Vector3.new(4, 6, 1), partName = "Items"}
 
@@ -2576,6 +2574,9 @@ function cloneScene(props)
     local parent = props.parent
     local template = props.template
     local index = props.index
+    local gapZ = props.gapZ
+
+    print('gapZ' .. ': ' .. gapZ); -- zzz
 
     local gapX = 4
 
@@ -2585,7 +2586,7 @@ function cloneScene(props)
     local startPosition = getStartPosition(parent, clone)
     clone.Position = startPosition +
                          Vector3.new(-(template.Size.X + gapX) * index,
-                                     0 * index, -0.5)
+                                     0 * index, gapZ)
 
     -- sceneOrigin.Transparency = 0.7
 
@@ -2614,9 +2615,10 @@ function addItemsToScene(props)
 end
 
 function addScenes(props)
-    local sceneOrigins = props.sceneOrigins
     local sceneTemplate = props.sceneTemplate
     local parent = props.parent
+    local sceneConfigs = props.sceneConfigs
+    local gapZ = props.gapZ
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
@@ -2624,8 +2626,8 @@ function addScenes(props)
         local buttonParent = nil
 
         local newScene = cloneScene({
+            gapZ = gapZ,
             parent = parent,
-            sceneOrigin = sceneOrigins[i],
             template = sceneTemplate,
             index = i - 1
         })
@@ -2674,11 +2676,11 @@ function addScenes(props)
     end
 end
 
--- TODO: develop story
--- TODO: re-create characters when new frame
--- TODO: abstract out createTexts, so entire scene is not recreated
+function addRemoteObjects()
+    local sceneConfigs = SceneConfig.getScenesConfig()
 
-function addRemoteObjects(base)
+    local quests = {sceneConfigs, sceneConfigs}
+
     local myStuff = workspace:FindFirstChild("MyStuff")
     local sceneLocations = myStuff:FindFirstChild("SceneLocations")
 
@@ -2696,17 +2698,18 @@ function addRemoteObjects(base)
     -- local characterTemplate =
     --     templatesFolder:FindFirstChild("CharacterTemplate")
 
-    local addScenesProps = {
-        base = base,
-        sceneOrigins = sceneOrigins,
-        sceneTemplate = sceneTemplate,
-        parent = sceneOrigins[1]
-    }
-    addScenes(addScenesProps)
+    for i, quest in pairs(quests) do
 
-    -- sceneTemplate.Transparency = 1
-    -- sceneTemplate.Position = sceneTemplate.Position +
-    --                              Vector3.new(0, -sceneTemplate.Size.Y * 2, 0)
+        local addScenesProps = {
+            gapZ = -20 * i,
+            sceneTemplate = sceneTemplate,
+            sceneConfigs = quest,
+            -- sceneConfigs = sceneConfigs,
+            parent = sceneOrigins[1]
+        }
+        addScenes(addScenesProps)
+    end
+
 end
 
 module.addRemoteObjects = addRemoteObjects
