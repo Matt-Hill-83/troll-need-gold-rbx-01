@@ -47,12 +47,6 @@ renderCharacters = function(parent, itemConfigs)
             end
         end
 
-        print('dataFileName' .. ': ' .. dataFileName); -- zzz
-
-        print('itemConfig.dataFileName' .. ': ' .. dataFileName); -- zzz
-        -- print('displayName' .. ': ' ..
-        --           Constants.characters[dataFileName]['displayName']); -- zzz
-
     end
 
     local characterScale = 0.6
@@ -107,7 +101,7 @@ getStartPosition = function(parent, child)
     local desiredOffsetFromParentEdge = Vector3.new(0, 0, 0)
 
     local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(1, 1, 1),
+        alignToParentFarEdge = Vector3.new(1, -1, -1),
         moveTowardZero = Vector3.new(-1, 1, -1),
         alignToChildFarEdge = Vector3.new(-1, 1, -1)
     }
@@ -126,21 +120,21 @@ function cloneScene(props)
     local parent = props.parent
     local template = props.template
     local index = props.index
-    local sceneOrigin = props.sceneOrigin
+    -- local sceneOrigin = props.sceneOrigin
 
     local gapX = 4
 
     local clone = template:Clone()
     clone.Parent = parent
     clone.Name = "Scene Clone-" .. index
-    local origin = getScenePosition(sceneOrigin, clone)
+    -- local origin = getScenePosition(sceneOrigin, clone)
     -- clone.Position = origin
     local startPosition = getStartPosition(parent, clone)
     clone.Position = startPosition +
                          Vector3.new(-(template.Size.X + gapX) * index,
                                      0 * index, -0.5)
 
-    sceneOrigin.Transparency = 0.7
+    -- sceneOrigin.Transparency = 0.7
 
     Instance.new("SurfaceLight", clone)
     return clone
@@ -169,6 +163,7 @@ end
 function addScenes02(props)
     local sceneOrigins = props.sceneOrigins
     local sceneTemplate = props.sceneTemplate
+    local parent = props.parent
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
@@ -176,7 +171,7 @@ function addScenes02(props)
         local buttonParent = nil
 
         local newScene = cloneScene({
-            parent = sceneTemplate,
+            parent = parent,
             -- parent = workspace,
             sceneOrigin = sceneOrigins[i],
             template = sceneTemplate,
@@ -312,7 +307,8 @@ function addRemoteObjects(base)
     local addScenesProps = {
         base = base,
         sceneOrigins = sceneOrigins,
-        sceneTemplate = sceneTemplate
+        sceneTemplate = sceneTemplate,
+        parent = sceneOrigins[1]
     }
     addScenes02(addScenesProps)
     -- addScenes(addScenesProps)
