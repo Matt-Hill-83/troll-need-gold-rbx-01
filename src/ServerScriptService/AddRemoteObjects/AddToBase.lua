@@ -10,31 +10,6 @@ local Constants = require(Sss.Source.Constants.Constants)
 
 local sceneConfigs = SceneConfig.getScenesConfig()
 
-renderCharacters03 = function(parent, itemConfigs)
-    local itemProps = {size = Vector3.new(4, 6, 1), partName = "Items"}
-
-    local itemDuplicationConfig = {
-        alignToParentFarEdge = Vector3.new(-1, -1, -1),
-        moveTowardZero = Vector3.new(1, 1, -1),
-        alignToChildFarEdge = Vector3.new(1, -1, -1)
-    }
-
-    local rowProps = {
-        parent = parent,
-        gapBetweenRowItems = Vector3.new(1, 0, 0),
-        itemDuplicationConfig = itemDuplicationConfig,
-        offset = Vector3.new(3, 2, 0)
-    }
-
-    local props = {
-        rowProps = rowProps,
-        itemConfigs = itemConfigs,
-        itemProps = itemProps
-    }
-
-    return RowOfParts.createRowOfParts(props)
-end
-
 renderCharacters02 = function(parent, itemConfigs)
     local itemProps = {size = Vector3.new(4, 6, 1), partName = "Items"}
 
@@ -174,8 +149,7 @@ function addItemsToScene(props)
     local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
     renderCharacters(newScene, characterConfigs01)
-    -- renderCharacters02(newScene, itemConfigs)
-    renderCharacters03(newScene, itemConfigs)
+    renderCharacters02(newScene, itemConfigs)
 
     return Dialog.renderDialog({
         parent = newScene,
