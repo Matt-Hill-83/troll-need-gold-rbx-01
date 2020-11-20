@@ -1,7 +1,7 @@
 local module = {}
 local Sss = game:GetService("ServerScriptService")
 
-local SceneConfig = require(Sss.Source.AddRemoteObjects.ScenesConfig)
+local SceneConfig = require(Sss.Source.QuestConfigs.ScenesConfig)
 local Dialog = require(Sss.Source.AddDialog.Dialog)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local ButtonBlock = require(Sss.Source.AddDialog.ButtonBlock)
