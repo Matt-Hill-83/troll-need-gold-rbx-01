@@ -221,9 +221,7 @@ function addScenes(props)
 end
 
 function addRemoteObjects()
-    local sceneConfigs = SceneConfig.getScenesConfig()
-
-    local quests = {sceneConfigs, sceneConfigs}
+    local questConfigs = SceneConfig.getScenesConfig()
 
     local myStuff = workspace:FindFirstChild("MyStuff")
     local sceneLocations = myStuff:FindFirstChild("SceneLocations")
@@ -242,13 +240,11 @@ function addRemoteObjects()
     -- local characterTemplate =
     --     templatesFolder:FindFirstChild("CharacterTemplate")
 
-    for i, quest in pairs(quests) do
-
+    for i, quest in pairs(questConfigs) do
         local addScenesProps = {
             gapZ = -20 * i,
             sceneTemplate = sceneTemplate,
             sceneConfigs = quest,
-            -- sceneConfigs = sceneConfigs,
             parent = sceneOrigins[1]
         }
         addScenes(addScenesProps)
