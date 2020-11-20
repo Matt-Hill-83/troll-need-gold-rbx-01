@@ -38,18 +38,21 @@ end
 renderCharacters = function(parent, itemConfigs)
 
     for i, itemConfig in ipairs(itemConfigs) do
-        -- local name = "raven"
         local dataFileName = itemConfig.name
         if (not itemConfig.decalId) then
-            itemConfig.decalId = Constants.characters[dataFileName]['decalId']
-            -- itemConfig.decalId = "5897424121"
+            if (Constants.characters[dataFileName]) then
+                itemConfig.decalId =
+                    Constants.characters[dataFileName]['decalId']
+            else
+                itemConfig.decalId = "5897424121"
+            end
         end
 
         print('dataFileName' .. ': ' .. dataFileName); -- zzz
 
         print('itemConfig.dataFileName' .. ': ' .. dataFileName); -- zzz
-        print('displayName' .. ': ' ..
-                  Constants.characters[dataFileName]['displayName']); -- zzz
+        -- print('displayName' .. ': ' ..
+        --           Constants.characters[dataFileName]['displayName']); -- zzz
 
     end
 
