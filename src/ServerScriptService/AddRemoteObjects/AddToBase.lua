@@ -6,6 +6,7 @@ local Dialog = require(Sss.Source.AddDialog.Dialog)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
 local ButtonBlock = require(Sss.Source.AddDialog.ButtonBlock)
 local Utils = require(Sss.Source.Utils.Utils)
+local Constants = require(Sss.Source.Constants.Constants)
 
 local sceneConfigs = SceneConfig.getScenesConfig()
 
@@ -37,11 +38,18 @@ end
 renderCharacters = function(parent, itemConfigs)
 
     for i, itemConfig in ipairs(itemConfigs) do
-        print('itemConfig.name' .. ' - start');
-        print(itemConfig.name);
-        print('itemConfig.name' .. ' - end');
+        -- local name = "raven"
+        local dataFileName = itemConfig.name
+        if (not itemConfig.decalId) then
+            itemConfig.decalId = Constants.characters[dataFileName]['decalId']
+            -- itemConfig.decalId = "5897424121"
+        end
 
-        print('itemConfig.name' .. ': ' .. itemConfig.name); -- zzz
+        print('dataFileName' .. ': ' .. dataFileName); -- zzz
+
+        print('itemConfig.dataFileName' .. ': ' .. dataFileName); -- zzz
+        print('displayName' .. ': ' ..
+                  Constants.characters[dataFileName]['displayName']); -- zzz
 
     end
 
