@@ -128,11 +128,18 @@ function cloneScene(props)
     local index = props.index
     local sceneOrigin = props.sceneOrigin
 
+    local gapX = 4
+
     local clone = template:Clone()
     clone.Parent = parent
     clone.Name = "Scene Clone-" .. index
     local origin = getScenePosition(sceneOrigin, clone)
-    clone.Position = origin
+    -- clone.Position = origin
+    local startPosition = getStartPosition(parent, clone)
+    clone.Position = startPosition +
+                         Vector3.new(-(template.Size.X + gapX) * index,
+                                     0 * index, -0.5)
+
     sceneOrigin.Transparency = 0.7
 
     Instance.new("SurfaceLight", clone)
@@ -157,6 +164,67 @@ function addItemsToScene(props)
         pageNum = pageNum
     })
 
+end
+
+function addScenes02(props)
+    local sceneOrigins = props.sceneOrigins
+    local sceneTemplate = props.sceneTemplate
+
+    for i, sceneConfig in ipairs(sceneConfigs) do
+        local numPages = #sceneConfig.frames
+        local pageNum = 1
+        local buttonParent = nil
+
+        local newScene = cloneScene({
+            parent = sceneTemplate,
+            -- parent = workspace,
+            sceneOrigin = sceneOrigins[i],
+            template = sceneTemplate,
+            index = i - 1
+        })
+
+        local sceneProps = {
+            newScene = newScene,
+            pageNum = pageNum,
+            sceneConfig = sceneConfig
+        }
+        buttonParent = addItemsToScene(sceneProps)
+
+        function incrementPage()
+            local newPageNum = pageNum + 1
+
+            if newPageNum <= numPages then
+                pageNum = newPageNum
+
+                local children = newScene:GetChildren()
+                for _, item in pairs(children) do
+                    local match1 = string.match(item.Name, "Items-")
+                    local match2 = string.match(item.Name, "Characters-")
+                    local match3 = string.match(item.Name, "Dialog-")
+                    if item:IsA('Part') and (match1 or match2 or match3) then
+                        item:Destroy()
+                    end
+                end
+
+                local newSceneProps = {
+                    newScene = newScene,
+                    pageNum = pageNum,
+                    sceneConfig = sceneConfig
+                }
+                buttonParent = addItemsToScene(newSceneProps)
+            end
+        end
+
+        local renderButtonBlockProps = {
+            parent = newScene,
+            sibling = buttonParent,
+            incrementPage = incrementPage,
+            pageNum = pageNum
+        }
+
+        ButtonBlock.renderButtonBlock(renderButtonBlockProps)
+
+    end
 end
 
 function addScenes(props)
@@ -246,7 +314,8 @@ function addRemoteObjects(base)
         sceneOrigins = sceneOrigins,
         sceneTemplate = sceneTemplate
     }
-    addScenes(addScenesProps)
+    addScenes02(addScenesProps)
+    -- addScenes(addScenesProps)
 
     -- sceneTemplate.Transparency = 1
     -- sceneTemplate.Position = sceneTemplate.Position +
