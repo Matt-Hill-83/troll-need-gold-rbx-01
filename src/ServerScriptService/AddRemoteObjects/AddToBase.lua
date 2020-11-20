@@ -10,7 +10,7 @@ local Constants = require(Sss.Source.Constants.Constants)
 
 local sceneConfigs = SceneConfig.getScenesConfig()
 
-renderItems = function(parent, itemConfigs)
+renderCharacters02 = function(parent, itemConfigs)
     local itemProps = {size = Vector3.new(4, 6, 1), partName = "Items"}
 
     local itemDuplicationConfig = {
@@ -142,12 +142,12 @@ function addItemsToScene(props)
     local pageNum = props.pageNum
     local sceneConfig = props.sceneConfig
 
-    local characterConfigs = sceneConfig.frames[pageNum].characters01
+    local characterConfigs01 = sceneConfig.frames[pageNum].characters01
     local itemConfigs = sceneConfig.frames[pageNum].characters02
     local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
-    renderCharacters(newScene, characterConfigs)
-    renderItems(newScene, itemConfigs)
+    renderCharacters(newScene, characterConfigs01)
+    renderCharacters02(newScene, itemConfigs)
 
     return Dialog.renderDialog({
         parent = newScene,
