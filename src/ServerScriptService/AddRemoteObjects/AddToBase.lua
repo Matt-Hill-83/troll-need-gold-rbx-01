@@ -1,11 +1,9 @@
 local module = {}
 local Sss = game:GetService("ServerScriptService")
-local Sss2 = game:GetService("ServerScriptService").Source
 
 local SceneConfig = require(Sss.Source.AddRemoteObjects.ScenesConfig)
 local Dialog = require(Sss.Source.AddDialog.Dialog)
 local RowOfParts = require(Sss.Source.AddRemoteObjects.RowOfParts)
-local Part = require(Sss.Source.AddRemoteObjects.Part)
 local ButtonBlock = require(Sss.Source.AddDialog.ButtonBlock)
 local Utils = require(Sss.Source.Utils.Utils)
 
@@ -17,7 +15,7 @@ renderItems = function(parent, itemConfigs)
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(-1, -1, -1),
         moveTowardZero = Vector3.new(1, 1, -1),
-        rowDirection = Vector3.new(1, -1, -1)
+        alignToChildFarEdge = Vector3.new(1, -1, -1)
     }
 
     local rowProps = {
@@ -37,6 +35,16 @@ renderItems = function(parent, itemConfigs)
 end
 
 renderCharacters = function(parent, itemConfigs)
+
+    for i, itemConfig in ipairs(itemConfigs) do
+        print('itemConfig.name' .. ' - start');
+        print(itemConfig.name);
+        print('itemConfig.name' .. ' - end');
+
+        print('itemConfig.name' .. ': ' .. itemConfig.name); -- zzz
+
+    end
+
     local characterScale = 0.6
     local itemProps = {
         size = Vector3.new(6 * characterScale, 8 * characterScale, 0.5),
@@ -46,7 +54,7 @@ renderCharacters = function(parent, itemConfigs)
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, -1, -1),
         moveTowardZero = Vector3.new(-1, 1, -1),
-        rowDirection = Vector3.new(-1, -1, -1)
+        alignToChildFarEdge = Vector3.new(-1, -1, -1)
     }
 
     local rowProps = {
@@ -71,7 +79,7 @@ getScenePosition = function(parent, child)
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, -1, -1),
         moveTowardZero = Vector3.new(-1, 1, -1),
-        rowDirection = Vector3.new(-1, 1, -1)
+        alignToChildFarEdge = Vector3.new(-1, 1, -1)
     }
 
     local offsetProps = {
@@ -91,7 +99,7 @@ getStartPosition = function(parent, child)
     local itemDuplicationConfig = {
         alignToParentFarEdge = Vector3.new(1, 1, 1),
         moveTowardZero = Vector3.new(-1, 1, -1),
-        rowDirection = Vector3.new(-1, 1, -1)
+        alignToChildFarEdge = Vector3.new(-1, 1, -1)
     }
 
     local offsetProps = {
@@ -142,7 +150,6 @@ function addItemsToScene(props)
 end
 
 function addScenes(props)
-    local base = props.base
     local sceneOrigins = props.sceneOrigins
     local sceneTemplate = props.sceneTemplate
 
@@ -207,25 +214,22 @@ end
 -- TODO: abstract out createTexts, so entire scene is not recreated
 
 function addRemoteObjects(base)
-
     local myStuff = workspace:FindFirstChild("MyStuff")
     local sceneLocations = myStuff:FindFirstChild("SceneLocations")
 
     local sceneOrigins = {}
     local children = sceneLocations:GetChildren()
     for i, item in pairs(children) do
-
         if item:IsA('Part') then
             sceneOrigins[i] = item
-
             --
         end
     end
 
     local templatesFolder = myStuff:FindFirstChild("Templates")
     local sceneTemplate = templatesFolder:FindFirstChild("SceneTemplate")
-    local characterTemplate =
-        templatesFolder:FindFirstChild("CharacterTemplate")
+    -- local characterTemplate =
+    --     templatesFolder:FindFirstChild("CharacterTemplate")
 
     local addScenesProps = {
         base = base,

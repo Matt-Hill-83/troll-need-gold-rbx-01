@@ -26,5 +26,4 @@ function createPartWithVectors(props)
 end
 
 module.createPartWithVectors = createPartWithVectors
-module.createPart = createPart
 return module

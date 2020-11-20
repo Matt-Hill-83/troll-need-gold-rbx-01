@@ -1,6 +1,9 @@
 local module = {}
 
-function hello() print("----------------------------- test-------------------") end
+function hello()
+
+    -- 
+end
 module.hello = hello
 return module
 
