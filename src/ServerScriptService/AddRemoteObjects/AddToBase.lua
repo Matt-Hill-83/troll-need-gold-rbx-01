@@ -8,8 +8,6 @@ local ButtonBlock = require(Sss.Source.AddDialog.ButtonBlock)
 local Utils = require(Sss.Source.Utils.Utils)
 local Constants = require(Sss.Source.Constants.Constants)
 
-local sceneConfigs = SceneConfig.getScenesConfig()
-
 renderCharacters02 = function(parent, itemConfigs)
     local itemProps = {size = Vector3.new(4, 6, 1), partName = "Items"}
 
@@ -160,6 +158,7 @@ end
 function addScenes(props)
     local sceneTemplate = props.sceneTemplate
     local parent = props.parent
+    local sceneConfigs = props.sceneConfigs
 
     for i, sceneConfig in ipairs(sceneConfigs) do
         local numPages = #sceneConfig.frames
@@ -220,7 +219,10 @@ end
 -- TODO: re-create characters when new frame
 -- TODO: abstract out createTexts, so entire scene is not recreated
 
-function addRemoteObjects(base)
+function addRemoteObjects()
+
+    local sceneConfigs = SceneConfig.getScenesConfig()
+
     local myStuff = workspace:FindFirstChild("MyStuff")
     local sceneLocations = myStuff:FindFirstChild("SceneLocations")
 
@@ -240,6 +242,7 @@ function addRemoteObjects(base)
 
     local addScenesProps = {
         sceneTemplate = sceneTemplate,
+        sceneConfigs = sceneConfigs,
         parent = sceneOrigins[1]
     }
     addScenes(addScenesProps)
