@@ -158,7 +158,6 @@ function addItemsToScene(props)
 end
 
 function addScenes(props)
-    local sceneOrigins = props.sceneOrigins
     local sceneTemplate = props.sceneTemplate
     local parent = props.parent
 
@@ -169,7 +168,6 @@ function addScenes(props)
 
         local newScene = cloneScene({
             parent = parent,
-            sceneOrigin = sceneOrigins[i],
             template = sceneTemplate,
             index = i - 1
         })
@@ -241,8 +239,6 @@ function addRemoteObjects(base)
     --     templatesFolder:FindFirstChild("CharacterTemplate")
 
     local addScenesProps = {
-        base = base,
-        sceneOrigins = sceneOrigins,
         sceneTemplate = sceneTemplate,
         parent = sceneOrigins[1]
     }
