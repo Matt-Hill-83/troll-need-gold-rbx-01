@@ -10,6 +10,31 @@ local Constants = require(Sss.Source.Constants.Constants)
 
 local sceneConfigs = SceneConfig.getScenesConfig()
 
+renderCharacters03 = function(parent, itemConfigs)
+    local itemProps = {size = Vector3.new(4, 6, 1), partName = "Items"}
+
+    local itemDuplicationConfig = {
+        alignToParentFarEdge = Vector3.new(-1, -1, -1),
+        moveTowardZero = Vector3.new(1, 1, -1),
+        alignToChildFarEdge = Vector3.new(1, -1, -1)
+    }
+
+    local rowProps = {
+        parent = parent,
+        gapBetweenRowItems = Vector3.new(1, 0, 0),
+        itemDuplicationConfig = itemDuplicationConfig,
+        offset = Vector3.new(3, 2, 0)
+    }
+
+    local props = {
+        rowProps = rowProps,
+        itemConfigs = itemConfigs,
+        itemProps = itemProps
+    }
+
+    return RowOfParts.createRowOfParts(props)
+end
+
 renderCharacters02 = function(parent, itemConfigs)
     local itemProps = {size = Vector3.new(4, 6, 1), partName = "Items"}
 
@@ -21,7 +46,7 @@ renderCharacters02 = function(parent, itemConfigs)
 
     local rowProps = {
         parent = parent,
-        xGap = Vector3.new(4, 0, 0),
+        gapBetweenRowItems = Vector3.new(1, 0, 0),
         itemDuplicationConfig = itemDuplicationConfig,
         offset = Vector3.new(3, 2, 0)
     }
@@ -36,7 +61,6 @@ renderCharacters02 = function(parent, itemConfigs)
 end
 
 renderCharacters = function(parent, itemConfigs)
-
     for i, itemConfig in ipairs(itemConfigs) do
         local dataFileName = itemConfig.name
         if (not itemConfig.decalId) then
@@ -71,7 +95,7 @@ renderCharacters = function(parent, itemConfigs)
     local rowProps = {
         parent = parent,
         itemDuplicationConfig = itemDuplicationConfig,
-        xGap = Vector3.new(1, 0, 0),
+        gapBetweenRowItems = Vector3.new(1, 0, 0),
         offset = Vector3.new(-1, 0.5, 0)
     }
 
@@ -150,7 +174,8 @@ function addItemsToScene(props)
     local dialogConfigs = sceneConfig.frames[pageNum].dialogs
 
     renderCharacters(newScene, characterConfigs01)
-    renderCharacters02(newScene, itemConfigs)
+    -- renderCharacters02(newScene, itemConfigs)
+    renderCharacters03(newScene, itemConfigs)
 
     return Dialog.renderDialog({
         parent = newScene,

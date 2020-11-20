@@ -54,7 +54,7 @@ function createRowOfParts(props)
 
     local parent = rowProps.parent
     local itemDuplicationConfig = rowProps.itemDuplicationConfig
-    local xGap = rowProps.xGap
+    local gapBetweenRowItems = rowProps.gapBetweenRowItems
 
     local rowOfParts = {}
     local desiredOffsetFromParentEdge = rowProps.offset
@@ -79,7 +79,8 @@ function createRowOfParts(props)
 
         rowOfParts[i] = Part.createPartWithVectors(newPartProps)
 
-        local positionIncrement = Vector3.new(itemProps.size.X, 0, 0) + xGap
+        local positionIncrement = Vector3.new(itemProps.size.X, 0, 0) +
+                                      gapBetweenRowItems
 
         desiredOffsetFromParentEdge = desiredOffsetFromParentEdge +
                                           positionIncrement *
