@@ -39,6 +39,12 @@ renderTexts = function(props)
     scrollingFrame.ScrollBarThickness = 40
     scrollingFrame.ScrollBarImageColor3 = Color3.new(113, 0, 255)
 
+    -- TODO: add up all the texts to get the correct CanvasSize
+    -- TODO: add up all the texts to get the correct CanvasSize
+    -- TODO: add up all the texts to get the correct CanvasSize
+
+    scrollingFrame.CanvasSize = UDim2.new(0, 0, 20, 0)
+
     local parentWidth = parent.Size.X * pixelsPerStud - (2 * paddingInPx)
     local parentHeight = parent.Size.Y * pixelsPerStud
 

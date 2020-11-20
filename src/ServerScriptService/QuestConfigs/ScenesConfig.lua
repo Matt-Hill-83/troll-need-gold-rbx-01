@@ -5,10 +5,11 @@ local module = {}
 
 function module.getScenesConfig()
 
-    local missyMeow = MissyMeow.quest
-    local quest2 = Quest2.quest
+    -- local missyMeow = MissyMeow.quest
+    -- return {missyMeow}
 
-    return {missyMeow, quest2}
+    local quests = Quest2.quests
+    return quests
 
 end
 
